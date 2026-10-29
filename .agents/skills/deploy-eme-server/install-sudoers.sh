@@ -8,7 +8,7 @@
 # On most machines that is "entermedia". The rule file is written to
 # /etc/sudoers.d/eme-deploy-<username> so several users can each have their own.
 #
-# deploy-root (default /media/emsites) scopes the chown rule: eme.sh runs
+# deploy-root (default /media/eme_sites) scopes the chown rule: eme.sh runs
 # `sudo chown <user>:<group> <server-dir>` during init/dockerbuild, where
 # <server-dir> is <deploy-root>/eme-server-<client>. Re-run with a new root
 # if you change DEPLOY_ROOT; re-running always overwrites the rule file.
@@ -52,7 +52,7 @@ for pair in "docker:$DOCKER_BIN" "nginx:$NGINX_BIN" "systemctl:$SYSTEMCTL_BIN" "
     fi
 done
 
-DEPLOY_ROOT="${2:-/media/emsites}"
+DEPLOY_ROOT="${2:-/media/eme_sites}"
 # Normalize a trailing slash so the sudoers glob matches <deploy-root>/eme-server-<client>.
 DEPLOY_ROOT="${DEPLOY_ROOT%/}"
 
