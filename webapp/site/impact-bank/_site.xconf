@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <page>
-	<property name="editable">true</property>
-
-  	<property name="fallbackdirectory">/community/default</property>
-
 	<property name="catalogid">site/catalog</property>
+	<property name="applicationid">site/impact-bank</property>
+	<property name="fallbackdirectory">/community/default</property>
 
 	<property name="falir">false</property>
+	<property name="editable">true</property>
 	<property name="templatename">impact-bank</property>
+	
 
 	<path-action name="Admin.autoLogin"/>
 	<path-action name="MediaArchiveModule.loadApplicationId"/>
