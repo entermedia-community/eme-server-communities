@@ -10,8 +10,6 @@
 	<property name="falir">false</property>
 	<property name="templatename">impact-bank</property>
 
-	<inner-layout>${communityhome}/innerlayout.html</inner-layout>
-
 	<path-action name="Admin.autoLogin"/>
 	<path-action name="MediaArchiveModule.loadApplicationId"/>
 	<path-action name="MediaArchiveModule.loadComponentHome"/>
@@ -34,6 +32,8 @@
 	
 	<property name="communitytag">impact-bank</property>
   	<path-action name="MediaAdminModule.loadCommunityTag"/>
+
+	<inner-layout>${communityhome}/innerlayout.html</inner-layout>
 
 
 	<!-- Base Community JS & CSS -->
