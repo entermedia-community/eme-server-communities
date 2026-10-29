@@ -5,13 +5,35 @@
 
   	<property name="fallbackdirectory">/community/default</property>
 
-	<property name="communityhome">/${siteid}/community/impact-bank</property>
-
 	<property name="catalogid">site/catalog</property>
 
 	<property name="falir">false</property>
 	<property name="templatename">impact-bank</property>
-	<property name="communitytagcategory">impact-bank</property>
+
+	<path-action name="Admin.autoLogin"/>
+	<path-action name="MediaArchiveModule.loadApplicationId"/>
+	<path-action name="MediaArchiveModule.loadComponentHome"/>
+	<path-action name="ProfileModule.loadUserProfile"/>
+	<path-action name="MediaArchiveModule.loadModule"/>
+	<path-action name="UserProfileModule.loadSideBarWidth"/>
+	<path-action name="DesktopModule.loadDesktop"/>
+	<path-action name="DataEditModule.loadEditHome"/>
+	<path-action name="DataEditModule.loadSearchHome"/>
+	<path-action name="MediaArchiveModule.getMediaArchive" alltypes="true" />
+	<path-action name="PageValue.loadPageVariable" allowduplicates="true" bean="searcherManager"/>
+	<path-action name="PageValue.loadPageVariable" allowduplicates="true" bean="userManager"/>
+	<path-action name="SessionValue.loadSessionVariable" bean="moduleManager"/>
+	<path-action name="Admin.loadPermissions"/>
+	<path-action name="Admin.loadPermissionFinder"/>
+	<path-action name="Admin.allowViewing"/>
+	<path-action name="TranslationModule.loadBrowserLanguage"/>
+	<path-action name="FinderModule.loadAppsMenu"/>
+	<path-action name="PageValue.loadPageVariable" allowduplicates="true" bean="inflector"/>
+	
+	<property name="communitytag">impact-bank</property>
+	<property name="communityhome">/${siteid}/community/impact-bank</property>
+  	<path-action name="MediaAdminModule.loadCommunityTag"/>
+
 
 	<!-- Base Community JS & CSS -->
 	<script id="jquery-ui-i18n" cancel="true" src="/${applicationid}/components/javascript/jquery-ui/i18n/jquery-ui-i18n.js"/>
