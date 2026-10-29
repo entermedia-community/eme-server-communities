@@ -1,0 +1,18 @@
+[Unit]
+Description=OpenCode web interface in eme-server-world11 (opencode.eme.world)
+After=docker.service network-online.target
+Wants=network-online.target
+Requires=docker.service
+
+[Service]
+Type=simple
+# Keep the OpenCode service alive inside eme-server-world11:
+#  - if http://172.18.0.11:49374 answers, do nothing (check every 60 s)
+#  - otherwise re-provision what a container restart/recreate loses
+#    (opencode binary, .agents skill symlink) and start the service
+ExecStart=/bin/bash -c 'BIN_SRC=/mnt/data/emsites/opencode/home/.opencode/bin/opencode; while :; do if curl -s -m 5 -o /dev/null http://172.18.0.11:49374/; then sleep 60; else docker exec -u entermedia eme-server-world11 sh -c "ln -sfn /home/entermedia/eme-server/.agents /home/entermedia/.agents" >/dev/null 2>&1 || true; docker exec -u entermedia eme-server-world11 sh -c "test -x /home/entermedia/.opencode/bin/opencode || { mkdir -p /home/entermedia/.opencode/bin && echo missing-binary; }" | grep -q missing-binary && docker cp "$BIN_SRC" eme-server-world11:/home/entermedia/.opencode/bin/opencode >/dev/null 2>&1 || true; docker exec -u entermedia eme-server-world11 /home/entermedia/eme-server/bin/opencoded.sh start >/dev/null 2>&1 || true; sleep 15; fi; done'
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

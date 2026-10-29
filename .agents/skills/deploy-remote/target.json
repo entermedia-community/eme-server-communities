@@ -1,0 +1,7 @@
+{
+  "url": "http://172.18.0.1:49374",
+  "fallback_url": "http://mediadb49.entermediadb.net:49374",
+  "username": "opencode",
+  "password": "op_n9!",
+  "auth_header": "Basic b3BlbmNvZGU6b3Bfbjkh"
+}
