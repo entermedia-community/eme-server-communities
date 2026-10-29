@@ -65,8 +65,8 @@
 	<script id="openedit" src="/openedit/components/javascript/openedit.js"/>
 	<script id="communityglobal" src="/site/impact-bank/components/javascript/community-global.js"/>
 
-	<style id="customfindercolors" href="${finderhome}/theme/defaulttheme/custom.css"/>
-	<style id="mediaplayer" href="${finderhome}/theme/styles/pages/mediaplayer.css"/>
+	<style id="customfindercolors" href="/finder/find/theme/defaulttheme/custom.css"/>
+	<style id="mediaplayer" href="/finder/find/theme/styles/pages/mediaplayer.css"/>
 	
 	<style id="eminstitute" href="/site/impact-bank/theme/css/community/eminstitute.css"/>
 	<style id="oi3" href="/site/impact-bank/theme/css/community/oi3.css"/>
