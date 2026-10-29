@@ -41,34 +41,35 @@
 	<script id="jquery-form" src="/${applicationid}/components/javascript/jquery.form.js"/>
 	<script id="jquery-validate" src="/${applicationid}/components/javascript/validation/jquery.validate.js"/>
 	<script id="validateandedit" src="/${applicationid}/components/javascript/validateandedit.js"/>
-	<script id="select2" src="/${applicationid}/components/javascript/select2/js/select2.full.js"/>
-	<style id="select2-css" href="/${applicationid}/components/javascript/select2/css/select2.css"/>
+	
+	<script src="/${applicationid}/components/javascript/select2/4.1.0/js/select2.full.js" id="select2"/>
+  	<style id="select2-css" href="/${applicationid}/components/javascript/select2/4.1.0/css/select2.css"/>
 
-	<script id="datetimepicker" src="/site/impact-bank//components/javascript/datepicker/js/bootstrap-datepicker.min.js"/>
-	<style id="datetimepicker-css" href="/site/impact-bank//components/javascript/datepicker/css/bootstrap-datepicker3.min.css" />
-	<script id="multidate" src="/site/impact-bank//components/javascript/multidate/moment.js"/>
+	<script id="datetimepicker" src="/site/impact-bank/components/javascript/datepicker/js/bootstrap-datepicker.min.js"/>
+	<style id="datetimepicker-css" href="/site/impact-bank/components/javascript/datepicker/css/bootstrap-datepicker3.min.css" />
+	<script id="multidate" src="/site/impact-bank/components/javascript/multidate/moment.js"/>
 
-	<script id="liveajax" src="/site/impact-bank//components/javascript/emedia/liveajax.js" />
-	<script id="utility-plugins" src="/site/impact-bank//components/javascript/emedia/utility-plugins.js" />
+	<script id="liveajax" src="/site/impact-bank/components/javascript/emedia/liveajax.js" />
+	<script id="utility-plugins" src="/site/impact-bank/components/javascript/emedia/utility-plugins.js" />
 
-	<script id="runajax" src="/site/impact-bank//components/javascript/emedia/ajax/runajax.js" />
-	<script id="emdialog" src="/site/impact-bank//components/javascript/emedia/ajax/emdialog.js" />
+	<script id="runajax" src="/site/impact-bank/components/javascript/emedia/ajax/runajax.js" />
+	<script id="emdialog" src="/site/impact-bank/components/javascript/emedia/ajax/emdialog.js" />
 	<script id="dataentryfields" src="/${applicationid}/components/javascript/emedia/dataentryfields.js" />
-	<script id="ajaxformsubmit" src="/site/impact-bank//components/javascript/emedia/ajax/ajaxformsubmit.js" />
+	<script id="ajaxformsubmit" src="/site/impact-bank/components/javascript/emedia/ajax/ajaxformsubmit.js" />
 
 	<script id="videojs" src="/${applicationid}/components/javascript/videojs/8.20.0/video.min.js" defer="true" />
 	<script id="videojs-qs" src="/${applicationid}/components/javascript/videojs/8.20.0/videojs-quality-selector.min.js" defer="true" />
 	<style id="videojs-css" href="/${applicationid}/components/javascript/videojs/8.20.0/video-js.min.css" />
 
-	<script id="oicomponents" src="/site/impact-bank//components/javascript/oicomponents.js" />
+	<script id="oicomponents" src="/site/impact-bank/components/javascript/oicomponents.js" />
 	<script id="openedit" src="/openedit/components/javascript/openedit.js"/>
-	<script id="communityglobal" src="/site/impact-bank//components/javascript/community-global.js"/>
+	<script id="communityglobal" src="/site/impact-bank/components/javascript/community-global.js"/>
 
 	<style id="customfindercolors" href="${finderhome}/theme/defaulttheme/custom.css"/>
 	<style id="mediaplayer" href="${finderhome}/theme/styles/pages/mediaplayer.css"/>
 	
-	<style id="eminstitute" href="/site/impact-bank//theme/css/eminstitute.css"/>
-	<style id="oi3" href="/site/impact-bank//theme/css/oi3.css"/>
+	<style id="eminstitute" href="/site/impact-bank/theme/css/community/eminstitute.css"/>
+	<style id="oi3" href="/site/impact-bank/theme/css/community/oi3.css"/>
 	<!-- Base Community JS & CSS -->
 
 </page>
