@@ -7,6 +7,8 @@
 
 	<property name="communityhome">/${siteid}/community/impact-bank</property>
 
+	<property name="catalogid">site/catalog</property>
+
 	<property name="falir">false</property>
 	<property name="templatename">impact-bank</property>
 	<property name="communitytagcategory">impact-bank</property>
