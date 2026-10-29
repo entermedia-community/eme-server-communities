@@ -72,7 +72,7 @@
 	<style id="customfindercolors" href="/finder/find/theme/defaulttheme/custom.css"/>
 	<style id="mediaplayer" href="/finder/find/theme/styles/pages/mediaplayer.css"/>
 	
-	<style id="eminstitute" href="/site/impact-bank/theme/css/community/eminstitute.css"/>
+	<style id="eminstitute" href="/site/impact-bank/theme/css/community/eminstitute_old.css"/>
 	<style id="oi3" href="/site/impact-bank/theme/css/community/oi3.css"/>
 	<!-- Base Community JS & CSS -->
 
