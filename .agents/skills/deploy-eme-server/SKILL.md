@@ -53,7 +53,7 @@ Notes for other machines:
   | `entermediadb.net` | `/etc/letsencrypt/live/entermediadb.net` | wildcard cert already on this machine |
 - **ADMIN_EMAIL** — the client's admin email address; ask for it up front, together with the domain base (it is needed before the container first starts — step 3). On first boot the server seeds the `user` table from `plugins/system/html/data/lists/user/defaultusers.xml`; this value replaces the vendor default on the `admin` row so the client can request a login code at their own address on day one. Login is email + emailed 6-digit code — there are no passwords (see the mediadb-auth skill).
 
-- **Node number NNN** — between **2 and 250** (the script validates 1–250, but **node 1 is unusable**: the `entermedia` docker network's bridge gateway occupies `172.18.0.1`, so a container with that IP fails with "Address already in use"). Never reuse one that is already in the DB.
+- **Node number NNN** — between **2 and 250** (the script validates 1–250, but **node 1 is unusable**: the `entermedia` docker network's bridge gateway occupies `172.18.0.1`, so a container with that IP fails with "Address already in use"). Never reuse one that is already in the DB — except when fully tearing an instance down and re-deploying the same client: keeping its number is fine once the old DB row is removed (the IP stays stable; see Rollback / teardown).
 
 ## Workflow
 
@@ -188,7 +188,7 @@ Template: `.agents/skills/deploy-eme-server/nginx-site.conf.template` (relative 
 |---|---|
 | `__DOMAIN__` | `$CLIENTNAME.$DOMAIN_BASE` |
 | `__CERT_DIR__` | `/etc/letsencrypt/live/$DOMAIN_BASE` — must exist (wildcard cert for the base), check first |
-| `__UPSTREAM_NAME__` | `eme_` + client name, non-alphanumerics → `_` (e.g. `eme_monday`) — must be unique across `/etc/nginx/sites-enabled/` |
+| `__UPSTREAM_NAME__` | `eme_` + client name, non-alphanumerics → `_` (e.g. `eme_monday`) — must be unique across the vhost files in this machine's include dir (see below) |
 | `__CONTAINER_IP__` | `172.18.0.$NNN` |
 | `__PORT__` | `8080` |
 
@@ -205,8 +205,14 @@ sed -e "s/__DOMAIN__/$DOMAIN/g" \
     -e "s/__PORT__/8080/g" \
   .agents/skills/deploy-eme-server/nginx-site.conf.template \
   > /tmp/opencode/nginx-deploy/$DOMAIN.conf
-sudo cp /tmp/opencode/nginx-deploy/$DOMAIN.conf /etc/nginx/sites-available/
-sudo ln -sf /etc/nginx/sites-available/$DOMAIN.conf /etc/nginx/sites-enabled/
+# Install into whichever vhost dir this machine's nginx actually includes —
+# Debian-style splits sites-available/ + sites-enabled/, but some machines only include conf.d/
+if grep -q "include[[:space:]]*/etc/nginx/sites-enabled" /etc/nginx/nginx.conf; then
+  sudo cp /tmp/opencode/nginx-deploy/$DOMAIN.conf /etc/nginx/sites-available/
+  sudo ln -sf /etc/nginx/sites-available/$DOMAIN.conf /etc/nginx/sites-enabled/
+else
+  sudo cp /tmp/opencode/nginx-deploy/$DOMAIN.conf /etc/nginx/conf.d/
+fi
 ```
 
 (The agent has no write access to `/etc/nginx`, so the rendered file is staged in the 700-mode dir and moved by the scoped sudo rules.)
@@ -234,6 +240,7 @@ The site's entry point is `/` → 302 → `/site/find` (per `webapp/index.xconf`
 ## Troubleshooting
 
 - **dockerbuild dies with `sudo: a password is required`** (right after "Creating ... .env file") — the scoped `chown` rule is missing or was installed for a different deploy root. Re-run the installer with this machine's deploy root: `sudo <repo>/.agents/skills/deploy-eme-server/install-sudoers.sh <user> $DEPLOY_ROOT`, then re-run step 5 (it is idempotent; the clone and `.env` survive).
+- **`bin/plugins.sh update` fails with `jq: command not found`** — plugins.sh parses each `plugins/<name>.json` with jq, which may be missing (it is also absent from the eme-server image, so running the script inside a container does not help). Fallback: read each `plugins/*.json` (fields `"repo"`, optional `"branch"` defaulting to `main`) and clone them by hand from the instance dir — for each file: `git clone [--branch <branch>] <repo> plugins/<name>`.
 - **Container crash-loops with `mkdir: Permission denied` / `could not create parent directories`** in `docker logs` — deployer ≠ `ownedby`, so the tree is owned by the wrong user. Run the ownership alignment from step 5, then restart.
 - **`git: detected dubious ownership`** when running `eme.sh update` or any git command as the deployer — the tree is owned by `entermedia`. Add the safe.directory entries from step 5 (one per repo; wildcards only work on git ≥ 2.35.2).
 - **Domain doesn't resolve publicly after everything else works** — DNS is per-client: add an A record `$CLIENTNAME.$DOMAIN_BASE` → this machine's public IPv4 (`curl -4 ifconfig.me`) at the domain provider. The apex of the base domain may point to a *different* server; that does not affect subdomains. Verify locally first with `curl -sk --resolve $DOMAIN:443:127.0.0.1 https://$DOMAIN/`.
@@ -247,7 +254,8 @@ The site's entry point is `/` → 302 → `/site/find` (per `webapp/index.xconf`
 
 ```bash
 sudo docker stop -t 60 eme-server-$CLIENTNAME$NNN && sudo docker rm -f eme-server-$CLIENTNAME$NNN
-sudo rm /etc/nginx/sites-enabled/$DOMAIN.conf /etc/nginx/sites-available/$DOMAIN.conf
+# vhost location depends on the layout detected in step 8 (sites-enabled + sites-available, or conf.d)
+sudo rm -f /etc/nginx/sites-enabled/$DOMAIN.conf /etc/nginx/sites-available/$DOMAIN.conf /etc/nginx/conf.d/$DOMAIN.conf
 sudo nginx -t && sudo systemctl reload nginx
 # remove the DB row, then ask before deleting $DEPLOY_ROOT/eme-server-$CLIENTNAME (client data!)
 ```
