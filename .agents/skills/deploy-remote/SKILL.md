@@ -1,12 +1,16 @@
 ---
 name: Deploy Remote (delegate)
-description: Use when the user asks to deploy, provision, or stand up an eme-server instance for a client ("deploy eme-server for X", "create a new client instance", "set up <client>.eme.world") AND this instance is not the deployment host itself — i.e. it cannot run docker/nginx on the box that holds the deploy root. Delegates the whole deployment to the deployment host's OpenCode server over its v2 HTTP API (create session, send prompt, wait for completion, report the result back). On the deployment host, use the deploy-eme-server skill directly instead of this one.
+description: Use when the user asks to deploy, provision, or stand up an eme-server instance for a client ("Deploy an instance for <client> with email ...", "deploy eme-server for X", "create a new client instance", "set up <client>.eme.world") AND this OpenCode instance is not the deployment host itself — decisive test: /media/eme_sites does not exist on this machine (you are running inside a container, e.g. opencode.eme.world). Delegates the whole deployment to the deployment host's OpenCode server over its v2 HTTP API (create session, send prompt, wait for completion, report the result back). On the deployment host itself (/media/eme_sites exists), use the deploy-eme-server skill directly instead of this one.
 ---
 
 # Deploy via the deployment host (delegate)
 
 This instance does not touch docker or nginx. It asks the **deployment host's** OpenCode
 server to run its `deploy-eme-server` skill end to end, and reports the result back.
+
+Quick check before starting: `ls /media/eme_sites` — if that directory exists on this
+machine, you ARE the deployment host; stop using this skill and follow `deploy-eme-server`
+directly instead.
 
 ## Target server
 
