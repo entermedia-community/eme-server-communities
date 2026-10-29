@@ -41,6 +41,8 @@
 	<script id="jquery-form" src="/${applicationid}/components/javascript/jquery.form.js"/>
 	<script id="jquery-validate" src="/${applicationid}/components/javascript/validation/jquery.validate.js"/>
 	<script id="validateandedit" src="/${applicationid}/components/javascript/validateandedit.js"/>
+
+	<style id="bootstrap-css" href="/${applicationid}/components/javascript/bootstrap/5.3.8/css/bootstrap.min.css"/>
 	
 	<script src="/${applicationid}/components/javascript/select2/4.1.0/js/select2.full.js" id="select2"/>
   	<style id="select2-css" href="/${applicationid}/components/javascript/select2/4.1.0/css/select2.css"/>
