@@ -31,7 +31,6 @@
 	<path-action name="PageValue.loadPageVariable" allowduplicates="true" bean="inflector"/>
 	
 	<property name="communitytag">impact-bank</property>
-	<property name="communityhome">/${siteid}/community/impact-bank</property>
   	<path-action name="MediaAdminModule.loadCommunityTag"/>
 
 
