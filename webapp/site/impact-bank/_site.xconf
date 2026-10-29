@@ -43,6 +43,8 @@
 	<script id="validateandedit" src="/${applicationid}/components/javascript/validateandedit.js"/>
 
 	<style id="bootstrap-css" href="/${applicationid}/components/javascript/bootstrap/5.3.8/css/bootstrap.min.css"/>
+	<style id="fontawesome-css" href="/${applicationid}/components/javascript/bootstrap/fonts/css/fontawesome-all.min.css"/>
+	<style id="bootstra-icons" href="/${applicationid}/components/javascript/bootstrap/5.3.8/icons/bootstrap-icons.min.css"/>
 	
 	<script src="/${applicationid}/components/javascript/select2/4.1.0/js/select2.full.js" id="select2"/>
   	<style id="select2-css" href="/${applicationid}/components/javascript/select2/4.1.0/css/select2.css"/>
