@@ -77,7 +77,7 @@
 	
 	<style id="eminstitute" href="/site/impact-bank/theme/css/community/eminstitute_old.css"/>
 	<style id="oi3" href="/site/impact-bank/theme/css/community/oi3_old.css"/>
-	<style id="blog" href="${apphome}/theme/css/blog.css"/>
+	<style id="blog" href="/site/impact-bank/theme/css/blog.css"/>
 	<!-- Base Community JS & CSS -->
 
 </page>
