@@ -33,6 +33,8 @@
 	<property name="communitytag">impact-bank</property>
   	<path-action name="MediaAdminModule.loadCommunityTag"/>
 
+	<page-loader loader="projectLoader" />
+
 	<inner-layout>/site/impact-bank/innerlayout.html</inner-layout>
 
 
