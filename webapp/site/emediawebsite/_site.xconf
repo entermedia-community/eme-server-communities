@@ -4,15 +4,16 @@
   <property name="editable">false</property>
 
   <property name="loginroot">${communityhome}/authentication</property>
+  <property name="applicationid">site/emediawebsite</property>
+  <property name="siteid">site</property>
 
-  <property name="fallbackdirectory">../default</property>
-  <property name="communityhome">/${siteid}/community/emediawebsite</property>
+  <property name="fallbackdirectory">/community/default</property>
+  <property name="communityhome">/${siteid}/emediawebsite</property>
 
-  <property name="communitytagcategory">emediawebsite</property>
+  <property name="communitytag">emediawebsite</property>
 
   <property name="oisection">home</property>
 
-  <inner-layout>${communityhome}/views/layouts/app.html</inner-layout>
 
   <property name="title">eMedia Library</property>
   <property name="description">eMediaLibrary is a smart file organizer that helps you organize your files in categorized, searchable, and shareable folders.</property>
