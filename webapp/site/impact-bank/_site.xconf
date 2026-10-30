@@ -68,10 +68,15 @@
 	<script id="videojs-qs" src="/${applicationid}/components/javascript/videojs/8.20.0/videojs-quality-selector.min.js" defer="true" />
 	<style id="videojs-css" href="/${applicationid}/components/javascript/videojs/8.20.0/video-js.min.css" />
 
+	<script src="/${applicationid}/components/javascript/emedia/dataentryfields.js" id="dataentryfields"/>
+  <script src="/${applicationid}/components/javascript/emedia/dataentrypickers.js" id="dataentrypickers"/>
+  
+
 	<script id="oicomponents" src="/site/impact-bank/components/javascript/oicomponents.js" />
 	<script id="openedit" src="/openedit/components/javascript/openedit.js"/>
 	<script id="communityglobal" src="/site/impact-bank/components/javascript/community-global.js"/>
 
+	<style id="results-css" href="/finder/find/theme/styles/pages/results.css" />
 	<style id="customfindercolors" href="/finder/find/theme/defaulttheme/custom.css"/>
 	<style id="mediaplayer" href="/finder/find/theme/styles/pages/mediaplayer.css"/>
 	
