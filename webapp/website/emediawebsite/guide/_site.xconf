@@ -2,12 +2,13 @@
 <page>
 	
 	<property name="editable">true</property>
+	
 	<property name="collectivesection">guide</property>
 	
-	 
 	<inner-layout />
 	
-	<style id="docstheme" href="${communityhome}/theme/css/doctheme.css" />
+	<style id="docstheme" href="${communityhome}/theme/css/community/doctheme.css" />
+
 	<script id="docsjs" src="${communityhome}/theme/js/docs.js" />
 	
 	<path-action alltypes="true" name="MediaArchiveModule.getMediaArchive"/>
