@@ -3,6 +3,6 @@
 <page>
   <property name="themeid">themelight</property>
   <property name="fallbackdirectory">/profile</property>
-  <property name="catalogid">site/catalog</property>
+  <property name="catalogid">website/catalog</property>
   <property name="applicationid">site/profile</property>
 </page>

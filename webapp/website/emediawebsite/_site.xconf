@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<page>
+  
+  <property name="siteid">website</property>
+  <property name="catalogid">website/catalog</property>
+  <property name="applicationid">website/emediawebsite</property>
+  <property name="fallbackdirectory">/community/default</property>
+
+  <property name="oisection">home</property>
+
+  <property name="editable">false</property>
+
+  <property name="loginroot">${communityhome}/authentication</property>
+
+  <property name="title">eMedia Library</property>
+  <property name="description">eMediaLibrary is a smart file organizer that helps you organize your files in categorized, searchable, and shareable folders.</property>
+  <property name="keywords">file organizer, smart file organizer, file manager, file sharing, file categorization, file search, file storage</property>
+
+  
+  <path-action name="Admin.autoLogin"/>
+	<path-action name="MediaArchiveModule.loadApplicationId"/>
+	<path-action name="MediaArchiveModule.loadComponentHome"/>
+	<path-action name="ProfileModule.loadUserProfile"/>
+	<path-action name="MediaArchiveModule.loadModule"/>
+	<path-action name="UserProfileModule.loadSideBarWidth"/>
+	<path-action name="DesktopModule.loadDesktop"/>
+	<path-action name="DataEditModule.loadEditHome"/>
+	<path-action name="DataEditModule.loadSearchHome"/>
+	<path-action name="MediaArchiveModule.getMediaArchive" alltypes="true" />
+	<path-action name="PageValue.loadPageVariable" allowduplicates="true" bean="searcherManager"/>
+	<path-action name="PageValue.loadPageVariable" allowduplicates="true" bean="userManager"/>
+	<path-action name="SessionValue.loadSessionVariable" bean="moduleManager"/>
+	<path-action name="Admin.loadPermissions"/>
+	<path-action name="Admin.loadPermissionFinder"/>
+	<path-action name="Admin.allowViewing"/>
+	<path-action name="TranslationModule.loadBrowserLanguage"/>
+	<path-action name="FinderModule.loadAppsMenu"/>
+	<path-action name="PageValue.loadPageVariable" allowduplicates="true" bean="inflector"/>
+
+  <path-action name="ProjectModule.trackReferralCode" />
+
+  <property name="communityhome">/${siteid}/emediawebsite</property>
+  <property name="communitytag">emediawebsite</property>
+
+  <path-action name="MediaAdminModule.loadCommunityTag"/>
+
+	<page-loader loader="projectLoader" />
+
+
+  <!-- Base Community JS & CSS -->
+	<script id="jquery-ui-i18n" cancel="true" src="/${applicationid}/components/javascript/jquery-ui/i18n/jquery-ui-i18n.js"/>
+	<script id="jquery-form" src="/${applicationid}/components/javascript/jquery.form.js"/>
+	<script id="jquery-validate" src="/${applicationid}/components/javascript/validation/jquery.validate.js"/>
+	<script id="validateandedit" src="/${applicationid}/components/javascript/validateandedit.js"/>
+
+	<style id="bootstrap-css" href="/${applicationid}/components/javascript/bootstrap/5.3.8/css/bootstrap.min.css"/>
+	<style id="fontawesome-css" href="/${applicationid}/components/javascript/bootstrap/fonts/css/fontawesome-all.min.css"/>
+	<style id="bootstra-icons" href="/${applicationid}/components/javascript/bootstrap/5.3.8/icons/bootstrap-icons.min.css"/>
+	
+	<script src="/${applicationid}/components/javascript/select2/4.1.0/js/select2.full.js" id="select2"/>
+  	<style id="select2-css" href="/${applicationid}/components/javascript/select2/4.1.0/css/select2.css"/>
+
+	<script id="datetimepicker" src="${communityhome}/components/javascript/datepicker/js/bootstrap-datepicker.min.js"/>
+	<style id="datetimepicker-css" href="${communityhome}/components/javascript/datepicker/css/bootstrap-datepicker3.min.css" />
+	<script id="multidate" src="${communityhome}/components/javascript/multidate/moment.js"/>
+
+	<script id="liveajax" src="${communityhome}/components/javascript/emedia/liveajax.js" />
+	<script id="utility-plugins" src="${communityhome}/components/javascript/emedia/utility-plugins.js" />
+
+	<script id="runajax" src="${communityhome}/components/javascript/emedia/ajax/runajax.js" />
+	<script id="emdialog" src="${communityhome}/components/javascript/emedia/ajax/emdialog.js" />
+	<script id="dataentryfields" src="${communityhome}/components/javascript/emedia/dataentryfields.js" />
+	<script id="ajaxformsubmit" src="${communityhome}/components/javascript/emedia/ajax/ajaxformsubmit.js" />
+
+	<script id="videojs" src="/${applicationid}/components/javascript/videojs/8.20.0/video.min.js" defer="true" />
+	<script id="videojs-qs" src="/${applicationid}/components/javascript/videojs/8.20.0/videojs-quality-selector.min.js" defer="true" />
+	<style id="videojs-css" href="/${applicationid}/components/javascript/videojs/8.20.0/video-js.min.css" />
+
+	<script src="${communityhome}/components/javascript/emedia/dataentryfields.js" id="dataentryfields"/>
+  <script src="${communityhome}/components/javascript/emedia/dataentrypickers.js" id="dataentrypickers"/>
+
+	<script id="oicomponents" src="${communityhome}/components/javascript/oicomponents.js" />
+	<script id="openedit" src="/openedit/components/javascript/openedit.js"/>
+	<script id="communityglobal" src="${communityhome}/components/javascript/community-global.js"/>
+
+	<style id="results-css" href="/finder/find/theme/styles/pages/results.css" />
+	<style id="customfindercolors" href="/finder/find/theme/defaulttheme/custom.css"/>
+	<style id="mediaplayer" href="/finder/find/theme/styles/pages/mediaplayer.css"/>
+
+	<style id="goals-css" href="${communityhome}/theme/css/goals/goals.css" /> 
+	
+	<style id="eminstitute" href="${communityhome}/theme/css/community/eminstitute_old.css"/>
+	<style id="oi3" href="${communityhome}/theme/css/community/oi3_old.css"/>
+	<style id="blog" href="${communityhome}/theme/css/community/blog.css"/>
+	<!-- Base Community JS & CSS -->
+
+
+  <style id="aos-css" href="${communityhome}/theme/css/aos.css"/>
+  <style id="customwebsite" href="${communityhome}/theme/css/custom.css"/>
+
+</page>
