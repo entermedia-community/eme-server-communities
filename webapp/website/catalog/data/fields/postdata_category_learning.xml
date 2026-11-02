@@ -1,0 +1,12 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<properties prefix="postdata_category_learning" beanname="dataSearcher"> 
+   
+  <property id="postdata_project" index="true" editable="true" stored="true" internalfield="false" isbadge="false" required="false" filter="false" multilanguage="false" deleted="false" datatype="list" listid="postdata_project" autocreatefromexif="false" keyword="false" writenametoexif="false">New 
+    <name> 
+      <language id="en"><![CDATA[Post Data Project]]></language> 
+    </name> 
+  </property>  
+
+</properties>
