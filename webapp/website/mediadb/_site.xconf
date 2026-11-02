@@ -2,6 +2,6 @@
 
 <page>
 <property name="fallbackdirectory">/finder/mediadb</property>  
-  <property name="applicationid">site/mediadb</property>
+  <property name="applicationid">website/mediadb</property>
   <property name="catalogid">website/catalog</property>
 </page>
