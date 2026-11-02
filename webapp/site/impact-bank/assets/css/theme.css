@@ -16903,6 +16903,7 @@ a.badge-soft-navy:focus {
 .btn-primary:not([href]):not([href]):not(:disabled):not(.disabled) {
   background-color: #377dff;
   border-color: #377dff;
+  color: #fff!important;
 }
 
 .btn-primary:hover {
