@@ -1,0 +1,7 @@
+<page>
+    <!-- comma separated list of communities to display blogs from -->
+    <property name="communitytag">emediawebsite,3</property>
+
+	<inner-layout>${communityhome}/views/layouts/app.html</inner-layout>
+
+</page>
