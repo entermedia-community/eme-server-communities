@@ -1,0 +1,7 @@
+#
+#Thu Sep 24 15:12:48 CST 2026
+Edit\ Profile=Modifier le profil
+Login\ to\ say\ Hello=Connectez-vous pour dire Bonjour
+Open\ Chat=Ouvrez le chat
+Portfolio=Le portefeuille
+Say\ Hello=Dites bonjour

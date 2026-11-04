@@ -1,8 +1,318 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <page>
-  <property name="themeid">themelight</property>
-  <property name="fallbackdirectory">/profile</property>
-  <property name="catalogid">site/catalog</property>
-  <property name="applicationid">site/profile</property>
+
+  <property name="catalogid">catalog</property>
+  <property name="applicationid">profile</property>
+  <property name="fallbackdirectory">/community/default</property>
+
+  <property name="findroot">/site/blockfind</property>
+
+  <property name="sidebarcomponent">eme</property>
+  <property name="communityhome">/${siteid}/profile</property>
+  <property name="searchtypeFromRequest">true</property>
+  <property name="profilemanagerid">${catalogid}</property>
+  <property name="thumbsize">thumb</property>
+  <property name="recentactivityid">${parentapplicationid}</property>
+  <property name="section">home</property>
+  <property name="oetextfilter">translation</property>
+  <property name="bs">4</property>
+  <property name="enableprofilefilters">true</property>
+  <property name="collectionroot">/${applicationid}/views/modules/librarycollection/media</property>
+  <property name="login-path">/${applicationid}/authentication/nopermissions.html</property>
+
+  <property name="editable">false</property>
+
+  <property name="allowguestregistration">true</property>
+  <property name="makeversion">false</property>
+  <property name="systemfromemailname">EnterMedia</property>
+
+  <page-loader loader="projectLoader" />
+  <path-action name="Admin.autoLogin"/>
+  <path-action name="MediaArchiveModule.loadApplicationId"/>
+  <path-action name="MediaArchiveModule.loadComponentHome"/>
+  <path-action name="ProfileModule.loadUserProfile"/>
+  <path-action name="MediaArchiveModule.loadModule"/>
+  <path-action name="UserProfileModule.loadSideBarWidth"/>
+  <path-action name="DesktopModule.loadDesktop"/>
+  <path-action name="DataEditModule.loadEditHome"/>
+  <path-action name="DataEditModule.loadSearchHome"/>
+  <path-action name="MediaArchiveModule.getMediaArchive" alltypes="true" />
+  <path-action name="PageValue.loadPageVariable" allowduplicates="true" bean="searcherManager"/>
+  <path-action name="PageValue.loadPageVariable" allowduplicates="true" bean="userManager"/>
+  <path-action name="SessionValue.loadSessionVariable" bean="moduleManager"/>
+  <path-action name="Admin.loadPermissions"/>
+  <path-action name="Admin.loadPermissionFinder"/>
+  <path-action name="Admin.allowViewing"/>
+  <path-action name="TranslationModule.loadBrowserLanguage"/>
+  <path-action name="FinderModule.loadAppsMenu"/>
+  <path-action name="PageValue.loadPageVariable" allowduplicates="true" bean="inflector"/>
+
+  <property name="communitytag">default</property>
+  <path-action name="MediaAdminModule.loadCommunityTag"/>
+
+  <property name="themeid">defaulttheme</property>
+  <path-action name="ThemeModule.loadCurrentTheme" />
+
+  <path-action name="FinderModule.loadEmeProfile" />
+
+  <path-action name="FinderModule.loadTopMenu" />
+
+  <inner-layout>/${applicationid}/theme/layouts/applicationcontent.html</inner-layout>
+
+  <style cancel="true" id="jquery"/>
+  <style id="jqueryui-css" href="/${applicationid}/components/javascript/jquery-ui/1.14/jquery-ui.css"/>
+  <script src="/${applicationid}/components/javascript/jquery.form.js" id="jquery-form"/>
+  <script src="/${applicationid}/components/javascript/validation/jquery.validate.min.js" id="validation"/>
+  <script src="/${applicationid}/components/javascript/emedia/ajax/ajaxformsubmit.js" id="ajaxformsubmit"/>
+  <script src="/${applicationid}/components/javascript/emedia/liveajax.js" id="liveajax"/>
+  <style id="bootstrap-css" href="/${applicationid}/components/javascript/bootstrap/5.3.8/css/bootstrap.min.css"/>
+  <style id="fontawesome-css" href="/${applicationid}/components/javascript/bootstrap/fonts/css/fontawesome-all.min.css"/>
+  <style id="bootstra-icons" href="/${applicationid}/components/javascript/bootstrap/5.3.8/icons/bootstrap-icons.min.css"/>
+  <script src="/openedit/components/javascript/openedit.js" id="openedit"/>
+  <script src="/${applicationid}/components/javascript/select2/4.1.0/js/select2.full.js" id="select2"/>
+  <style id="select2-css" href="/${applicationid}/components/javascript/select2/4.1.0/css/select2.css"/>
+  <script src="/${applicationid}/components/javascript/jplayer/jquery.jplayer.min.js" id="jplayer"/>
+  <style id="jplayer-css" href="/${applicationid}/components/javascript/jplayer/premium.pixels/premium-pixels.css"/>
+  <script defer="true" src="/${applicationid}/components/javascript/minicolors/jquery.minicolors.min.js" id="minicolors"/>
+  <style id="minicolors-css" href="/${applicationid}/components/javascript/minicolors/jquery.minicolors.css"/>
+  <script src="/${applicationid}/components/xml/detaileditor.js" id="detaileditor"/>
+  <script src="/${applicationid}/components/javascript/emedia/ajax/runajax.js" id="runajax"/>
+  <script src="/${applicationid}/components/javascript/emedia/ajax/emdialog.js" id="emdialog"/>
+  <script src="/${applicationid}/components/javascript/emedia/dataentryfields.js" id="dataentryfields"/>
+  <script src="/${applicationid}/components/javascript/emedia/dataentrypickers.js" id="dataentrypickers"/>
+  <script src="/${applicationid}/components/javascript/emedia/utility-plugins.js" id="utility-plugins"/>
+  <script src="/${applicationid}/components/javascript/emedia/util.js" id="util"/>
+  <script src="/${applicationid}/components/javascript/emedia/toast.js" id="toast"/>
+  <script src="/${applicationid}/components/javascript/emedia/image-editor.js" id="imageditor"/>
+  <script src="/${applicationid}/components/chatterbox/chatterbox.js" id="chatterbox"/>
+  <style id="chatterbox" href="/${applicationid}/components/chatterbox/chatterbox.css"/>
+  <script defer="true" src="/${applicationid}/components/javascript/twemoji/twemoji.js" id="twemoji"/>
+  <script defer="true" src="/${applicationid}/components/javascript/videojs/8.20.0/video.min.js" id="videojs"/>
+  <script defer="true" src="/${applicationid}/components/javascript/videojs/8.20.0/videojs-quality-selector.min.js" id="videojs-qs"/>
+  <style id="videojs-css" href="/${applicationid}/components/javascript/videojs/8.20.0/video-js.min.css"/>
+  <style id="closedcaptionplayercss" href="/${applicationid}/theme/styles/timeline/timeslider.css"/>
+  <style id="videoplayer-css" href="/${applicationid}/theme/styles/timeline/timeline.css"/>
+  <script defer="true" src="/${applicationid}/components/javascript/draw2d.min.js" id="smart2d"/>
+  <script defer="true" src="/${applicationid}/components/javascript/jszip/jszip.min.js" id="jszip"/>
+  <script defer="true" src="/${applicationid}/components/javascript/emedia/smartorganizer.js" id="smartorganizer"/>
+  <script defer="true" src="/${applicationid}/components/javascript/emedia/smartcreator.js" id="smartcreator"/>
+  <script defer="true" src="/${applicationid}/components/javascript/emedia/agentautomation.js" id="agentautomation"/>
+  <script defer="true" src="/${applicationid}/components/javascript/jcrop/jquery.Jcrop.min.js" id="jcrop"/>
+  <style id="jcrop-css" href="/${applicationid}/components/javascript/jcrop/jquery.Jcrop.min.css"/>
+  <script defer="true" src="/${applicationid}/components/javascript/emedia/aitools.js" id="aitools"/>
+  <script defer="true" src="/${applicationid}/components/javascript/emedia/dragdrop.js" id="dragdrop"/>
+  <script src="/${applicationid}/components/javascript/emedia/ui-components-old.js" id="uicomponentsold"/>
+  <script src="/${applicationid}/components/javascript/emedia/ui-components.js" id="uicomponents"/>
+  <script src="/${applicationid}/components/javascript/emedia/emtree.js" id="emtree"/>
+  <script defer="true" src="/${applicationid}/components/javascript/fabric.min.js" id="fabric"/>
+
+  <!-- style id="app-com-css" href="/${applicationid}/theme/styles/theme-community.cssNEEDTHIS?"/ -->
+
+  <style id="finder-css" href="/finder/find/theme/styles/theme.css"/>
+  <style id="eme-css" href="/${applicationid}/theme/styles/theme.css"/>
+
+  <style id="finder-results-css" href="/finder/find/theme/styles/pages/results.css" />
+  <style id="eme-results-css" href="/${applicationid}/theme/styles/pages/results.css" />
+
+  <style id="finder-mediaplayer" href="/finder/find/theme/styles/pages/mediaplayer.css"/>
+  <style id="eme-mediaplayer" href="/${applicationid}/theme/styles/pages/mediaplayer.css"/>
+
+  <script defer="true" src="/${applicationid}/components/javascript/jquery.html5_upload.js" id="html5_upload"/>
+  <script defer="true" src="/${applicationid}/components/javascript/emedia/upload.js" id="upload"/>
+  <script defer="true" src="/${applicationid}/components/javascript/emedia/quicksearch.js" id="quicksearch"/>
+  <script src="/${applicationid}/components/javascript/emedia/results.js" id="results"/>
+
+
+  <style id="dropdown-css" href="/finder/find/theme/styles/dropdown.css" />
+  <script src="/${applicationid}/components/javascript/emedia/brick.js" id="jquerybrick"/>
+  <script src="/${applicationid}/components/javascript/emedia/brickvertical.js" id="jquerybrickvertical"/>
+  <script defer="true" src="/${applicationid}/components/javascript/chart/Chart.bundle.js" id="chartjs"/>
+  <script src="/${applicationid}/components/javascript/jquery.cuepoint.js" id="jscuepoint"/>
+  <script src="/${applicationid}/views/modules/asset/editor/closedcaptions/closedcaptions.js" id="jsclosedcaptions"/>
+
+
+  <permission name="view">
+    <or>
+      <userprofile name="view" value="true"/>
+      <boolean value="true"/>
+    </or>
+  </permission>
+  <permission name="quicksearch">
+    <userprofile name="quicksearch" value="true"/>
+  </permission>
+  <permission name="editentities">
+    <or>
+      <userprofile name="viewsettings" value="true"/>
+      <settingsrole id="user"/>
+    </or>
+  </permission>
+  <permission name="viewentities">
+    <boolean value="true"/>
+  </permission>
+  <permission name="viewhomelink">
+    <userprofile name="viewhomelink" value="true"/>
+  </permission>
+  <permission name="viewquicksearchheader">
+    <boolean value="false"/>
+  </permission>
+  <permission name="editassettags">
+    <userprofile name="editassettags" value="true"/>
+  </permission>
+  <permission name="maximize">
+    <userprofile name="maximize" value="true"/>
+  </permission>
+  <permission name="vieworders">
+    <userprofile name="vieworders" value="true"/>
+  </permission>
+  <permission name="viewbasket">
+    <userprofile name="viewbasket" value="true"/>
+  </permission>
+  <permission name="sharetosocialmedia">
+    <userprofile name="sharetosocialmedia" value="true"/>
+  </permission>
+  <permission name="createnewrecord">
+    <userprofile name="createnewrecord" value="true"/>
+  </permission>
+  <permission name="multiedit">
+    <userprofile name="multiedit" value="true"/>
+  </permission>
+  <permission name="deletecomments">
+    <and>
+      <userprofile name="deletecomments" value="true"/>
+      <pagevalue name="caneditasset" equals="true"/>
+    </and>
+  </permission>
+  <permission name="viewmediaviewer">
+    <userprofile name="viewmediaviewer" value="true"/>
+  </permission>
+  <permission name="viewassetdownloads">
+    <userprofile name="viewassetdownloads" value="true"/>
+  </permission>
+  <permission name="viewsidebarhelp">
+    <userprofile name="viewsidebarhelp" value="true"/>
+  </permission>
+  <permission name="viewsettings">
+    <userprofile name="viewsettings" value="true"/>
+  </permission>
+  <permission name="viewmodulesettings">
+    <or>
+      <userprofile name="viewsettings" value="true"/>
+      <userprofile name="viewmodulesettings" value="true"/>
+    </or>
+  </permission>
+  <permission name="deleteasset">
+    <and>
+      <userprofile name="deleteasset" value="true"/>
+      <pagevalue name="caneditasset" equals="true"/>
+    </and>
+  </permission>
+  <permission name="viewfilemenu">
+    <userprofile name="viewfilemenu" value="true"/>
+  </permission>
+  <permission name="vote">
+    <userprofile name="vote" value="true"/>
+  </permission>
+  <permission name="socialshare">
+    <userprofile name="socialshare" value="true"/>
+  </permission>
+  <permission name="exportdata">
+    <userprofile name="exportdata" value="true"/>
+  </permission>
+  <permission name="edittablecolumns">
+    <userprofile name="edittablecolumns" value="true"/>
+  </permission>
+  <permission name="viewsearcheditor">
+    <userprofile name="viewsearcheditor" value="true"/>
+  </permission>
+  <permission name="viewrecentsearches">
+    <userprofile name="viewrecentsearches" value="true"/>
+  </permission>
+  <permission name="viewmyaccount">
+    <userprofile name="viewmyaccount" value="true"/>
+  </permission>
+  <permission name="viewmyfiles">
+    <userprofile name="viewmyfiles" value="true"/>
+  </permission>
+  <permission name="savesearch">
+    <userprofile name="savesearch" value="true"/>
+  </permission>
+  <permission name="viewmodulelist">
+    <userprofile name="viewmodulelist" value="true"/>
+  </permission>
+  <permission name="viewerrors">
+    <userprofile name="viewerrors" value="true"/>
+  </permission>
+  <permission name="editlists">
+    <or>
+      <userprofile name="editlists" value="true"/>
+    </or>
+  </permission>
+  <permission name="forcewatermarkasset">
+    <userprofile name="forcewatermarkasset" value="true"/>
+  </permission>
+  <permission name="develop">
+    <userprofile name="viewdevelopertools" value="true"/>
+  </permission>
+  <permission name="viewmetadatageneral">
+    <or>
+      <pagevalue name="caneditasset" equals="true"/>
+      <userprofile name="viewmetadatageneral" value="true"/>
+    </or>
+  </permission>
+  <permission name="createlivemedia">
+    <userprofile name="createlivemedia" value="true"/>
+  </permission>
+  <permission name="actasotherusers">
+    <userprofile name="editusersgroups" value="true"/>
+  </permission>
+  <permission name="editusersgroups">
+    <userprofile name="editusersgroups" value="true"/>
+  </permission>
+  <permission name="openeditdirectedit">
+    <userprofile name="viewsettings" value="true"/>
+  </permission>
+  <permission name="copycategory">
+    <userprofile name="copycategory" value="true"/>
+  </permission>
+  <permission name="viewallorders">
+    <userprofile name="viewallorders" value="true"/>
+  </permission>
+  <permission name="addtofavorites">
+    <userprofile name="addtofavorites" value="true"/>
+  </permission>
+  <permission name="viewallassets">
+    <userprofile name="viewallassets" value="true"/>
+  </permission>
+  <permission name="checkout">
+    <userprofile name="checkout" value="true"/>
+  </permission>
+  <permission name="hidedeletedassets">
+    <userprofile name="hidedeletedassets" value="true"/>
+  </permission>
+  <permission name="viewentitiestopmenu">
+    <userprofile name="viewentitiestopmenu" value="true"/>
+  </permission>
+  <permission name="viewappsmenu">
+    <userprofile name="viewappsmenu" value="true"/>
+  </permission>
+  <permission name="viewentitiesbreadcrumb">
+    <userprofile name="viewentitiesbreadcrumb" value="true"/>
+  </permission>
+  <permission name="sidebar">
+    <userprofile name="sidebar" value="true"/>
+  </permission>
+  <permission name="togglesidebar">
+    <userprofile name="togglesidebar" value="true"/>
+  </permission>
+  <permission name="viewsmartorganizer">
+    <userprofile name="viewsmartorganizer" value="true"/>
+  </permission>
+  <permission name="viewaiagent">
+    <userprofile name="viewaiagent" value="true"/>
+  </permission>
+  <permission name="runaiinformatics">
+    <userprofile name="runaiinformatics" value="true"/>
+  </permission>
+
 </page>

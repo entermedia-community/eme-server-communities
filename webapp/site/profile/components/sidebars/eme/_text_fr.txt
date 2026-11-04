@@ -1,0 +1,13 @@
+#
+#Thu Sep 24 15:14:16 CST 2026
+Collapse\ sidebar=Barre lat\u00E9rale de l'effondrement
+EME=\u00C9ME
+Messages\ on=Messages sur
+No\ team\ chat\ found\!=Aucun chat d'\u00E9quipe trouv\u00E9 \!
+Profile=Le profil
+Project=Le projet
+Settings=Les param\u00E8tres
+Teams=Les \u00E9quipes
+View=Vue
+ago=Il y a
+now=\u00C0 pr\u00E9sent.

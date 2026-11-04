@@ -1,0 +1,36 @@
+#
+#Thu Sep 24 15:12:37 CST 2026
+AI\ Chat\ Search=Recherche par chat
+Account\ Settings=Param\u00E8tres du compte
+Bookmarks=Les signets
+Cart=Chariot
+Close=Ferm\u00E9
+Collapse\ sidebar=Barre lat\u00E9rale de l'effondrement
+Continue\ Editing=Poursuite de l'\u00E9dition
+Dashboard=Tableau de bord
+Dashboard\ Reports=Rapports du tableau de bord
+Desktop\ Settings=Param\u00E8tres de bureau
+Discard=D\u00E9barrasser
+Download\ Desktop\ App=T\u00E9l\u00E9charger une application de bureau
+EME=\u00C9ME
+Esc\ to\ Close=Esc \u00E0 cl\u00F4turer
+Go\ to=Va voir .
+Guides=Des guides
+Language=Linguistique
+Login=Connectez-vous
+Logout=D\u00E9sactivation
+Looks\ like\ you\ have\ unsaved\ changes.\ Are\ you\ sure\ you\ want\ to\ discard\ them?=On dirait que vous n'avez pas sauvegard\u00E9 les modifications.
+My\ Account=Mon compte
+My\ Orders=Mes ordres .
+My\ Profile=Mon profil
+Ok=C' est bon.
+Pending\ Orders=Ordres en attente
+Powered\ by\ EME=Propuls\u00E9 par EME
+Settings=Les param\u00E8tres
+Theme=Le th\u00E8me
+Upload=T\u00E9l\u00E9charger
+Upload\ Media=T\u00E9l\u00E9charger les m\u00E9dias
+Upload\ To=T\u00E9l\u00E9charger vers
+View\ Bookmarks=Afficher les signets
+account=compte
+eMedia\ Library=Biblioth\u00E8que multim\u00E9dia
