@@ -3672,9 +3672,9 @@ fieldset:disabled a.btn {
 
 .btn-sm,
 .btn-group-sm > .btn {
-  padding: 0.625rem 1.125rem;
+  padding: 0.65rem .5rem;
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 1.2;
   border-radius: 0;
 }
 
@@ -3692,7 +3692,9 @@ input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%;
 }
-
+.translate-ajax {
+  min-width: 100px;
+}
 .fade {
   transition: opacity 0.15s linear;
 }
@@ -6401,7 +6403,8 @@ a.close.disabled {
 .modal-dialog {
   position: relative;
   width: auto;
-  margin: 0.5rem;
+  max-width: 800px;
+  margin: 0.5rem auto;
   pointer-events: none;
 }
 
@@ -6570,7 +6573,7 @@ a.close.disabled {
   overflow: scroll;
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .modal-dialog {
     max-width: 550px;
     margin: 1.75rem auto;
@@ -12684,66 +12687,6 @@ a.text-navy:focus {
   }
 }
 
-.w-25 {
-  width: 25% !important;
-}
-
-.w-50 {
-  width: 50% !important;
-}
-
-.w-75 {
-  width: 75% !important;
-}
-
-.w-100 {
-  width: 100% !important;
-}
-
-.w-auto {
-  width: auto !important;
-}
-
-.w-15 {
-  width: 15% !important;
-}
-
-.w-20 {
-  width: 20% !important;
-}
-
-.w-30 {
-  width: 30% !important;
-}
-
-.w-35 {
-  width: 35% !important;
-}
-
-.w-40 {
-  width: 40% !important;
-}
-
-.w-60 {
-  width: 60% !important;
-}
-
-.w-65 {
-  width: 65% !important;
-}
-
-.w-80 {
-  width: 80% !important;
-}
-
-.w-85 {
-  width: 85% !important;
-}
-
-.w-90 {
-  width: 90% !important;
-}
-
 @media (min-width: 576px) {
   .w-sm-25 {
     width: 25% !important;
@@ -13205,21 +13148,6 @@ a.text-navy:focus {
 ------------------------------------*/
 main {
   position: relative;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  color: #1e2022;
 }
 
 figure {
@@ -18797,34 +18725,6 @@ label.btn {
   color: #377dff;
 }
 
-.dropdown-item-icon {
-  display: inline-block;
-  text-align: center;
-  font-size: 0.75rem;
-  min-width: 1rem;
-  max-width: 1rem;
-  margin-right: 0.25rem;
-}
-
-/* Toggle */
-.dropdown-toggle::after {
-  display: inline-block;
-  font-family: "Font Awesome 5 Free";
-  font-size: 80%;
-  font-weight: 900;
-  content: "";
-  margin-left: 0.5rem;
-}
-
-.dropdown-toggle-collapse::after {
-  transition: 0.3s;
-}
-
-.dropdown-toggle-collapse[aria-expanded="true"]::after {
-  -webkit-transform: rotate(-180deg);
-  transform: rotate(-180deg);
-}
-
 /* Dropdown Positions */
 .dropdown-menu-top {
   top: 0;
@@ -21232,35 +21132,6 @@ label.btn {
   }
 }
 
-@media (min-width: 992px) {
-  .step-lg.step-centered {
-    text-align: center;
-  }
-  .step-lg.step-centered .step-item:last-child .step-icon::after {
-    display: none;
-  }
-  .step-lg.step-centered .step-icon {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .step-lg.step-centered .step-icon::after {
-    width: calc(100% - 3.125rem);
-    left: calc(50% + 2.5rem);
-  }
-  .step-lg.step-centered .step-icon.step-icon-xs::after {
-    width: calc(100% - 1.75rem);
-    left: calc(50% + 1.8125rem);
-  }
-  .step-lg.step-centered .step-icon.step-icon-sm::after {
-    width: calc(100% - 2.6875rem);
-    left: calc(50% + 2.28125rem);
-  }
-  .step-lg.step-centered .step-icon.step-icon-lg::after {
-    width: calc(100% - 4.25rem);
-    left: calc(50% + 3.0625rem);
-  }
-}
-
 /*------------------------------------
   Step States
 ------------------------------------*/
@@ -22070,7 +21941,6 @@ label.btn {
   top: 0;
   right: 0;
   bottom: 0;
-  right: 0;
   z-index: -1;
   width: 100%;
   height: 100%;
