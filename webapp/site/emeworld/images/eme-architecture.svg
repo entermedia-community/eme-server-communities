@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 644 824" width="100%" role="img" aria-labelledby="t d" font-family="'Space Grotesk', system-ui, sans-serif">
+  <title id="t">Technical Architecture Breakdown</title>
+  <desc id="d">The UN News EME Server (ingestion and memory) takes raw inputs (audio, video, docs, notes, articles), then the AI Editorial Assistant, which branches into speech-to-text transcription, fact synthesis and drafting, multi-lingual translation and accessibility alt-text generation, then the Drupal Publishing Connector Agent, and finally Drupal CMS for staging and publishing.</desc>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=JetBrains+Mono:wght@500;700&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap');
+    .h { font-family: 'Archivo Black', 'Arial Black', sans-serif; font-weight: 400; }
+    .m { font-family: 'JetBrains Mono', ui-monospace, monospace; font-weight: 500; letter-spacing: 1px; }
+    .b { font-family: 'Space Grotesk', system-ui, sans-serif; font-weight: 500; }
+  </style>
+  <rect x="-2" y="-2" width="644" height="824" fill="#ffffff"/>
+  <line x1="320.0" y1="88" x2="320.0" y2="111" stroke="#94a3b8" stroke-width="2.5"/>
+  <path d="M312.0 110L320.0 120L328.0 110z" fill="#94a3b8"/>
+  <line x1="320.0" y1="244" x2="320.0" y2="267" stroke="#94a3b8" stroke-width="2.5"/>
+  <path d="M312.0 266L320.0 276L328.0 266z" fill="#94a3b8"/>
+  <line x1="320.0" y1="584" x2="320.0" y2="607" stroke="#94a3b8" stroke-width="2.5"/>
+  <path d="M312.0 606L320.0 616L328.0 606z" fill="#94a3b8"/>
+  <line x1="320.0" y1="700" x2="320.0" y2="723" stroke="#94a3b8" stroke-width="2.5"/>
+  <path d="M312.0 722L320.0 732L328.0 722z" fill="#94a3b8"/>
+  <g transform="translate(0,0)">
+    <rect width="640" height="82" rx="16" fill="#1e293b"/>
+    <path d="M16 0h8v82h-8a16 16 0 0 1-16-16V16A16 16 0 0 1 16 0z" fill="#8b5cf6"/>
+    <text x="48" y="44" class="h" fill="#f8fafc" font-size="22">UN News EME Server</text>
+    <text x="48" y="68" class="m" fill="#c4b5fd" font-size="14">INGESTION &amp; MEMORY</text>
+  </g>
+  <g transform="translate(0,126)">
+    <rect width="640" height="112" rx="16" fill="#1e293b"/>
+    <path d="M16 0h8v112h-8a16 16 0 0 1-16-16V16A16 16 0 0 1 16 0z" fill="#0ea5e9"/>
+    <text x="48" y="44" class="h" fill="#f8fafc" font-size="22">Raw Inputs</text>
+    <rect x="48" y="60" width="94" height="36" rx="18" fill="#0f172a" stroke="#0ea5e9" stroke-width="1.5"/>
+    <text x="95.0" y="83" text-anchor="middle" class="b" fill="#e2e8f0" font-size="16">Audio</text>
+    <rect x="156" y="60" width="94" height="36" rx="18" fill="#0f172a" stroke="#0ea5e9" stroke-width="1.5"/>
+    <text x="203.0" y="83" text-anchor="middle" class="b" fill="#e2e8f0" font-size="16">Video</text>
+    <rect x="264" y="60" width="84" height="36" rx="18" fill="#0f172a" stroke="#0ea5e9" stroke-width="1.5"/>
+    <text x="306.0" y="83" text-anchor="middle" class="b" fill="#e2e8f0" font-size="16">Docs</text>
+    <rect x="362" y="60" width="94" height="36" rx="18" fill="#0f172a" stroke="#0ea5e9" stroke-width="1.5"/>
+    <text x="409.0" y="83" text-anchor="middle" class="b" fill="#e2e8f0" font-size="16">Notes</text>
+    <rect x="470" y="60" width="124" height="36" rx="18" fill="#0f172a" stroke="#0ea5e9" stroke-width="1.5"/>
+    <text x="532.0" y="83" text-anchor="middle" class="b" fill="#e2e8f0" font-size="16">Articles</text>
+  </g>
+  <g transform="translate(0,282)">
+    <rect width="640" height="82" rx="16" fill="#1e293b"/>
+    <path d="M16 0h8v82h-8a16 16 0 0 1-16-16V16A16 16 0 0 1 16 0z" fill="#AEDE4A"/>
+    <text x="48" y="44" class="h" fill="#f8fafc" font-size="22">AI Editorial Assistant</text>
+    <text x="48" y="68" class="m" fill="#AEDE4A" font-size="14">CHAT INTERFACE</text>
+  </g>
+  <path d="M40 364 V543 Q40 557 54 557 H84" fill="none" stroke="#AEDE4A" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M40 407 H84" fill="none" stroke="#AEDE4A" stroke-width="2.5" stroke-linecap="round"/>
+  <rect x="84" y="386" width="556" height="42" rx="10" fill="#1e293b"/>
+  <rect x="84" y="386" width="6" height="42" rx="3" fill="#AEDE4A"/>
+  <text x="108" y="413" class="b" fill="#f8fafc" font-size="17">Speech-to-Text Transcription</text>
+  <path d="M40 457 H84" fill="none" stroke="#AEDE4A" stroke-width="2.5" stroke-linecap="round"/>
+  <rect x="84" y="436" width="556" height="42" rx="10" fill="#1e293b"/>
+  <rect x="84" y="436" width="6" height="42" rx="3" fill="#AEDE4A"/>
+  <text x="108" y="463" class="b" fill="#f8fafc" font-size="17">Fact Synthesis &amp; Drafting</text>
+  <path d="M40 507 H84" fill="none" stroke="#AEDE4A" stroke-width="2.5" stroke-linecap="round"/>
+  <rect x="84" y="486" width="556" height="42" rx="10" fill="#1e293b"/>
+  <rect x="84" y="486" width="6" height="42" rx="3" fill="#AEDE4A"/>
+  <text x="108" y="513" class="b" fill="#f8fafc" font-size="17">Multi-Lingual Translation</text>
+  <rect x="84" y="536" width="556" height="42" rx="10" fill="#1e293b"/>
+  <rect x="84" y="536" width="6" height="42" rx="3" fill="#AEDE4A"/>
+  <text x="108" y="563" class="b" fill="#f8fafc" font-size="17">Accessibility Alt-Text Generation</text>
+  <g transform="translate(0,622)">
+    <rect width="640" height="72" rx="16" fill="#1e293b"/>
+    <path d="M16 0h8v72h-8a16 16 0 0 1-16-16V16A16 16 0 0 1 16 0z" fill="#2EC4B6"/>
+    <text x="48" y="44.0" class="h" fill="#f8fafc" font-size="22">Drupal Publishing Connector Agent</text>
+  </g>
+  <g transform="translate(0,738)">
+    <rect width="640" height="82" rx="16" fill="#1e293b"/>
+    <path d="M16 0h8v82h-8a16 16 0 0 1-16-16V16A16 16 0 0 1 16 0z" fill="#10b981"/>
+    <text x="48" y="44" class="h" fill="#f8fafc" font-size="22">Drupal CMS</text>
+    <text x="48" y="68" class="m" fill="#10b981" font-size="14">STAGING &amp; PUBLISHING</text>
+  </g>
+</svg>

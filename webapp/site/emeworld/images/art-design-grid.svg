@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1250" width="900" height="1250" font-family="Helvetica, Arial, sans-serif">
+  <title>Art and Design Grid</title>
+  <rect width="900" height="1250" fill="#faf7f2"/>
+  <text x="450" y="62" text-anchor="middle" font-size="36" font-weight="700" fill="#2b2b3a">Art &amp; Design</text>
+  <text x="450" y="90" text-anchor="middle" font-size="16" fill="#6b6b7b">Nine disciplines of visual creativity</text>
+
+  <!-- 1 Painting -->
+  <g transform="translate(40,110)">
+    <rect width="260" height="260" rx="18" fill="#fde8e4"/>
+    <ellipse cx="130" cy="100" rx="82" ry="62" fill="#e9c9a0" stroke="#8a5a2b" stroke-width="3"/>
+    <ellipse cx="160" cy="125" rx="14" ry="11" fill="#fde8e4" stroke="#8a5a2b" stroke-width="2"/>
+    <circle cx="88" cy="85" r="12" fill="#e63946"/>
+    <circle cx="120" cy="65" r="12" fill="#f4b400"/>
+    <circle cx="156" cy="68" r="12" fill="#2a9d8f"/>
+    <circle cx="180" cy="92" r="12" fill="#3a6ea5"/>
+    <text x="130" y="228" text-anchor="middle" font-size="22" font-weight="600" fill="#2b2b3a">Painting</text>
+  </g>
+
+  <!-- 2 Drawing -->
+  <g transform="translate(320,110)">
+    <rect width="260" height="260" rx="18" fill="#e8eefb"/>
+    <g transform="rotate(-35 130 100)">
+      <rect x="50" y="85" width="120" height="30" fill="#f4b400"/>
+      <rect x="50" y="85" width="120" height="8" fill="#f9d36b"/>
+      <rect x="30" y="85" width="20" height="30" fill="#e63946"/>
+      <polygon points="170,85 215,100 170,115" fill="#f0d9b5"/>
+      <polygon points="200,94 215,100 200,106" fill="#2b2b3a"/>
+    </g>
+    <path d="M40 160 q30 -25 60 0 t60 0 t60 0" fill="none" stroke="#2b2b3a" stroke-width="3" stroke-linecap="round"/>
+    <text x="130" y="228" text-anchor="middle" font-size="22" font-weight="600" fill="#2b2b3a">Drawing</text>
+  </g>
+
+  <!-- 3 Sculpture -->
+  <g transform="translate(600,110)">
+    <rect width="260" height="260" rx="18" fill="#ece9e4"/>
+    <rect x="85" y="150" width="90" height="30" fill="#9a9690"/>
+    <path d="M85 150 q0 -35 45 -40 q45 5 45 40 z" fill="#c9c5bf"/>
+    <circle cx="130" cy="75" r="30" fill="#d8d4ce"/>
+    <rect x="120" y="100" width="20" height="14" fill="#d8d4ce"/>
+    <path d="M118 70 q6 -6 12 0 M138 70 q6 -6 12 0" fill="none" stroke="#9a9690" stroke-width="2"/>
+    <text x="130" y="228" text-anchor="middle" font-size="22" font-weight="600" fill="#2b2b3a">Sculpture</text>
+  </g>
+
+  <!-- 4 Photography -->
+  <g transform="translate(40,390)">
+    <rect width="260" height="260" rx="18" fill="#e3f3ee"/>
+    <rect x="45" y="55" width="170" height="110" rx="14" fill="#2b2b3a"/>
+    <rect x="100" y="42" width="50" height="18" rx="5" fill="#2b2b3a"/>
+    <circle cx="130" cy="112" r="40" fill="#5b5b70"/>
+    <circle cx="130" cy="112" r="28" fill="#3a6ea5"/>
+    <circle cx="120" cy="102" r="8" fill="#fff" opacity=".6"/>
+    <circle cx="195" cy="75" r="6" fill="#f4b400"/>
+    <text x="130" y="228" text-anchor="middle" font-size="22" font-weight="600" fill="#2b2b3a">Photography</text>
+  </g>
+
+  <!-- 5 Typography -->
+  <g transform="translate(320,390)">
+    <rect width="260" height="260" rx="18" fill="#fff3d6"/>
+    <text x="130" y="140" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="100" font-weight="700" fill="#2b2b3a">A<tspan font-family="Helvetica, Arial, sans-serif" font-weight="400" fill="#e63946">a</tspan></text>
+    <line x1="50" y1="150" x2="210" y2="150" stroke="#2b2b3a" stroke-width="2" stroke-dasharray="4 4"/>
+    <text x="130" y="228" text-anchor="middle" font-size="22" font-weight="600" fill="#2b2b3a">Typography</text>
+  </g>
+
+  <!-- 6 Illustration -->
+  <g transform="translate(600,390)">
+    <rect width="260" height="260" rx="18" fill="#e8f1fb"/>
+    <rect x="45" y="40" width="170" height="125" rx="8" fill="#bfe0f5" stroke="#2b2b3a" stroke-width="3"/>
+    <circle cx="180" cy="72" r="16" fill="#f4b400"/>
+    <polygon points="45,165 100,90 150,165" fill="#2a9d8f"/>
+    <polygon points="110,165 165,110 215,165" fill="#1f7a6f"/>
+    <polygon points="100,90 90,108 100,104 110,110" fill="#fff"/>
+    <text x="130" y="228" text-anchor="middle" font-size="22" font-weight="600" fill="#2b2b3a">Illustration</text>
+  </g>
+
+  <!-- 7 Architecture -->
+  <g transform="translate(40,670)">
+    <rect width="260" height="260" rx="18" fill="#efe9f7"/>
+    <polygon points="50,80 130,40 210,80" fill="#7b5ea7"/>
+    <rect x="55" y="84" width="150" height="8" fill="#5b4382"/>
+    <rect x="68" y="96" width="14" height="60" fill="#d9cdea"/>
+    <rect x="103" y="96" width="14" height="60" fill="#d9cdea"/>
+    <rect x="143" y="96" width="14" height="60" fill="#d9cdea"/>
+    <rect x="178" y="96" width="14" height="60" fill="#d9cdea"/>
+    <rect x="50" y="156" width="160" height="12" fill="#5b4382"/>
+    <text x="130" y="228" text-anchor="middle" font-size="22" font-weight="600" fill="#2b2b3a">Architecture</text>
+  </g>
+
+  <!-- 8 Fashion -->
+  <g transform="translate(320,670)">
+    <rect width="260" height="260" rx="18" fill="#fbe4ef"/>
+    <path d="M130 40 v-10 a8 8 0 1 1 8 8" fill="none" stroke="#2b2b3a" stroke-width="3" stroke-linecap="round"/>
+    <path d="M130 40 L55 80 h150 z" fill="none" stroke="#2b2b3a" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M105 95 h50 l8 28 l35 50 h-136 l35 -50 z" fill="#d6336c" stroke="#8c1d45" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="105" y="120" width="50" height="8" fill="#8c1d45"/>
+    <text x="130" y="228" text-anchor="middle" font-size="22" font-weight="600" fill="#2b2b3a">Fashion</text>
+  </g>
+
+  <!-- 9 Graphic Design -->
+  <g transform="translate(600,670)">
+    <rect width="260" height="260" rx="18" fill="#e4f6ea"/>
+    <circle cx="95" cy="95" r="42" fill="#e63946" opacity=".85"/>
+    <rect x="115" y="60" width="80" height="80" fill="#3a6ea5" opacity=".85"/>
+    <polygon points="130,175 90,105 170,105" fill="#f4b400" opacity=".9"/>
+    <text x="130" y="228" text-anchor="middle" font-size="22" font-weight="600" fill="#2b2b3a">Graphic Design</text>
+  </g>
+
+  <!-- 10 Mermaid (wide tile) -->
+  <g transform="translate(40,950)">
+    <rect width="820" height="260" rx="18" fill="#dff3f7"/>
+    <path d="M30 205 q20 -12 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0" fill="none" stroke="#8ecae6" stroke-width="4" stroke-linecap="round"/>
+    <!-- bubbles -->
+    <g fill="none" stroke="#ffffff" stroke-width="3">
+      <circle cx="320" cy="70" r="9"/>
+      <circle cx="345" cy="120" r="5"/>
+      <circle cx="500" cy="60" r="7"/>
+      <circle cx="478" cy="115" r="4"/>
+      <circle cx="540" cy="140" r="10"/>
+    </g>
+    <!-- hair -->
+    <path d="M388 50 q-6 -34 22 -34 q28 0 22 34 q8 40 -6 62 q-4 -30 -16 -36 q-12 6 -16 36 q-14 -22 -6 -62z" fill="#d9480f"/>
+    <!-- arms and torso -->
+    <g stroke="#f3c9a5" stroke-width="9" stroke-linecap="round">
+      <line x1="392" y1="88" x2="374" y2="120"/>
+      <line x1="428" y1="88" x2="448" y2="116"/>
+    </g>
+    <rect x="402" y="68" width="16" height="14" fill="#f3c9a5"/>
+    <path d="M392 82 h36 l-4 40 h-28 z" fill="#f3c9a5"/>
+    <circle cx="410" cy="52" r="20" fill="#f3c9a5"/>
+    <path d="M394 44 q16 -14 32 0 q-16 -4 -32 0z" fill="#d9480f"/>
+    <circle cx="403" cy="54" r="2" fill="#2b2b3a"/>
+    <circle cx="417" cy="54" r="2" fill="#2b2b3a"/>
+    <path d="M404 63 q6 5 12 0" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round"/>
+    <!-- shell top -->
+    <circle cx="402" cy="94" r="9" fill="#f783ac"/>
+    <circle cx="418" cy="94" r="9" fill="#f783ac"/>
+    <!-- tail -->
+    <path d="M388 120 H432 C436 150 418 160 418 182 L400 182 C400 160 384 150 388 120 Z" fill="#2a9d8f"/>
+    <path d="M409 180 C380 180 372 200 366 214 C385 208 398 210 409 200 C420 210 433 208 452 214 C446 200 438 180 409 180 Z" fill="#1f7a6f"/>
+    <g fill="none" stroke="#1f7a6f" stroke-width="2" stroke-linecap="round">
+      <path d="M394 132 q4 6 8 0 m8 0 q4 6 8 0 m8 0 q4 6 6 0"/>
+      <path d="M398 148 q4 6 8 0 m8 0 q4 6 8 0"/>
+      <path d="M401 164 q4 6 8 0 m8 0 q3 5 6 0"/>
+    </g>
+    <text x="410" y="246" text-anchor="middle" font-size="22" font-weight="600" fill="#2b2b3a">Mermaid</text>
+  </g>
+</svg>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="161 20 883 481" width="100%" role="img" aria-labelledby="t d" font-family="'Space Grotesk', system-ui, sans-serif">
+  <title id="t">Why EME World Matters</title>
+  <desc id="d">A four-slice pie chart: Logistical Efficiency, Synergistic Collectivism, Environmental Stewardship and Economic Inclusiveness, each with a short description.</desc>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap');
+    .h { font-family: 'Archivo Black', 'Arial Black', sans-serif; font-weight: 400; }
+    .b { font-family: 'Space Grotesk', system-ui, sans-serif; font-weight: 500; }
+  </style>
+  <rect x="161" y="20" width="883" height="481" fill="#ffffff"/>
+  <path d="M600 250L380.0 250.0A220 220 0 0 1 600.0 30.0Z" fill="#0284c7" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M600 250L600.0 30.0A220 220 0 0 1 820.0 250.0Z" fill="#7c3aed" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M600 250L820.0 250.0A220 220 0 0 1 600.0 470.0Z" fill="#059669" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M600 250L600.0 470.0A220 220 0 0 1 380.0 250.0Z" fill="#b45309" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+  <text x="506.0" y="170.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">Logistical</text>
+  <text x="506.0" y="196.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">Efficiency</text>
+  <polyline points="444.4,94.4 360,94.4" fill="none" stroke="#94a3b8" stroke-width="1"/>
+  <circle cx="444.4" cy="94.4" r="8" fill="#0284c7" stroke="#ffffff" stroke-width="3"/>
+  <text x="350" y="44.4" text-anchor="end" class="b" fill="#000000" font-size="16">Reduces repetitive</text>
+  <text x="350" y="66.4" text-anchor="end" class="b" fill="#000000" font-size="16">administrative overhead</text>
+  <text x="350" y="88.4" text-anchor="end" class="b" fill="#000000" font-size="16">through automated EME</text>
+  <text x="350" y="110.4" text-anchor="end" class="b" fill="#000000" font-size="16">interjections, dynamic</text>
+  <text x="350" y="132.4" text-anchor="end" class="b" fill="#000000" font-size="16">scheduling, and cross-</text>
+  <text x="350" y="154.4" text-anchor="end" class="b" fill="#000000" font-size="16">channel messaging.</text>
+  <text x="694.0" y="170.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">Synergistic</text>
+  <text x="694.0" y="196.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">Collectivism</text>
+  <polyline points="755.6,94.4 840,94.4" fill="none" stroke="#94a3b8" stroke-width="1"/>
+  <circle cx="755.6" cy="94.4" r="8" fill="#7c3aed" stroke="#ffffff" stroke-width="3"/>
+  <text x="850" y="33.4" text-anchor="start" class="b" fill="#000000" font-size="16">Unifies localized human</text>
+  <text x="850" y="55.4" text-anchor="start" class="b" fill="#000000" font-size="16">talent with AI-assisted</text>
+  <text x="850" y="77.4" text-anchor="start" class="b" fill="#000000" font-size="16">coordination, allowing</text>
+  <text x="850" y="99.4" text-anchor="start" class="b" fill="#000000" font-size="16">disparate community</text>
+  <text x="850" y="121.4" text-anchor="start" class="b" fill="#000000" font-size="16">teams to solve complex</text>
+  <text x="850" y="143.4" text-anchor="start" class="b" fill="#000000" font-size="16">civic problems</text>
+  <text x="850" y="165.4" text-anchor="start" class="b" fill="#000000" font-size="16">collectively.</text>
+  <text x="694.0" y="322.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">Environmental</text>
+  <text x="694.0" y="348.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">Stewardship</text>
+  <polyline points="755.6,405.6 840,405.6" fill="none" stroke="#94a3b8" stroke-width="1"/>
+  <circle cx="755.6" cy="405.6" r="8" fill="#059669" stroke="#ffffff" stroke-width="3"/>
+  <text x="850" y="322.6" text-anchor="start" class="b" fill="#000000" font-size="16">Built on lightweight,</text>
+  <text x="850" y="344.6" text-anchor="start" class="b" fill="#000000" font-size="16">open-source technology</text>
+  <text x="850" y="366.6" text-anchor="start" class="b" fill="#000000" font-size="16">that operates</text>
+  <text x="850" y="388.6" text-anchor="start" class="b" fill="#000000" font-size="16">efficiently on idle</text>
+  <text x="850" y="410.6" text-anchor="start" class="b" fill="#000000" font-size="16">hardware, solar nodes,</text>
+  <text x="850" y="432.6" text-anchor="start" class="b" fill="#000000" font-size="16">and localized server</text>
+  <text x="850" y="454.6" text-anchor="start" class="b" fill="#000000" font-size="16">clusters—countering</text>
+  <text x="850" y="476.6" text-anchor="start" class="b" fill="#000000" font-size="16">energy-intensive data</text>
+  <text x="850" y="498.6" text-anchor="start" class="b" fill="#000000" font-size="16">centers.</text>
+  <text x="506.0" y="322.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">Economic</text>
+  <text x="506.0" y="348.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">Inclusiveness</text>
+  <polyline points="444.4,405.6 360,405.6" fill="none" stroke="#94a3b8" stroke-width="1"/>
+  <circle cx="444.4" cy="405.6" r="8" fill="#b45309" stroke="#ffffff" stroke-width="3"/>
+  <text x="350" y="333.6" text-anchor="end" class="b" fill="#000000" font-size="16">Guarantees free lifelong</text>
+  <text x="350" y="355.6" text-anchor="end" class="b" fill="#000000" font-size="16">access for all citizens,</text>
+  <text x="350" y="377.6" text-anchor="end" class="b" fill="#000000" font-size="16">empowering small</text>
+  <text x="350" y="399.6" text-anchor="end" class="b" fill="#000000" font-size="16">business operators,</text>
+  <text x="350" y="421.6" text-anchor="end" class="b" fill="#000000" font-size="16">informal workers, and</text>
+  <text x="350" y="443.6" text-anchor="end" class="b" fill="#000000" font-size="16">rural populations to</text>
+  <text x="350" y="465.6" text-anchor="end" class="b" fill="#000000" font-size="16">compete in the global</text>
+  <text x="350" y="487.6" text-anchor="end" class="b" fill="#000000" font-size="16">digital economy.</text>
+</svg>

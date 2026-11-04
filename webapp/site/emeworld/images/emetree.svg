@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1144 778" width="100%" role="img" aria-labelledby="t" font-family="'Space Grotesk', system-ui, sans-serif">
+  <title id="t">EME World - Collective Intelligence Structure</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=JetBrains+Mono:wght@500;700&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap');
+    .h { font-family: 'Archivo Black', 'Arial Black', sans-serif; font-weight: 400; }
+    .m { font-family: 'JetBrains Mono', ui-monospace, monospace; font-weight: 500; }
+    .b { font-family: 'Space Grotesk', system-ui, sans-serif; }
+  </style>
+  <defs>
+    <linearGradient id="human-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C6EE6A"/><stop offset="1" stop-color="#AEDE4A"/></linearGradient>
+    <filter id="drop-shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dy="4" result="blur"/>
+      <feFlood flood-color="#000000" flood-opacity="0.5"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1144" height="778" fill="#FFFFFF"/>
+
+  <!-- Pillar 1: PEOPLE -->
+  <g>
+    <rect x="2" y="2" width="360" height="62" rx="10" fill="#0f1609" stroke="#E8C547" stroke-width="2.5"/>
+    <text x="182" y="31" text-anchor="middle" class="h" fill="#E8C547" font-size="22" letter-spacing="1">PEOPLE</text>
+    <text x="182" y="53" text-anchor="middle" class="m" fill="#F4FAE6" font-size="12">Individual Level (My EME)</text>
+    <rect x="2" y="78" width="360" height="698" rx="12" fill="#0b1007" stroke="#0b1007" stroke-width="2"/>
+    <rect x="14" y="94" width="336" height="122" rx="8" fill="#FBF3D0" stroke="#E8C547" stroke-width="1.2"/>
+    <text x="32" y="126" class="h" fill="#7A5C00" font-size="17">Free-for-Life Login</text>
+    <text x="32" y="154" class="b" fill="#1a2410" font-size="17">Universal digital identity</text>
+    <text x="32" y="177" class="b" fill="#1a2410" font-size="17">and cross-platform access</text>
+    <rect x="14" y="230" width="336" height="122" rx="8" fill="#FBF3D0" stroke="#E8C547" stroke-width="1.2"/>
+    <text x="32" y="262" class="h" fill="#7A5C00" font-size="17">Electronic Me (EME)</text>
+    <text x="32" y="290" class="b" fill="#1a2410" font-size="17">Personal digital twin that</text>
+    <text x="32" y="313" class="b" fill="#1a2410" font-size="17">emulates user online</text>
+    <rect x="14" y="366" width="336" height="122" rx="8" fill="#FBF3D0" stroke="#E8C547" stroke-width="1.2"/>
+    <text x="32" y="398" class="h" fill="#7A5C00" font-size="17">Persona Emulation</text>
+    <text x="32" y="426" class="b" fill="#1a2410" font-size="17">Custom trained preferences</text>
+    <text x="32" y="449" class="b" fill="#1a2410" font-size="17">(e.g., friendly vs. factual)</text>
+    <rect x="14" y="502" width="336" height="122" rx="8" fill="#FBF3D0" stroke="#E8C547" stroke-width="1.2"/>
+    <text x="32" y="534" class="h" fill="#7A5C00" font-size="17">My EME Digital Twin Chat</text>
+    <text x="32" y="562" class="b" fill="#1a2410" font-size="17">Daily digest of pending</text>
+    <text x="32" y="585" class="b" fill="#1a2410" font-size="17">tasks &amp; communications</text>
+    <rect x="14" y="638" width="336" height="122" rx="8" fill="#FBF3D0" stroke="#E8C547" stroke-width="1.2"/>
+    <text x="32" y="670" class="h" fill="#7A5C00" font-size="17">Omnichannel Messaging</text>
+    <text x="32" y="698" class="b" fill="#1a2410" font-size="17">In-app chat &amp; email dispatch</text>
+    <text x="32" y="721" class="b" fill="#1a2410" font-size="17">Auto-responds on user's</text>
+    <text x="32" y="744" class="b" fill="#1a2410" font-size="17">behalf during multi-user chat</text>
+  </g>
+
+  <!-- Pillar 2: PROJECTS -->
+  <g>
+    <rect x="392" y="2" width="360" height="62" rx="10" fill="#0f1609" stroke="#6CC24A" stroke-width="2.5"/>
+    <text x="572" y="31" text-anchor="middle" class="h" fill="#6CC24A" font-size="22" letter-spacing="1">PROJECTS</text>
+    <text x="572" y="53" text-anchor="middle" class="m" fill="#F4FAE6" font-size="12">Collaborative Level (Team Workspaces)</text>
+    <rect x="392" y="78" width="360" height="698" rx="12" fill="#0b1007" stroke="#0b1007" stroke-width="2"/>
+    <rect x="404" y="94" width="336" height="122" rx="8" fill="#E4F4D6" stroke="#6CC24A" stroke-width="1.2"/>
+    <text x="422" y="126" class="h" fill="#2F6B14" font-size="17">Collaborative Group Chat</text>
+    <text x="422" y="154" class="b" fill="#1a2410" font-size="17">Humans and personal EMEs</text>
+    <text x="422" y="177" class="b" fill="#1a2410" font-size="17">interact in unified threads</text>
+    <rect x="404" y="230" width="336" height="122" rx="8" fill="#E4F4D6" stroke="#6CC24A" stroke-width="1.2"/>
+    <text x="422" y="262" class="h" fill="#2F6B14" font-size="17">Automated EME Interjection</text>
+    <text x="422" y="290" class="b" fill="#1a2410" font-size="17">Helper agents cross-check</text>
+    <text x="422" y="313" class="b" fill="#1a2410" font-size="17">schedules &amp; book logistics</text>
+    <rect x="404" y="366" width="336" height="122" rx="8" fill="#E4F4D6" stroke="#6CC24A" stroke-width="1.2"/>
+    <text x="422" y="398" class="h" fill="#2F6B14" font-size="17">Goal Tracking Matrix</text>
+    <text x="422" y="426" class="b" fill="#1a2410" font-size="17">Shared team objective</text>
+    <text x="422" y="449" class="b" fill="#1a2410" font-size="17">milestones &amp; task tracking</text>
+    <rect x="404" y="502" width="336" height="122" rx="8" fill="#E4F4D6" stroke="#6CC24A" stroke-width="1.2"/>
+    <text x="422" y="534" class="h" fill="#2F6B14" font-size="17">Financial &amp; Profit Tracking</text>
+    <text x="422" y="562" class="b" fill="#1a2410" font-size="17">Transparent group accounting</text>
+    <text x="422" y="585" class="b" fill="#1a2410" font-size="17">and revenue division</text>
+    <rect x="404" y="638" width="336" height="122" rx="8" fill="#E4F4D6" stroke="#6CC24A" stroke-width="1.2"/>
+    <text x="422" y="670" class="h" fill="#2F6B14" font-size="17">After-Hours Continuity</text>
+    <text x="422" y="698" class="b" fill="#1a2410" font-size="17">EME assistants maintain team</text>
+    <text x="422" y="721" class="b" fill="#1a2410" font-size="17">collaboration &amp; queries</text>
+    <text x="422" y="744" class="b" fill="#1a2410" font-size="17">outside business hours</text>
+  </g>
+
+  <!-- Pillar 3: SERVERS -->
+  <g>
+    <rect x="782" y="2" width="360" height="62" rx="10" fill="#0f1609" stroke="#2EC4B6" stroke-width="2.5"/>
+    <text x="962" y="31" text-anchor="middle" class="h" fill="#2EC4B6" font-size="22" letter-spacing="1">SERVERS</text>
+    <text x="962" y="53" text-anchor="middle" class="m" fill="#F4FAE6" font-size="12">Flexible, Self-Hosted Platform</text>
+    <rect x="782" y="78" width="360" height="698" rx="12" fill="#0b1007" stroke="#0b1007" stroke-width="2"/>
+    <rect x="794" y="94" width="336" height="122" rx="8" fill="#D3F2EE" stroke="#2EC4B6" stroke-width="1.2"/>
+    <text x="812" y="126" class="h" fill="#0B6B63" font-size="17">Flexible Linux &amp; Docker Core</text>
+    <text x="812" y="154" class="b" fill="#1a2410" font-size="17">Container-based and portable,</text>
+    <text x="812" y="177" class="b" fill="#1a2410" font-size="17">easy to extend or replace</text>
+    <rect x="794" y="230" width="336" height="122" rx="8" fill="#D3F2EE" stroke="#2EC4B6" stroke-width="1.2"/>
+    <text x="812" y="262" class="h" fill="#0B6B63" font-size="17">Our Own AI Models</text>
+    <text x="812" y="290" class="b" fill="#1a2410" font-size="17">Run on our own hardware,</text>
+    <text x="812" y="313" class="b" fill="#1a2410" font-size="17">not a third-party cloud</text>
+    <rect x="794" y="366" width="336" height="122" rx="8" fill="#D3F2EE" stroke="#2EC4B6" stroke-width="1.2"/>
+    <text x="812" y="398" class="h" fill="#0B6B63" font-size="17">Regional Data Centers</text>
+    <text x="812" y="426" class="b" fill="#1a2410" font-size="17">A network of regional sites,</text>
+    <text x="812" y="449" class="b" fill="#1a2410" font-size="17">some powered by solar energy</text>
+    <rect x="794" y="502" width="336" height="122" rx="8" fill="#D3F2EE" stroke="#2EC4B6" stroke-width="1.2"/>
+    <text x="812" y="534" class="h" fill="#0B6B63" font-size="17">OpenCode &amp; Skills</text>
+    <text x="812" y="562" class="b" fill="#1a2410" font-size="17">AI coding tools with reusable</text>
+    <text x="812" y="585" class="b" fill="#1a2410" font-size="17">skills for building server apps</text>
+    <rect x="794" y="638" width="336" height="122" rx="8" fill="#D3F2EE" stroke="#2EC4B6" stroke-width="1.2"/>
+    <text x="812" y="670" class="h" fill="#0B6B63" font-size="17">Anyone Can Build an App</text>
+    <text x="812" y="698" class="b" fill="#1a2410" font-size="17">Non-technical users create and</text>
+    <text x="812" y="721" class="b" fill="#1a2410" font-size="17">maintain community apps shared</text>
+    <text x="812" y="744" class="b" fill="#1a2410" font-size="17">with the whole EME World base</text>
+  </g>
+</svg>
