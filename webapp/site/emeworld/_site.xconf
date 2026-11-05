@@ -9,7 +9,7 @@
   <property name="findroot">/site/blockfind</property>
 
   <property name="sidebarcomponent">eme</property>
-  <property name="communityhome">/${siteid}/profile</property>
+  <property name="communityhome">/${siteid}/emeworld</property>
   <property name="searchtypeFromRequest">true</property>
   <property name="profilemanagerid">${catalogid}</property>
   <property name="thumbsize">thumb</property>
@@ -33,7 +33,6 @@
   <path-action name="MediaArchiveModule.loadComponentHome"/>
   <path-action name="ProfileModule.loadUserProfile"/>
   <path-action name="MediaArchiveModule.loadModule"/>
-  <path-action name="UserProfileModule.loadSideBarWidth"/>
   <path-action name="DesktopModule.loadDesktop"/>
   <path-action name="DataEditModule.loadEditHome"/>
   <path-action name="DataEditModule.loadSearchHome"/>
