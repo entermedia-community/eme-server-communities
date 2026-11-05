@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Mermaid River</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #06222e; display: flex; align-items: center; justify-content: center; font-family: sans-serif; overflow: hidden; overscroll-behavior: none; touch-action: none; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; }
+  canvas { background: #0b4f6c; width: min(100vw, 75vh); height: min(133.33vw, 100vh); touch-action: none; box-sizing: border-box; border: 2px solid #1d8aa8; }
+  @supports (height: 100dvh) { canvas { width: min(100vw, 75dvh); height: min(133.33vw, 100dvh); } }
+</style>
+</head>
+<body>
+<canvas id="game" width="480" height="640"></canvas>
+<script>
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
+const W = canvas.width, H = canvas.height;
+
+const keys = {};
+let audio;
+// browsers (iOS especially) only start audio from inside a user gesture, so retry on every one until it runs
+function unlockAudio() {
+  try {
+    if (!audio) audio = new (window.AudioContext || window.webkitAudioContext)();
+    if (audio.state !== "running") audio.resume();
+    const b = audio.createBuffer(1, 1, 22050), s = audio.createBufferSource(); // silent blip wakes iOS
+    s.buffer = b; s.connect(audio.destination); s.start(0);
+  } catch (e) {}
+}
+for (const ev of ["touchstart", "touchend", "pointerdown", "pointerup", "click", "keydown"]) addEventListener(ev, unlockAudio, { passive: true });
+function tone(freq, start, dur, type, vol, slideTo) {
+  if (!audio) return;
+  const t = audio.currentTime + start;
+  const o = audio.createOscillator(), g = audio.createGain();
+  o.type = type; o.frequency.setValueAtTime(freq, t);
+  if (slideTo) o.frequency.exponentialRampToValueAtTime(slideTo, t + dur);
+  g.gain.setValueAtTime(vol, t);
+  g.gain.exponentialRampToValueAtTime(0.001, t + dur);
+  o.connect(g).connect(audio.destination);
+  o.start(t); o.stop(t + dur);
+}
+const sfx = {
+  good() { tone(660, 0, 0.1, "sine", 0.25); tone(990, 0.08, 0.16, "sine", 0.25); },
+  bad() { tone(180, 0, 0.3, "sawtooth", 0.3, 60); tone(130, 0, 0.3, "square", 0.2, 50); },
+  shark() { tone(120, 0, 0.5, "sawtooth", 0.4, 40); tone(90, 0.1, 0.5, "square", 0.3, 30); },
+  warn() { tone(70, 0, 0.8, "sine", 0.35, 55); },
+  feed() { tone(400, 0, 0.12, "sine", 0.25, 700); },
+  clean() { tone(440, 0, 0.1, "triangle", 0.25); tone(660, 0.08, 0.1, "triangle", 0.25); tone(880, 0.16, 0.25, "triangle", 0.25); },
+  bite() { tone(220, 0, 0.12, "square", 0.3, 70); tone(110, 0, 0.15, "sawtooth", 0.25, 50); },
+  snap() { tone(1000, 0, 0.06, "square", 0.2, 300); },
+  armoff() { tone(160, 0, 0.35, "sawtooth", 0.35, 50); tone(500, 0, 0.1, "square", 0.2, 200); },
+  win() { [523, 659, 784, 1047].forEach((f, i) => tone(f, i * 0.12, 0.25, "triangle", 0.3)); },
+  free() { tone(300, 0, 0.2, "triangle", 0.25, 600); },
+  happy() { tone(520, 0, 0.1, "triangle", 0.25); tone(780, 0.1, 0.2, "triangle", 0.25); }
+};
+
+addEventListener("keydown", e => {
+  if (e.key.startsWith("Arrow") || e.key === " ") e.preventDefault();
+  keys[e.key] = true;
+  if ((e.key === " " || e.key === "Enter") && state.over) reset();
+  else if (e.key === " " && !e.repeat) feedSharks();
+});
+addEventListener("keyup", e => keys[e.key] = false);
+
+// touch: slide a finger left/right to swim, double tap to feed the sharks
+let touch = false;
+const drag = { id: null, x: 0, sx: 0, sy: 0, t: 0, moved: false };
+let lastTap = 0;
+const RESTART_BTN = { x: W / 2 - 100, y: H / 2 + 50, w: 200, h: 60 };
+function hitRestart(e) {
+  const r = canvas.getBoundingClientRect(), b = RESTART_BTN, pad = 10;
+  const x = (e.clientX - r.left) * W / r.width, y = (e.clientY - r.top) * H / r.height;
+  return x >= b.x - pad && x <= b.x + b.w + pad && y >= b.y - pad && y <= b.y + b.h + pad;
+}
+const DOUBLE_TAP_MS = 350, TAP_SLOP = 12;
+canvas.addEventListener("pointerdown", e => {
+  if (e.pointerType === "mouse") return;
+  e.preventDefault();
+  touch = true;
+  canvas.setPointerCapture(e.pointerId);
+  Object.assign(drag, { id: e.pointerId, x: e.clientX, sx: e.clientX, sy: e.clientY, t: performance.now(), moved: false });
+});
+canvas.addEventListener("pointermove", e => {
+  if (e.pointerId !== drag.id) return;
+  e.preventDefault();
+  if (Math.hypot(e.clientX - drag.sx, e.clientY - drag.sy) > TAP_SLOP) drag.moved = true;
+  const scale = W / canvas.getBoundingClientRect().width;
+  const dx = (e.clientX - drag.x) * scale;
+  drag.x = e.clientX;
+  if (state.over || mermaid.stuck) return; // seaweed holds her
+  mermaid.x = Math.max(mermaid.w / 2, Math.min(W - mermaid.w / 2, mermaid.x + dx));
+  mermaid.vx = Math.max(-340, Math.min(340, dx * 30)); // for the tail sway
+});
+const endTouch = e => {
+  if (e.pointerId !== drag.id) return;
+  drag.id = null;
+  if (e.type !== "pointerup" || drag.moved || performance.now() - drag.t > 300) { lastTap = 0; return; }
+  const now = performance.now();
+  if (state.over) { if (hitRestart(e)) reset(); lastTap = 0; }
+  else if (now - lastTap < DOUBLE_TAP_MS) { feedSharks(); lastTap = 0; }
+  else lastTap = now;
+};
+canvas.addEventListener("click", e => { if (state.over && hitRestart(e)) reset(); }); // mouse
+canvas.addEventListener("pointerup", endTouch);
+canvas.addEventListener("pointercancel", endTouch);
+canvas.addEventListener("contextmenu", e => e.preventDefault());
+document.addEventListener("dblclick", e => e.preventDefault());
+
+const state = {};
+let mermaid, items, foods, weeds, weedTimer, crab, crabTimer, debris, bubbles, spawnTimer, trashTimer, sharkTimer, last = 0;
+
+function reset() {
+  Object.assign(state, { score: 0, lives: 3, over: false, speed: 1, time: 0, banner: { text: "", t: 0 } });
+  mermaid = { x: W / 2, y: H - 70, w: 60, vx: 0, flash: 0 };
+  items = [];
+  foods = [];
+  weeds = [];
+  weedTimer = 8;
+  crab = null;
+  crabTimer = 25;
+  debris = [];
+  state.feedCooldown = 0;
+  bubbles = Array.from({ length: 30 }, () => ({ x: Math.random() * W, y: Math.random() * H, r: 1 + Math.random() * 3, s: 20 + Math.random() * 40 }));
+  spawnTimer = 0;
+  trashTimer = 4 + Math.random() * 3;
+  sharkTimer = 3 + Math.random() * 3;
+}
+reset();
+
+const FISH_COLORS = ["#ff9f43", "#feca57", "#ff6b81", "#1dd1a1", "#a29bfe"];
+const TRASH_TYPES = ["bottle", "can", "boot", "bag"];
+
+function spawnFish() {
+  items.push({ kind: "fish", x: 30 + Math.random() * (W - 60), y: -30, vy: 90 + Math.random() * 60, r: 16, color: FISH_COLORS[Math.floor(Math.random() * FISH_COLORS.length)], t: Math.random() * 6 });
+}
+function spawnTrash() {
+  items.push({ kind: "trash", type: TRASH_TYPES[Math.floor(Math.random() * TRASH_TYPES.length)], x: 30 + Math.random() * (W - 60), y: -30, vy: 110 + Math.random() * 50, r: 15, rot: 0, vr: (Math.random() - 0.5) * 4 });
+}
+
+function spawnShark() {
+  items.push({ kind: "shark", x: 60 + Math.random() * (W - 120), y: -80, vy: 50, r: 45, hw: 38 * SHARK_START, hh: 45 * SHARK_START, size: SHARK_START, hungry: 0, agil: 0.6 + Math.random() * 0.9, wob: 0.5 + Math.random(), ph: Math.random() * 6.28, side: Math.random() < 0.5 ? -1 : 1, t: 0, ang: Math.PI / 2 });
+  sfx.warn();
+}
+
+const SHARK_START = 0.5, SHARK_MIN = 0.3, SHARK_MAX = 4, SHARK_SHRINK = 0.04, SHARK_HUNGRY_AFTER = 3;
+const sharkSlow = sh => Math.min(1, 0.6 / sh.size); // huge sharks are sluggish
+const growShark = (sh, a) => { sh.size = Math.min(SHARK_MAX, sh.size + a * 2); sh.hungry = 0; };
+
+const CRAB_STAY = 30, CRAB_ATTACK_Y = H * 0.4;
+const crabAttackable = () => crab && !crab.dying && crab.y >= CRAB_ATTACK_Y; // sharks wait until it is 40% of the way down
+const FEED_COOLDOWN = 1.5, FEED_TIME = 5, MAX_LIVES = 5;
+
+function feedSharks() {
+  if (state.over || state.feedCooldown > 0) return;
+  state.feedCooldown = FEED_COOLDOWN;
+  sfx.feed();
+  for (let i = 0; i < 6; i++) foods.push({ x: mermaid.x + (Math.random() - 0.5) * 40, y: mermaid.y - 40, vy: 110 + Math.random() * 50, life: 2.5 });
+  for (const it of items) {
+    if (it.kind !== "shark" || it.y < -40) continue;
+    if (!it.tame) { state.score += 5; sfx.happy(); }
+    it.tame = true;       // fed sharks never hurt the mermaid
+    it.fed = FEED_TIME;   // and swim over to her for a while
+  }
+}
+
+function banner(text) { state.banner = { text, t: 3 }; }
+
+function updateCrab(dt) {
+  if (!crab) {
+    crabTimer -= dt;
+    if (crabTimer <= 0) {
+      crab = { x: W / 2, y: -90, bites: 0, arms: [true, true], hit: 0, pinchT: 0, snapped: false, aim: 0, t: 0, dying: false, alpha: 1, rot: 0 };
+      sfx.warn(); banner("A giant crab! Feed the sharks!");
+    }
+    return;
+  }
+  crab.t += dt; crab.hit = Math.max(0, crab.hit - dt);
+  if (crab.dying) {
+    crab.y += 140 * dt; crab.rot += 0.4 * dt; crab.alpha -= 0.35 * dt;
+    if (crab.y > H + 100 || crab.alpha <= 0) { crab = null; crabTimer = 45 + Math.random() * 20; }
+    return;
+  }
+  if (!crab.leaving && (crab.t > CRAB_STAY || (!crab.arms[0] && !crab.arms[1]))) crab.leaving = crab.x < W / 2 ? -1 : 1; // gets bored, or has no claws left
+  if (crab.leaving) {
+    crab.x += crab.leaving * 160 * dt;
+    if (crab.x < -150 || crab.x > W + 150) { crab = null; crabTimer = 30 + Math.random() * 20; }
+    return;
+  }
+  const ty = H - 175;
+  crab.y = Math.min(ty, crab.y + 40 * dt);
+  if (!crab.arms[crab.aim]) crab.aim = crab.arms[0] ? 0 : 1;
+  // line the aimed claw up over the mermaid
+  const tx = Math.max(60, Math.min(W - 60, mermaid.x + (crab.aim ? -95 : 95)));
+  crab.x += Math.max(-60 * dt, Math.min(60 * dt, tx - crab.x));
+  if (crab.y < ty) return;
+  crab.pinchT += dt;
+  if (crab.pinchT >= 2.2 && !crab.snapped) {
+    crab.snapped = true; sfx.snap();
+    const cx = crab.x + (crab.aim ? 95 : -95);
+    for (const sh of items) if (sh.kind === "shark" && sh.size < 3 && Math.hypot(sh.x - cx, sh.y - crab.y) < 90 + 40 * sh.size) { sh.eaten = true; sfx.bad(); }
+    if (Math.abs(mermaid.x - cx) < 55 && mermaid.flash <= 0) {
+      state.lives--; mermaid.flash = 0.6; sfx.bad();
+      if (state.lives <= 0) state.over = true;
+    }
+  }
+  if (crab.pinchT >= 2.5) {
+    crab.pinchT = 0; crab.snapped = false;
+    crab.aim = crab.arms[1 - crab.aim] ? 1 - crab.aim : crab.aim;
+  }
+}
+
+function biteCrab(sh) {
+  sh.biteCd = 0.4; growShark(sh, 0.1);
+  crab.bites += sh.size * 2; crab.hit = 0.3; sfx.bite(); // big sharks do more damage
+  // the crab pinches back: small sharks often die, bigger ones just shrink
+  if (Math.random() < Math.max(0.25, 0.9 - sh.size * 0.2)) { sh.eaten = true; sfx.bad(); }
+  else sh.size = Math.max(SHARK_MIN, sh.size - 0.3);
+  const lose = i => { crab.arms[i] = false; debris.push({ s: i ? 1 : -1, x: crab.x, y: crab.y, vx: (i ? 1 : -1) * 50, vy: 40, rot: 0, vr: (i ? 1 : -1) * 3 }); sfx.armoff(); };
+  if (crab.bites >= 10 && crab.arms[0]) lose(0);
+  else if (crab.bites >= 20 && crab.arms[1]) lose(1);
+  else if (crab.bites >= 30) {
+    crab.dying = true;
+    state.score += 50; if (state.lives < MAX_LIVES) state.lives++;
+    sfx.win(); banner("Crab defeated! +1 life");
+  }
+}
+
+const wrapAng = a => Math.atan2(Math.sin(a), Math.cos(a));
+const tangles = w => w.h > 30 && Math.abs(w.x - mermaid.x) < 45;
+
+// what a fed shark swims after: food first, then seaweed holding the mermaid, then the nearest fish/trash/seaweed
+function sharkTarget(sh) {
+  let best = null, bd = Infinity;
+  const others = items.filter(o => o !== sh && o.kind === "shark" && o.tgt);
+  const consider = (x, y, bonus = 0, shared = false) => {
+    let d = Math.hypot(x - sh.x, y - sh.y) - bonus;
+    if (!shared) for (const o of others) if (Math.hypot(o.tgt.x - x, o.tgt.y - y) < 90) d += 400; // let another shark have it
+    if (d < bd) { bd = d; best = { x, y }; }
+  };
+  if (crab && !crab.dying) { if (crabAttackable()) consider(crab.x, crab.y, 0, true); } // a crab is the only thing worth chasing
+  else {
+    for (const f of foods) consider(f.x, f.y, 2000, true); // food is for everyone
+    for (const w of weeds) if (tangles(w)) consider(w.x, H - w.h / 2, 1000);
+    for (const o of items) if ((o.kind === "trash" || o.kind === "fish") && o.y > -10) consider(o.x, o.y);
+    for (const w of weeds) if (w.h > 30) consider(w.x, H - w.h / 2);
+  }
+  if (!best) best = { x: mermaid.x + sh.side * (120 + 60 * sh.size), y: mermaid.y - 140 - 40 * sh.size };
+  // each shark drifts around its target in its own rhythm
+  const drift = foods.length || (crab && !crab.dying) ? 0 : 1; // no lazy circling while there is food
+  sh.tgt = { x: best.x + Math.sin(sh.t * sh.wob + sh.ph) * 50 * drift, y: best.y + Math.cos(sh.t * sh.wob * 0.8 + sh.ph) * 30 * drift };
+  return sh.tgt;
+}
+
+function update(dt) {
+  if (state.over) return;
+  state.time += dt;
+  state.banner.t = Math.max(0, state.banner.t - dt);
+  state.speed = 1 + state.time / 60;
+
+  weedTimer -= dt;
+  if (weedTimer <= 0) {
+    let x = 40 + Math.random() * (W - 80);
+    for (let i = 0; i < 10 && Math.abs(x - mermaid.x) < 130; i++) x = 40 + Math.random() * (W - 80); // keep clear of the mermaid
+    if (weeds.length < 10) weeds.push({ x: Math.max(30, Math.min(W - 30, x)), h: 0, maxH: 130 + Math.random() * 50, t: Math.random() * 6, age: 0, life: 10 + Math.random() * 8 });
+    weedTimer = Math.max(5, 10 - state.time / 30) + Math.random() * 6;
+  }
+  for (const w of weeds) { // grows up from below, then sinks away unless a shark eats it first
+    w.t += dt; w.age += dt;
+    const left = w.life - w.age;
+    w.h = left < 2 ? Math.max(0, Math.min(w.h, w.maxH * left / 2)) : Math.min(w.maxH, w.h + 90 * dt);
+  }
+  weeds = weeds.filter(w => w.age < w.life);
+  mermaid.stuck = weeds.some(tangles);
+
+  const k = mermaid.stuck ? 0 : 1; // seaweed holds her completely
+  const accel = 1400 * k, maxV = 340 * k;
+  const dir = (keys.ArrowRight ? 1 : 0) - (keys.ArrowLeft ? 1 : 0);
+  mermaid.vx += dir * accel * dt;
+  if (!dir) mermaid.vx *= Math.pow(0.002, dt);
+  mermaid.vx = Math.max(-maxV, Math.min(maxV, mermaid.vx));
+  mermaid.x = Math.max(mermaid.w / 2, Math.min(W - mermaid.w / 2, mermaid.x + mermaid.vx * dt));
+  mermaid.flash = Math.max(0, mermaid.flash - dt);
+  state.feedCooldown = Math.max(0, state.feedCooldown - dt);
+  for (const f of foods) { f.y -= f.vy * dt; f.life -= dt; }
+  foods = foods.filter(f => f.life > 0);
+
+  spawnTimer -= dt;
+  if (spawnTimer <= 0) { spawnFish(); spawnTimer = (0.5 + Math.random() * 0.7) / state.speed; }
+  trashTimer -= dt;
+  if (trashTimer <= 0) { spawnTrash(); trashTimer = (3 + Math.random() * 4) / state.speed; }
+
+  sharkTimer -= dt;
+  if (sharkTimer <= 0) { spawnShark(); sharkTimer = Math.max(2, 7 - state.time / 15) + Math.random() * 3; }
+
+  updateCrab(dt);
+  for (const d of debris) { d.x += d.vx * dt; d.y += d.vy * dt; d.vy += 120 * dt; d.rot += d.vr * dt; }
+  debris = debris.filter(d => d.y < H + 120);
+
+  // tame sharks eat food, fish, trash and seaweed they touch and bite the crab
+  for (const sh of items) {
+    if (sh.kind !== "shark" || !sh.tame) continue;
+    let ate = false;
+    sh.biteCd = Math.max(0, (sh.biteCd || 0) - dt);
+    // starving sharks shrink; eating makes them grow
+    sh.hungry += dt;
+    if (sh.hungry > SHARK_HUNGRY_AFTER) sh.size = Math.max(SHARK_MIN, sh.size - SHARK_SHRINK * dt);
+    sh.hw = 38 * sh.size; sh.hh = 45 * sh.size;
+    // only the teeth at the tip of the snout eat, not the body
+    const mx = sh.x + Math.cos(sh.ang) * 52 * sh.size, my = sh.y + Math.sin(sh.ang) * 52 * sh.size;
+    const reach = 12 + 12 * sh.size;
+    if (crabAttackable() && sh.biteCd <= 0 && Math.hypot(crab.x - sh.x, crab.y - sh.y) < 40 + 45 * sh.size) { biteCrab(sh); ate = true; }
+    for (const f of foods) if (!(crab && !crab.dying) && f.life > 0 && Math.hypot(f.x - mx, f.y - my) < reach) { f.life = 0; ate = true; growShark(sh, 0.04); }
+    for (const w of weeds) if (!w.eaten && w.h > 20 && Math.abs(w.x - mx) < reach + 10 && my > H - w.h - 10) {
+      w.eaten = true; w.age = w.life; w.h = 0; ate = true; growShark(sh, 0.05); sfx.free();
+    }
+    for (const o of items) {
+      if ((o.kind !== "trash" && o.kind !== "fish") || o.eaten || Math.hypot(o.x - mx, o.y - my) > reach) continue;
+      o.eaten = ate = true;
+      if (o.kind === "trash") { if (state.lives < MAX_LIVES) state.lives++; state.score += 5; growShark(sh, 0.06); sfx.clean(); }
+      else { state.score += 10; growShark(sh, 0.08); sfx.good(); }
+    }
+    if (ate) sh.fed = Math.max(sh.fed || 0, 2);
+  }
+  items = items.filter(i => !i.eaten);
+  weeds = weeds.filter(w => !w.eaten);
+  foods = foods.filter(f => f.life > 0);
+
+  for (const it of items) {
+    it.t += dt;
+    if (it.fed > 0) {
+      it.fed -= dt;
+      const { x: tx, y: ty } = sharkTarget(it);
+      const slow = (it.kind === "shark" ? sharkSlow(it) : 1) * (foods.length ? 2.5 : 1); // dash for food
+      it.x += (tx - it.x) * 2.5 * it.agil * slow * dt;
+      it.y += (ty - it.y) * 2 * it.agil * slow * dt;
+      if (Math.hypot(tx - it.x, ty - it.y) > 12) it.ang += wrapAng(Math.atan2(ty - it.y, tx - it.x) - it.ang) * Math.min(1, 0.8 * sharkSlow(it) * (foods.length ? 3 : 1) * dt); // turn around to face it
+    } else it.y += it.vy * state.speed * dt;
+    if (it.kind === "shark" && !(it.fed > 0)) it.ang += wrapAng(Math.PI / 2 - it.ang) * Math.min(1, 0.8 * dt);
+    if (it.kind === "trash") it.rot += it.vr * dt;
+    else if (it.kind === "fish") it.x += Math.sin(it.t * 4) * 20 * dt;
+    else if (!(it.fed > 0)) it.x += Math.sin(it.t * 1.5) * 25 * dt;
+    it.dead = it.y > H + 40;
+
+    const dx = it.x - mermaid.x, dy = it.y - (mermaid.y - 10);
+    const hw = it.hw ?? it.r - 8, hh = it.hh ?? it.r - 8;
+    if (Math.abs(dx) < mermaid.w / 2 + hw && Math.abs(dy) < 45 + hh) {
+      if (it.kind !== "shark") it.dead = true;
+      if (it.kind === "fish") { state.score += 10; sfx.good(); }
+      else if (it.kind === "shark" && (it.tame || mermaid.flash > 0)) { /* friendly or invulnerable */ }
+      else {
+        state.lives--; mermaid.flash = 0.6;
+        it.kind === "shark" ? sfx.shark() : sfx.bad();
+        if (state.lives <= 0) state.over = true;
+      }
+    }
+  }
+  // sharks push each other apart instead of stacking
+  const sharks = items.filter(i => i.kind === "shark");
+  for (let i = 0; i < sharks.length; i++) for (let j = i + 1; j < sharks.length; j++) {
+    const a = sharks[i], b = sharks[j];
+    let dx = b.x - a.x, dy = b.y - a.y, d = Math.hypot(dx, dy);
+    const min = 45 * (a.size + b.size);
+    if (d >= min) continue;
+    if (d < 1) { dx = a.side; dy = 0; d = 1; }
+    const push = (min - d) * Math.min(1, 6 * dt) / 2 / d;
+    a.x -= dx * push; a.y -= dy * push; b.x += dx * push; b.y += dy * push;
+  }
+  items = items.filter(i => !i.dead);
+
+  for (const b of bubbles) { b.y -= b.s * dt; if (b.y < -5) { b.y = H + 5; b.x = Math.random() * W; } }
+}
+
+function drawFish(f) {
+  ctx.save();
+  ctx.translate(f.x, f.y);
+  ctx.rotate(Math.PI / 2 + Math.sin(f.t * 8) * 0.15); // head points down, toward her
+  ctx.fillStyle = f.color;
+  ctx.beginPath(); ctx.ellipse(0, 0, 18, 10, 0, 0, Math.PI * 2); ctx.fill();
+  ctx.beginPath(); ctx.moveTo(-14, 0); ctx.lineTo(-27, -9); ctx.lineTo(-27, 9); ctx.closePath(); ctx.fill();
+  ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.arc(9, -3, 3.5, 0, Math.PI * 2); ctx.fill();
+  ctx.fillStyle = "#000"; ctx.beginPath(); ctx.arc(10, -3, 1.6, 0, Math.PI * 2); ctx.fill();
+  ctx.restore();
+}
+
+function drawShark(f) {
+  ctx.save();
+  ctx.translate(f.x, f.y);
+  ctx.rotate(f.ang + Math.sin(f.t * 2) * 0.06); // faces where it is swimming
+  ctx.scale(f.size, f.size);
+  // tail
+  ctx.fillStyle = "#636e72";
+  ctx.beginPath(); ctx.moveTo(-45, 0); ctx.lineTo(-75, -22); ctx.lineTo(-65, 0); ctx.lineTo(-75, 22); ctx.closePath(); ctx.fill();
+  // side fins (pectoral)
+  ctx.beginPath(); ctx.moveTo(10, -12); ctx.lineTo(-10, -38); ctx.lineTo(-18, -10); ctx.closePath(); ctx.fill();
+  ctx.beginPath(); ctx.moveTo(10, 12); ctx.lineTo(-10, 38); ctx.lineTo(-18, 10); ctx.closePath(); ctx.fill();
+  // body
+  ctx.fillStyle = "#74828a";
+  ctx.beginPath(); ctx.ellipse(0, 0, 58, 22, 0, 0, Math.PI * 2); ctx.fill();
+  ctx.fillStyle = "#dfe6e9";
+  ctx.beginPath(); ctx.ellipse(8, 8, 46, 12, 0, 0, Math.PI); ctx.fill();
+  // eye and teeth
+  ctx.fillStyle = "#000"; ctx.beginPath(); ctx.arc(34, -8, 3.5, 0, Math.PI * 2); ctx.fill();
+  ctx.fillStyle = "#fff";
+  for (let i = 0; i < 4; i++) { ctx.beginPath(); ctx.moveTo(40 + i * 4, 3); ctx.lineTo(43 + i * 4, 11); ctx.lineTo(46 + i * 4, 3); ctx.fill(); }
+  ctx.restore();
+  if (f.tame) { ctx.fillStyle = "#ff7675"; ctx.font = "bold 22px sans-serif"; ctx.textAlign = "center"; ctx.fillText("♥", f.x, f.y - 20 - 40 * f.size); }
+}
+
+function drawWeed(w) {
+  ctx.save();
+  ctx.lineCap = "round";
+  const blades = 5;
+  for (let i = 0; i < blades; i++) {
+    const bx = w.x + (i - 2) * 11;
+    const h = w.h * (0.7 + 0.3 * Math.sin(i * 2.1 + 1));
+    const sway = Math.sin(w.t * 2 + i) * 14;
+    ctx.strokeStyle = i % 2 ? "#1e8449" : "#27ae60";
+    ctx.lineWidth = 8;
+    ctx.beginPath(); ctx.moveTo(bx, H);
+    ctx.quadraticCurveTo(bx - sway, H - h * 0.5, bx + sway, H - h);
+    ctx.stroke();
+  }
+  ctx.restore();
+}
+
+function drawArm(s, open) {
+  const cx = s * 95, cy = open ? 5 : 40;
+  ctx.strokeStyle = "#c0392b"; ctx.lineWidth = 16; ctx.lineCap = "round"; ctx.lineJoin = "round";
+  ctx.beginPath(); ctx.moveTo(s * 45, 8); ctx.lineTo(s * 80, open ? -5 : 15); ctx.lineTo(cx, cy); ctx.stroke();
+  ctx.fillStyle = "#e55039";
+  for (const d of [-1, 1]) {
+    ctx.save(); ctx.translate(cx, cy); ctx.rotate(d * (0.15 + open * 0.45));
+    ctx.beginPath(); ctx.ellipse(0, 18, 11, 22, 0, 0, Math.PI * 2); ctx.fill(); ctx.restore();
+  }
+}
+
+function drawCrab(c) {
+  ctx.save();
+  ctx.translate(c.x, c.y); ctx.rotate(c.rot); ctx.globalAlpha = Math.max(0, c.alpha);
+  ctx.strokeStyle = "#c0392b"; ctx.lineWidth = 7; ctx.lineCap = "round";
+  for (const s of [-1, 1]) for (let i = 0; i < 4; i++) {
+    const wob = Math.sin(c.t * 6 + i + (s > 0 ? 2 : 0)) * 5;
+    ctx.beginPath(); ctx.moveTo(s * 30, -5 + i * 9); ctx.lineTo(s * 70, 10 + i * 10 + wob); ctx.stroke();
+  }
+  const windup = c.pinchT > 1.6 && c.pinchT < 2.2;
+  c.arms.forEach((on, i) => { if (on) drawArm(i ? 1 : -1, windup && c.aim === i ? 1 : 0); });
+  ctx.fillStyle = c.hit > 0 ? "#ffb199" : "#e55039";
+  ctx.beginPath(); ctx.ellipse(0, 0, 62, 42, 0, 0, Math.PI * 2); ctx.fill();
+  ctx.fillStyle = "rgba(0,0,0,.15)";
+  for (const [x, y] of [[-25, 8], [10, 15], [30, 0], [-5, -12]]) { ctx.beginPath(); ctx.arc(x, y, 5, 0, Math.PI * 2); ctx.fill(); }
+  ctx.strokeStyle = "#c0392b"; ctx.lineWidth = 5;
+  for (const s of [-1, 1]) { ctx.beginPath(); ctx.moveTo(s * 18, -35); ctx.lineTo(s * 20, -52); ctx.stroke(); }
+  ctx.fillStyle = "#fff";
+  for (const s of [-1, 1]) { ctx.beginPath(); ctx.arc(s * 20, -54, 8, 0, Math.PI * 2); ctx.fill(); }
+  ctx.fillStyle = "#000";
+  for (const s of [-1, 1]) { ctx.beginPath(); ctx.arc(s * 20, -52, 3.5, 0, Math.PI * 2); ctx.fill(); }
+  ctx.strokeStyle = "#7b241c"; ctx.lineWidth = 3;
+  ctx.beginPath(); ctx.arc(0, 8, 16, 0.2, Math.PI - 0.2); ctx.stroke();
+  ctx.restore();
+  if (!c.dying) {
+    for (let i = 0; i < 10; i++) {
+      ctx.fillStyle = i < 10 - c.bites ? "#ff7675" : "rgba(255,255,255,.2)";
+      ctx.fillRect(c.x - 50 + i * 10, c.y - 82, 8, 7);
+    }
+  }
+}
+
+function drawTrash(t) {
+  ctx.save();
+  ctx.translate(t.x, t.y);
+  ctx.rotate(t.rot);
+  switch (t.type) {
+    case "bottle":
+      ctx.fillStyle = "#7bed9f"; ctx.fillRect(-7, -4, 14, 22); ctx.fillRect(-3, -16, 6, 12);
+      ctx.fillStyle = "#555"; ctx.fillRect(-4, -19, 8, 4); break;
+    case "can":
+      ctx.fillStyle = "#b2bec3"; ctx.fillRect(-9, -13, 18, 26);
+      ctx.fillStyle = "#d63031"; ctx.fillRect(-9, -4, 18, 8); break;
+    case "boot":
+      ctx.fillStyle = "#6d4c2f"; ctx.fillRect(-8, -16, 12, 24);
+      ctx.beginPath(); ctx.ellipse(2, 8, 14, 7, 0, 0, Math.PI * 2); ctx.fill(); break;
+    case "bag":
+      ctx.fillStyle = "rgba(235,235,235,.85)";
+      ctx.beginPath(); ctx.moveTo(-14, 10); ctx.quadraticCurveTo(-18, -8, -6, -14); ctx.lineTo(6, -14); ctx.quadraticCurveTo(18, -8, 14, 10); ctx.closePath(); ctx.fill(); break;
+  }
+  ctx.restore();
+}
+
+function drawMermaid() {
+  const m = mermaid;
+  if (m.flash > 0 && Math.floor(m.flash * 20) % 2) return;
+  ctx.save();
+  ctx.translate(m.x, m.y);
+  const sway = Math.sin(performance.now() / 150) * 5 + m.vx * 0.03;
+  // hair
+  ctx.fillStyle = "#e17055";
+  ctx.beginPath(); ctx.ellipse(0, -36, 17, 20, 0, 0, Math.PI * 2); ctx.fill();
+  ctx.fillRect(-17, -36, 34, 34);
+  // tail
+  ctx.fillStyle = "#00b894";
+  ctx.beginPath(); ctx.moveTo(-13, 0); ctx.quadraticCurveTo(-16 + sway, 25, sway, 40); ctx.quadraticCurveTo(16 + sway, 25, 13, 0); ctx.closePath(); ctx.fill();
+  ctx.fillStyle = "#55efc4";
+  ctx.beginPath(); ctx.moveTo(sway, 38); ctx.lineTo(sway - 22, 58); ctx.lineTo(sway - 4, 55); ctx.lineTo(sway, 62); ctx.lineTo(sway + 4, 55); ctx.lineTo(sway + 22, 58); ctx.closePath(); ctx.fill();
+  // torso
+  ctx.fillStyle = "#ffeaa7"; ctx.fillRect(-11, -22, 22, 24);
+  ctx.fillStyle = "#a29bfe"; ctx.fillRect(-11, -18, 22, 9);
+  // head
+  ctx.fillStyle = "#ffeaa7"; ctx.beginPath(); ctx.arc(0, -34, 12, 0, Math.PI * 2); ctx.fill();
+  ctx.fillStyle = "#e17055"; ctx.beginPath(); ctx.arc(0, -38, 12, Math.PI, 0); ctx.fill();
+  ctx.fillStyle = "#2d3436"; ctx.fillRect(-6, -34, 3, 3); ctx.fillRect(3, -34, 3, 3);
+  ctx.restore();
+}
+
+function draw() {
+  const g = ctx.createLinearGradient(0, 0, 0, H);
+  g.addColorStop(0, "#1e90a8"); g.addColorStop(1, "#073b52");
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+
+  // river current streaks
+  ctx.strokeStyle = "rgba(255,255,255,.07)"; ctx.lineWidth = 2;
+  for (let i = 0; i < 12; i++) {
+    const x = (i * 47) % W, y = ((state.time * 80 * state.speed + i * 90) % (H + 80)) - 40;
+    ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + 6, y + 40); ctx.stroke();
+  }
+  ctx.fillStyle = "rgba(255,255,255,.25)";
+  for (const b of bubbles) { ctx.beginPath(); ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2); ctx.fill(); }
+
+  if (crab) drawCrab(crab);
+  for (const d of debris) { ctx.save(); ctx.translate(d.x, d.y); ctx.rotate(d.rot); drawArm(d.s, 0); ctx.restore(); }
+  for (const it of items) it.kind === "fish" ? drawFish(it) : it.kind === "shark" ? drawShark(it) : drawTrash(it);
+  ctx.fillStyle = "#c9a26b";
+  for (const f of foods) { ctx.beginPath(); ctx.arc(f.x, f.y, 4, 0, Math.PI * 2); ctx.fill(); }
+  drawMermaid();
+  ctx.globalAlpha = 0.9;
+  for (const w of weeds) drawWeed(w);
+  ctx.globalAlpha = 1;
+  if (mermaid.stuck) {
+    ctx.fillStyle = "#fff"; ctx.font = "bold 16px sans-serif"; ctx.textAlign = "center";
+    ctx.fillText("Stuck! Feed a shark!", mermaid.x, mermaid.y - 82);
+  }
+
+  ctx.fillStyle = "#fff"; ctx.font = "bold 20px sans-serif"; ctx.textAlign = "left";
+  ctx.fillText("Fish: " + state.score / 10, 14, 28);
+  ctx.fillStyle = state.feedCooldown > 0 ? "rgba(255,255,255,.4)" : "#ffeaa7";
+  ctx.font = "16px sans-serif"; ctx.textAlign = "left";
+  const feedKey = touch ? "Double tap" : "Space";
+  ctx.fillText(state.feedCooldown > 0 ? feedKey + ": feed sharks (" + state.feedCooldown.toFixed(1) + "s)" : feedKey + ": feed sharks", 14, H - 14);
+  ctx.font = "bold 20px sans-serif";
+  ctx.textAlign = "right"; ctx.fillStyle = "#ff7675";
+  ctx.fillText("♥".repeat(Math.max(0, state.lives)), W - 14, 28);
+
+  if (state.banner.t > 0) {
+    ctx.globalAlpha = Math.min(1, state.banner.t);
+    ctx.fillStyle = "#ffeaa7"; ctx.font = "bold 24px sans-serif"; ctx.textAlign = "center";
+    ctx.fillText(state.banner.text, W / 2, 80);
+    ctx.globalAlpha = 1;
+  }
+
+  if (state.over) {
+    ctx.fillStyle = "rgba(0,0,0,.6)"; ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = "#fff"; ctx.textAlign = "center";
+    ctx.font = "bold 40px sans-serif"; ctx.fillText("Game over!", W / 2, H / 2 - 20);
+    ctx.font = "22px sans-serif"; ctx.fillText("You caught " + state.score / 10 + " fish", W / 2, H / 2 + 20);
+    const b = RESTART_BTN;
+    ctx.fillStyle = "#1dd1a1"; ctx.beginPath(); ctx.roundRect(b.x, b.y, b.w, b.h, 14); ctx.fill();
+    ctx.fillStyle = "#06222e"; ctx.font = "bold 26px sans-serif"; ctx.textBaseline = "middle";
+    ctx.fillText("Play again", W / 2, b.y + b.h / 2 + 1);
+    ctx.textBaseline = "alphabetic";
+  } else if (state.time < 4) {
+    ctx.fillStyle = "rgba(255,255,255,.85)"; ctx.textAlign = "center"; ctx.font = "18px sans-serif";
+    ctx.fillText(touch ? "Slide your finger to move. Catch fish, dodge trash!" : "← → to move. Catch fish, dodge trash and sharks!", W / 2, H / 2);
+    ctx.fillText((touch ? "Double tap" : "Space") + " feeds sharks: they eat trash, seaweed and crabs.", W / 2, H / 2 + 26);
+  }
+}
+
+function loop(ts) {
+  const dt = Math.min(0.05, (ts - last) / 1000 || 0);
+  last = ts;
+  update(dt); draw();
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>

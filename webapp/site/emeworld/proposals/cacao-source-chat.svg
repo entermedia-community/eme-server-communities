@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 402 635" width="100%" role="img" aria-labelledby="t d" class="b">
+  <title id="t">Cacao Source team chat with the EME assistant</title>
+  <desc id="d">A mobile chat in the Cacao Source team channel where the EME AI assistant welcomes the user and presents the menu: Employee Training, Company Dashboard and Goal Tracking.</desc>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=JetBrains+Mono:wght@500;700&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap');
+    .h { font-family: 'Archivo Black', 'Arial Black', sans-serif; font-weight: 400; }
+    .m { font-family: 'JetBrains Mono', ui-monospace, monospace; font-weight: 500; }
+    .b { font-family: 'Space Grotesk', system-ui, sans-serif; }
+  </style>
+  <defs>
+    <linearGradient id="me" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a8683d"/><stop offset="1" stop-color="#5a3320"/></linearGradient>
+    <linearGradient id="ai" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7a8f2a"/><stop offset="1" stop-color="#3C5B00"/></linearGradient>
+    <clipPath id="screen"><rect x="16" y="16" width="372" height="605" rx="36"/></clipPath>
+  </defs>
+
+  <!-- white background -->
+  <rect width="404" height="637" fill="#ffffff"/>
+
+  <!-- phone -->
+  <rect x="2" y="2" width="400" height="633" rx="48" fill="#0f172a"/>
+  <rect x="16" y="16" width="372" height="605" rx="36" fill="#f1f5f9"/>
+  <g clip-path="url(#screen)">
+    <rect x="157" y="24" width="90" height="22" rx="11" fill="#0f172a"/>
+    <text x="44" y="38" font-size="13" font-weight="700" fill="#0f172a">9:41</text>
+    <g fill="#0f172a"><rect x="324" y="30" width="3" height="6" rx="1"/><rect x="329" y="27" width="3" height="9" rx="1"/><rect x="334" y="24" width="3" height="12" rx="1"/><rect x="343" y="26" width="20" height="10" rx="3" fill="none" stroke="#0f172a" stroke-width="1.5"/><rect x="345" y="28" width="13" height="6" rx="1.5"/></g>
+
+    <!-- header -->
+    <path d="M16 52h372v66H16z" fill="#fff"/>
+    <line x1="16" y1="118" x2="388" y2="118" stroke="#e2e8f0"/>
+    <path d="M44 74l-8 11 8 11" fill="none" stroke="#5a3320" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- placeholder icon: cacao pod -->
+    <circle cx="84" cy="85" r="21" fill="#f6ece1" stroke="#dcc3a6"/>
+    <g transform="rotate(35 84 85)">
+      <ellipse cx="84" cy="85" rx="10" ry="15" fill="#7a4a2b"/>
+      <path d="M84 70v30M78 74c-2 7-2 15 0 22M90 74c2 7 2 15 0 22" stroke="#d9a066" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    </g>
+    <circle cx="100" cy="101" r="5.5" fill="#22c55e" stroke="#fff" stroke-width="2"/>
+    <text x="116" y="82" font-size="16" font-weight="700" fill="#0f172a">Cacao Source</text>
+    <text x="116" y="100" font-size="12" fill="#64748b">Team · General</text>
+    <g fill="#5a3320"><circle cx="366" cy="76" r="2.2"/><circle cx="366" cy="85" r="2.2"/><circle cx="366" cy="94" r="2.2"/></g>
+
+    <!-- date chip -->
+    <rect x="156" y="130" width="92" height="20" rx="10" fill="#e2e8f0"/>
+    <text x="202" y="144" text-anchor="middle" font-size="11" fill="#64748b">Today 9:41</text>
+
+    <!-- EME assistant (AI bot) -->
+    <circle cx="36" cy="212" r="14" fill="url(#ai)"/>
+    <path d="M36 203l2.2 6.3 6.3 2.2-6.3 2.2L36 220l-2.2-6.3-6.3-2.2 6.3-2.2z" fill="#fff"/>
+    <text x="58" y="178" font-size="11" font-weight="700" fill="#7a4a2b">EME Assistant</text>
+    <rect x="138" y="167" width="46" height="14" rx="7" fill="#f6ece1" stroke="#dcc3a6"/>
+    <text x="161" y="177" text-anchor="middle" font-size="8.5" font-weight="700" fill="#7a4a2b" letter-spacing=".6">AI BOT</text>
+    <text x="380" y="178" text-anchor="end" font-size="10" fill="#94a3b8">Just now</text>
+    <rect x="58" y="188" width="322" height="240" rx="20" fill="#f6ece1" stroke="#dcc3a6"/>
+    <text x="74" y="222" class="h" font-size="20" fill="#2b1a10">Welcome!</text>
+    <text x="74" y="248" class="b" font-size="14" fill="#2b1a10">Here's what I can help you with at</text>
+    <text x="74" y="269" class="b" font-size="14" fill="#2b1a10"><tspan font-weight="700">Cacao Source</tspan>:</text>
+    <circle cx="82" cy="292" r="2.4" fill="#7a4a2b"/>
+    <text x="96" y="296" class="b" font-size="12.5" fill="#2b1a10"><tspan font-weight="700" fill="#3C5B00">Employee Training:</tspan> Learn at</text>
+    <text x="96" y="312" class="b" font-size="12.5" fill="#2b1a10">your own pace with short lessons</text>
+    <text x="96" y="328" class="b" font-size="12.5" fill="#2b1a10">and track your progress.</text>
+    <circle cx="82" cy="340" r="2.4" fill="#7a4a2b"/>
+    <text x="96" y="344" class="b" font-size="12.5" fill="#2b1a10"><tspan font-weight="700" fill="#3C5B00">Company Dashboard:</tspan> See sales</text>
+    <text x="96" y="360" class="b" font-size="12.5" fill="#2b1a10">and orders at a glance, right</text>
+    <text x="96" y="376" class="b" font-size="12.5" fill="#2b1a10">from your phone.</text>
+    <circle cx="82" cy="388" r="2.4" fill="#7a4a2b"/>
+    <text x="96" y="392" class="b" font-size="12.5" fill="#2b1a10"><tspan font-weight="700" fill="#3C5B00">Goal Tracking:</tspan> See team goals and</text>
+    <text x="96" y="408" class="b" font-size="12.5" fill="#2b1a10">how close we are to reaching them.</text>
+
+    <!-- input bar -->
+    <rect x="16" y="575" width="372" height="46" fill="#fff"/>
+    <line x1="16" y1="575" x2="388" y2="575" stroke="#e2e8f0"/>
+    <circle cx="42" cy="598" r="12" fill="#e2e8f0"/>
+    <path d="M42 592v12M36 598h12" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
+    <rect x="64" y="584" width="272" height="28" rx="14" fill="#f1f5f9"/>
+    <text x="80" y="603" font-size="13" fill="#94a3b8">Type your message...</text>
+    <circle cx="360" cy="598" r="13" fill="url(#me)"/>
+    <path d="M354 598h12M362 593l5 5-5 5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
