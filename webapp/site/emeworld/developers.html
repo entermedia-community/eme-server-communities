@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customize EME Server with OpenCode | EME Developers</title>
+  <meta name="description" content="A technical tutorial for developers: set up an eme-server developer environment from GitHub, connect OpenCode to it, and use AI coding agents to add skills, pages and data to your own EME server.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Customize EME Server with OpenCode">
+  <meta property="og:description" content="Set up eme-server, connect OpenCode, and let an AI coding agent customize your own EME server.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/${applicationid}/theme/css/index2.css">
+  <link rel="stylesheet" href="/${applicationid}/theme/css/developers.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Customize EME Server with OpenCode",
+    "description": "How to set up an eme-server developer environment and use OpenCode to customize it with Java skills, pages, data lists and the MediaDB API.",
+    "inLanguage": "en",
+    "proficiencyLevel": "Intermediate",
+    "about": ["eme-server", "OpenCode", "AI coding agents", "Model Context Protocol"],
+    "publisher": { "@type": "Organization", "name": "EME World", "url": "https://eme.world" }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="/${applicationid}/index.html" aria-label="EME World home"><img src="/${applicationid}/overview/logo_light.svg" width="932" height="197" alt="EME World"></a>
+      <nav class="main" aria-label="Primary">
+        <a class="hide-sm" href="/${applicationid}/index.html#harness">AI Harness</a>
+        <a class="hide-sm" href="#setup">Setup</a>
+        <a class="hide-sm" href="#opencode">OpenCode</a>
+        <a class="btn" href="/app/">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="dev-hero">
+      <div class="wrap">
+        <span class="eyebrow">Developers</span>
+        <h1>Customize EME Server with OpenCode</h1>
+        <p>EME Server is 100% open source. This tutorial takes you from a fresh machine to an AI coding agent that adds skills, pages and data to your own EME server, using the workflow defined in the <a href="https://github.com/entermedia-community/eme-server" style="color:#7dd3fc">eme-server repository on GitHub</a>.</p>
+      </div>
+    </section>
+
+    <div class="band" style="padding-top:56px;">
+      <div class="wrap dev-layout">
+
+        <aside class="toc" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol>
+            <li><a href="#how">How the pieces fit</a></li>
+            <li><a href="#prereq">1. Prerequisites</a></li>
+            <li><a href="#setup">2. Set up your server</a></li>
+            <li><a href="#auth">3. Sign in for API access</a></li>
+            <li><a href="#opencode">4. Connect OpenCode</a></li>
+            <li><a href="#rules">5. Rules the agent follows</a></li>
+            <li><a href="#skills">6. Agent skills</a></li>
+            <li><a href="#example">7. Example: add an AI skill</a></li>
+            <li><a href="#loop">8. The edit and reload loop</a></li>
+            <li><a href="#chat">9. OpenCode from inside a chat</a></li>
+            <li><a href="#ship">10. Save, update and deploy</a></li>
+            <li><a href="#links">Links</a></li>
+          </ol>
+        </aside>
+
+        <article class="doc">
+
+          <section id="how">
+            <h2>How the pieces fit</h2>
+            <p>There are four parts. Knowing which part owns what makes it easy to tell an AI agent where a change belongs.</p>
+            <ul>
+              <li><strong>eme-server</strong> is the Java server you run. Your copy is a Git fork, so your changes stay yours.</li>
+              <li><strong>Plugins</strong> hold the code. Java lives in <code>plugins/*/code</code>, Spring beans are registered in <code>plugins/*/html/src/plugin.xml</code>, and pages are configured by <code>.xconf</code> files.</li>
+              <li><strong>OpenCode</strong> is the AI coding agent. It reads <code>AGENTS.md</code> and the skills in <code>.agents/skills</code> for the project rules.</li>
+              <li><strong>MediaDB MCP</strong> is the server's own Model Context Protocol endpoint. OpenCode connects to it so the agent can work with live data while it codes.</li>
+            </ul>
+          </section>
+
+          <section id="prereq">
+            <h2>1. Prerequisites</h2>
+            <ul>
+              <li>A Linux machine (the scripts are bash) with <code>git</code> and <code>curl</code>.</li>
+              <li>A Java JDK. The server uses <code>JAVA_HOME</code>, then SDKMAN, then <code>/usr/lib/jvm/default-java</code>.</li>
+              <li>VS Code. The developer setup opens a <code>workspace.code-workspace</code> and the server runs as a VS Code debug session.</li>
+              <li>The <a href="https://opencode.ai">OpenCode</a> CLI, installed so that <code>opencode</code> is on your path.</li>
+              <li>A model that speaks the OpenAI compatible API, hosted by you or a provider.</li>
+              <li>A GitHub account, so you can fork the repository.</li>
+            </ul>
+            <div class="note"><p>Run everything as your normal user. <code>bin/eme.sh</code> refuses to run as root, except for <code>dockerstart</code>.</p></div>
+          </section>
+
+          <section id="setup">
+            <h2>2. Set up your server</h2>
+            <h3>Create the developer environment</h3>
+            <p>This is the AI developer setup from the repository README. It clones eme-server into the folder you name.</p>
+<pre><code># see all commands
+curl -fsSL get-eme.eme.world | bash -s -- help
+
+# clone eme-server and prepare it for development
+curl -L get-eme.eme.world | bash -s -- developer &#36;HOME/git/MyEmEServer</code></pre>
+            <p>The <code>developer</code> command creates the folder if needed, writes a <code>.env</code> with <code>INSTANCE</code>, <code>SITE</code> and <code>NODENUMBER</code>, clones eme-server, updates the plugins, copies the default site into <code>webapp/site</code>, and opens the VS Code workspace.</p>
+            <h3>Fork it so your changes are saved</h3>
+            <p>The clone points at the shared repository. To keep your own work, fork <a href="https://github.com/entermedia-community/eme-server">eme-server</a> on GitHub and use your fork for a custom client:</p>
+<pre><code>git clone https://github.com/YOUR-ORG/eme-server-myserver.git
+cd eme-server-myserver
+bin/pluginspull.sh</code></pre>
+            <h3>Start the server</h3>
+            <p>Start it from VS Code with <code>bin/start.sh</code>, which also installs the Remote Control extension if it is missing. Use <code>bin/restart.sh</code> after changes. Do not start Tomcat yourself with <code>eme.sh start</code>.</p>
+          </section>
+
+          <section id="auth">
+            <h2>3. Sign in for API access</h2>
+            <p>Users have no password. Scripts, the MCP endpoint and agents all authenticate with a Bearer token from <code>bin/refreshtoken.sh</code>. Register once, from a terminal:</p>
+<pre><code># emails you a login code and registers a key
+bin/refreshtoken.sh --register
+
+# or use an application password
+bin/refreshtoken.sh --app-password</code></pre>
+            <p>After that, the script reads <code>EME_USER</code>, <code>EME_KEY_ID</code> and <code>EME_PRIVATE_KEY</code> (or <code>EME_APP_PASSWORD</code>) from the <code>.env</code> in your project root, caches a 7 day token, and prints the token as its last line:</p>
+<pre><code>AUTH="Authorization: Bearer &#36;(bin/refreshtoken.sh | tail -n1)"
+curl -H "&#36;AUTH" http://localhost:8080/site/mediadb/ai/mcp/</code></pre>
+            <div class="note"><p>Never paste a token into a document or script. Use <code>bin/refreshtoken.sh --force</code> to log in again after a 401.</p></div>
+          </section>
+
+          <section id="opencode">
+            <h2>4. Connect OpenCode</h2>
+            <p>The project root contains an <code>opencode.json</code>. It defines the model provider and the server's MCP endpoint. A minimal version looks like this:</p>
+<pre><code>{
+  "&#36;schema": "https://opencode.ai/config.json",
+  "providers": {
+    "my-llm": {
+      "package": "aisdk:@ai-sdk/openai-compatible",
+      "settings": { "baseURL": "https://your-llm-host/v1" },
+      "models": {
+        "my-model": {
+          "name": "my-model",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] },
+          "limit": { "context": 80000, "output": 16384 }
+        }
+      }
+    }
+  },
+  "model": { "providerID": "my-llm", "model": "my-model" },
+  "mcp": {
+    "eme-mediadb": {
+      "type": "remote",
+      "url": "http://localhost:8080/site/mediadb/ai/mcp/",
+      "headers": { "Authorization": "Bearer {env:EME_TOKEN}" },
+      "enabled": true
+    }
+  }
+}</code></pre>
+            <p>OpenCode only reads <code>EME_TOKEN</code> at startup, so start it with the wrapper script. It fetches a fresh token and then runs <code>opencode</code> from the project root:</p>
+<pre><code>bin/opencode.sh</code></pre>
+            <h3>Prefer a browser?</h3>
+            <p>Run the OpenCode web interface as a background service:</p>
+<pre><code>bin/opencoded.sh start     # also: restart, stop, status</code></pre>
+            <p>The host and port come from the <code>server</code> block of <code>opencode.json</code>. Sign in with the one time pairing link the script prints. A link works once and expires in 5 minutes, so run the script again for a new one. Behind a proxy, set <code>OPENCODE_PAIR_URL</code> to the public address.</p>
+          </section>
+
+          <section id="rules">
+            <h2>5. Rules the agent follows</h2>
+            <p>The repository's <code>AGENTS.md</code> is loaded by OpenCode, so the agent works the same way you would. The rules that matter most when customizing:</p>
+            <table class="rules">
+              <thead><tr><th>Topic</th><th>Rule</th></tr></thead>
+              <tbody>
+                <tr><td>Server logic</td><td>Write Java in <code>plugins/*/code</code>, register a bean in <code>plugin.xml</code>, and call it from the page's <code>.xconf</code> with <code>&lt;path-action name="ModuleName.method"/&gt;</code>. No Groovy scripts.</td></tr>
+                <tr><td>After Java, <code>plugin.xml</code> or jar changes</td><td>Run <code>bin/restart.sh</code>, then wait for <code>http://localhost:8080/site/</code> to respond before testing.</td></tr>
+                <tr><td>After <code>.xconf</code> changes</td><td>Clear the page manager cache. No restart is needed.</td></tr>
+                <tr><td>After data list XML changes</td><td>Reset the table from XML, then clear the caches.</td></tr>
+                <tr><td>The <code>description</code> field</td><td>It is search text for the index, not a real description. Use <code>longdescription</code>.</td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="skills">
+            <h2>6. Agent skills</h2>
+            <p>Skills are short guides in <code>.agents/skills</code> that teach the agent how this project does things. They keep it from guessing at bean ids, data ids and reload steps. A few you will use often:</p>
+            <ul>
+              <li><code>create-java-ai-skill</code>: add a Java automation step to the AI pipeline.</li>
+              <li><code>mediadb-auth</code>: how people, apps, scripts and agents log in.</li>
+              <li><code>reload-list-data</code>: reset data list tables after you edit their XML.</li>
+              <li><code>opencode-running</code>: how a chat message becomes an OpenCode session.</li>
+              <li><code>opencode-v2-api</code>: the OpenCode HTTP API and event stream.</li>
+            </ul>
+            <p>Browse the folder for more. Add your own the same way: one folder with a <code>SKILL.md</code> that says when to use it.</p>
+          </section>
+
+          <section id="example">
+            <h2>7. Example: add an AI skill</h2>
+            <p>Start <code>bin/opencode.sh</code> and describe the result you want. Naming the skill points the agent at the right conventions:</p>
+<pre><code>Use the create-java-ai-skill skill to add a new AI skill called
+WelcomeNoteSkill. It should run in the agentorchestrator scenario and
+post a short welcome message to the chat.</code></pre>
+            <p>The agent will do the following. Review each step in your diff:</p>
+            <ol class="steps">
+              <li>Write the class under <code>plugins/finder/code/org/entermediadb/ai/skills/</code>, extending <code>BaseSkill</code> and overriding <code>process(AgentContext)</code>.</li>
+              <li>Register the Spring bean in <code>plugins/finder/html/src/plugin.xml</code>.</li>
+              <li>Add the row to <code>plugins/catalog/html/data/lists/aiskill*/*.xml</code>, and append the step to <code>automationstep/&lt;scenario&gt;.xml</code>.</li>
+            </ol>
+            <p>The bean id, the data row <code>id</code> and the step's <code>aiskill</code> value must be the same string (the class name with a lowercase first letter, here <code>welcomeNoteSkill</code>). A mismatch is the most common reason a new skill does not run.</p>
+            <p>The contract every skill implements:</p>
+<pre><code>public interface Skill
+{
+    void processStarting(AgentContext inContext);
+    void process(AgentContext inContext);
+    void processUpdate(AgentContext inContext);    // broadcast the last response, keep working
+    void processCompleted(AgentContext inContext); // broadcast the last response, then run its exec step
+}</code></pre>
+          </section>
+
+          <section id="loop">
+            <h2>8. The edit and reload loop</h2>
+            <p>Each kind of change has its own reload step. Ask the agent to run them, or run them yourself:</p>
+<pre><code># Java, plugin.xml or jars under plugins/*/lib
+bin/restart.sh
+
+# .xconf page configuration
+curl -H "&#36;AUTH" http://localhost:8080/openedit/views/filemanager/clearpagemanager.html
+
+# data list XML, one call per table, then clear caches
+for t in automationscenario automationstep; do
+  curl -H "&#36;AUTH" "http://localhost:8080/site/find/views/settings/lists/datamanager/list/restoredata.html?searchtype=&#36;t&amp;oemaxlevel=1"
+done
+curl -H "&#36;AUTH" http://localhost:8080/site/find/views/settings/status/tools/clearcaches.html</code></pre>
+            <div class="note"><p>A data reset overwrites records with what is in the XML, so edits made only in the UI are lost. It does not delete records you removed or renamed in the XML, so delete those first with <code>DELETE /site/mediadb/services/lists/data/&lt;searchtype&gt;/&lt;id&gt;</code>.</p></div>
+          </section>
+
+          <section id="chat">
+            <h2>9. OpenCode from inside a chat</h2>
+            <p>OpenCode can also run as a step in an agent job, so people can ask for a customization from the chat screen. The <code>eme_server_custom_skills</code> scenario chains the skills: one turns the chat message into a request, one starts or resumes the OpenCode session, one polls progress and shows a status card, and two send a person's answer or approval back to OpenCode. Questions and security prompts from the agent appear in the chat as forms the person can answer.</p>
+            <p>The code is in <code>plugins/finder/code/org/entermediadb/ai/skills/OpenCode*Skill.java</code>. Read the <code>opencode-running</code> skill before changing it.</p>
+          </section>
+
+          <section id="ship">
+            <h2>10. Save, update and deploy</h2>
+<pre><code># commit everything, pull, and push to main (the argument is the commit message)
+bin/eme.sh branchpush /full/path/eme-server-myserver "Add welcome note skill"
+
+# pull the latest eme-server into your server, then restart
+bin/eme.sh update /full/path/eme-server-myserver
+bin/restart.sh
+
+# if you forked, merge the shared project's latest changes
+bin/eme.sh updatefork /full/path/eme-server-myserver</code></pre>
+            <p>To run your server in Docker, clone your fork, run <code>bin/pluginspull.sh</code>, then create the instance. The arguments are the server path, a node number, and the user that will own it:</p>
+<pre><code>bin/eme.sh dockercreate /full/path/eme-server-myserver 20 entermedia</code></pre>
+          </section>
+
+          <section id="links">
+            <h2>Links</h2>
+            <ul>
+              <li><a href="https://github.com/entermedia-community/eme-server">eme-server on GitHub</a></li>
+              <li><a href="https://opencode.ai">OpenCode</a></li>
+              <li><a href="mailto:cburkey@eme.world">Ask the EME World OSPO Team</a></li>
+            </ul>
+          </section>
+
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>EME World. Own your intelligence. Own your content. Own your future.</span>
+      <span><a href="/${applicationid}/index.html">Home</a> · <a href="https://github.com/entermedia-community/eme-server">GitHub</a> · <a href="mailto:cburkey@eme.world">Contact</a></span>
+    </div>
+  </footer>
+
+</body>
+</html>
