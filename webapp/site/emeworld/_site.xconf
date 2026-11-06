@@ -2,8 +2,9 @@
 
 <page>
 
-  <property name="catalogid">catalog</property>
-  <property name="applicationid">profile</property>
+  <property name="siteid">site</property>
+  <property name="catalogid">site/catalog</property>
+  <property name="applicationid">site/emeworld</property>
   <property name="fallbackdirectory">/community/default</property>
 
   <property name="findroot">/site/blockfind</property>

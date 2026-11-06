@@ -1,157 +1,776 @@
-<div style="background: linear-gradient(135deg, #1f2d20 0%, #1a2230 55%, #16271e 100%);padding-bottom: 4rem;">
-  <section class="hero" id="hero">
-    <span class="hero-eyebrow-label">Collective Intelligence Network</span>
-    <h1>Own your intelligence.<br>Own your content.<br>Own your future.</h1>
-    <p class="hero-sub">
-      Connect with others, offer services, and browse a marketplace of interconnected
-      servers, profiles, and products using
-      <a href="./collective-intelligence.html" class="hero-eyebrow">Collective Intelligence</a>.
-    </p>
-    <div class="hero-actions">
-      #ifnotnull($user)
-        <a href="$apphome/authentication/ajaxlogin.html" class="site-cta">Go to your EME</a>
-      #end
-      #ifnull($user)
-        <a href="$apphome/authentication/ajaxlogin.html" class="site-cta ajax" data-targetdivinner="hero">Create Your EME</a>
-      #end
-      <a href="#how-it-works" class="site-cta-secondary">How it works →</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EME World | Collective Intelligence Harness for Organizations and Communities</title>
+  <meta name="description" content="EME is an all inclusive, open source AI harness delivered through one platform. Chat front door, memory, agents, automation, translation, transcription and an OpenAI compatible API, with humans fully in control.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="EME World | Collective Intelligence Harness">
+  <meta property="og:description" content="One open platform for every AI need. Each person trains their own EME persona as a personal digital twin, and humans stay fully in control.">
+  <meta property="og:image" content="/${applicationid}/overview/eme-pie.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "EME World",
+        "url": "https://eme.world",
+        "email": "cburkey@eme.world",
+        "telephone": "+1 513 898-2063",
+        "sameAs": ["https://github.com/entermedia-community/eme-server"],
+        "description": "EME World provides an open source, human guided AI harness for organizations, governments and communities."
+      },
+      {
+        "@type": "WebPage",
+        "name": "Collective Intelligence Harness",
+        "description": "EME is an all inclusive AI package delivered through a single, open platform, empowering organizations to harness powerful digital capabilities while keeping humans fully in control.",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "EME Server",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Linux, Docker",
+        "isAccessibleForFree": true,
+        "license": "https://github.com/entermedia-community/eme-server",
+        "featureList": [
+          "Memory", "Agents", "Chat", "Automation", "Informatics", "Database",
+          "Media Management", "Storage", "Translation", "Transcribing and Voice to Text",
+          "Video Editing", "Orchestration", "Open API compatible with OpenAI syntax"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/${applicationid}/theme/css/index2.css">
+</head>
+<body>
+
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="/${applicationid}/index2.html" aria-label="EME World home"><img src="/${applicationid}/overview/logo_light.svg" width="932" height="197" alt="EME World"></a>
+      <nav class="main" aria-label="Primary">
+        <a class="hide-sm" href="#persona">Your EME</a>
+        <a class="hide-sm" href="#servers">Servers</a>
+        <a class="hide-sm" href="#harness">AI Harness</a>
+        <a class="hide-sm" href="#values">Values</a>
+        <a class="btn" href="$apphome/app/">Login</a>
+      </nav>
     </div>
-    <p class="hero-tagline">Own your digital identity — forever.</p>
-  </section>
+  </header>
 
-  <section class="cta-section" style="margin-bottom: 4rem;">
-    <div class="hero-stats">
-      <div class="hero-stat"><strong>137</strong><span>Profiles</span></div>
-      <div class="hero-stat"><strong>12</strong><span>Services</span></div>
-      <div class="hero-stat"><strong>6550</strong><span>Documents</span></div>
-      <div class="hero-stat"><strong>32</strong><span>Countries</span></div>
-    </div>
-  </section>
+  <main>
 
-
-  <div class="filter-bar" id="searchBar">
-    <div class="filter-inner">
-      <div class="filter-search">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="search" id="searchInput" placeholder="Search in Categories" autocomplete="off">
+    <section class="hero" id="top">
+      <div class="wrap">
+        <span class="eyebrow">Empowered AI Vision for All</span>
+        <h1>Collective Intelligence Harness</h1>
+        <p class="sub">One open platform. Every AI need. Humans fully in control.</p>
+        <p class="lead">EME is an all inclusive AI package delivered through a single, open platform. It empowers organizations to harness powerful digital capabilities while keeping humans fully in control.</p>
+        <p class="lead">Using a chat interface as the front door, EME brings together document management, smart AI helpers, writing tools, translation, audio transcription, learning guides, data analysis, media storage, and database access into one simple system.</p>
+        <div class="actions">
+          <a class="btn" href="$apphome/app/">Login</a>
+          <a class="btn ghost" href="#harness">Explore the AI Harness</a>
+        </div>
       </div>
-      <div class="filter-chips" id="filterChips">
-        <button class="chip active" data-filter="all">All</button>
-        <button class="chip" data-filter="emerentals">Rentals</button>
-        <button class="chip" data-filter="emerides">Rides</button>
-        <button class="chip" data-filter="emeevents">Events</button>
-        <button class="chip" data-filter="emeproducts">Web Design</button>
-        <button class="chip" data-filter="emeproducts">Graphic Design</button>
-        <button class="chip" data-filter="emeproducts">Content Writing</button>
+    </section>
+
+    <section class="band dark" id="persona" aria-labelledby="persona-h">
+      <div class="wrap split">
+        <div>
+          <span class="eyebrow">1. Demystifying the "Electronic Me"</span>
+          <h2 id="persona-h">Your EME is a personal digital twin</h2>
+          <p>At the heart of the system is the <strong>EME (Electronic Me)</strong> persona. It acts as an AI assistant to your team members, keeping humans in control while augmenting their capabilities.</p>
+          <p>Each person trains their EME persona as a personalized digital twin that matches their communication style, schedule, and specialized knowledge, relying on human guidance for key actions.</p>
+          <h3 style="margin-top:2rem;">People Driven: Digital Twin</h3>
+          <p>Users stay in full control of their EME. By adding reference files, team guidelines, and personal preferences, leaders can adjust their EME for specific needs.</p>
+          <ul class="modes">
+            <li><strong>Clear and Precise</strong>Set up for accurate administrative reports, legal reviews, or technical logs.</li>
+            <li><strong>Friendly and Helpful</strong>Set up for community outreach, student tutoring, or customer support.</li>
+          </ul>
+          <h3 style="margin-top:2rem;">Omnichannel Communication</h3>
+          <p>My EME makes communication easier by connecting app users with team members who use email, helping everyone stay updated and productive in any project.</p>
+        </div>
+        <div class="phone">
+          <svg class="art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 690" width="100%" role="img" aria-labelledby="s2-t s2-d" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title id="s2-t">Peer-to-peer chat with EME assistant</title>
+  <desc id="s2-d">A mobile chat between Christopher and Tammy planning a conference trip, where the EME assistant offers to reserve tickets and schedule a carpool.</desc>
+  <defs>
+    <linearGradient id="s2-me" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
+    <linearGradient id="s2-ai" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#6d28d9"/></linearGradient>
+    <filter id="s2-sh" x="-10%" y="-10%" width="120%" height="130%"><feGaussianBlur in="SourceAlpha" stdDeviation="10"/><feOffset dy="8" result="b"/><feFlood flood-color="#000" flood-opacity=".3"/><feComposite in2="b" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+
+  <!-- phone -->
+  <rect x="10" y="10" width="400" height="670" rx="48" fill="#0f172a" filter="url(#s2-sh)"/>
+  <rect x="24" y="24" width="372" height="642" rx="36" fill="#f1f5f9"/>
+  <rect x="165" y="32" width="90" height="22" rx="11" fill="#0f172a"/>
+  <text x="52" y="46" font-size="13" font-weight="600" fill="#0f172a">9:41</text>
+  <g fill="#0f172a"><rect x="332" y="38" width="3" height="6" rx="1"/><rect x="337" y="35" width="3" height="9" rx="1"/><rect x="342" y="32" width="3" height="12" rx="1"/><rect x="351" y="34" width="20" height="10" rx="3" fill="none" stroke="#0f172a" stroke-width="1.5"/><rect x="353" y="36" width="13" height="6" rx="1.5"/></g>
+
+  <!-- header -->
+  <path d="M24 60h372v66H24z" fill="#fff"/>
+  <line x1="24" y1="126" x2="396" y2="126" stroke="#e2e8f0"/>
+  <path d="M52 82l-8 11 8 11" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="92" cy="93" r="21" fill="#f472b6"/>
+  <text x="92" y="99" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">T</text>
+  <circle cx="108" cy="109" r="5.5" fill="#22c55e" stroke="#fff" stroke-width="2"/>
+  <text x="124" y="90" font-size="16" font-weight="700" fill="#0f172a">Tammy</text>
+  <text x="124" y="108" font-size="12" fill="#22c55e">Online</text>
+  <g fill="none" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M360 84a3 3 0 0 0-3-3h-4c-1 0-2 1-2 2 0 12 10 22 22 22 1 0 2-1 2-2v-4a3 3 0 0 0-3-3l-4-1-3 3a14 14 0 0 1-6-6l3-3z" transform="translate(-6,-1) scale(.95)"/>
+  </g>
+
+  <!-- date chip -->
+  <rect x="164" y="138" width="92" height="20" rx="10" fill="#e2e8f0"/>
+  <text x="210" y="152" text-anchor="middle" font-size="11" fill="#64748b">Today 9:41 AM</text>
+
+  <!-- Christopher (sent) -->
+  <rect x="130" y="170" width="250" height="82" rx="20" fill="url(#s2-me)"/>
+  <g font-size="15" fill="#fff">
+    <text x="146" y="196">Tammy, are you free to attend</text>
+    <text x="146" y="216">the regional conference this</text>
+    <text x="146" y="236">weekend?</text>
+  </g>
+  <text x="380" y="268" text-anchor="end" font-size="10" fill="#94a3b8">9:41 AM · Read</text>
+
+  <!-- Tammy -->
+  <circle cx="44" cy="318" r="14" fill="#f472b6"/>
+  <text x="44" y="323" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">T</text>
+  <rect x="66" y="282" width="196" height="62" rx="20" fill="#fff" stroke="#e2e8f0"/>
+  <g font-size="15" fill="#0f172a">
+    <text x="82" y="308">Yes! That sounds great,</text>
+    <text x="82" y="328">let's do it.</text>
+  </g>
+  <text x="66" y="360" font-size="10" fill="#94a3b8">9:42 AM</text>
+
+  <!-- assistant divider -->
+  <line x1="40" y1="386" x2="118" y2="386" stroke="#c4b5fd"/>
+  <text x="210" y="390" text-anchor="middle" font-size="11" font-weight="700" fill="#7c3aed" letter-spacing="1">✦ EME ASSISTANT</text>
+  <line x1="302" y1="386" x2="380" y2="386" stroke="#c4b5fd"/>
+
+  <!-- EME Christopher -->
+  <circle cx="44" cy="484" r="14" fill="url(#s2-ai)"/>
+  <path d="M44 475l2.2 6.3 6.3 2.2-6.3 2.2L44 492l-2.2-6.3-6.3-2.2 6.3-2.2z" fill="#fff"/>
+  <text x="66" y="416" font-size="11" font-weight="700" fill="#7c3aed">EME Christopher</text>
+  <rect x="66" y="424" width="314" height="102" rx="20" fill="#ede9fe" stroke="#c4b5fd"/>
+  <g font-size="15" fill="#1e1b4b">
+    <text x="82" y="450">I've checked both your schedules.</text>
+    <text x="82" y="470">Christopher is open Sat 10AM.</text>
+    <text x="82" y="490">Shall I reserve two tickets and</text>
+    <text x="82" y="510">schedule a carpool ride?</text>
+  </g>
+
+  <!-- Tammy reply -->
+  <circle cx="44" cy="574" r="14" fill="#f472b6"/>
+  <text x="44" y="579" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">T</text>
+  <rect x="66" y="550" width="150" height="42" rx="20" fill="#fff" stroke="#e2e8f0"/>
+  <text x="82" y="576" font-size="15" fill="#0f172a">Perfect, proceed!</text>
+  <text x="66" y="606" font-size="10" fill="#94a3b8">9:43 AM</text>
+
+  <!-- input bar -->
+  <rect x="24" y="620" width="372" height="46" fill="#fff"/>
+  <path d="M24 666v-30a16 16 0 0 1 0 0" fill="none"/>
+  <line x1="24" y1="620" x2="396" y2="620" stroke="#e2e8f0"/>
+  <circle cx="50" cy="643" r="12" fill="#e2e8f0"/>
+  <path d="M50 637v12M44 643h12" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
+  <rect x="72" y="629" width="272" height="28" rx="14" fill="#f1f5f9"/>
+  <text x="88" y="648" font-size="13" fill="#94a3b8">Message</text>
+  <circle cx="368" cy="643" r="13" fill="url(#s2-me)"/>
+  <path d="M362 643h12M370 638l5 5-5 5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+        </div>
       </div>
-      <span class="filter-count" id="filterCount"></span>
-    </div>
-  </div>
-  
-  $pages.include("/${applicationid}/components/services/list.html")
+    </section>
 
-</div>
+    <section class="band" id="productivity" aria-labelledby="prod-h">
+      <div class="wrap narrow center">
+        <span class="eyebrow" style="color:var(--blue)">2. A Universal Productivity Booster for Everyone</span>
+        <h2 id="prod-h">Scenario A: Peer-to-Peer Logistical Help</h2>
+        <p class="lead">In a regular chat between friends, like Christopher and Tammy, they talk about attending a weekend event. When they express interest, <strong>EME Christopher</strong> helps right inside the conversation.</p>
+        <p>The EME assistant checks their calendars, finds open times, confirms event details, and offers to handle tickets and travel plans. This keeps the plan simple without leaving the chat app.</p>
+      </div>
+    </section>
 
+    <section class="band soft" id="servers" aria-labelledby="servers-h">
+      <div class="wrap center">
+        <span class="eyebrow" style="color:var(--blue)">3. Custom EME Servers</span>
+        <h2 id="servers-h">Build a server for your team</h2>
+        <p class="lead narrow">To support team projects, <strong>EME</strong> lets users build custom <strong>EME Servers</strong>. Built on a <strong>100% open-source</strong> setup, software developers, local IT teams, and community organizers can quickly build custom servers and connect them to EME World to solve specific team needs.</p>
+        <p class="narrow">You can reach all server features through simple <strong>chat screens</strong> supported by interactive forms, clean data tables, and helpful graphics.</p>
+      </div>
+      <div class="wrap center">
+        <p class="narrow">EME World helps public groups and non-profits work faster using a single, secure digital system. By keeping humans in full control and letting each team member train their own EME persona as a digital twin, it boosts productivity and standardizes key actions while giving organizations complete oversight of their technology.</p>
+        <h3 style="margin:2.5rem 0 1.5rem;">Chat apps being created by EME users</h3>
+        <div class="chats">
+          <figure>
+            <svg class="art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 690" width="100%" role="img" aria-labelledby="s4-t s4-d" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title id="s4-t">Peer-to-peer chat with EME assistant</title>
+  <desc id="s4-d">A mobile chat between Christopher and Tammy planning a conference trip, where the EME assistant offers to reserve tickets and schedule a carpool.</desc>
+  <defs>
+    <linearGradient id="s4-me" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
+    <linearGradient id="s4-ai" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#6d28d9"/></linearGradient>
+    <filter id="s4-sh" x="-10%" y="-10%" width="120%" height="130%"><feGaussianBlur in="SourceAlpha" stdDeviation="10"/><feOffset dy="8" result="b"/><feFlood flood-color="#000" flood-opacity=".3"/><feComposite in2="b" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
 
+  <!-- phone -->
+  <rect x="10" y="10" width="400" height="670" rx="48" fill="#0f172a" filter="url(#s4-sh)"/>
+  <rect x="24" y="24" width="372" height="642" rx="36" fill="#f1f5f9"/>
+  <rect x="165" y="32" width="90" height="22" rx="11" fill="#0f172a"/>
+  <text x="52" y="46" font-size="13" font-weight="600" fill="#0f172a">9:41</text>
+  <g fill="#0f172a"><rect x="332" y="38" width="3" height="6" rx="1"/><rect x="337" y="35" width="3" height="9" rx="1"/><rect x="342" y="32" width="3" height="12" rx="1"/><rect x="351" y="34" width="20" height="10" rx="3" fill="none" stroke="#0f172a" stroke-width="1.5"/><rect x="353" y="36" width="13" height="6" rx="1.5"/></g>
 
+  <!-- header -->
+  <path d="M24 60h372v66H24z" fill="#fff"/>
+  <line x1="24" y1="126" x2="396" y2="126" stroke="#e2e8f0"/>
+  <path d="M52 82l-8 11 8 11" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="92" cy="93" r="21" fill="#f472b6"/>
+  <text x="92" y="99" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">T</text>
+  <circle cx="108" cy="109" r="5.5" fill="#22c55e" stroke="#fff" stroke-width="2"/>
+  <text x="124" y="90" font-size="16" font-weight="700" fill="#0f172a">Tammy</text>
+  <text x="124" y="108" font-size="12" fill="#22c55e">Online</text>
+  <g fill="none" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M360 84a3 3 0 0 0-3-3h-4c-1 0-2 1-2 2 0 12 10 22 22 22 1 0 2-1 2-2v-4a3 3 0 0 0-3-3l-4-1-3 3a14 14 0 0 1-6-6l3-3z" transform="translate(-6,-1) scale(.95)"/>
+  </g>
 
-<section class="how" id="how-it-works">
-  <h1 style="text-align: center;margin-bottom: 2rem;">How to create your own <span>EME</span></h1>
-  <div class="how-inner">
-    <div class="how-card">
-      <div class="how-icon">🚀</div>
-      <h3>Create your EME Profile</h3>
-      <p>Connect with founders, investors, and collaborators who share your focus. Your profile is yours across the entire EME network.</p>
-    </div>
-    <div class="how-card">
-      <div class="how-icon">🤝</div>
-      <h3>Create A Server</h3>
-      <p>Spin up a new EME site for your industry in minutes and grow your own incubator community.</p>
-    </div>
-    <div class="how-card">
-      <div class="how-icon">🎯</div>
-      <h3>Migrate Your Data</h3>
-      <p>Become independent from corporate control. Import your data from Google Drive and other platforms into EME.</p>
-    </div>
-    <div class="how-card">
-      <div class="how-icon">🌐</div>
-      <h3>EME Assistant</h3>
-      <p>Use your EME Profile to help you complete goals and work with others in your network.</p>
-    </div>
-  </div>
-</section>
+  <!-- date chip -->
+  <rect x="164" y="138" width="92" height="20" rx="10" fill="#e2e8f0"/>
+  <text x="210" y="152" text-anchor="middle" font-size="11" fill="#64748b">Today 9:41 AM</text>
 
+  <!-- Christopher (sent) -->
+  <rect x="130" y="170" width="250" height="82" rx="20" fill="url(#s4-me)"/>
+  <g font-size="15" fill="#fff">
+    <text x="146" y="196">Tammy, are you free to attend</text>
+    <text x="146" y="216">the regional conference this</text>
+    <text x="146" y="236">weekend?</text>
+  </g>
+  <text x="380" y="268" text-anchor="end" font-size="10" fill="#94a3b8">9:41 AM · Read</text>
 
+  <!-- Tammy -->
+  <circle cx="44" cy="318" r="14" fill="#f472b6"/>
+  <text x="44" y="323" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">T</text>
+  <rect x="66" y="282" width="196" height="62" rx="20" fill="#fff" stroke="#e2e8f0"/>
+  <g font-size="15" fill="#0f172a">
+    <text x="82" y="308">Yes! That sounds great,</text>
+    <text x="82" y="328">let's do it.</text>
+  </g>
+  <text x="66" y="360" font-size="10" fill="#94a3b8">9:42 AM</text>
 
-<section class="how" id="ai-harness">
-  <h1 style="text-align: center;margin-bottom: 1rem;">Complete <span>AI Harness</span> for Organizations and Governments</h1>
-  <div style="max-width: 860px; margin: 0 auto 2rem; text-align: center;">
-    <p>EME World offers to serve as the unified AI harness for all AI needs across any organization or government agency. By consolidating your entire AI infrastructure into a single, secure environment, EME eliminates fragmented tooling and brings full governance, security, and operational clarity to your operations.</p>
-    <p>Our comprehensive AI harness encompasses a complete suite of integrated features and capabilities:</p>
-  </div>
-  <div class="how-inner">
-    <div class="how-card">
-      <div class="how-icon">🧠</div>
-      <h3>Memory</h3>
-      <p>Context-aware persistence for seamless past-interaction retention across teams.</p>
+  <!-- assistant divider -->
+  <line x1="40" y1="386" x2="118" y2="386" stroke="#c4b5fd"/>
+  <text x="210" y="390" text-anchor="middle" font-size="11" font-weight="700" fill="#7c3aed" letter-spacing="1">✦ EME ASSISTANT</text>
+  <line x1="302" y1="386" x2="380" y2="386" stroke="#c4b5fd"/>
+
+  <!-- EME Christopher -->
+  <circle cx="44" cy="484" r="14" fill="url(#s4-ai)"/>
+  <path d="M44 475l2.2 6.3 6.3 2.2-6.3 2.2L44 492l-2.2-6.3-6.3-2.2 6.3-2.2z" fill="#fff"/>
+  <text x="66" y="416" font-size="11" font-weight="700" fill="#7c3aed">EME Christopher</text>
+  <rect x="66" y="424" width="314" height="102" rx="20" fill="#ede9fe" stroke="#c4b5fd"/>
+  <g font-size="15" fill="#1e1b4b">
+    <text x="82" y="450">I've checked both your schedules.</text>
+    <text x="82" y="470">Christopher is open Sat 10AM.</text>
+    <text x="82" y="490">Shall I reserve two tickets and</text>
+    <text x="82" y="510">schedule a carpool ride?</text>
+  </g>
+
+  <!-- Tammy reply -->
+  <circle cx="44" cy="574" r="14" fill="#f472b6"/>
+  <text x="44" y="579" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">T</text>
+  <rect x="66" y="550" width="150" height="42" rx="20" fill="#fff" stroke="#e2e8f0"/>
+  <text x="82" y="576" font-size="15" fill="#0f172a">Perfect, proceed!</text>
+  <text x="66" y="606" font-size="10" fill="#94a3b8">9:43 AM</text>
+
+  <!-- input bar -->
+  <rect x="24" y="620" width="372" height="46" fill="#fff"/>
+  <path d="M24 666v-30a16 16 0 0 1 0 0" fill="none"/>
+  <line x1="24" y1="620" x2="396" y2="620" stroke="#e2e8f0"/>
+  <circle cx="50" cy="643" r="12" fill="#e2e8f0"/>
+  <path d="M50 637v12M44 643h12" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
+  <rect x="72" y="629" width="272" height="28" rx="14" fill="#f1f5f9"/>
+  <text x="88" y="648" font-size="13" fill="#94a3b8">Message</text>
+  <circle cx="368" cy="643" r="13" fill="url(#s4-me)"/>
+  <path d="M362 643h12M370 638l5 5-5 5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+            <figcaption>Peer to Peer</figcaption>
+          </figure>
+          <figure>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 402 635" width="100%" role="img" aria-labelledby="s5-t s5-d" class="art b">
+  <title id="s5-t">UN News EME chat with My EME assistant</title>
+  <desc id="s5-d">A mobile chat in the UN News EME channel where the My EME AI bot welcomes the user and lists what it can help with: answer questions, tutor chat, search for media and run custom skills.</desc>
+  <defs>
+    <linearGradient id="s5-me" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
+    <linearGradient id="s5-ai" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#6d28d9"/></linearGradient>
+    <clipPath id="s5-screen"><rect x="16" y="16" width="372" height="605" rx="36"/></clipPath>
+  </defs>
+
+  <!-- white background -->
+  <rect width="404" height="637" fill="#ffffff"/>
+
+  <!-- phone -->
+  <rect x="2" y="2" width="400" height="633" rx="48" fill="#0f172a"/>
+  <rect x="16" y="16" width="372" height="605" rx="36" fill="#f1f5f9"/>
+  <g clip-path="url(#s5-screen)">
+    <rect x="157" y="24" width="90" height="22" rx="11" fill="#0f172a"/>
+    <text x="44" y="38" font-size="13" font-weight="700" fill="#0f172a">9:41</text>
+    <g fill="#0f172a"><rect x="324" y="30" width="3" height="6" rx="1"/><rect x="329" y="27" width="3" height="9" rx="1"/><rect x="334" y="24" width="3" height="12" rx="1"/><rect x="343" y="26" width="20" height="10" rx="3" fill="none" stroke="#0f172a" stroke-width="1.5"/><rect x="345" y="28" width="13" height="6" rx="1.5"/></g>
+
+    <!-- header -->
+    <path d="M16 52h372v66H16z" fill="#fff"/>
+    <line x1="16" y1="118" x2="388" y2="118" stroke="#e2e8f0"/>
+    <path d="M44 74l-8 11 8 11" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="84" cy="85" r="21" fill="url(#s5-me)"/>
+    <text x="84" y="91" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">UN</text>
+    <circle cx="100" cy="101" r="5.5" fill="#22c55e" stroke="#fff" stroke-width="2"/>
+    <text x="116" y="82" font-size="16" font-weight="700" fill="#0f172a">UN News EME</text>
+    <text x="116" y="100" font-size="12" fill="#64748b">1 members · General</text>
+    <g fill="#2563eb"><circle cx="366" cy="76" r="2.2"/><circle cx="366" cy="85" r="2.2"/><circle cx="366" cy="94" r="2.2"/></g>
+
+    <!-- date chip -->
+    <rect x="156" y="130" width="92" height="20" rx="10" fill="#e2e8f0"/>
+    <text x="202" y="144" text-anchor="middle" font-size="11" fill="#64748b">Today 9:41 AM</text>
+
+    <!-- My EME (AI bot) -->
+    <circle cx="36" cy="212" r="14" fill="url(#s5-ai)"/>
+    <path d="M36 203l2.2 6.3 6.3 2.2-6.3 2.2L36 220l-2.2-6.3-6.3-2.2 6.3-2.2z" fill="#fff"/>
+    <text x="58" y="178" font-size="11" font-weight="700" fill="#7c3aed">My EME</text>
+    <rect x="104" y="167" width="44" height="14" rx="7" fill="#ede9fe" stroke="#c4b5fd"/>
+    <text x="126" y="177" text-anchor="middle" font-size="8.5" font-weight="700" fill="#7c3aed" letter-spacing=".6">AI BOT</text>
+    <text x="380" y="178" text-anchor="end" font-size="10" fill="#94a3b8">Just now</text>
+    <rect x="58" y="188" width="322" height="365" rx="20" fill="#ede9fe" stroke="#c4b5fd"/>
+    <text x="74" y="222" class="h" font-size="20" fill="#1e1b4b">Welcome!</text>
+    <text x="74" y="248" class="b" font-size="15" fill="#1e1b4b">Here are some things I can help you</text>
+    <text x="74" y="269" class="b" font-size="15" fill="#1e1b4b">with in <tspan font-weight="700">EME Server</tspan>:</text>
+    <circle cx="82" cy="292" r="2.4" fill="#7c3aed"/>
+    <text x="96" y="296" class="b" font-size="15" fill="#1e1b4b"><tspan font-weight="700" fill="#059669">Answer Questions:</tspan> Gives AI answers</text>
+    <text x="96" y="317" class="b" font-size="15" fill="#1e1b4b">about your catalog using</text>
+    <text x="96" y="338" class="b" font-size="15" fill="#1e1b4b">semantic search.</text>
+    <circle cx="82" cy="361" r="2.4" fill="#7c3aed"/>
+    <text x="96" y="365" class="b" font-size="15" fill="#1e1b4b"><tspan font-weight="700" fill="#059669">Tutor Chat:</tspan> Guides learners</text>
+    <text x="96" y="386" class="b" font-size="15" fill="#1e1b4b">step-by-step and tracks</text>
+    <text x="96" y="407" class="b" font-size="15" fill="#1e1b4b">their mastery progress.</text>
+    <circle cx="82" cy="430" r="2.4" fill="#7c3aed"/>
+    <text x="96" y="434" class="b" font-size="15" fill="#1e1b4b"><tspan font-weight="700" fill="#059669">Search for Media:</tspan> Finds media from</text>
+    <text x="96" y="455" class="b" font-size="15" fill="#1e1b4b">natural language requests.</text>
+    <circle cx="82" cy="478" r="2.4" fill="#7c3aed"/>
+    <text x="96" y="482" class="b" font-size="15" fill="#1e1b4b"><tspan font-weight="700" fill="#059669">Create Draft Article:</tspan> Helps editors</text>
+    <text x="96" y="503" class="b" font-size="15" fill="#1e1b4b">research and write about</text>
+    <text x="96" y="524" class="b" font-size="15" fill="#1e1b4b">world events.</text>
+
+    <!-- input bar -->
+    <rect x="16" y="575" width="372" height="46" fill="#fff"/>
+    <line x1="16" y1="575" x2="388" y2="575" stroke="#e2e8f0"/>
+    <circle cx="42" cy="598" r="12" fill="#e2e8f0"/>
+    <path d="M42 592v12M36 598h12" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
+    <rect x="64" y="584" width="272" height="28" rx="14" fill="#f1f5f9"/>
+    <text x="80" y="603" font-size="13" fill="#94a3b8">Type your message...</text>
+    <circle cx="360" cy="598" r="13" fill="url(#s5-me)"/>
+    <path d="M354 598h12M362 593l5 5-5 5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
+            <figcaption>UN News</figcaption>
+          </figure>
+          <figure>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 402 635" width="100%" role="img" aria-labelledby="s6-t s6-d" class="art b">
+  <title id="s6-t">Cacao Source team chat with the EME assistant</title>
+  <desc id="s6-d">A mobile chat in the Cacao Source team channel where the EME AI assistant welcomes the user and presents the menu: Employee Training, Company Dashboard and Goal Tracking.</desc>
+  <defs>
+    <linearGradient id="s6-me" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a8683d"/><stop offset="1" stop-color="#5a3320"/></linearGradient>
+    <linearGradient id="s6-ai" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7a8f2a"/><stop offset="1" stop-color="#3C5B00"/></linearGradient>
+    <clipPath id="s6-screen"><rect x="16" y="16" width="372" height="605" rx="36"/></clipPath>
+  </defs>
+
+  <!-- white background -->
+  <rect width="404" height="637" fill="#ffffff"/>
+
+  <!-- phone -->
+  <rect x="2" y="2" width="400" height="633" rx="48" fill="#0f172a"/>
+  <rect x="16" y="16" width="372" height="605" rx="36" fill="#f1f5f9"/>
+  <g clip-path="url(#s6-screen)">
+    <rect x="157" y="24" width="90" height="22" rx="11" fill="#0f172a"/>
+    <text x="44" y="38" font-size="13" font-weight="700" fill="#0f172a">9:41</text>
+    <g fill="#0f172a"><rect x="324" y="30" width="3" height="6" rx="1"/><rect x="329" y="27" width="3" height="9" rx="1"/><rect x="334" y="24" width="3" height="12" rx="1"/><rect x="343" y="26" width="20" height="10" rx="3" fill="none" stroke="#0f172a" stroke-width="1.5"/><rect x="345" y="28" width="13" height="6" rx="1.5"/></g>
+
+    <!-- header -->
+    <path d="M16 52h372v66H16z" fill="#fff"/>
+    <line x1="16" y1="118" x2="388" y2="118" stroke="#e2e8f0"/>
+    <path d="M44 74l-8 11 8 11" fill="none" stroke="#5a3320" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- placeholder icon: cacao pod -->
+    <circle cx="84" cy="85" r="21" fill="#f6ece1" stroke="#dcc3a6"/>
+    <g transform="rotate(35 84 85)">
+      <ellipse cx="84" cy="85" rx="10" ry="15" fill="#7a4a2b"/>
+      <path d="M84 70v30M78 74c-2 7-2 15 0 22M90 74c2 7 2 15 0 22" stroke="#d9a066" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    </g>
+    <circle cx="100" cy="101" r="5.5" fill="#22c55e" stroke="#fff" stroke-width="2"/>
+    <text x="116" y="82" font-size="16" font-weight="700" fill="#0f172a">Cacao Source</text>
+    <text x="116" y="100" font-size="12" fill="#64748b">Team · General</text>
+    <g fill="#5a3320"><circle cx="366" cy="76" r="2.2"/><circle cx="366" cy="85" r="2.2"/><circle cx="366" cy="94" r="2.2"/></g>
+
+    <!-- date chip -->
+    <rect x="156" y="130" width="92" height="20" rx="10" fill="#e2e8f0"/>
+    <text x="202" y="144" text-anchor="middle" font-size="11" fill="#64748b">Today 9:41</text>
+
+    <!-- EME assistant (AI bot) -->
+    <circle cx="36" cy="212" r="14" fill="url(#s6-ai)"/>
+    <path d="M36 203l2.2 6.3 6.3 2.2-6.3 2.2L36 220l-2.2-6.3-6.3-2.2 6.3-2.2z" fill="#fff"/>
+    <text x="58" y="178" font-size="11" font-weight="700" fill="#7a4a2b">EME Assistant</text>
+    <rect x="138" y="167" width="46" height="14" rx="7" fill="#f6ece1" stroke="#dcc3a6"/>
+    <text x="161" y="177" text-anchor="middle" font-size="8.5" font-weight="700" fill="#7a4a2b" letter-spacing=".6">AI BOT</text>
+    <text x="380" y="178" text-anchor="end" font-size="10" fill="#94a3b8">Just now</text>
+    <rect x="58" y="188" width="322" height="240" rx="20" fill="#f6ece1" stroke="#dcc3a6"/>
+    <text x="74" y="222" class="h" font-size="20" fill="#2b1a10">Welcome!</text>
+    <text x="74" y="248" class="b" font-size="14" fill="#2b1a10">Here's what I can help you with at</text>
+    <text x="74" y="269" class="b" font-size="14" fill="#2b1a10"><tspan font-weight="700">Cacao Source</tspan>:</text>
+    <circle cx="82" cy="292" r="2.4" fill="#7a4a2b"/>
+    <text x="96" y="296" class="b" font-size="12.5" fill="#2b1a10"><tspan font-weight="700" fill="#3C5B00">Employee Training:</tspan> Learn at</text>
+    <text x="96" y="312" class="b" font-size="12.5" fill="#2b1a10">your own pace with short lessons</text>
+    <text x="96" y="328" class="b" font-size="12.5" fill="#2b1a10">and track your progress.</text>
+    <circle cx="82" cy="340" r="2.4" fill="#7a4a2b"/>
+    <text x="96" y="344" class="b" font-size="12.5" fill="#2b1a10"><tspan font-weight="700" fill="#3C5B00">Company Dashboard:</tspan> See sales</text>
+    <text x="96" y="360" class="b" font-size="12.5" fill="#2b1a10">and orders at a glance, right</text>
+    <text x="96" y="376" class="b" font-size="12.5" fill="#2b1a10">from your phone.</text>
+    <circle cx="82" cy="388" r="2.4" fill="#7a4a2b"/>
+    <text x="96" y="392" class="b" font-size="12.5" fill="#2b1a10"><tspan font-weight="700" fill="#3C5B00">Goal Tracking:</tspan> See team goals and</text>
+    <text x="96" y="408" class="b" font-size="12.5" fill="#2b1a10">how close we are to reaching them.</text>
+
+    <!-- input bar -->
+    <rect x="16" y="575" width="372" height="46" fill="#fff"/>
+    <line x1="16" y1="575" x2="388" y2="575" stroke="#e2e8f0"/>
+    <circle cx="42" cy="598" r="12" fill="#e2e8f0"/>
+    <path d="M42 592v12M36 598h12" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
+    <rect x="64" y="584" width="272" height="28" rx="14" fill="#f1f5f9"/>
+    <text x="80" y="603" font-size="13" fill="#94a3b8">Type your message...</text>
+    <circle cx="360" cy="598" r="13" fill="url(#s6-me)"/>
+    <path d="M354 598h12M362 593l5 5-5 5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
+            <figcaption>Cacao Source</figcaption>
+          </figure>
+          <figure>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 402 635" width="100%" role="img" aria-labelledby="s7-t s7-d" class="art b">
+  <title id="s7-t">Cumbre de Cocreación: cursos de Capacitación y Certificación</title>
+  <desc id="s7-d">Pantalla móvil de Capacitación y Certificación en Cumbre de Cocreación con los cinco módulos del catálogo LevelUp Guatemala, una barra de progreso por módulo y el progreso general hacia la certificación.</desc>
+  <defs>
+    <linearGradient id="s7-me" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
+    <linearGradient id="s7-ai" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#6d28d9"/></linearGradient>
+    <linearGradient id="s7-heart" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient>
+    <clipPath id="s7-screen"><rect x="16" y="16" width="372" height="605" rx="36"/></clipPath>
+  </defs>
+
+  <!-- white background -->
+  <rect width="404" height="637" fill="#ffffff"/>
+
+  <!-- phone -->
+  <rect x="2" y="2" width="400" height="633" rx="48" fill="#0f172a"/>
+  <rect x="16" y="16" width="372" height="605" rx="36" fill="#f1f5f9"/>
+  <g clip-path="url(#s7-screen)">
+    <rect x="157" y="24" width="90" height="22" rx="11" fill="#0f172a"/>
+    <text x="44" y="38" font-size="13" font-weight="700" fill="#0f172a">9:41</text>
+    <g fill="#0f172a"><rect x="324" y="30" width="3" height="6" rx="1"/><rect x="329" y="27" width="3" height="9" rx="1"/><rect x="334" y="24" width="3" height="12" rx="1"/><rect x="343" y="26" width="20" height="10" rx="3" fill="none" stroke="#0f172a" stroke-width="1.5"/><rect x="345" y="28" width="13" height="6" rx="1.5"/></g>
+
+    <!-- header -->
+    <path d="M16 52h372v66H16z" fill="#fff"/>
+    <line x1="16" y1="118" x2="388" y2="118" stroke="#e2e8f0"/>
+    <path d="M44 74l-8 11 8 11" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="84" cy="85" r="21" fill="#f8fafc" stroke="#e2e8f0"/>
+    <g fill="none" stroke-width="2.4" stroke-linecap="round">
+      <path d="M67 82A17 17 0 0 1 101 82" stroke="#ef4444"/>
+      <path d="M70 82A14 14 0 0 1 98 82" stroke="#f59e0b"/>
+      <path d="M73 82A11 11 0 0 1 95 82" stroke="#22c55e"/>
+    </g>
+    <path d="M84 100C71 91 69 82 75 79C79 77.500 82.500 79 84 82C85.500 79 89 77.500 93 79C99 82 97 91 84 100Z" fill="url(#s7-heart)"/>
+    <text x="116" y="82" font-size="15" font-weight="700" fill="#0f172a">Capacitación y Certificación</text>
+    <text x="116" y="100" font-size="12" fill="#64748b">5 módulos · LevelUp Guatemala</text>
+    <g fill="#2563eb"><circle cx="366" cy="76" r="2.2"/><circle cx="366" cy="85" r="2.2"/><circle cx="366" cy="94" r="2.2"/></g>
+
+    <!-- overall progress -->
+    <rect x="28" y="130" width="348" height="58" rx="16" fill="#fff" stroke="#e2e8f0"/>
+    <text x="44" y="152" font-size="12" font-weight="700" fill="#0f172a">Tu progreso general</text>
+    <text x="360" y="152" text-anchor="end" font-size="12" font-weight="700" fill="#2563eb">37%</text>
+    <rect x="44" y="161" width="316" height="8" rx="4" fill="#e2e8f0"/>
+    <rect x="44" y="161" width="117" height="8" rx="4" fill="url(#s7-me)"/>
+    <text x="44" y="181" font-size="11" fill="#64748b">1 de 5 módulos completados</text>
+
+    <!-- courses -->
+    <rect x="28" y="198" width="348" height="62" rx="16" fill="#fff" stroke="#e2e8f0"/>
+    <circle cx="52" cy="229" r="15" fill="#22c55e"/>
+    <path d="M45 229l5 5 9-10" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="78" y="221" font-size="13" font-weight="700" fill="#0f172a">Fundamentos Digitales</text>
+    <text x="78" y="236" font-size="10.5" fill="#64748b">Transformación digital y conceptos esenciales</text>
+    <rect x="78" y="244" width="238" height="6" rx="3" fill="#e2e8f0"/>
+    <rect x="78" y="244" width="238" height="6" rx="3" fill="#22c55e"/>
+    <text x="364" y="251" text-anchor="end" font-size="11" font-weight="700" fill="#16a34a">100%</text>
+    <rect x="28" y="266" width="348" height="62" rx="16" fill="#fff" stroke="#e2e8f0"/>
+    <circle cx="52" cy="297" r="15" fill="url(#s7-me)"/>
+    <text x="52" y="302" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">2</text>
+    <text x="78" y="289" font-size="13" font-weight="700" fill="#0f172a">Presencia Digital</text>
+    <text x="78" y="304" font-size="10.5" fill="#64748b">Sitio web, Google Maps y SEO local</text>
+    <rect x="78" y="312" width="238" height="6" rx="3" fill="#e2e8f0"/>
+    <rect x="78" y="312" width="143" height="6" rx="3" fill="url(#s7-me)"/>
+    <text x="364" y="319" text-anchor="end" font-size="11" font-weight="700" fill="#2563eb">60%</text>
+    <rect x="28" y="334" width="348" height="62" rx="16" fill="#fff" stroke="#e2e8f0"/>
+    <circle cx="52" cy="365" r="15" fill="url(#s7-me)"/>
+    <text x="52" y="370" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">3</text>
+    <text x="78" y="357" font-size="13" font-weight="700" fill="#0f172a">Comunicación Digital</text>
+    <text x="78" y="372" font-size="10.5" fill="#64748b">Correo, WhatsApp Business y redes sociales</text>
+    <rect x="78" y="380" width="238" height="6" rx="3" fill="#e2e8f0"/>
+    <rect x="78" y="380" width="60" height="6" rx="3" fill="url(#s7-me)"/>
+    <text x="364" y="387" text-anchor="end" font-size="11" font-weight="700" fill="#2563eb">25%</text>
+    <rect x="28" y="402" width="348" height="62" rx="16" fill="#fff" stroke="#e2e8f0"/>
+    <circle cx="52" cy="433" r="15" fill="#e2e8f0"/>
+    <text x="52" y="438" text-anchor="middle" font-size="14" font-weight="700" fill="#64748b">4</text>
+    <text x="78" y="425" font-size="13" font-weight="700" fill="#0f172a">Operaciones Digitales</text>
+    <text x="78" y="440" font-size="10.5" fill="#64748b">Hojas de cálculo y almacenamiento en la nube</text>
+    <rect x="78" y="448" width="238" height="6" rx="3" fill="#e2e8f0"/>
+    <text x="364" y="455" text-anchor="end" font-size="11" font-weight="700" fill="#94a3b8">0%</text>
+    <rect x="28" y="470" width="348" height="62" rx="16" fill="#fff" stroke="#e2e8f0"/>
+    <circle cx="52" cy="501" r="15" fill="#e2e8f0"/>
+    <text x="52" y="506" text-anchor="middle" font-size="14" font-weight="700" fill="#64748b">5</text>
+    <text x="78" y="493" font-size="13" font-weight="700" fill="#0f172a">El Siguiente Paso Digital</text>
+    <text x="78" y="508" font-size="10.5" fill="#64748b">Pagos digitales, ERP y flujos B2B / B2C</text>
+    <rect x="78" y="516" width="238" height="6" rx="3" fill="#e2e8f0"/>
+    <text x="364" y="523" text-anchor="end" font-size="11" font-weight="700" fill="#94a3b8">0%</text>
+
+    <!-- certification -->
+    <rect x="28" y="540" width="348" height="66" rx="16" fill="#ede9fe" stroke="#c4b5fd"/>
+    <circle cx="56" cy="573" r="17" fill="url(#s7-ai)"/>
+    <path d="M56 563l3 6.500 7 .8-5.200 4.800 1.500 7-6.300-3.600-6.300 3.600 1.500-7-5.200-4.800 7-.8z" fill="#fff"/>
+    <text x="84" y="563" font-size="12" font-weight="700" fill="#4c1d95">Certificación en prácticas</text>
+    <text x="84" y="578" font-size="12" font-weight="700" fill="#4c1d95">empresariales holísticas</text>
+    <text x="84" y="594" font-size="10.5" fill="#6d28d9">Completa los 5 módulos para obtenerla.</text>
+  </g>
+</svg>
+            <figcaption>Cumbre de Cocreación</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="band dark" id="harness" aria-labelledby="harness-h">
+      <div class="wrap">
+        <div class="center">
+          <span class="eyebrow">5. Complete AI Harness</span>
+          <h2 id="harness-h">Complete AI Harness for Organizations and Governments</h2>
+          <p class="lead narrow">EME World offers to serve as the unified AI harness for all AI needs across any organization or government agency. By consolidating your entire AI infrastructure into a single, secure environment, EME eliminates fragmented tooling and brings full governance, security, and operational clarity to your operations.</p>
+          <p class="narrow">Our comprehensive AI harness encompasses a complete suite of integrated features and capabilities:</p>
+        </div>
+        <ul class="features" style="margin-top:40px;">
+          <li><h3>Memory</h3><p>Context-aware persistence for seamless past-interaction retention across teams.</p></li>
+          <li><h3>Agents</h3><p>Autonomous and semi-autonomous digital helpers tailored to specific roles.</p></li>
+          <li><h3>Chat</h3><p>Intuitive conversational front doors for users, teams, and public service interactions.</p></li>
+          <li><h3>Automation</h3><p>Streamlined execution of repetitive administrative tasks and complex workflows.</p></li>
+          <li><h3>Informatics</h3><p>Advanced analytics, reporting, and business intelligence aggregation.</p></li>
+          <li><h3>Database</h3><p>Structured data integration, vector indexing, and relational storage access.</p></li>
+          <li><h3>Media Management</h3><p>Centralized asset tagging, search, and organization for digital media.</p></li>
+          <li><h3>Storage</h3><p>Secure, enterprise-grade storage designed for dynamic content and archives.</p></li>
+          <li><h3>Translation</h3><p>Multi-language real-time translation for global and multi-lingual community outreach.</p></li>
+          <li><h3>Transcribing &amp; Voice to Text</h3><p>Automated audio-to-text conversion for meetings, field interviews, and accessibility.</p></li>
+          <li><h3>Video Editing</h3><p>Automated snippet extraction, visual asset processing, and content creation tools.</p></li>
+          <li><h3>Orchestration</h3><p>Multi-agent coordination and cross-system task sequencing under human supervision.</p></li>
+          <li><h3>Open API</h3><p>Includes complete REST based API for AI needs. Compatible with OpenAI syntax and made available to EME servers but with no extra charges based on usage.</p></li>
+        </ul>
+        <div class="center" style="margin-top:56px;">
+          <h3>Predictable budgeting and complete sovereignty</h3>
+          <p class="narrow">Our deployment model offers predictable budgeting and complete sovereignty over your technological ecosystem. Delivered at a transparent flat rate, the service guarantees complete data privacy with zero corporate connections, data harvesting, or vendor lock-in. Every plan is fully managed and includes all necessary hosting, open AI models, dedicated GPU allocation, and cloud storage needs out of the box.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" aria-labelledby="structure-h">
+      <div class="wrap center">
+        <h2 id="structure-h">How to structure organizational knowledge</h2>
+        <p class="lead narrow">People, projects and servers work together in one federated network.</p>
+      </div>
+      <figure class="stage bleed" style="margin-top:32px;">
+        <svg class="art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1144 778" width="100%" role="img" aria-labelledby="s8-t" font-family="'Space Grotesk', system-ui, sans-serif">
+  <title id="s8-t">EME World - Collective Intelligence Structure</title>
+  <defs>
+    <linearGradient id="s8-human-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C6EE6A"/><stop offset="1" stop-color="#AEDE4A"/></linearGradient>
+    <filter id="s8-drop-shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dy="4" result="blur"/>
+      <feFlood flood-color="#000000" flood-opacity="0.5"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1144" height="778" fill="#FFFFFF"/>
+
+  <!-- Pillar 1: PEOPLE -->
+  <g>
+    <rect x="2" y="2" width="360" height="62" rx="10" fill="#0f1609" stroke="#E8C547" stroke-width="2.5"/>
+    <text x="182" y="31" text-anchor="middle" class="h" fill="#E8C547" font-size="22" letter-spacing="1">PEOPLE</text>
+    <text x="182" y="53" text-anchor="middle" class="m" fill="#F4FAE6" font-size="12">Individual Level (My EME)</text>
+    <rect x="2" y="78" width="360" height="698" rx="12" fill="#0b1007" stroke="#0b1007" stroke-width="2"/>
+    <rect x="14" y="94" width="336" height="122" rx="8" fill="#FBF3D0" stroke="#E8C547" stroke-width="1.2"/>
+    <text x="32" y="126" class="h" fill="#7A5C00" font-size="17">Free-for-Life Login</text>
+    <text x="32" y="154" class="b" fill="#1a2410" font-size="17">Universal digital identity</text>
+    <text x="32" y="177" class="b" fill="#1a2410" font-size="17">and cross-platform access</text>
+    <rect x="14" y="230" width="336" height="122" rx="8" fill="#FBF3D0" stroke="#E8C547" stroke-width="1.2"/>
+    <text x="32" y="262" class="h" fill="#7A5C00" font-size="17">Electronic Me (EME)</text>
+    <text x="32" y="290" class="b" fill="#1a2410" font-size="17">Personal digital twin that</text>
+    <text x="32" y="313" class="b" fill="#1a2410" font-size="17">emulates user online</text>
+    <rect x="14" y="366" width="336" height="122" rx="8" fill="#FBF3D0" stroke="#E8C547" stroke-width="1.2"/>
+    <text x="32" y="398" class="h" fill="#7A5C00" font-size="17">Persona Emulation</text>
+    <text x="32" y="426" class="b" fill="#1a2410" font-size="17">Custom trained preferences</text>
+    <text x="32" y="449" class="b" fill="#1a2410" font-size="17">(e.g., friendly vs. factual)</text>
+    <rect x="14" y="502" width="336" height="122" rx="8" fill="#FBF3D0" stroke="#E8C547" stroke-width="1.2"/>
+    <text x="32" y="534" class="h" fill="#7A5C00" font-size="17">My EME Digital Twin Chat</text>
+    <text x="32" y="562" class="b" fill="#1a2410" font-size="17">Daily digest of pending</text>
+    <text x="32" y="585" class="b" fill="#1a2410" font-size="17">tasks &amp; communications</text>
+    <rect x="14" y="638" width="336" height="122" rx="8" fill="#FBF3D0" stroke="#E8C547" stroke-width="1.2"/>
+    <text x="32" y="670" class="h" fill="#7A5C00" font-size="17">Omnichannel Messaging</text>
+    <text x="32" y="698" class="b" fill="#1a2410" font-size="17">In-app chat &amp; email dispatch</text>
+    <text x="32" y="721" class="b" fill="#1a2410" font-size="17">Auto-responds on user's</text>
+    <text x="32" y="744" class="b" fill="#1a2410" font-size="17">behalf during multi-user chat</text>
+  </g>
+
+  <!-- Pillar 2: PROJECTS -->
+  <g>
+    <rect x="392" y="2" width="360" height="62" rx="10" fill="#0f1609" stroke="#6CC24A" stroke-width="2.5"/>
+    <text x="572" y="31" text-anchor="middle" class="h" fill="#6CC24A" font-size="22" letter-spacing="1">PROJECTS</text>
+    <text x="572" y="53" text-anchor="middle" class="m" fill="#F4FAE6" font-size="12">Collaborative Level (Team Workspaces)</text>
+    <rect x="392" y="78" width="360" height="698" rx="12" fill="#0b1007" stroke="#0b1007" stroke-width="2"/>
+    <rect x="404" y="94" width="336" height="122" rx="8" fill="#E4F4D6" stroke="#6CC24A" stroke-width="1.2"/>
+    <text x="422" y="126" class="h" fill="#2F6B14" font-size="17">Collaborative Group Chat</text>
+    <text x="422" y="154" class="b" fill="#1a2410" font-size="17">Humans and personal EMEs</text>
+    <text x="422" y="177" class="b" fill="#1a2410" font-size="17">interact in unified threads</text>
+    <rect x="404" y="230" width="336" height="122" rx="8" fill="#E4F4D6" stroke="#6CC24A" stroke-width="1.2"/>
+    <text x="422" y="262" class="h" fill="#2F6B14" font-size="17">Automated EME Interjection</text>
+    <text x="422" y="290" class="b" fill="#1a2410" font-size="17">Helper agents cross-check</text>
+    <text x="422" y="313" class="b" fill="#1a2410" font-size="17">schedules &amp; book logistics</text>
+    <rect x="404" y="366" width="336" height="122" rx="8" fill="#E4F4D6" stroke="#6CC24A" stroke-width="1.2"/>
+    <text x="422" y="398" class="h" fill="#2F6B14" font-size="17">Goal Tracking Matrix</text>
+    <text x="422" y="426" class="b" fill="#1a2410" font-size="17">Shared team objective</text>
+    <text x="422" y="449" class="b" fill="#1a2410" font-size="17">milestones &amp; task tracking</text>
+    <rect x="404" y="502" width="336" height="122" rx="8" fill="#E4F4D6" stroke="#6CC24A" stroke-width="1.2"/>
+    <text x="422" y="534" class="h" fill="#2F6B14" font-size="17">Financial &amp; Profit Tracking</text>
+    <text x="422" y="562" class="b" fill="#1a2410" font-size="17">Transparent group accounting</text>
+    <text x="422" y="585" class="b" fill="#1a2410" font-size="17">and revenue division</text>
+    <rect x="404" y="638" width="336" height="122" rx="8" fill="#E4F4D6" stroke="#6CC24A" stroke-width="1.2"/>
+    <text x="422" y="670" class="h" fill="#2F6B14" font-size="17">After-Hours Continuity</text>
+    <text x="422" y="698" class="b" fill="#1a2410" font-size="17">EME assistants maintain team</text>
+    <text x="422" y="721" class="b" fill="#1a2410" font-size="17">collaboration &amp; queries</text>
+    <text x="422" y="744" class="b" fill="#1a2410" font-size="17">outside business hours</text>
+  </g>
+
+  <!-- Pillar 3: SERVERS -->
+  <g>
+    <rect x="782" y="2" width="360" height="62" rx="10" fill="#0f1609" stroke="#2EC4B6" stroke-width="2.5"/>
+    <text x="962" y="31" text-anchor="middle" class="h" fill="#2EC4B6" font-size="22" letter-spacing="1">SERVERS</text>
+    <text x="962" y="53" text-anchor="middle" class="m" fill="#F4FAE6" font-size="12">Flexible, Self-Hosted Platform</text>
+    <rect x="782" y="78" width="360" height="698" rx="12" fill="#0b1007" stroke="#0b1007" stroke-width="2"/>
+    <rect x="794" y="94" width="336" height="122" rx="8" fill="#D3F2EE" stroke="#2EC4B6" stroke-width="1.2"/>
+    <text x="812" y="126" class="h" fill="#0B6B63" font-size="17">Flexible Linux &amp; Docker Core</text>
+    <text x="812" y="154" class="b" fill="#1a2410" font-size="17">Container-based and portable,</text>
+    <text x="812" y="177" class="b" fill="#1a2410" font-size="17">easy to extend or replace</text>
+    <rect x="794" y="230" width="336" height="122" rx="8" fill="#D3F2EE" stroke="#2EC4B6" stroke-width="1.2"/>
+    <text x="812" y="262" class="h" fill="#0B6B63" font-size="17">Our Own AI Models</text>
+    <text x="812" y="290" class="b" fill="#1a2410" font-size="17">Run on our own hardware,</text>
+    <text x="812" y="313" class="b" fill="#1a2410" font-size="17">not a third-party cloud</text>
+    <rect x="794" y="366" width="336" height="122" rx="8" fill="#D3F2EE" stroke="#2EC4B6" stroke-width="1.2"/>
+    <text x="812" y="398" class="h" fill="#0B6B63" font-size="17">Regional Data Centers</text>
+    <text x="812" y="426" class="b" fill="#1a2410" font-size="17">A network of regional sites,</text>
+    <text x="812" y="449" class="b" fill="#1a2410" font-size="17">some powered by solar energy</text>
+    <rect x="794" y="502" width="336" height="122" rx="8" fill="#D3F2EE" stroke="#2EC4B6" stroke-width="1.2"/>
+    <text x="812" y="534" class="h" fill="#0B6B63" font-size="17">OpenCode &amp; Skills</text>
+    <text x="812" y="562" class="b" fill="#1a2410" font-size="17">AI coding tools with reusable</text>
+    <text x="812" y="585" class="b" fill="#1a2410" font-size="17">skills for building server apps</text>
+    <rect x="794" y="638" width="336" height="122" rx="8" fill="#D3F2EE" stroke="#2EC4B6" stroke-width="1.2"/>
+    <text x="812" y="670" class="h" fill="#0B6B63" font-size="17">Anyone Can Build an App</text>
+    <text x="812" y="698" class="b" fill="#1a2410" font-size="17">Non-technical users create and</text>
+    <text x="812" y="721" class="b" fill="#1a2410" font-size="17">maintain community apps shared</text>
+    <text x="812" y="744" class="b" fill="#1a2410" font-size="17">with the whole EME World base</text>
+  </g>
+</svg>
+      </figure>
+    </section>
+
+    <section class="band" id="values" aria-labelledby="values-h">
+      <div class="wrap center">
+        <h2 id="values-h">EME Values</h2>
+        <p class="lead narrow">Four beliefs guide everything we build.</p>
+      </div>
+      <figure class="stage bleed" style="margin-top:32px;">
+        <svg class="art pie" xmlns="http://www.w3.org/2000/svg" viewBox="161 20 883 481" width="100%" role="img" aria-labelledby="s1-t s1-d" font-family="'Space Grotesk', system-ui, sans-serif">
+  <title id="s1-t">Our Values</title>
+  <desc id="s1-d">A four slice pie chart of EME World's values: Respect for Time, Stronger Together, Light on the Earth and Open to Everyone, each with a short statement of belief.</desc>
+  <rect x="161" y="20" width="883" height="481" fill="#ffffff"/>
+  <path d="M600 250L380.0 250.0A220 220 0 0 1 600.0 30.0Z" fill="#0284c7" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M600 250L600.0 30.0A220 220 0 0 1 820.0 250.0Z" fill="#7c3aed" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M600 250L820.0 250.0A220 220 0 0 1 600.0 470.0Z" fill="#059669" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M600 250L600.0 470.0A220 220 0 0 1 380.0 250.0Z" fill="#b45309" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+  <text x="506.0" y="170.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">Respect for</text>
+  <text x="506.0" y="196.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">Time</text>
+  <polyline points="444.4,94.4 360,94.4" fill="none" stroke="#94a3b8" stroke-width="1"/>
+  <circle cx="444.4" cy="94.4" r="8" fill="#0284c7" stroke="#ffffff" stroke-width="3"/>
+  <text x="350" y="77.4" text-anchor="end" class="b" fill="#000000" font-size="16">Technology carries the</text>
+  <text x="350" y="99.4" text-anchor="end" class="b" fill="#000000" font-size="16">routine so people focus</text>
+  <text x="350" y="121.4" text-anchor="end" class="b" fill="#000000" font-size="16">on <tspan font-weight="700">what matters.</tspan></text>
+  <text x="694.0" y="170.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">Stronger</text>
+  <text x="694.0" y="196.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">Together</text>
+  <polyline points="755.6,94.4 840,94.4" fill="none" stroke="#94a3b8" stroke-width="1"/>
+  <circle cx="755.6" cy="94.4" r="8" fill="#7c3aed" stroke="#ffffff" stroke-width="3"/>
+  <text x="850" y="66.4" text-anchor="start" class="b" fill="#000000" font-size="16">Communities solve</text>
+  <text x="850" y="88.4" text-anchor="start" class="b" fill="#000000" font-size="16">problems best when</text>
+  <text x="850" y="110.4" text-anchor="start" class="b" fill="#000000" font-size="16"><tspan font-weight="700">people and AI</tspan> work</text>
+  <text x="850" y="132.4" text-anchor="start" class="b" fill="#000000" font-size="16"><tspan font-weight="700">side by side</tspan>.</text>
+  <text x="694.0" y="322.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">Light on</text>
+  <text x="694.0" y="348.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">the Earth</text>
+  <polyline points="755.6,405.6 840,405.6" fill="none" stroke="#94a3b8" stroke-width="1"/>
+  <circle cx="755.6" cy="405.6" r="8" fill="#059669" stroke="#ffffff" stroke-width="3"/>
+  <text x="850" y="366.6" text-anchor="start" class="b" fill="#000000" font-size="16">We honor <tspan font-weight="700">nature.</tspan></text>
+  <text x="850" y="388.6" text-anchor="start" class="b" fill="#000000" font-size="16">Open-source tools on</text>
+  <text x="850" y="410.6" text-anchor="start" class="b" fill="#000000" font-size="16">idle hardware and solar</text>
+  <text x="850" y="432.6" text-anchor="start" class="b" fill="#000000" font-size="16">nodes keep technology</text>
+  <text x="850" y="454.6" text-anchor="start" class="b" fill="#000000" font-size="16"><tspan font-weight="700">sustainable.</tspan></text>
+  <text x="506.0" y="322.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">Open to</text>
+  <text x="506.0" y="348.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">Everyone</text>
+  <polyline points="444.4,405.6 360,405.6" fill="none" stroke="#94a3b8" stroke-width="1"/>
+  <circle cx="444.4" cy="405.6" r="8" fill="#b45309" stroke="#ffffff" stroke-width="3"/>
+  <text x="350" y="388.6" text-anchor="end" class="b" fill="#000000" font-size="16"><tspan font-weight="700">Knowledge</tspan> belongs to</text>
+  <text x="350" y="410.6" text-anchor="end" class="b" fill="#000000" font-size="16">everyone, with <tspan font-weight="700">free</tspan></text>
+  <text x="350" y="432.6" text-anchor="end" class="b" fill="#000000" font-size="16">and <tspan font-weight="700">lifelong</tspan> access.</text>
+</svg>
+      </figure>
+
+    </section>
+
+    <section class="band dark" id="contact" aria-labelledby="next-h">
+      <div class="wrap narrow center">
+        <span class="eyebrow">4. Next Steps &amp; Collaborative Onboarding</span>
+        <h2 id="next-h">Build independent, community focused tools</h2>
+        <p class="lead">The EME World platform provides a clear plan for leaders who want to build independent, community-focused tools powered by human-guided AI assistant personas.</p>
+        <p>To ask about local test programs, server sponsorship, or open-source setup, contact the <strong>EME World OSPO Team</strong>.</p>
+        <ul class="contact">
+          <li><strong>Official Public Portal:</strong> <a href="https://eme.world">eme.world</a></li>
+          <li><strong>Open Source Repository:</strong> <a href="https://github.com/entermedia-community/eme-server">github.com/entermedia-community/eme-server</a></li>
+          <li><strong>President:</strong> Christopher Burkey, <a href="mailto:cburkey@eme.world">cburkey@eme.world</a>, <a href="tel:+15138982063">+1 513 898-2063</a></li>
+        </ul>
+        <div class="actions" style="justify-content:center;">
+          <a class="btn" href="$apphome/app/">Login</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>EME World. Own your intelligence. Own your content. Own your future.</span>
+      <span><a href="https://github.com/entermedia-community/eme-server">GitHub</a> · <a href="mailto:cburkey@eme.world">Contact</a></span>
     </div>
-    <div class="how-card">
-      <div class="how-icon">🤖</div>
-      <h3>Agents</h3>
-      <p>Autonomous and semi-autonomous digital helpers tailored to specific roles.</p>
-    </div>
-    <div class="how-card">
-      <div class="how-icon">💬</div>
-      <h3>Chat</h3>
-      <p>Intuitive conversational front doors for users, teams, and public service interactions.</p>
-    </div>
-    <div class="how-card">
-      <div class="how-icon">⚙️</div>
-      <h3>Automation</h3>
-      <p>Streamlined execution of repetitive administrative tasks and complex workflows.</p>
-    </div>
-    <div class="how-card">
-      <div class="how-icon">📊</div>
-      <h3>Informatics</h3>
-      <p>Advanced analytics, reporting, and business intelligence aggregation.</p>
-    </div>
-    <div class="how-card">
-      <div class="how-icon">🗄️</div>
-      <h3>Database</h3>
-      <p>Structured data integration, vector indexing, and relational storage access.</p>
-    </div>
-    <div class="how-card">
-      <div class="how-icon">🖼️</div>
-      <h3>Media Management</h3>
-      <p>Centralized asset tagging, search, and organization for digital media.</p>
-    </div>
-    <div class="how-card">
-      <div class="how-icon">💾</div>
-      <h3>Storage</h3>
-      <p>Secure, enterprise-grade storage designed for dynamic content and archives.</p>
-    </div>
-    <div class="how-card">
-      <div class="how-icon">🌐</div>
-      <h3>Translation</h3>
-      <p>Multi-language real-time translation for global and multi-lingual community outreach.</p>
-    </div>
-    <div class="how-card">
-      <div class="how-icon">🎙️</div>
-      <h3>Transcribing &amp; Voice to Text</h3>
-      <p>Automated audio-to-text conversion for meetings, field interviews, and accessibility.</p>
-    </div>
-    <div class="how-card">
-      <div class="how-icon">🎬</div>
-      <h3>Video Editing</h3>
-      <p>Automated snippet extraction, visual asset processing, and content creation tools.</p>
-    </div>
-    <div class="how-card">
-      <div class="how-icon">🧩</div>
-      <h3>Orchestration</h3>
-      <p>Multi-agent coordination and cross-system task sequencing under human supervision.</p>
-    </div>
-  </div>
-  <div style="max-width: 860px; margin: 2rem auto 0; text-align: center;">
-    <p>Our deployment model offers predictable budgeting and complete sovereignty over your technological ecosystem. Delivered at a transparent flat rate, the service guarantees complete data privacy with zero corporate connections, data harvesting, or vendor lock-in. Every plan is fully managed and includes all necessary hosting, open AI models, dedicated GPU allocation, and cloud storage needs out of the box.</p>
-  </div>
-</section>
+  </footer>
+
+</body>
+</html>
