@@ -67,7 +67,7 @@ nav.main .btn { padding: 12px 24px; }
 .hero::before { content: ""; position: absolute; inset: 0 0 0 46%; background: url("../images/ink-hero.webp") 35% center / cover no-repeat; mix-blend-mode: multiply;
   -webkit-mask-image: linear-gradient(to right, transparent 0, #000 35%); mask-image: linear-gradient(to right, transparent 0, #000 35%); }
 .hero .wrap { position: relative; padding-top: 130px; padding-bottom: 90px; }
-.hero h1 { color: var(--ink); max-width: 13ch; }
+.hero h1 { color: var(--ink); max-width: 15ch; font-size: clamp(2.5rem, 5.4vw, 5rem); }
 .hero .sub { font-size: clamp(1.2rem, 2.2vw, 1.7rem); font-weight: 300; color: var(--ink); margin-bottom: 1.2rem; max-width: 30ch; }
 .hero p.lead { color: var(--muted); max-width: 46ch; }
 
