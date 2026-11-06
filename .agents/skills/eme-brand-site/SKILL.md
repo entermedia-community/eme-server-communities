@@ -23,6 +23,7 @@ no heavy black display fonts, no big shadows. Deep indigo bands are the exceptio
 | `--ink-soft` | `#3d5078` | secondary accents |
 | `--paper` | `#eeedeb` | page background (matches `ink-hero.webp`) |
 | `--paper-2` | `#e7e6e3` | soft bands, footer, inline code |
+| `--tint` | `#e1e6ef` | `.tint` band: paper with a hint of indigo, for a gentle section change (mission, digital brain) |
 | `--surface` | `#f7f6f4` | cards |
 | `--line` | `#d3d6dc` | hairlines |
 | `--body` / `--muted` | `#2c3a55` / `#5d6a82` | body and secondary text |
@@ -38,6 +39,8 @@ no heavy black display fonts, no big shadows. Deep indigo bands are the exceptio
 
 - `.btn` solid indigo, small uppercase, 5px radius. `.btn.ghost` thin outline. On `.dark` bands they invert.
 - `.card`, `.features li` off white surface, 1px `--line`, 10px radius, no shadow.
+- Capability cards: add `<svg class="fi">` (30px, `--ink-soft`, stroke 1.5, 24 unit viewBox) as the first child of the `li`. CSS puts the icon and the `h3` on one line and the description underneath (`.features li:has(.fi)`).
+- Band colors: alternate `paper`, `.tint`, `.soft` and `.dark` so two neighbours never match. The home page order is in `eme-content-guide`.
 - `.band` sections: default paper, `.soft` for a gentle change, `.dark` (deep indigo) at most for one or two sections.
 - Do not put a `.soft` band directly around a white panel (it shows as gray bars). Keep graphic panels transparent on paper.
 - `.side` fixed left menu (232px): logo, icon links, a divider, Developers, Login at the bottom. No internal scroll: `overflow: hidden`
@@ -50,8 +53,9 @@ no heavy black display fonts, no big shadows. Deep indigo bands are the exceptio
 
 - Inline the SVGs in the page (real text for crawlers, page fonts apply). Give every copy unique ids, and drop the `@import` style block.
 - Page CSS styles `svg.art` fonts. The values pie is recolored to indigo tones: `#0a1a33`, `#3d5078`, `#9aa6bf`, `#cfd5e1` (dark text on the two light slices),
-  transparent backdrop. The structure diagram gets `filter: saturate(.55)` and a transparent backdrop. Phone mockups keep their colors, slightly softened.
+  transparent backdrop. The structure diagram gets `filter: saturate(.55)` and a transparent backdrop. Keep the SVG's first element a full size backdrop `<rect>`: the CSS rule `svg.tree > rect:first-of-type { fill: none; }` clears the first rect's fill, so if you delete the backdrop, the first dark card turns transparent and its light text disappears. Phone mockups keep their colors, slightly softened.
 - The graphics house style for new SVG and PNG files is in the `eme-graphics` skill (saturated palette, 3000px PNG). On the website, soften with the CSS above rather than re-drawing.
+- Diagram text size on screen is the SVG font size times (rendered width / viewBox width). To make labels bigger, raise the font in the SVG and raise the figure `max-width` (the entity ring is shown at `max-width:1120px`; `.wrap` is 1200px). A single ring of wide chips needs radius of about 2.2 times the chip width, and staggering radii looked messy, so keep one clean ring.
 - Logo: `overview/logo_light.svg` is a single olive green. Show it near black with `filter: brightness(0) opacity(.92)`.
 
 ## Page conventions (crawler friendly)

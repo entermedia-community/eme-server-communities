@@ -5,6 +5,7 @@
   --ink-soft: #3d5078;
   --paper: #eeedeb;
   --paper-2: #e7e6e3;
+  --tint: #e1e6ef; /* paper with a hint of indigo, for gentle section changes */
   --surface: #f7f6f4;
   --line: #d3d6dc;
   --text: #0a1a33;
@@ -34,6 +35,7 @@ strong { font-weight: 500; color: var(--ink); }
 .narrow { max-width: 780px; }
 .band { padding: clamp(72px, 10vw, 140px) 0; }
 .soft { background: var(--paper-2); }
+.tint { background: var(--tint); }
 .lead { font-size: 1.3rem; font-weight: 300; color: var(--muted); }
 .eyebrow { display: inline-block; font-size: .78rem; letter-spacing: .24em; text-transform: uppercase; font-weight: 400; color: var(--muted); margin-bottom: 1.4rem; }
 .center { text-align: center; }
@@ -117,6 +119,10 @@ svg.tree > rect:first-of-type { fill: none; }
 .features { list-style: none; padding: 0; margin: 0; display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .features li { padding: 28px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
 .features h3 { color: var(--ink); margin-bottom: .35em; }
+.features li:has(.fi) { display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 14px; row-gap: 10px; }
+.features li:has(.fi) h3 { margin: 0; }
+.features li:has(.fi) p { grid-column: 1 / -1; }
+.features .fi { display: block; width: 30px; height: 30px; color: var(--ink-soft); }
 .features p { margin: 0; font-size: 1rem; color: var(--muted); }
 
 .contact { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; gap: 12px; font-size: 1.1rem; }

@@ -11,6 +11,7 @@ description: Use whenever you write or rewrite copy for EME World (web pages, gr
 - Human first: people decide, EME helps. Say "keeps humans in control", never "automates people away".
 - Concrete over grand. Name the thing: calendars, tickets, carpool, translation, transcripts.
 - Soft, not hype. No exclamation marks, no "revolutionary", no "disrupt".
+- Lead with the most compelling points and use few words. The user's steer on the home page was "most compelling parts only, not too many words": one line per idea, detail goes in cards.
 - Decide the amount of text yourself and keep it short. Chart and card blurbs are about 3 to 5 short lines.
 - Bold only the key words in a short blurb, never whole sentences.
 
@@ -21,6 +22,8 @@ description: Use whenever you write or rewrite copy for EME World (web pages, gr
 3. **Never write "sin fines de lucro" or "nonprofit"** for EME World Inc. Say **Fundación** (a 501(c)(3) foundation).
 4. Do not read or show the `description` field as a description; it is search text. Use `longdescription`.
 5. Do not invent customers, numbers or claims. Use the proof points in `eme-brand-story`.
+6. Say **EME Profile**, not "persona", for a person's digital twin entity.
+7. Fix typos in the user's supplied wording (for example Bidirectional, Component, WYSIWYG, flexibility) and say so in the reply.
 
 ## The four values (exact wording)
 
@@ -39,7 +42,7 @@ Respect for Time, Stronger Together, Light on the Earth, Open to Everyone.
 | Prefer | Avoid |
 |---|---|
 | EME, My EME, your EME | "the bot", "the chatbot" |
-| digital twin, persona | "clone", "avatar" |
+| digital twin, **EME Profile** (the entity name) | "clone", "avatar", "persona" |
 | AI Harness | "AI wrapper", "middleware" |
 | EME Server | "instance" in public copy |
 | open source, 100% open source | "free software" (unless quoting) |

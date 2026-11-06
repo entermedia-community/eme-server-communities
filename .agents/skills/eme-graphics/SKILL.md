@@ -8,6 +8,14 @@ description: Use whenever you create or edit an SVG/PNG graphic for the EME webs
 Reference examples (copy their structure, do not reinvent): `webapp/site/emediawebsite/images/`
 `eme-server-apps.svg` (cards), `emetree.svg` (3-column tree), `eme-pie.svg` (pie with leader lines), `eme-chat-dialog.svg` (phone UI).
 
+## Scope of a diagram
+
+- Show only the essentials. For the AI Harness the diagram holds just the industry standard components (Interact, Reason, Context, Connect, Governance and Security, on the server, humans in control). The full capability list lives in cards on the page. Do not grow a diagram with every new feature.
+- Shorten labels to fit the box (for example "Vector Search", "Docker, Git, Linux") and keep the full names in the cards.
+- The real asset folder for the home page is `webapp/site/emeworld/overview/` (the examples below were first made in `emediawebsite/images/`).
+- Circular entity diagram: logo in a circle at the centre (paste the paths from `logo_light.svg`, scale about 0.26), boxes on one ring, spokes to the centre. Text 22.5px in 236x60 boxes needs a ring radius of 530.
+- When inlining on the page, keep the first element a full size backdrop `<rect>` (the page CSS clears it). Deleting it makes the first dark box transparent.
+
 ## Output
 
 - Write the SVG and PNG side by side in `webapp/site/emediawebsite/images/`, same basename (`eme-<topic>.svg` / `.png`).

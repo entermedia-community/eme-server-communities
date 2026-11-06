@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 604" width="100%" role="img" aria-labelledby="hz-t hz-d">
+<title id="hz-t">How the EME AI Harness fits together</title>
+<desc id="hz-d">People guide every key action. Inside the AI Harness, 13 capabilities are grouped as Talk, Think, Do and Keep, with an Open API. All of it runs on your own EME Server with dedicated hardware.</desc>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=JetBrains+Mono:wght@500;700&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap');
+  .h { font-family: 'Archivo Black', 'Arial Black', sans-serif; font-weight: 400; }
+  .m { font-family: 'JetBrains Mono', ui-monospace, monospace; font-weight: 500; }
+  .b { font-family: 'Space Grotesk', system-ui, sans-serif; }
+</style>
+<rect x="0" y="0" width="1000" height="604" fill="#ffffff"/>
+<rect x="2" y="2" width="996" height="64" rx="14" fill="#1e293b"/>
+<rect x="2" y="2" width="8" height="64" rx="4" fill="#f59e0b"/>
+<circle cx="46" cy="34.0" r="14" fill="#f59e0b"/>
+<text x="76" y="40.0" class="h" font-size="20" fill="#f8fafc">Humans in control</text>
+<text x="990" y="40.0" text-anchor="end" class="b" font-size="17" fill="#e2e8f0">Every key action is guided by people</text>
+<path d="M488 72h24l-12 16z" fill="#94a3b8"/>
+<rect x="2" y="94" width="996" height="420" rx="18" fill="#0f172a"/>
+<text x="28" y="130" class="h" font-size="24" fill="#f8fafc">AI Harness</text>
+<text x="972" y="128" text-anchor="end" class="m" font-size="13" fill="#94a3b8">Governance, security, human in the loop</text>
+<rect x="22" y="152" width="227" height="38" rx="19" fill="#0284c7"/>
+<text x="135.5" y="177" text-anchor="middle" class="h" font-size="16" fill="#ffffff">Talk</text>
+<rect x="22" y="200" width="227" height="62" rx="12" fill="#1e293b"/>
+<rect x="22" y="200" width="6" height="62" rx="3" fill="#0ea5e9"/>
+<circle cx="52" cy="231" r="7" fill="#0ea5e9"/>
+<text x="72" y="227" class="h" font-size="15" fill="#f8fafc">Chat</text>
+<text x="72" y="247" class="b" font-size="14" fill="#e2e8f0">The front door</text>
+<rect x="22" y="272" width="227" height="62" rx="12" fill="#1e293b"/>
+<rect x="22" y="272" width="6" height="62" rx="3" fill="#0ea5e9"/>
+<circle cx="52" cy="303" r="7" fill="#0ea5e9"/>
+<text x="72" y="299" class="h" font-size="15" fill="#f8fafc">Translation</text>
+<text x="72" y="319" class="b" font-size="14" fill="#e2e8f0">Real time, many languages</text>
+<rect x="22" y="344" width="227" height="62" rx="12" fill="#1e293b"/>
+<rect x="22" y="344" width="6" height="62" rx="3" fill="#0ea5e9"/>
+<circle cx="52" cy="375" r="7" fill="#0ea5e9"/>
+<text x="72" y="371" class="h" font-size="15" fill="#f8fafc">Voice to Text</text>
+<text x="72" y="391" class="b" font-size="14" fill="#e2e8f0">Meetings and interviews</text>
+<rect x="265" y="152" width="227" height="38" rx="19" fill="#7c3aed"/>
+<text x="378.5" y="177" text-anchor="middle" class="h" font-size="16" fill="#ffffff">Think</text>
+<rect x="265" y="200" width="227" height="62" rx="12" fill="#1e293b"/>
+<rect x="265" y="200" width="6" height="62" rx="3" fill="#8b5cf6"/>
+<circle cx="295" cy="231" r="7" fill="#8b5cf6"/>
+<text x="315" y="227" class="h" font-size="15" fill="#f8fafc">Memory</text>
+<text x="315" y="247" class="b" font-size="14" fill="#e2e8f0">Context that persists</text>
+<rect x="265" y="272" width="227" height="62" rx="12" fill="#1e293b"/>
+<rect x="265" y="272" width="6" height="62" rx="3" fill="#8b5cf6"/>
+<circle cx="295" cy="303" r="7" fill="#8b5cf6"/>
+<text x="315" y="299" class="h" font-size="15" fill="#f8fafc">Agents</text>
+<text x="315" y="319" class="b" font-size="14" fill="#e2e8f0">Helpers for each role</text>
+<rect x="265" y="344" width="227" height="62" rx="12" fill="#1e293b"/>
+<rect x="265" y="344" width="6" height="62" rx="3" fill="#8b5cf6"/>
+<circle cx="295" cy="375" r="7" fill="#8b5cf6"/>
+<text x="315" y="371" class="h" font-size="15" fill="#f8fafc">Orchestration</text>
+<text x="315" y="391" class="b" font-size="14" fill="#e2e8f0">Coordinated, supervised</text>
+<rect x="508" y="152" width="227" height="38" rx="19" fill="#b45309"/>
+<text x="621.5" y="177" text-anchor="middle" class="h" font-size="16" fill="#ffffff">Do</text>
+<rect x="508" y="200" width="227" height="62" rx="12" fill="#1e293b"/>
+<rect x="508" y="200" width="6" height="62" rx="3" fill="#f59e0b"/>
+<circle cx="538" cy="231" r="7" fill="#f59e0b"/>
+<text x="558" y="227" class="h" font-size="15" fill="#f8fafc">Automation</text>
+<text x="558" y="247" class="b" font-size="14" fill="#e2e8f0">Routine work, done</text>
+<rect x="508" y="272" width="227" height="62" rx="12" fill="#1e293b"/>
+<rect x="508" y="272" width="6" height="62" rx="3" fill="#f59e0b"/>
+<circle cx="538" cy="303" r="7" fill="#f59e0b"/>
+<text x="558" y="299" class="h" font-size="15" fill="#f8fafc">Informatics</text>
+<text x="558" y="319" class="b" font-size="14" fill="#e2e8f0">Analytics and reports</text>
+<rect x="508" y="344" width="227" height="62" rx="12" fill="#1e293b"/>
+<rect x="508" y="344" width="6" height="62" rx="3" fill="#f59e0b"/>
+<circle cx="538" cy="375" r="7" fill="#f59e0b"/>
+<text x="558" y="371" class="h" font-size="15" fill="#f8fafc">Video Editing</text>
+<text x="558" y="391" class="b" font-size="14" fill="#e2e8f0">Snippets and content</text>
+<rect x="751" y="152" width="227" height="38" rx="19" fill="#059669"/>
+<text x="864.5" y="177" text-anchor="middle" class="h" font-size="16" fill="#ffffff">Keep</text>
+<rect x="751" y="200" width="227" height="62" rx="12" fill="#1e293b"/>
+<rect x="751" y="200" width="6" height="62" rx="3" fill="#10b981"/>
+<circle cx="781" cy="231" r="7" fill="#10b981"/>
+<text x="801" y="227" class="h" font-size="15" fill="#f8fafc">Database</text>
+<text x="801" y="247" class="b" font-size="14" fill="#e2e8f0">Structured and vector</text>
+<rect x="751" y="272" width="227" height="62" rx="12" fill="#1e293b"/>
+<rect x="751" y="272" width="6" height="62" rx="3" fill="#10b981"/>
+<circle cx="781" cy="303" r="7" fill="#10b981"/>
+<text x="801" y="299" class="h" font-size="15" fill="#f8fafc">Storage</text>
+<text x="801" y="319" class="b" font-size="14" fill="#e2e8f0">Secure archives</text>
+<rect x="751" y="344" width="227" height="62" rx="12" fill="#1e293b"/>
+<rect x="751" y="344" width="6" height="62" rx="3" fill="#10b981"/>
+<circle cx="781" cy="375" r="7" fill="#10b981"/>
+<text x="801" y="371" class="h" font-size="15" fill="#f8fafc">Media Management</text>
+<text x="801" y="391" class="b" font-size="14" fill="#e2e8f0">Tag, search, organize</text>
+<rect x="22" y="418" width="956" height="54" rx="12" fill="#1e293b"/>
+<rect x="22" y="418" width="6" height="54" rx="3" fill="#AEDE4A"/>
+<circle cx="52" cy="445" r="7" fill="#AEDE4A"/>
+<text x="72" y="451" class="h" font-size="16" fill="#f8fafc">Open API</text>
+<text x="960" y="451" text-anchor="end" class="b" font-size="16" fill="#e2e8f0">Complete REST, OpenAI compatible, no usage charges</text>
+<path d="M488 520h24l-12 16z" fill="#94a3b8"/>
+<rect x="2" y="542" width="996" height="60" rx="14" fill="#1e293b"/>
+<rect x="2" y="542" width="8" height="60" rx="4" fill="#2EC4B6"/>
+<circle cx="46" cy="572.0" r="14" fill="#2EC4B6"/>
+<text x="76" y="578.0" class="h" font-size="20" fill="#f8fafc">Your EME Server</text>
+<text x="990" y="578.0" text-anchor="end" class="b" font-size="17" fill="#e2e8f0">Dedicated hardware. Flat rate. Full data privacy.</text>
+</svg>
