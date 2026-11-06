@@ -14,7 +14,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
   {
@@ -56,19 +56,25 @@
 </head>
 <body>
 
-  <header class="top">
-    <div class="wrap">
-      <a class="brand" href="/${applicationid}/index.html" aria-label="EME World home"><img src="/${applicationid}/overview/logo_light.svg" width="932" height="197" alt="EME World"></a>
-      <nav class="main" aria-label="Primary">
-        <a class="hide-sm" href="#persona">Your EME</a>
-        <a class="hide-sm" href="#servers">Servers</a>
-        <a class="hide-sm" href="#harness">AI Harness</a>
-        <a class="hide-sm" href="#values">Values</a>
-        <a class="hide-sm" href="/${applicationid}/developers.html">Developers</a>
-        <a class="btn" href="/app/">Login</a>
-      </nav>
+  <aside class="side" aria-label="Site menu">
+    <a class="brand" href="/${applicationid}/index.html" aria-label="EME World home"><img src="/${applicationid}/overview/logo_light.svg" width="932" height="197" alt="EME World"></a>
+    <nav class="side-nav" aria-label="Primary">
+      <div class="group">
+        <a href="#top" class="on" aria-current="page" data-spy="home"><span class="ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></span><span>Home</span></a>
+        <a href="#persona" data-spy="persona"><span class="ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></span><span>Your EME</span></a>
+        <a href="#servers" data-spy="servers"><span class="ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></span><span>Servers</span></a>
+        <a href="#harness" data-spy="harness"><span class="ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></span><span>AI Harness</span></a>
+        <a href="#values" data-spy="values"><span class="ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3.5 4 6 6.8 6 10a6 6 0 0 1-12 0c0-3.2 2.5-6 6-10z"/></svg></span><span>Values</span></a>
+      </div>
+      <div class="group">
+        <a href="/${applicationid}/developers.html" data-spy="dev"><span class="ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-5 4 5 4M16 8l5 4-5 4M14 5l-4 14"/></svg></span><span>Developers</span></a>
+      </div>
+    </nav>
+    <div class="side-foot">
+      <a class="btn" href="/app/">Login</a>
+      <p>Open source. Human guided.</p>
     </div>
-  </header>
+  </aside>
 
   <main>
 
@@ -556,7 +562,7 @@
       </div>
     </section>
 
-    <section class="band dark" id="harness" aria-labelledby="harness-h">
+    <section class="band soft" id="harness" aria-labelledby="harness-h">
       <div class="wrap">
         <div class="center">
           <span class="eyebrow">5. Complete AI Harness</span>
@@ -592,7 +598,7 @@
         <p class="lead narrow">People, projects and servers work together in one federated network.</p>
       </div>
       <figure class="stage bleed" style="margin-top:32px;">
-        <svg class="art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1144 778" width="100%" role="img" aria-labelledby="s8-t" font-family="'Space Grotesk', system-ui, sans-serif">
+        <svg class="art tree" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1144 778" width="100%" role="img" aria-labelledby="s8-t" font-family="'Space Grotesk', system-ui, sans-serif">
   <title id="s8-t">EME World - Collective Intelligence Structure</title>
   <defs>
     <linearGradient id="s8-human-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C6EE6A"/><stop offset="1" stop-color="#AEDE4A"/></linearGradient>
@@ -707,38 +713,38 @@
   <title id="s1-t">Our Values</title>
   <desc id="s1-d">A four slice pie chart of EME World's values: Respect for Time, Stronger Together, Light on the Earth and Open to Everyone, each with a short statement of belief.</desc>
   <rect x="161" y="20" width="883" height="481" fill="#ffffff"/>
-  <path d="M600 250L380.0 250.0A220 220 0 0 1 600.0 30.0Z" fill="#0284c7" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
-  <path d="M600 250L600.0 30.0A220 220 0 0 1 820.0 250.0Z" fill="#7c3aed" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
-  <path d="M600 250L820.0 250.0A220 220 0 0 1 600.0 470.0Z" fill="#059669" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
-  <path d="M600 250L600.0 470.0A220 220 0 0 1 380.0 250.0Z" fill="#b45309" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M600 250L380.0 250.0A220 220 0 0 1 600.0 30.0Z" fill="#0a1a33" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M600 250L600.0 30.0A220 220 0 0 1 820.0 250.0Z" fill="#3d5078" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M600 250L820.0 250.0A220 220 0 0 1 600.0 470.0Z" fill="#9aa6bf" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M600 250L600.0 470.0A220 220 0 0 1 380.0 250.0Z" fill="#cfd5e1" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
   <text x="506.0" y="170.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">Respect for</text>
   <text x="506.0" y="196.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">Time</text>
   <polyline points="444.4,94.4 360,94.4" fill="none" stroke="#94a3b8" stroke-width="1"/>
-  <circle cx="444.4" cy="94.4" r="8" fill="#0284c7" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="444.4" cy="94.4" r="8" fill="#0a1a33" stroke="#ffffff" stroke-width="3"/>
   <text x="350" y="77.4" text-anchor="end" class="b" fill="#000000" font-size="16">Technology carries the</text>
   <text x="350" y="99.4" text-anchor="end" class="b" fill="#000000" font-size="16">routine so people focus</text>
   <text x="350" y="121.4" text-anchor="end" class="b" fill="#000000" font-size="16">on <tspan font-weight="700">what matters.</tspan></text>
   <text x="694.0" y="170.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">Stronger</text>
   <text x="694.0" y="196.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">Together</text>
   <polyline points="755.6,94.4 840,94.4" fill="none" stroke="#94a3b8" stroke-width="1"/>
-  <circle cx="755.6" cy="94.4" r="8" fill="#7c3aed" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="755.6" cy="94.4" r="8" fill="#3d5078" stroke="#ffffff" stroke-width="3"/>
   <text x="850" y="66.4" text-anchor="start" class="b" fill="#000000" font-size="16">Communities solve</text>
   <text x="850" y="88.4" text-anchor="start" class="b" fill="#000000" font-size="16">problems best when</text>
   <text x="850" y="110.4" text-anchor="start" class="b" fill="#000000" font-size="16"><tspan font-weight="700">people and AI</tspan> work</text>
   <text x="850" y="132.4" text-anchor="start" class="b" fill="#000000" font-size="16"><tspan font-weight="700">side by side</tspan>.</text>
-  <text x="694.0" y="322.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">Light on</text>
-  <text x="694.0" y="348.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">the Earth</text>
+  <text x="694.0" y="322.0" text-anchor="middle" class="h" fill="#0a1a33" font-size="22">Light on</text>
+  <text x="694.0" y="348.0" text-anchor="middle" class="h" fill="#0a1a33" font-size="22">the Earth</text>
   <polyline points="755.6,405.6 840,405.6" fill="none" stroke="#94a3b8" stroke-width="1"/>
-  <circle cx="755.6" cy="405.6" r="8" fill="#059669" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="755.6" cy="405.6" r="8" fill="#9aa6bf" stroke="#ffffff" stroke-width="3"/>
   <text x="850" y="366.6" text-anchor="start" class="b" fill="#000000" font-size="16">We honor <tspan font-weight="700">nature.</tspan></text>
   <text x="850" y="388.6" text-anchor="start" class="b" fill="#000000" font-size="16">Open-source tools on</text>
   <text x="850" y="410.6" text-anchor="start" class="b" fill="#000000" font-size="16">idle hardware and solar</text>
   <text x="850" y="432.6" text-anchor="start" class="b" fill="#000000" font-size="16">nodes keep technology</text>
   <text x="850" y="454.6" text-anchor="start" class="b" fill="#000000" font-size="16"><tspan font-weight="700">sustainable.</tspan></text>
-  <text x="506.0" y="322.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">Open to</text>
-  <text x="506.0" y="348.0" text-anchor="middle" class="h" fill="#ffffff" font-size="22">Everyone</text>
+  <text x="506.0" y="322.0" text-anchor="middle" class="h" fill="#0a1a33" font-size="22">Open to</text>
+  <text x="506.0" y="348.0" text-anchor="middle" class="h" fill="#0a1a33" font-size="22">Everyone</text>
   <polyline points="444.4,405.6 360,405.6" fill="none" stroke="#94a3b8" stroke-width="1"/>
-  <circle cx="444.4" cy="405.6" r="8" fill="#b45309" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="444.4" cy="405.6" r="8" fill="#cfd5e1" stroke="#ffffff" stroke-width="3"/>
   <text x="350" y="388.6" text-anchor="end" class="b" fill="#000000" font-size="16"><tspan font-weight="700">Knowledge</tspan> belongs to</text>
   <text x="350" y="410.6" text-anchor="end" class="b" fill="#000000" font-size="16">everyone, with <tspan font-weight="700">free</tspan></text>
   <text x="350" y="432.6" text-anchor="end" class="b" fill="#000000" font-size="16">and <tspan font-weight="700">lifelong</tspan> access.</text>
@@ -773,5 +779,22 @@
     </div>
   </footer>
 
+
+  <script>
+    (function () {
+      var links = document.querySelectorAll('.side-nav a[data-spy]');
+      var map = {};
+      links.forEach(function (a) { var h = a.getAttribute('href'); var i = h.indexOf('#'); if (i > -1) map[h.slice(i + 1)] = a; });
+      if (!('IntersectionObserver' in window)) return;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting || !map[e.target.id]) return;
+          links.forEach(function (a) { a.classList.remove('on'); a.removeAttribute('aria-current'); });
+          map[e.target.id].classList.add('on'); map[e.target.id].setAttribute('aria-current', 'location');
+        });
+      }, { rootMargin: '-40% 0px -55% 0px' });
+      Object.keys(map).forEach(function (id) { var el = document.getElementById(id); if (el) io.observe(el); });
+    })();
+  </script>
 </body>
 </html>
