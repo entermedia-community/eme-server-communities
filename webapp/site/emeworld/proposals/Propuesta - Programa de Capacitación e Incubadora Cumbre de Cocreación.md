@@ -17,6 +17,18 @@
 | **Objetivo** | Que cada emprendedor use su teléfono para trabajar, vender y crecer durante todo el año. |
 | **Entidades Aliadas** | **LevelUp Guatemala** (donó el programa completo de cursos); **EME World Inc.** (presenta la propuesta); **UN Open Source Week** de la ONU (colaboración estratégica, ver sección 6) |
 
+> **EME World** es una **Plataforma de Inteligencia Colectiva**: **IA personalizable para todos**. Una plataforma abierta, para cada necesidad de IA, con las personas siempre al mando.
+
+# **Nuestra misión**
+
+**Tecnología abierta para cocrear el futuro de cada comunidad.**
+
+Creemos que la IA debe pertenecer a todos, no a unas pocas corporaciones. Por eso construimos, junto a la comunidad, una plataforma **abierta, gratuita y reutilizable**, inspirada en los principios de la **UN Open Source Week** de la ONU.
+
+Y creemos que el cambio empieza escuchando: **escuchar** a las personas, **notar** lo que está emergiendo y **cocrear** juntos el siguiente paso, siempre con las **personas al mando** de la tecnología.
+
+Nuestros valores: **Respeto por el tiempo**, **Más fuertes juntos**, **Ligeros con la Tierra** y **Abierto para todos**.
+
 | Pantalla de inicio | Módulos de capacitación |
 | :---: | :---: |
 |<img src="cumbre-de-cocreacion-chat.png" alt="Chat de Cumbre de Cocreación con el menú principal" width="320" height="505"> | <img src="cumbre-de-cocreacion-cursos.png" alt="Lista de cursos de Capacitación y Certificación con indicador de progreso" width="320" height="505"> |
@@ -64,7 +76,7 @@ No partimos de cero. La empresa guatemalteca **LevelUp** ha donado su programa c
 
 ![Ruta de capacitación: cinco módulos formativos de LevelUp Guatemala en formato Gantt](cumbre-de-cocreacion-gantt.png)
 
-**Metodología: aprender aplicando.** Los participantes no estudian teoría: aplican cada lección directamente a su propio negocio. Evalúan cómo operan hoy, identifican qué les falta, eligen las herramientas adecuadas y definen sus próximos pasos concretos. Al finalizar, cada emprendedor sabe qué puede hacer la tecnología por su negocio, por dónde empezar y cuál es su siguiente paso.
+**Metodología: aprender aplicando.** Los participantes no estudian teoría: aplican cada lección directamente a su propio negocio. Evalúan cómo operan hoy, identifican qué les falta, eligen las herramientas adecuadas y definen sus próximos pasos concretos. Al finalizar, cada emprendedor sabe qué puede hacer la tecnología por su negocio, por dónde empezar y cuál es su siguiente paso. Antes de actuar, cada persona aprende a **escuchar** con atención a su comunidad y a sus clientes, a notar lo que está emergiendo y a **cocrear** el siguiente paso junto a otros, avanzando hacia el futuro que se está abriendo.
 
 # **5\. Lo que pedimos: \$1,000 USD**
 
@@ -85,9 +97,17 @@ Estos primeros pasos son la base de empresas más sólidas, más productividad y
 
 # **6\. Quiénes estamos detrás**
 
-**EME World Inc.** es una fundación 501(c)(3) dedicada a la mejora comunitaria y al desarrollo de capacidades mediante tecnología abierta.
+**EME World Inc.** es una **Fundación** 501(c)(3) dedicada a la mejora comunitaria y al desarrollo de capacidades mediante tecnología abierta, **sin depender de grandes corporaciones**.
 
-Actualmente, EME World Inc. impulsa iniciativas globales de recaudación de fondos y mantiene colaboraciones estratégicas en el marco de la **UN Open Source Week** de la Organización de las Naciones Unidas (ONU). Esta alianza busca poner la tecnología al servicio del empoderamiento de comunidades vulnerables y en desarrollo.
+## **IA que pertenece a todos**
+
+* **Chat gratuito para todos:** en móvil y web, con capacidad para miles de usuarios y servidores trabajando juntos. Cada persona cuenta con su gemelo digital EME, que se une a la conversación cuando hace falta.
+* **Tokens ilimitados:** cada servidor EME corre en hardware dedicado, sin cargos por uso.
+* **Las personas al mando:** quien usa la plataforma guía cada acción importante.
+* **Servidores en todo el mundo:** trabajamos con la ONU, y entre nuestros clientes están Yale y la Canadian Broadcasting Corporation (CBC).
+* **Comunidad:** cada mes, la Comunidad EME se reúne y envía sus comentarios a nuestra Oficina del Programa de Código Abierto (OSPO).
+
+La aplicación de la Cumbre de Cocreación funciona sobre esta plataforma, como uno de los servidores EME de la comunidad. Actualmente, EME World Inc. impulsa iniciativas globales de recaudación de fondos y mantiene colaboraciones estratégicas en el marco de la UN Open Source Week, para poner la tecnología al servicio del empoderamiento de comunidades vulnerables y en desarrollo.
 
 # **7\. Cómo funciona y próximos pasos**
 
