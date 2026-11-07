@@ -181,3 +181,8 @@ header.top { display: none; }
   .side-foot .btn { padding: 11px 16px; }
   .side-foot p { display: none; }
 }
+
+/* values cards: four narrow, tall cards in a row */
+.values-cards { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); max-width: 1000px; margin-left: auto; margin-right: auto; }
+.values-cards li { padding: 32px 22px; min-height: 280px; }
+@media (min-width: 900px) { .values-cards { grid-template-columns: repeat(4, 1fr); } }
