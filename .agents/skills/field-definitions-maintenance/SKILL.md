@@ -79,7 +79,7 @@ when an entity module is saved — `baseentity.xml` is the canonical table-side 
 table-side `baseentitytemplate.xml` is reported by audit_fields.py (report-only; the script
 never moves files).
 
-Tables using it (2026-10-08, 22 folder copies + master): aitutorial, componentrenderversion,
+Tables using it (2026-10-08, 22 folder copies + master): entitytutorial, componentrenderversion,
 contentcreator, drupalcontent, emedialightbox, emeprofile, entityarticle, entityasset,
 entityassetpage, entityassetworkflow, entitycompany, entitydocument, entitydocumentpage,
 entitylocation, entityperson, entitytopic, entitytutorial, entitywebcontent, librarycollection,
