@@ -16,8 +16,7 @@
     #foreach( $message in $messages )
       #set( $channel = $mediaarchive.getCachedData("channel",$message.channel))
       #ifnotnull($channel)
-        #set( $topic = $mediaarchive.getCachedData("collectiveproject",$channel.dataid))
-        #set( $project = $mediaarchive.getCachedData("librarycollection",$topic.parentcollectionid))
+        #set( $project = $mediaarchive.getCachedData("librarycollection",$channel.dataid))
         #set( $community = $mediaarchive.getCachedData("communitytag",$project.communitytag))
         #set( $otherperson =  $chatManager.getOtherChatUser($project,$user) )
 
