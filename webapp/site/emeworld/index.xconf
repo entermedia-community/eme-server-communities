@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<page>
-  <inner-layout>/${applicationid}/theme/layouts/sitepage.html</inner-layout>
-  <property name="pagetitle">EME World | Collective Intelligence Platform</property>
-  <property name="metadescription">A free, open source chat platform with your own AI digital twin. EME World, a Fundación inspired by UN Open Source Week, gives everyone one AI harness with humans fully in control.</property>
-  <property name="navkey">home</property>
-  <property name="ogimage">/overview/eme-pie.png</property>
-</page>

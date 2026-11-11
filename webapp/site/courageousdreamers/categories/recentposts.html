@@ -1,0 +1,26 @@
+<div class="container-fluid pt-3" id="results-container">
+  <h1 class="text-center">
+    <span class="text-primary">Recent Posts</span>
+    <hr class="w-25 mx-auto">
+  </h1>
+
+  <div class="row results-row">
+    #foreach( $i in [1,2,3,2,3,1] )
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="result-card article">
+        <a href="#link-to-articcle" class="thumbnail"><img src="${communityhome}/images/article${i}.webp" alt=""></a>
+        <div class="d-flex flex-column py-2 px-3 flex-grow-1">
+          <span class="category">Technology</span>
+          <a href="#link-to-articcle" class="title">The Rise of AI in Everyday Applications</a>
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <div class="author">John Doe</div>
+            <div class="date text-muted ">June 15, 2023</div>
+          </div>
+          <div class="content">How artificial intelligence is being integrated into the applications we use daily.</div>
+          <a href="#link-to-articcle" class="readmore">Read Article</a>
+        </div>
+      </div>
+    </div>
+    #end
+  </div>
+</div>

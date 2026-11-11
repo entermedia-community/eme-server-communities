@@ -1,0 +1,79 @@
+#set($category = $context.getPageValue("category"))
+
+<div class="d-flex flex-column justify-content-center text-center py-3">
+  <h1 class="mb-1">
+    <span class="text-primary">#text($category)</span>
+  </h1>
+  <p class="mx-auto text-muted" style="max-width: 700px;">$!{category.get("longcaption")}</p> 
+</div>
+
+<div class="text-center container py-5" id="category-container">
+  <div class="d-flex flex-column align-items-center mx-auto category-intro"> 
+    $pages.include("${communityhome}/editable-components/category-intro-${category.getId()}.html", $context)
+  </div>
+</div>
+
+<div class="row results-row">
+  #foreach( $i in [1,2,3,2,3,1] )
+  <div class="col-12 col-sm-6 col-md-4">
+    <div class="result-card article">
+      <a href="#link-to-articcle" class="thumbnail"><img src="${communityhome}/images/article${i}.webp" alt=""></a>
+      <div class="d-flex flex-column py-2 px-3 flex-grow-1">
+        <span class="category">Technology</span>
+        <a href="#link-to-articcle" class="title">The Rise of AI in Everyday Applications</a>
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <div class="author">John Doe</div>
+          <div class="date text-muted ">June 15, 2023</div>
+        </div>
+        <div class="content mb-3">How artificial intelligence is being integrated into the applications we use daily.</div>
+        #if($user)
+        <a href="#link-to-articcle" class="readmore">Read Article <i class="fas fa-arrow-right ms-1"></i></a>
+        #else
+        <a href="#link-to-articcle" class="readmore"><i class="fas fa-user-plus me-1"></i> Join Us to Read the Article</a>
+        #end
+      </div>
+    </div>
+  </div>
+  #end
+</div>
+
+<div class="text-center container py-5" id="category-container">
+  <hr class="w-50 mx-auto mb-5">
+  <div class="d-flex flex-column align-items-center mx-auto category-details"> 
+    $pages.include("${communityhome}/editable-components/category-details-${category.getId()}.html", $context)
+    
+    <h2 class="text-primary mt-5">Meet the Members</h2>
+
+    <div id="membersCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        #foreach($i in ["a", "b", "c", "d", "e"])
+          <button type="button" data-bs-target="#membersCarousel" data-bs-slide-to="$foreach.index" class='#if($i == "a") active #end'></button>
+        #end
+      </div>
+      <div class="carousel-inner"> 
+        #foreach($i in ["a", "b", "c", "d", "e"])
+          <div class='carousel-item #if($i == "a") active #end'>
+            <div class="mt-4" style="width:100%;max-width: 600px;height: 450px;">
+              <img src="${communityhome}/images/catslide/${i}.jpg" alt="$i-cover" class="img-fluid"> 
+            </div>
+          </div>
+        #end
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#membersCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#membersCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <h2 class="text-primary mt-5">Our Clients</h2>
+  </div>
+  <div class="d-flex justify-content-center flex-wrap gap-4 w-100">
+    #foreach($i in [1,2,3,4,5])
+      <img src="${communityhome}/images/clients/${i}.png" alt="brand-$i" class="img-fluid">
+    #end
+  </div> 
+</div>

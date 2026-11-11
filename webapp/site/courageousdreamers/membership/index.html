@@ -1,0 +1,257 @@
+<div class="hero">
+	<div class="hero-video no-blur">
+		<video poster="${communityhome}/images/poster.webp" muted loop autoplay preload="none">
+			<source src="${communityhome}/images/720p.mp4" type="video/mp4" />
+			<source src="${communityhome}/images/1080p.mp4" type="video/mp4" />
+		</video>
+	</div> 
+	<div class="container-fluid hero-content">
+		<div class="d-flex flex-wrap justify-content-center py-5">
+			<div class="profile" data-aos="fade-right">
+				<svg height="100" width="100" class="bfly tl">
+					<use href="#butterfly" />
+				</svg>
+				<div class="avatar" data-aos="fade-down" data-aos-delay="500">
+					<img src="${communityhome}/images/dp.webp" alt="" class="img-fluid" />
+				</div>
+				<div
+					class="d-flex flex-column align-items-center bio"
+					data-aos="fade-up"
+					data-aos-delay="500"
+				>
+					$pages.include("../editable-components/upgrade.html")
+					<a class="btn btn-light rounded-pill join-btn" href="/pricing/">Join Now</a>
+				</div>
+			</div>
+			<div class="intro" data-aos="fade-left">
+				$pages.include("../editable-components/intro.html")
+				<svg height="100" width="100" class="bfly br">
+					<use href="#butterfly" />
+				</svg>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="bg-white video-section">
+	$pages.include("../editable-components/watch.html")
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-md-6 mb-4">
+				<div class="features bg-white p-3 h-100" data-aos="fade-right">
+					<svg height="100" width="100" class="bfly tl">
+						<use href="#butterfly" />
+					</svg>
+					$pages.include("../editable-components/video.html")
+				</div>
+			</div>
+			<div class="col-12 col-md-6 mb-4">
+				<div class="position-relative" data-aos="fade-left">
+					<video
+						src="${communityhome}/images/file.mp4"
+						poster="${communityhome}/images/file.webp"
+						class="w-100 rounded object-fit-contain"
+						controls
+						preload="none"
+					></video>
+					<svg height="100" width="100" class="bfly br">
+						<use href="#butterfly" />
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="bg-light">
+	<div class="container section-cta">
+		$pages.include("../editable-components/subintro.html")
+	</div>
+</div>
+<div class="wrapper bg-white">
+	<div class="container">
+		<div class="golden" data-aos="fade-in">
+			$context.putPageValue("name", "Community Home Page")
+			$pages.include("../editable-components/dream.html", $context)
+		</div>
+		<div class="row courses">
+			<div class="col-12 col-md-6">
+				<div class="course-card" data-aos="fade-up-right">
+					$pages.include("../editable-components/course.html")
+					<a href="/upgrade.html" class="btn themed-btn rounded-pill">
+						Take The Course
+						<svg
+							data-bbox="9 70.9 181 59"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 200 200"
+							width="36px"
+							height="36px"
+							fill="#ffffff"
+						>
+							<g>
+								<path
+									d="M159 70.9l-2.2 2.4L183.6 99H9v3h174.6l-26.2 25.3 2.1 2.6 30.5-29.3-31-29.7z"
+								></path>
+							</g>
+						</svg>
+					</a>
+					<svg 
+						height="120"
+						width="120"
+						class="bfly bl"
+					>
+						<use href="#butterfly" />
+					</svg>
+				</div>
+			</div>
+			<div class="col-12 col-md-6">
+				<div class="course-card" data-aos="fade-up-left">
+					$context.putPageValue("name", "Online Courses")
+					$pages.include("../editable-components/course.html", $context)
+					<a href="/upgrade.html" class="btn themed-btn rounded-pill">
+						Take The Course
+						<svg
+							data-bbox="9 70.9 181 59"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 200 200"
+							width="36px"
+							height="36px"
+							fill="#ffffff"
+						>
+							<g>
+								<path
+									d="M159 70.9l-2.2 2.4L183.6 99H9v3h174.6l-26.2 25.3 2.1 2.6 30.5-29.3-31-29.7z"
+								></path>
+							</g>
+						</svg>
+					</a>
+					<svg
+						height="120"
+						width="120"
+						class="bfly tr"
+					>
+						<use href="#butterfly" />
+					</svg>
+				</div>
+			</div>
+			<div class="col-12 col-md-6">
+				<div class="course-card" data-aos="fade-up-right">
+					$context.putPageValue("name", "Start Fundraising")
+					$pages.include("../editable-components/course.html", $context)
+					<a href="/upgrade.html" class="btn themed-btn rounded-pill">
+						Take The Course
+						<svg
+							data-bbox="9 70.9 181 59"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 200 200"
+							width="36px"
+							height="36px"
+							fill="#ffffff"
+						>
+							<g>
+								<path
+									d="M159 70.9l-2.2 2.4L183.6 99H9v3h174.6l-26.2 25.3 2.1 2.6 30.5-29.3-31-29.7z"
+								></path>
+							</g>
+						</svg>
+					</a>
+					<svg 
+						height="120"
+						width="120"
+						class="bfly bl"
+					>
+						<use href="#butterfly" />
+					</svg>
+				</div>
+			</div>
+			<div class="col-12 col-md-6">
+				<div class="course-card" data-aos="fade-up-left">
+					$context.putPageValue("name", "Build My Dream Team")
+					$pages.include("../editable-components/course.html", $context)
+					<a href="/upgrade.html" class="btn themed-btn rounded-pill">
+						Take The Course
+						<svg
+							data-bbox="9 70.9 181 59"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 200 200"
+							width="36px"
+							height="36px"
+							fill="#ffffff"
+						>
+							<g>
+								<path
+									d="M159 70.9l-2.2 2.4L183.6 99H9v3h174.6l-26.2 25.3 2.1 2.6 30.5-29.3-31-29.7z"
+								></path>
+							</g>
+						</svg>
+					</a>
+					<svg 
+						height="120"
+						width="120"
+						class="bfly tr"
+					>
+						<use href="#butterfly" />
+					</svg>
+				</div>
+			</div>
+			<div class="col-12 col-md-6">
+				<div class="course-card" data-aos="fade-up-right">
+					$context.putPageValue("name", "Join Meetings - Zoom Links")
+					$pages.include("../editable-components/course.html", $context)
+					<a href="/upgrade.html" class="btn themed-btn rounded-pill">
+						Take The Course
+						<svg
+							data-bbox="9 70.9 181 59"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 200 200"
+							width="36px"
+							height="36px"
+							fill="#ffffff"
+						>
+							<g>
+								<path
+									d="M159 70.9l-2.2 2.4L183.6 99H9v3h174.6l-26.2 25.3 2.1 2.6 30.5-29.3-31-29.7z"
+								></path>
+							</g>
+						</svg>
+					</a>
+					<svg 
+						height="120"
+						width="120"
+						class="bfly bl"
+					>
+						<use href="#butterfly" />
+					</svg>
+				</div>
+			</div>
+			<div class="col-12 col-md-6">
+				<div class="course-card" data-aos="fade-up-left">
+					$context.putPageValue("name", "Create Your Membership Page")
+					$pages.include("../editable-components/course.html", $context)
+					<a href="/upgrade.html" class="btn themed-btn rounded-pill">
+						Take The Course
+						<svg
+							data-bbox="9 70.9 181 59"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 200 200"
+							width="36px"
+							height="36px"
+							fill="#ffffff"
+						>
+							<g>
+								<path
+									d="M159 70.9l-2.2 2.4L183.6 99H9v3h174.6l-26.2 25.3 2.1 2.6 30.5-29.3-31-29.7z"
+								></path>
+							</g>
+						</svg>
+					</a>
+					<svg 
+						height="120"
+						width="120"
+						class="bfly tr"
+					>
+						<use href="#butterfly" />
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

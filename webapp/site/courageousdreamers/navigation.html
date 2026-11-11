@@ -1,0 +1,57 @@
+#set($currentPage = $content.currentPage)
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container">
+    <div class="d-flex align-items-center">
+      <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand d-flex align-items-center" href="/" style="line-height: 1;">
+        <img src="${communityhome}/images/candle.webp" alt="Courageous Dreamers" width="42" height="42">
+        <div class="d-flex flex-column ms-2">
+          <span>Courageous</span><span>Dreamers</span>
+        </div>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarToggler">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a href="#open-schedule-meeting" data-url="${communitylink}/meetingschedule/meeting-form.html#open-schedule-meeting" data-urlbar="/#open-schedule-meeting" data-updateurl="true" rel="nofollow" class="nav-link emdialog" id="schedule-meeting">
+            <i class="fas fa-video"></i>
+            <span>Schedule a Meeting</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link #if($currentPage == 'membership') active #end" href="/membership/">
+						<i class="fas fa-user"></i>
+						<span>Join Us</span>
+					</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link #if($currentPage == 'dreamteams') active #end" href="/dreamteams/">
+						<i class="fas fa-users"></i>
+						<span>Dreamers</span>
+					</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link #if($currentPage == 'blogs') active #end" href="/blogs/">
+						<i class="fas fa-blog"></i>
+						<span>Blogs</span>
+					</a>
+        </li>  
+        <li class="nav-item">
+          <a class="nav-link #if($currentPage == 'guide') active #end" href="/guide/">
+						<i class="fas fa-book"></i>
+						<span>Guide</span>
+					</a>
+        </li>  
+        <li class="nav-item">
+          <a class="nav-link portal-btn" href="/find/">
+						<i class="fas fa-sign-in-alt"></i>
+						<span>Portal</span>
+					</a>
+        </li> 
+      </ul> 
+    </div>
+  </div>
+</nav>

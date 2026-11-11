@@ -1,0 +1,238 @@
+<div class="hero">
+  <div class="hero-video">
+    <video poster="${communityhome}/images/team.webp" muted loop autoplay preload="none">
+      <source src="${communityhome}/images/team480.mp4" type="video/mp4" />
+      <source src="${communityhome}/images/team720.mp4" type="video/mp4" />
+      <source src="${communityhome}/images/team.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="d-flex flex-column align-items-center justify-content-center hero-content">
+    <div class="directory-content">
+      $pages.include("${communityhome}/editable-components/directory-text.html")
+      <div class="d-flex align-items-center">
+        <a href="/pricing/" class="btn btn-primary join-btn-lg me-3">
+          <i class="fas fa-plus me-2"></i>
+          Join Now
+        </a> 
+        <a href="/membership/" class="btn btn-light join-btn-lg"> 
+          Learn More 
+        </a>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<div class="container py-5">
+  <div class="hero-links auto-active-container"> 
+    <a href="${communitylink}/categories" class="flink current">
+      <span>Our Story</span></i>
+    </a>
+
+    #set($categories = $mediaarchive.query("searchcategory").search())
+
+    #foreach($category in $categories) 
+    <a href="${communitylink}/categories?category=${category.getId()}" class="flink">
+      <span>#text($category)</span>
+    </a>
+    #end
+  </div>
+</div>
+
+<div class="container">
+  $pages.include("${communityhome}/editable-components/our-story.html")
+</div>
+
+<div class="container index-intro">
+  <div class="text-center mb-5">
+    <h2 class="mt-1">Become A More</h2>
+    <h1>Courageous Leader</h1>
+    <h2>Leader Everyday</h2>
+  </div>
+  <div class="row mb-5">
+    <div class="col-12 col-sm-6 col-md-7">
+      <video
+        src="${communityhome}/images/file.mp4"
+        poster="${communityhome}/images/file.webp"
+        class="w-100 rounded object-fit-contain mb-n1"
+        controls
+        preload="none"
+      ></video>
+    </div>
+    <div class="col-12 col-sm-4 col-md-5 p-3 bg-purple rounded"> 
+      <div class="d-flex justify-content-center flex-column h-100">
+        $pages.include("${communityhome}/editable-components/intro-quote.html")
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bg-dark p-3 my-5">
+  <h2 class="text-white text-center">The Courageous Dreamer Story...</h2>
+</div>
+<div class="container index-story">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-4">
+     <div class="purple-box">
+        <h3>Unlock The Courage & Potential Within</h3>
+        <svg height="100" width="100" class="bfly tr">
+					<use href="#butterfly" />
+				</svg>
+        <svg height="100" width="100" class="bfly bl">
+					<use href="#butterfly" />
+				</svg>
+        <p class="lead">
+          The Dream Is Already True<br/>
+          You Just Need To Activate<br/>
+          The Most Courageous Version Of Yourself & Step Onto Your Most Prosperous Timeline
+        </p>
+        <a class="dl-activations">Download FREE Activations</a>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            #foreach($i in ["a","b","c","d","e"])
+            <li class="glide__slide">
+              <div class="w-100 d-flex align-items-center justify-content-center slightbox" data-href="${communityhome}/images/catslide/${i}.jpg" title="$i"> 
+                <img class="rounded-circle" style="aspect-ratio: 1;height:100%;width:100%;" src="${communityhome}/images/catslide/${i}.jpg" alt="cover"> 
+              </div>
+            </li>
+            #end
+          </ul>
+        </div> 
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left bg-white rounded-circle" data-glide-dir="<">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="glide__arrow glide__arrow--right bg-white rounded-circle" data-glide-dir=">">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <h2>It All Began With A Dream...</h2>
+      <p class="lead">Crystal had recently broke the 5 minute mile & become a Cross-Country National Champion when she got hit by a car that ran a red light. Since she could no longer be a competitive runner, she went to study abroad in Uganda and then went on to live in Uganda where she spent 8 years building a school for orphan & needy children, a hotel and a safari company. After leaving Uganda and an abusive relationship, Crystal started all over again. She started, Courageous Speakers, a program teaching people how to be inspirational speakers & use their stories to get investors, funders, and clients. During this time she also traveled Central America with her children, became after a sought after copy writer and started a course: 30 Days To Social Media Sales.<br/>It was during her healing journey that she also started offering community meals & opened a community center where she would ask people what their dreams were... and then help those become true!<br/>From that foundation Courageous Dreamers was birthed with the mission to serve and create a community of Courageous Dreamers, Entrepreneurs, Leaders, Visionaries, and Creatives who are ready to become the most joyful, inspirational, and prosperous versions of themselves while manifesting their individual & company dreams into reality as well as helping others realize their dreams as well.</p>
+    </div>
+  </div>
+</div>
+<div class="bg-purple p-3 my-5">
+  <div class="container">
+    <h2 class="text-white text-center">Your Journey Into Your Most Inspirational &<br>Prosperous Leadership & Timeline Starts Here...</h2>
+  </div>
+</div>
+<div class="container index-movement">
+  <h2 class="mb-5">Step Into The Movement...</h2>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div id="flycontainer">
+        <div>
+          <canvas id="flycanvas" width="832" height="1488"></canvas>
+        </div>
+        <video id="fly" src="${communityhome}/images/fly.mp4" muted autoplay loop preload="auto"></video>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <p class="lead">
+        There are many ways to rise with Courageous Dreamers. You can tap into our free resources and awaken your fire, join us as a <strong style="font-family: Arial;">Founding Member</strong> and shape the legacy, share the dream as an Affiliate and earn as you inspire, or journey deeper through a powerful standalone course. Your next leap begins here.
+      </p>
+      <div class="d-flex justify-content-center flex-wrap gap-2"> 
+        <a class="movement-btn">Free Membership & Resources</a>
+        <a class="movement-btn">Become A Founding Member</a>
+        <a class="movement-btn">Become An Affiliate</a>
+        <a class="movement-btn">Purchase A Course</a>
+        <a class="movement-btn">Attend An Event</a>
+      </div>
+    </div>
+    </div>
+</div>
+<div class="bg-dark p-3 my-4">
+  <div class="container">
+    <h2 class="text-white text-center">Our Memberships Include...</h2>
+  </div>
+</div>
+<div class="container">
+  <ul class="list-unstyled mb-4 text-start mx-auto" style="max-width: 1000px;"> 
+    <li>
+      <i class="text-success fas fa-check me-2 mt-1"></i>
+      <p class="m-0 lead d-inline">Zoom Calls</p>
+    </li>
+    <li>
+      <i class="text-success fas fa-check me-2 mt-1"></i>
+      <p class="m-0 lead d-inline">Video Courses</p>
+    </li>
+    <li>
+      <i class="text-success fas fa-check me-2 mt-1"></i>
+      <p class="m-0 lead d-inline">Community Groups</p>
+    </li>
+    <li>
+      <i class="text-success fas fa-check me-2 mt-1"></i>
+      <p class="m-0 lead d-inline">Networking & Masterminding</p>
+    </li>
+    <li>
+      <i class="text-success fas fa-check me-2 mt-1"></i>
+      <p class="m-0 lead d-inline">Personal & Business Transformation Support</p>
+    </li>
+    <li>
+      <i class="text-success fas fa-check me-2 mt-1"></i>
+      <p class="m-0 lead d-inline">Pathways To Growth As A Speaker, Performer, Entrepreneur, Creative, Leader & Visionary</p>
+    </li>
+  </ul> 
+</div>
+<div class="cards">
+  <div class="item position-relative"> 
+    <svg height="100" width="100" class="bfly tl">
+      <use href="#butterfly" />
+    </svg>
+    $pages.include("./editable-components/contact-left.html")
+  </div> 
+  <div class="item position-relative">
+    $pages.include("./editable-components/contact-right-header.html") 
+    <form action="#">
+      <div class="mb-3">
+        <label for="email" class="form-label">Your Email Address</label>
+        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary cntct">Send</button>
+    </form>
+    <svg height="100" width="100" class="bfly br">
+      <use href="#butterfly" />
+    </svg>
+  </div>
+</div>
+<script>
+  const video = document.getElementById('fly');
+  const canvas = document.getElementById('flycanvas');
+  const ctx = canvas.getContext('2d');
+  video.addEventListener('play', () => {
+    function renderFrame() { 
+      ctx.drawImage(video, 0, 0, 832, 1488); 
+      const butterfly = ctx.getImageData(0, 0, 832, 744); 
+      const mask = ctx.getImageData(0, 744, 832, 744); 
+      const output = ctx.createImageData(832, 744);
+      const bData = butterfly.data;
+      const mData = mask.data;
+      const oData = output.data;
+
+      for (let i = 0; i < bData.length; i += 4) {
+        if(mData[i] <= 100 && mData[i + 1] <= 100 && mData[i + 2] <= 100) { 
+          oData[i + 3] = 0; 
+          continue;
+        }
+        oData[i]     = (bData[i]     * mData[i])     / 255; 
+        oData[i + 1] = (bData[i + 1] * mData[i + 1]) / 255; 
+        oData[i + 2] = (bData[i + 2] * mData[i + 2]) / 255; 
+        oData[i + 3] = bData[i + 3]; // Preserve original alpha
+      }
+  
+      ctx.putImageData(output, 0, 0);
+
+      requestAnimationFrame(renderFrame);
+    }
+    renderFrame();
+  });
+</script> 

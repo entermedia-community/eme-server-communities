@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="mt-5 row">
+    <div class="col-12 col-md-6 h-100">
+      <h2 class="text-center faq">Login or Register For The Portal</h2> 
+      <div class="login-form">
+        <div class="p-2 bg-dark rounded shadow-sm h-100 text-white">
+
+
+<form class="ajaxform d-flex flex-column my-4" style="text-align: left;" data-targetdiv="loginformdiv" data-oemaxlevel="1" action="/site/find/authentication/sendmagiclinkfinish.html" id="password-reminder" name="passwordReminder" method="post">
+								<input class="form-control py-3 required grabfocus mb-3 w-100" type="text" name="email" placeholder="Enter you email address" required="">
+								<input class="btn btn-primary align-self-center" name="submit" type="submit" value="Next">
+								<input type="hidden" name="subject" value="Your Login Info">
+							</form>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <h2 class="text-center faq">F.A.Q.</h2>
+      #set($faqs = [
+        ["How do I access the online courses and tools included in my membership?", "To access your online courses and tools, log in to your account on the Courageous Dreamer Portal. Navigate to the &quot;Online Courses&quot; section, where you'll find a curated selection of resources designed to enhance your personal and professional growth."],
+        ["What is the process for joining live Zoom sessions, and are recordings available if I cannot attend?", "Live Zoom sessions can be accessed through the &quot;Join Meetings - Zoom Links&quot; section on the portal. If you're unable to attend a live session, recordings are typically made available in the same section for you to view at your convenience."],
+        ["How can I upgrade my membership or access VIP coaching and marketing services?","To upgrade your membership or explore VIP coaching and marketing services, visit the &quot;Membership&quot; section on the portal. Detailed information about various membership levels and additional services is provided, along with instructions on how to proceed with an upgrade."],
+        ["What steps should I follow to start generating income through the portal's opportunities?","Begin by exploring the &quot;Access Your Streams of Income&quot; section, which offers various channels to generate and diversify your income. This area provides comprehensive guidance on initiating and managing your income streams effectively."]
+      ])
+      <div class="accordion accordion-flush" id="accordionFAQ">
+        #foreach ($faq in $faqs)
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${foreach.count}" aria-expanded="true" aria-controls="collapse${foreach.count}">
+                $faq[0]
+              </button>
+            </h2>
+            <div id="collapse${foreach.count}" class="accordion-collapse collapse #if($foreach.count == 1) show #end" data-bs-parent="#accordionFAQ">
+              <div class="accordion-body">
+                $faq[1]
+              </div>
+            </div>
+          </div>
+        #end
+      </div>
+    </div>
+  </div>
+</div>

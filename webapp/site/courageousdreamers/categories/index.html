@@ -1,0 +1,12 @@
+#set($categoryid = $context.getRequestParameter("category"))
+#set($category = $mediaarchive.query("searchcategory").exact("id", $categoryid).searchOne())
+
+#ifnull($category)
+  $pages.include("${communityhome}/categories/recentposts.html", $context)
+#end
+
+#ifnotnull($category)
+  $context.putPageValue("category", $category)
+  $pages.include("${communityhome}/categories/category.html", $context)
+#end
+

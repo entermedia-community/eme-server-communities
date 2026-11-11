@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="extend" name="Deploy site">
+
+<target name="extend">
+
+  <property name="wardir" location="${build}/wartmp"/>
+    <property name="dockerwebapp" location="/opt/entermediadb/webapp"/>
+       <property name="communitysite" location="${dockerwebapp}/WEB-INF/base/eminstitute/community/courageous-dreamers"/>
+  	<echo>Reinstall plugin(s)</echo>
+ 	 <delete failonerror="false">
+		 <fileset dir="${communitysite}"/>
+     	</delete>
+     	<copy todir="${communitysite}" preservelastmodified="true">
+     	  <fileset dir="${basedir}/"/>
+     	</copy>
+  </target>
+</project>
+

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<page>
-  <inner-layout>/${applicationid}/theme/layouts/sitepage.html</inner-layout>
-  <property name="pagetitle">Budget | EME World</property>
-  <property name="metadescription">What EME costs: a free My EME supported by the EME Fundación, basic hosting from EnterMediaLibrary.com, and a one on one option for a custom proposal. AI runs on dedicated hardware at a flat rate, not per token.</property>
-  <property name="navkey">costs</property>
-  <property name="extracss">costs.css</property>
-</page>

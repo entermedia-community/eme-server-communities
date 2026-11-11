@@ -1,0 +1,32 @@
+.docs-branding header {
+	height: 50px;
+	display: flex;
+	align-items: center;
+	margin: 2px 0 20px;
+}
+.docs-branding header a {
+	text-decoration: none;
+}
+.docs-branding header h1 {
+	margin: 0 8px;
+	font-size: 24px;
+}
+.docs-branding header img {
+	height: 50px;
+}
+.docs-branding .navlinks {
+	padding-left: 300px;
+	margin-top: -24px;
+}
+.docs-branding .navlinks a {
+	text-decoration: none;
+	margin: 0 8px;
+	font-size: 15px;
+	color: #444;
+}
+.docs-branding .navlinks a:hover {
+	text-decoration: underline;
+}
+.docs-branding .navlinks a:last-child {
+	display: none;
+}

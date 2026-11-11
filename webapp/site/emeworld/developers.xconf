@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<page>
-  <inner-layout>/${applicationid}/theme/layouts/sitepage.html</inner-layout>
-  <property name="pagetitle">Customize EME Server with OpenCode | EME Developers</property>
-  <property name="metadescription">A technical tutorial for developers: set up an eme-server developer environment from GitHub, connect OpenCode to it, and use AI coding agents to add skills, pages and data to your own EME server.</property>
-  <property name="navkey">dev</property>
-  <property name="extracss">developers.css</property>
-</page>

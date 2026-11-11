@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="shortcut icon" href="${communityhome}/theme/images/favicon.ico" />
+		
+		#if( $librarycol )
+			#set($metatitle = "#text($librarycol) - #text($communitytagcategory)")
+		#elseif( $communitytagcategory )
+			#set($metatitle = "#text($communitytagcategory)")
+		#end
+		#if( $metatitle )
+			#ifnotnull( $content.title )
+				#set($metatitle = "$content.title - $metatitle")
+			#end
+			#ifnull( $content.title )
+				#set($metatitle = "$metatitle")
+			#end	
+		#else
+			#set($metatitle = "$!content.title")
+		#end		
+
+		<title>$!metatitle</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="${communityhome}/assets/vendor/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="${communityhome}/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css">
+    <link rel="stylesheet" href="${communityhome}/assets/vendor/fancybox/dist/jquery.fancybox.min.css">
+		<link rel="stylesheet" href="${communityhome}/theme/js/aos/aos.css">
+
+    <link rel="stylesheet" href="${communityhome}/assets/css/theme.css">
+
+	</head>
+
+	<body #if(!$user || $browser.inApp()) data-hidetoolbar="true" #end #if($desktop) class="desktop" #end>
+
+		<div id="application" class="eminstitutecollective" 
+			data-home="$home" 
+			data-user="$!user.id" 
+			data-apphome="$!{apphome}"
+			data-communityhome="$!{communityhome}"
+			data-applink="$!{applink}" 
+			data-inapp="$!{browser.inApp()}" 
+			data-themeprefix="/$!{applicationid}/theme"
+			data-browserlanguage="$!{browserlanguage}" 
+			data-editmode='$!user.get("oe_edit_mode")'
+			data-mediadbappid="$!mediaarchive.getMediaDbId()" 
+			data-componenthome="$!componenthome" 
+			#if( $showupload) data-showuploadid="${showupload.id}" #end
+			>
+
+			$pages.include("${communityhome}/navigation.html", $context)
+
+			$pages.includeContent()
+
+			$pages.include("${communityhome}/footer.html")
+
+		</div>
+
+
+    <script src="${communityhome}/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="${communityhome}/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+    <script src="${communityhome}/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="${communityhome}/assets/js/hs.core.js"></script>
+    <script src="${communityhome}/assets/js/hs.fancybox.js"></script>
+    <script src="${communityhome}/assets/js/hs.clipboard.js"></script>
+
+    <script src="${communityhome}/assets/vendor/hs-sticky-block/dist/hs-sticky-block.min.js"></script>
+    <script src="${communityhome}/assets/vendor/fancybox/dist/jquery.fancybox.min.js"></script>
+    <script src="${communityhome}/assets/vendor/clipboard/dist/clipboard.min.js"></script>
+
+		<script src="${communityhome}/theme/js/aos/aos.js"></script>
+
+    <script src="${communityhome}/theme/js/main.js"></script>
+	</body>
+</html>

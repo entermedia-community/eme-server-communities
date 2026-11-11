@@ -1,0 +1,15 @@
+<div class="d-flex flex-column align-items-center justify-content-center hero-content py-5 bg-light">
+  <div class="hero-links auto-active-container"> 
+    #set($categories = $mediaarchive.query("searchcategory").search())
+    #set($categoryid = $context.getRequestParameter("category"))
+
+    #foreach($category in $categories) 
+    <a href="${communitylink}/categories?category=${category.getId()}" class="auto-active-link flink #if($category.getId() == $categoryid) current #end">
+      <span>#text($category)</span>
+    </a>
+    #end
+  </div>
+</div>
+
+
+$pages.includeContent()
