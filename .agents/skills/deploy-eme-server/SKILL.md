@@ -1,11 +1,11 @@
 ---
 name: deploy-eme-server
-description: Use when the user asks to deploy, provision, or stand up a new eme-server instance for a client on this machine — "deploy eme-server for X", "create a new client instance", "set up <client>.eme.world". Covers cloning the repo under /media/emsites, allocating a unique node number from the instance DB, dockerbuild, update, creating the nginx site from the template (domain base selectable, default eme.world), reloading nginx, verifying in the browser, and setting up the admin account.
+description: Use when the user asks to deploy, provision, or stand up a new eme-server instance for a client on this machine — "deploy eme-server for X", "create a new client instance", "set up <client>.eme.world". Covers cloning the repo under /media/eme_sites, allocating a unique node number from the instance DB, dockerbuild, update, creating the nginx site from the template (domain base selectable, default eme.world), reloading nginx, and verifying in the browser.
 ---
 
 # Deploy an eme-server instance
 
-Provisions one client instance end to end: git clone → docker container on the `entermedia` network → nginx vhost → verified in the browser → (optional) admin account set up.
+Provisions one client instance end to end: git clone → docker container on the `entermedia` network → nginx vhost → verified in the browser.
 
 ## What a finished deployment looks like
 
@@ -13,7 +13,6 @@ Provisions one client instance end to end: git clone → docker container on the
 - Docker container `eme-server-<client><NNN>` running Tomcat at `http://172.18.0.<NNN>:8080` on the `entermedia` docker network (subnet `172.18.0.0/16`)
 - Nginx vhost for `https://<client>.$DOMAIN_BASE` (default `eme.world`, wildcard cert) proxying to the container IP
 - A row in the instance DB `$DEPLOY_ROOT/deployed-instances.txt`
-- (When requested) an admin user row with the client's email, verified live
 
 ## One-time prerequisite per machine: NOPASSWD sudo rules
 
@@ -45,7 +44,6 @@ Notes for other machines:
   - `DIR=$DEPLOY_ROOT/eme-server-$CLIENTNAME`
   - `DOMAIN=$CLIENTNAME.$DOMAIN_BASE`
   - container name = `eme-server-$CLIENTNAME$NNN` (basename of DIR + node number)
-- **ADMIN_EMAIL** — optional; the client's admin login email. If given, do step 10 after verification.
 - **DOMAIN_BASE** — which domain family the instance gets. If not stated by the user, default is the first option. Add new rows here as options appear:
 
   | Base | Cert dir | Notes |
@@ -78,14 +76,6 @@ chown -R "$(id -un)" $DEPLOY_ROOT/eme-server-$CLIENTNAME
 
 (If the dir already exists from a previous attempt, `cd` into it and `git pull` instead.)
 
-**Cannot create the instance dir (deploy root owned by another user)** — e.g. `$DEPLOY_ROOT` is owned by `entermedia` and the scoped chown rule only matches *subpaths* of it, so plain `mkdir`/`git clone` fail with permission denied while you are a different user. Do not burn time probing sudo variants; use a throwaway root container (the `sudo docker *` rule is enough) and then take ownership:
-
-```bash
-sudo docker run --rm --entrypoint mkdir -v $DEPLOY_ROOT:/dr entermediadb/entermedia:latest -p /dr/eme-server-$CLIENTNAME
-sudo chown "$(id -un):$(id -gn)" $DEPLOY_ROOT/eme-server-$CLIENTNAME
-cd $DEPLOY_ROOT && git clone https://github.com/entermedia-community/eme-server eme-server-$CLIENTNAME
-```
-
 ### 3. Allocate a node number (instance DB)
 
 DB file: `$DEPLOY_ROOT/deployed-instances.txt`, one row per instance, comma-separated:
@@ -106,21 +96,7 @@ Also sanity-check the docker side before committing the number (a container may 
 docker ps -aq --filter "name=eme-server-${CLIENTNAME}${NNN}"
 ```
 
-### 4. Set up the admin account (when ADMIN_EMAIL was given)
-
-A fresh instance ships with a placeholder admin (`id="admin"`, stock email), so re-point it.
-
-Note: in a fresh clone the plugins are only JSON manifests, so `plugins/system` (and thus `defaultusers.xml`) does not exist until dockerbuild (step 5) pulls them. Do this edit right after step 5 dockerbuild and before the ownership-alignment restart; the first successful boot then seeds ES with the correct admin row, so no wipe/re-seed cycle is needed.
-
-
-**Fresh instance (no user data yet) **
-
-1. Edit `$DIR/plugins/system/html/data/lists/user/defaultusers.xml`, admin row →
-   `<row id="admin" email="$ADMIN_EMAIL" enabled="true" firstName="<First>" screenname="<First>" groups="administrators"><First></row>`
-   (keep `id="admin"`; drop the legacy `password` attribute — it is not a field in `user.xml`; leave the `agent` row alone). The file is owned by `entermedia`: `sudo chown "$(id -un):$(id -gn)" <file>`, edit, then `sudo chown "$(id -u entermedia):$(id -g entermedia)" <file>`.
-
-
-### 5. Dockerbuild
+### 4. Dockerbuild
 
 ```bash
 cd $DEPLOY_ROOT/eme-server-$CLIENTNAME
@@ -138,18 +114,15 @@ sudo chown -R "$(id -u entermedia):$(id -g entermedia)" $DEPLOY_ROOT/eme-server-
 sudo docker restart eme-server-$CLIENTNAME$NNN
 ```
 
-**Git "dubious ownership" (same trigger)**: once the tree is owned by `entermedia`, any `git`/`eme.sh update` run as the deployer fails with `detected dubious ownership`. Add safe.directory entries — the instance dir **and every plugin repo** (they are separate git repos). Git < 2.35.2 does not support wildcards in safe.directory, so add each path explicitly (no trailing slash). If `$DEPLOY_ROOT` is reached through a symlink (e.g. `/media/emsites` → `/mnt/data/emsites`), the real path shows up in git errors — **add both path forms** for every repo:
+**Git "dubious ownership" (same trigger)**: once the tree is owned by `entermedia`, any `git`/`eme.sh update` run as the deployer fails with `detected dubious ownership`. Add safe.directory entries — the instance dir **and every plugin repo** (they are separate git repos). Git < 2.35.2 does not support wildcards in safe.directory, so add each path explicitly (no trailing slash):
 
 ```bash
 for d in "$DEPLOY_ROOT/eme-server-$CLIENTNAME" "$DEPLOY_ROOT"/eme-server-$CLIENTNAME/plugins/*/; do
   git config --global --add safe.directory "${d%/}"
 done
-# symlinked deploy root: also add the resolved real path of each repo (see `git rev-parse --show-toplevel` errors)
 ```
 
-Locked-down machines: if the deployer cannot write `~/.gitconfig` (home owned by another user), `git config --global` fails. Do not treat that as fatal - git continues with a warning, and the container boot does not need safe.directory at all; only agent-side git commands run against the entermedia-owned tree do. Show the full list of entries in chat for the user to paste into their own `~/.gitconfig`, or re-chown the tree to the deployer before running agent-side git.
-
-### 6. Update to latest
+### 5. Update to latest
 
 ```bash
 bin/eme.sh update .
@@ -173,7 +146,7 @@ sudo chown "$(id -u entermedia):$(id -g entermedia)" $DEPLOY_ROOT/eme-server-$CL
 
 (Use absolute paths in the `sudo chown` calls — the sudoers rule matches on the literal argument string.)
 
-### 7. Register in the instance DB
+### 6. Register in the instance DB
 
 Append exactly one row (keep the header line):
 
@@ -181,7 +154,7 @@ Append exactly one row (keep the header line):
 echo "$CLIENTNAME,$DEPLOY_ROOT/eme-server-$CLIENTNAME,$NNN,$DOMAIN" >> $DEPLOY_ROOT/deployed-instances.txt
 ```
 
-### 8. Create the nginx vhost
+### 7. Create the nginx vhost
 
 Template: `.agents/skills/deploy-eme-server/nginx-site.conf.template` (relative to this repo). Replace placeholders:
 
@@ -189,39 +162,30 @@ Template: `.agents/skills/deploy-eme-server/nginx-site.conf.template` (relative 
 |---|---|
 | `__DOMAIN__` | `$CLIENTNAME.$DOMAIN_BASE` |
 | `__CERT_DIR__` | `/etc/letsencrypt/live/$DOMAIN_BASE` — must exist (wildcard cert for the base), check first |
-| `__UPSTREAM_NAME__` | `eme_` + client name, non-alphanumerics → `_` (e.g. `eme_monday`) — must be unique across all loaded vhosts |
+| `__UPSTREAM_NAME__` | `eme_` + client name, non-alphanumerics → `_` (e.g. `eme_monday`) — must be unique across `/etc/nginx/sites-enabled/` |
 | `__CONTAINER_IP__` | `172.18.0.$NNN` |
 | `__PORT__` | `8080` |
-
-**First, find where this machine loads vhosts from**: `ls /etc/nginx/sites-enabled 2>/dev/null || ls /etc/nginx/conf.d`. Most machines use `sites-available`/`sites-enabled`; some (including this one) use only `/etc/nginx/conf.d/*.conf` — the scoped sudo cp/ln rules below target sites-* only, so on a conf.d machine use the docker workaround at the end of this step.
 
 ```bash
 # Wildcard cert for the chosen base must exist, or nginx -t will fail later
 test -f "/etc/letsencrypt/live/$DOMAIN_BASE/fullchain.pem" \
-  || { echo "No cert for $DOMAIN_BASE in /etc/letsencrypt/live/$DOMAIN_BASE — issue one first (needs DNS control of the base domain)."; exit 1; }
+  || { echo "No cert for $DOMAIN_BASE in /etc/letsencrypt/live/ — issue one first (needs DNS control of the base domain)."; exit 1; }
 
-mkdir -p $DEPLOY_ROOT/.ngstage   # stage inside the deploy root: always writable, even on locked-down machines
+mkdir -p -m 700 /tmp/opencode/nginx-deploy
 sed -e "s/__DOMAIN__/$DOMAIN/g" \
     -e "s|__CERT_DIR__|/etc/letsencrypt/live/$DOMAIN_BASE|g" \
     -e "s/__UPSTREAM_NAME__/eme_${CLIENTNAME}/g" \
     -e "s/__CONTAINER_IP__/172.18.0.$NNN/g" \
     -e "s/__PORT__/8080/g" \
   .agents/skills/deploy-eme-server/nginx-site.conf.template \
-  > $DEPLOY_ROOT/.ngstage/$DOMAIN.conf
-sudo cp $DEPLOY_ROOT/.ngstage/$DOMAIN.conf /etc/nginx/sites-available/
+  > /tmp/opencode/nginx-deploy/$DOMAIN.conf
+sudo cp /tmp/opencode/nginx-deploy/$DOMAIN.conf /etc/nginx/sites-available/
 sudo ln -sf /etc/nginx/sites-available/$DOMAIN.conf /etc/nginx/sites-enabled/
 ```
 
-(The agent has no write access to `/etc/nginx`, so the rendered file is staged inside the deploy root - which stays writable even on locked-down machines - and moved by the scoped sudo rules or the docker workaround below.)
+(The agent has no write access to `/etc/nginx`, so the rendered file is staged in the 700-mode dir and moved by the scoped sudo rules.)
 
-**conf.d machines (no sites-available/enabled)**: install the staged vhost with a throwaway root container instead of fighting missing sudo rules:
-
-```bash
-sudo docker run --rm --entrypoint cp -v $DEPLOY_ROOT/.ngstage:/src:ro -v /etc/nginx/conf.d:/dst \
-  entermediadb/entermedia:latest /src/$DOMAIN.conf /dst/
-```
-
-### 9. Reload nginx
+### 8. Reload nginx
 
 ```bash
 sudo nginx -t && sudo systemctl reload nginx
@@ -229,24 +193,22 @@ sudo nginx -t && sudo systemctl reload nginx
 
 If `nginx -t` fails, fix the config (usually a duplicate upstream name) and re-run; do not leave a broken config loaded.
 
-### 10. Verify
+### 9. Verify
 
 The site's entry point is `/` → 302 → `/site/find` (per `webapp/index.xconf`). **Do not probe `/site/`** — it has no index page and returns 404 even on a healthy instance.
 
 1. Container is up: `docker ps --filter "name=eme-server-$CLIENTNAME$NNN"` shows `Up`.
-2. Tomcat answers inside the network (poll up to ~3 min after a restart; first boot compiles Java and is slow). If `sleep` is not available in your shell, use curl's own retry as the wait:
-   `curl -sL -o /dev/null -w '%{http_code} %{url_effective}\n' --retry 40 --retry-delay 3 --retry-connrefused http://172.18.0.$NNN:8080/` → final **200** at `/site/find/authentication/nopermissions.html` (anonymous).
+2. Tomcat answers inside the network (poll up to ~3 min after a restart; first boot compiles Java and is slow):
+   `curl -sL -o /dev/null -w '%{http_code} %{url_effective}\n' http://172.18.0.$NNN:8080/` → final **200** at `/site/find/authentication/nopermissions.html` (anonymous).
 3. Through nginx (if the domain doesn't resolve yet, force local resolution with `--resolve $DOMAIN:443:127.0.0.1`):
    `curl -skL -o /dev/null -w '%{http_code}\n' https://$DOMAIN/` → **200**.
 4. Browser check with cua-driver: open Chrome to `https://$DOMAIN/`, take one compact screenshot (`get_window_state`, small `max_dimension`), confirm the EME find app renders (not a cert error or 502).
-
 
 ## Troubleshooting
 
 - **dockerbuild dies with `sudo: a password is required`** (right after "Creating ... .env file") — the scoped `chown` rule is missing or was installed for a different deploy root. Re-run the installer with this machine's deploy root: `sudo <repo>/.agents/skills/deploy-eme-server/install-sudoers.sh <user> $DEPLOY_ROOT`, then re-run step 4 (it is idempotent; the clone and `.env` survive).
 - **Container crash-loops with `mkdir: Permission denied` / `could not create parent directories`** in `docker logs` — deployer ≠ `ownedby`, so the tree is owned by the wrong user. Run the ownership alignment from step 4, then restart.
-- **Container dies at boot with `AccessDeniedException ... elastic/singlenode/data`** — the ES data path's parent dir is not writable by `entermedia` (e.g. after a chown during an index wipe). `sudo chown -R "$(id -u entermedia):$(id -g entermedia)" $DIR/webapp/WEB-INF/elastic`, restart.
-- **`git: detected dubious ownership`** when running `eme.sh update` or any git command as the deployer — the tree is owned by `entermedia`. Add the safe.directory entries from step 4 (one per repo, both symlink and real path forms; wildcards only work on git ≥ 2.35.2).
+- **`git: detected dubious ownership`** when running `eme.sh update` or any git command as the deployer — the tree is owned by `entermedia`. Add the safe.directory entries from step 4 (one per repo; wildcards only work on git ≥ 2.35.2).
 - **Domain doesn't resolve publicly after everything else works** — DNS is per-client: add an A record `$CLIENTNAME.$DOMAIN_BASE` → this machine's public IPv4 (`curl -4 ifconfig.me`) at the domain provider. The apex of the base domain may point to a *different* server; that does not affect subdomains. Verify locally first with `curl -sk --resolve $DOMAIN:443:127.0.0.1 https://$DOMAIN/`.
 - **502 from nginx** — container down or still booting: `sudo docker logs --tail 100 eme-server-$CLIENTNAME$NNN`.
 - **Cert error in browser** — domain must be a subdomain of the chosen `DOMAIN_BASE` and the wildcard cert must exist under `/etc/letsencrypt/live/<base>/`; check the rendered vhost's `server_name` and `ssl_certificate` paths.
@@ -258,7 +220,7 @@ The site's entry point is `/` → 302 → `/site/find` (per `webapp/index.xconf`
 
 ```bash
 sudo docker stop -t 60 eme-server-$CLIENTNAME$NNN && sudo docker rm -f eme-server-$CLIENTNAME$NNN
-sudo rm /etc/nginx/sites-enabled/$DOMAIN.conf /etc/nginx/sites-available/$DOMAIN.conf   # or /etc/nginx/conf.d/$DOMAIN.conf
+sudo rm /etc/nginx/sites-enabled/$DOMAIN.conf /etc/nginx/sites-available/$DOMAIN.conf
 sudo nginx -t && sudo systemctl reload nginx
 # remove the DB row, then ask before deleting $DEPLOY_ROOT/eme-server-$CLIENTNAME (client data!)
 ```
