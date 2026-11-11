@@ -5,9 +5,8 @@
 	<property name="applicationid">site/courageousdreamers</property>
 	<property name="fallbackdirectory">/community/default</property>
 
-	<property name="falir">false</property>
 	<property name="editable">true</property>
-	<property name="templatename">impact-bank</property>
+	<property name="templatename">courageousdreamers</property>
 	
 
 	<path-action name="Admin.autoLogin"/>
@@ -86,5 +85,8 @@
 	<style id="oi3" href="${communityhome}/theme/css/community/oi3_old.css"/>
 	<style id="blog" href="${communityhome}/theme/css/community/blog.css"/>
 	<!-- Base Community JS & CSS -->
+
+		<style id="aos-css" href="${communityhome}/theme/js/aos/aos.css" />
+	<style id="cd" href="${communityhome}/theme/css/cd.css" />
 
 </page>
