@@ -30,7 +30,7 @@
 	<path-action name="FinderModule.loadAppsMenu"/>
 	<path-action name="PageValue.loadPageVariable" allowduplicates="true" bean="inflector"/>
 	
-	<property name="communitytag">courageous-dreamers</property>
+	<property name="communitytag">courageousdreamers</property>
 	<property name="communityhome">/site/courageousdreamers</property>
   	<path-action name="MediaAdminModule.loadCommunityTag"/>
 
