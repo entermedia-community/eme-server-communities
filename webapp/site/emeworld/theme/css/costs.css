@@ -1,0 +1,27 @@
+.costs-hero { padding: clamp(72px, 9vw, 120px) 0 24px; }
+.costs-hero h1 { font-size: clamp(2rem, 4.2vw, 3.4rem); max-width: 22ch; margin: 0 0 .4em; }
+.tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 2rem; }
+.tier { display: flex; flex-direction: column; }
+.tier .amt { font-size: 2.4rem; font-weight: 300; color: var(--text); margin: .2em 0 0; line-height: 1.1; }
+.tier .amt small { font-size: 1rem; color: var(--muted); }
+.tier .by { font-size: .9rem; color: var(--muted); margin: .3em 0 1em; }
+.tier ul { margin: 0 0 1.4rem; padding-left: 1.1em; color: var(--body); }
+.tier li { margin-bottom: .5em; }
+.tier .btn { margin-top: auto; text-align: center; padding: 16px 20px; }
+.cmp { width: 100%; border-collapse: collapse; margin-top: 1.5rem; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.cmp th, .cmp td { text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.cmp th { font-weight: 500; color: var(--text); background: var(--tint); }
+.cmp tr:last-child td { border-bottom: 0; }
+.cmp td { color: var(--body); }
+.survey { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 30px; margin-top: 1.5rem; }
+.survey fieldset { border: 0; padding: 0; margin: 0 0 1.6rem; }
+.survey legend { font-weight: 500; color: var(--text); font-size: 1.1rem; margin-bottom: .6rem; padding: 0; }
+.survey .opts { display: flex; flex-wrap: wrap; gap: 10px; }
+.survey label { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); color: var(--body); cursor: pointer; }
+.survey label:has(input:checked) { background: var(--ink); color: #fff; border-color: var(--ink); }
+.survey input { accent-color: var(--ink); }
+.survey .result { display: none; margin-top: 1rem; padding: 18px 22px; border-left: 4px solid var(--ink); background: var(--tint); color: var(--text); }
+.survey .result.on { display: block; }
+.tier.pick { outline: 3px solid var(--ink); outline-offset: 3px; }
+@media (max-width: 640px) { .cmp { display: block; overflow-x: auto; } }
+[hidden] { display: none !important; }

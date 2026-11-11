@@ -1,0 +1,198 @@
+<main>
+    <section class="costs-hero">
+      <div class="wrap">
+        <span class="eyebrow">Give first</span>
+        <h1>We help teams activate a new AI economy without burning out or blowing budget.</h1>
+        <p class="lead">My EME is sponsored by the EME Fundación and trusted by the UN, Yale and the CBC.</p>
+      </div>
+    </section>
+
+    <div class="band" style="padding-top:24px;padding-bottom:48px;">
+      <div class="wrap">
+        <div class="tiers" style="grid-template-columns:minmax(260px,420px);">
+          <article class="card tier" id="t-free">
+            <h3>My EME</h3>
+            <p class="amt">Free</p>
+            <p class="by">Sponsored by the EME Fundación</p>
+            <ul>
+              <li>Your EME Profile and AI assistant</li>
+              <li>Chat on mobile and web</li>
+              <li>Open source, no lock in</li>
+            </ul>
+            <a class="btn" href="/site/app">Get My EME</a>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="band tint" style="padding-bottom:48px;">
+      <div class="wrap">
+        <span class="eyebrow">Test small, bet big</span>
+        <h2>Want to go bigger?</h2>
+        <p class="lead narrow">Are you building your own, or do you need help? We will show what fits.</p>
+        <form class="survey" id="needs" onsubmit="return false;">
+          <fieldset>
+            <legend>Are you a developer creating your own EME?</legend>
+            <div class="opts">
+              <label><input type="radio" name="dev" value="yes"> Yes, I am building my own</label>
+              <label><input type="radio" name="dev" value="no"> No, tell us more</label>
+            </div>
+          </fieldset>
+          <div id="detail" hidden>
+          <fieldset>
+            <legend>1. Who are you?</legend>
+            <div class="opts">
+              <label><input type="radio" name="who" value="a community or group"> Community or group</label>
+              <label><input type="radio" name="who" value="a business"> Business</label>
+              <label><input type="radio" name="who" value="a school or university"> School or university</label>
+              <label><input type="radio" name="who" value="an agency or government"> Agency or government</label>
+              <label><input type="radio" name="who" value="an individual"> Just me</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>2. What takes up most of your time? Pick any.</legend>
+            <div class="opts">
+              <label><input type="checkbox" name="pain" value="answering the same questions"> Answering the same questions</label>
+              <label><input type="checkbox" name="pain" value="finding files and documents"> Finding files and documents</label>
+              <label><input type="checkbox" name="pain" value="transcripts and translation"> Transcripts and translation</label>
+              <label><input type="checkbox" name="pain" value="scheduling and follow up"> Scheduling and follow up</label>
+              <label><input type="checkbox" name="pain" value="training and onboarding"> Training and onboarding</label>
+              <label><input type="checkbox" name="pain" value="reports and dashboards"> Reports and dashboards</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>3. How many people would use it?</legend>
+            <div class="opts">
+              <label><input type="radio" name="size" value="1"> Just me</label>
+              <label><input type="radio" name="size" value="2"> 2 to 10</label>
+              <label><input type="radio" name="size" value="3"> 11 to 100</label>
+              <label><input type="radio" name="size" value="4"> More than 100</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>4. How private must your data be?</legend>
+            <div class="opts">
+              <label><input type="radio" name="privacy" value="1"> Nothing special</label>
+              <label><input type="radio" name="privacy" value="2"> Some documents</label>
+              <label><input type="radio" name="privacy" value="3"> Everything stays with us</label>
+            </div>
+          </fieldset>
+          </div>
+          <div class="result" id="result" role="status" aria-live="polite"></div>
+        </form>
+        <p id="host-hint" style="margin-top:1.4rem;color:var(--muted);">Answer the first question to begin.</p>
+        <p id="host-wrap" style="margin-top:1.4rem;" hidden><a class="btn" id="host-link" href="/site/app/#entermedialibraryhosting">Continue to EnterMediaLibrary hosting</a></p>
+
+        <div class="tiers" id="bigtiers" style="margin-top:2.5rem;" hidden>
+          <article class="card tier" id="t-host">
+            <h3>Test small</h3>
+            <p class="by" style="margin:0 0 .6em;"><strong>Basic hosting</strong></p>
+            <p class="amt">$150 <small>per month</small></p>
+            <p class="by">Provided by EnterMediaLibrary.com</p>
+            <ul>
+              <li>Your own EME Server, hosted for you</li>
+              <li>Open AI models on dedicated hardware</li>
+              <li>Flat rate for all AI services</li>
+            </ul>
+            <a class="btn" href="https://entermedialibrary.com">Host with us</a>
+          </article>
+
+          <article class="card tier" id="t-one">
+            <h3>Bet big</h3>
+            <p class="by" style="margin:0 0 .6em;"><strong>One on one</strong></p>
+            <p class="amt">Custom</p>
+            <p class="by">A proposal built around you</p>
+            <ul>
+              <li>We learn what your team does</li>
+              <li>Custom skills, workflows and data</li>
+              <li>Costs agreed in your proposal</li>
+            </ul>
+            <a class="btn ghost" id="one-link" href="mailto:cburkey@eme.world?subject=EME%20one%20on%20one">Start a conversation</a>
+          </article>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="band">
+      <div class="wrap">
+        <span class="eyebrow">Dedicated hardware</span>
+        <h2>Hardware, not tokens</h2>
+        <p class="lead">Most AI is billed by the token, so the more your team uses it, the more it costs. EME runs your AI on <strong>dedicated hardware</strong> instead.</p>
+        <table class="cmp">
+          <thead><tr><th></th><th>Token billing</th><th>EME dedicated hardware</th></tr></thead>
+          <tbody>
+            <tr><th>How you are charged</th><td>By every word in and out</td><td>One flat rate for all AI services</td></tr>
+            <tr><th>Heavy use</th><td>The bill grows</td><td>Unlimited tokens, same cost</td></tr>
+            <tr><th>Planning</th><td>Hard to predict</td><td>Predictable every month</td></tr>
+            <tr><th>Your data</th><td>Sent to a shared service</td><td>Full data privacy on your own hardware</td></tr>
+            <tr><th>Lock in</th><td>Tied to one vendor</td><td>Open models, open source, no lock in</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:1.5rem;">Hosting, open AI models, dedicated GPU and cloud storage are included. The Open API has no usage charges.</p>
+      </div>
+    </div>
+
+    <div class="band tint">
+      <div class="wrap">
+        <span class="eyebrow">Our exchange</span>
+        <h2>How it fits together</h2>
+        <p class="lead narrow">The <strong>free</strong> My EME is the front door, paid for by the Fundación. Hosting pays for the servers and the people who run them. One on one work pays for the time we spend learning your needs.</p>
+      </div>
+    </div>
+  </main>
+
+<script>
+  (function () {
+    var f = document.getElementById('needs');
+    if (!f) return;
+    function $id(i) { return document.getElementById(i); }
+    function val(n) { var e = f.querySelector('input[name=' + n + ']:checked'); return e ? e.value : ''; }
+    function vals(n) { return [].map.call(f.querySelectorAll('input[name=' + n + ']:checked'), function (e) { return e.value; }); }
+    var sizes = { 1: 'just me', 2: '2 to 10 people', 3: '11 to 100 people', 4: 'more than 100 people' };
+    var privs = { 1: 'nothing special', 2: 'some documents', 3: 'everything stays with us' };
+    var names = { 't-host': 'Test small: Basic hosting', 't-one': 'Bet big: One on one', 't-free': 'Give first: My EME (free)' };
+
+    function update() {
+      var dev = val('dev'), who = val('who'), pains = vals('pain'), size = +val('size') || 0, priv = +val('privacy') || 0;
+      var isDev = dev === 'yes';
+      var parts = [], any = false, pick = '', why = '';
+
+      $id('detail').hidden = dev !== 'no';
+      $id('bigtiers').hidden = !dev;
+      $id('t-one').hidden = isDev;
+      $id('result').className = 'result';
+
+      if (isDev) {
+        any = true; pick = 't-host';
+        why = 'As a developer building your own, basic hosting at $150 per month is all you need.';
+        parts.push('I am a developer creating my own EME.');
+      } else if (dev === 'no') {
+        if (who) parts.push('I am ' + who + '.');
+        if (size) parts.push('Users: ' + sizes[size] + '.');
+        if (priv) parts.push('Privacy: ' + privs[priv] + '.');
+        if (pains.length) parts.push('Most time goes to: ' + pains.join(', ') + '.');
+        any = !!(who || size || priv || pains.length);
+        if (who && size && priv) {
+          pick = 't-free'; why = 'A free My EME is a good place to start.';
+          if (size >= 2 || priv >= 2 || pains.length >= 3) { pick = 't-host'; why = 'Your own hosted EME Server keeps your data and your team together.'; }
+          if (size >= 4 || (priv >= 3 && size >= 3) || who === 'an agency or government') { pick = 't-one'; why = 'Your needs are specific. A one on one proposal fits them best.'; }
+        }
+      }
+
+      [].forEach.call(document.querySelectorAll('.tier'), function (t) { t.classList.toggle('pick', t.id === pick); });
+      if (pick) {
+        $id('result').innerHTML = '<strong>' + names[pick] + '</strong> looks like your fit. ' + why;
+        $id('result').className = 'result on';
+      }
+
+      var url = '/site/app/';
+      if (parts.length) url += '?message=' + encodeURIComponent(parts.join(' '));
+      $id('host-link').href = url + '#entermedialibraryhosting';
+      $id('host-wrap').hidden = !any;
+      $id('host-hint').hidden = !!dev;
+      $id('one-link').href = 'mailto:cburkey@eme.world?subject=' + encodeURIComponent('EME one on one') + '&body=' + encodeURIComponent(parts.join(' '));
+    }
+    f.addEventListener('change', update);
+  })();
+  </script>
