@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <page>
-  <inner-layout>/${applicationid}/theme/layouts/sitepage.html</inner-layout>
+  <layout>/${applicationid}/theme/layouts/sitepage.html</layout>
+  <inner-layout />
   <property name="pagetitle">Budget | EME World</property>
   <property name="metadescription">What EME costs: a free My EME supported by the EME Fundación, basic hosting from EnterMediaLibrary.com, and a one on one option for a custom proposal. AI runs on dedicated hardware at a flat rate, not per token.</property>
+  <property name="keywords">My EME free, EME budget, EME hosting, AI economy, flat rate AI, dedicated hardware, unlimited tokens, EnterMediaLibrary</property>
+  <property name="canonical">https://eme.world/costs.html</property>
   <property name="navkey">costs</property>
   <property name="extracss">costs.css</property>
 </page>

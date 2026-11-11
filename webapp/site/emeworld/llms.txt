@@ -1,0 +1,19 @@
+# EME World
+
+> EME World is a Fundación (501(c)(3) foundation) that provides an open source, human guided AI harness for organizations, governments and communities. Everyone gets a free My EME, a chat platform with their own AI digital twin (an EME Profile). Trusted by the United Nations, Yale and the Canadian Broadcasting Corporation (CBC).
+
+Key facts:
+- 100% open source. Runs on Linux, Docker and Git.
+- AI runs on dedicated hardware at a flat rate. Unlimited tokens, no usage charges, full data privacy, no vendor lock in.
+- Hosting, open AI models, dedicated GPU and cloud storage are included.
+
+## Pages
+
+- [Home](https://eme.world/): What EME is, the AI harness, EME Profiles, servers and values.
+- [Budget](https://eme.world/costs.html): My EME is free. Basic hosting is $150 per month, provided by EnterMediaLibrary.com. Monthly support plans are agreed in a one on one proposal. Explains dedicated hardware instead of per token billing.
+- [Developers](https://eme.world/developers.html): Tutorial for setting up an EME Server and customizing it with OpenCode and AI coding agents.
+
+## Optional
+
+- [Source code](https://github.com/entermedia-community/eme-server): The open source EME Server.
+- Contact: cburkey@eme.world

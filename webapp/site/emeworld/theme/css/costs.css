@@ -26,3 +26,7 @@
 .tier.pick { outline: 3px solid var(--ink); outline-offset: 3px; }
 @media (max-width: 640px) { .cmp { display: block; overflow-x: auto; } }
 [hidden] { display: none !important; }
+.glance { display: grid; grid-template-columns: max-content 1fr; gap: 10px 28px; margin: 1.5rem 0 0; }
+.glance dt { font-weight: 500; color: var(--text); }
+.glance dd { margin: 0; color: var(--body); }
+@media (max-width: 640px) { .glance { grid-template-columns: 1fr; gap: 2px; } .glance dd { margin-bottom: 12px; } }

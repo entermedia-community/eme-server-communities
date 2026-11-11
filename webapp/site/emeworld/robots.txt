@@ -1,0 +1,77 @@
+User-agent: *
+Allow: /
+Disallow: /authentication/
+Disallow: /views/
+
+# AI crawlers and assistants are welcome to read the public pages
+User-agent: GPTBot
+Allow: /
+Disallow: /authentication/
+Disallow: /views/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /authentication/
+Disallow: /views/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /authentication/
+Disallow: /views/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /authentication/
+Disallow: /views/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /authentication/
+Disallow: /views/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /authentication/
+Disallow: /views/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /authentication/
+Disallow: /views/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /authentication/
+Disallow: /views/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /authentication/
+Disallow: /views/
+
+User-agent: CCBot
+Allow: /
+Disallow: /authentication/
+Disallow: /views/
+
+User-agent: Bytespider
+Allow: /
+Disallow: /authentication/
+Disallow: /views/
+
+User-agent: meta-externalagent
+Allow: /
+Disallow: /authentication/
+Disallow: /views/
+
+User-agent: Amazonbot
+Allow: /
+Disallow: /authentication/
+Disallow: /views/
+
+User-agent: cohere-ai
+Allow: /
+Disallow: /authentication/
+Disallow: /views/
+
+Sitemap: https://eme.world/sitemap.xml

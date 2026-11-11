@@ -5,14 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>$!content.pagetitle</title>
   <meta name="description" content="$!content.metadescription">
+  <meta name="keywords" content="$!content.keywords">
   <meta name="robots" content="index, follow, max-image-preview:large">
+  #if($content.canonical)
+  <link rel="canonical" href="$content.canonical">
+  <meta property="og:url" content="$content.canonical">
+  #end
+  <meta property="og:site_name" content="EME World">
+  <meta property="og:locale" content="en_US">
   <meta property="og:type" content="website">
   <meta property="og:title" content="$!content.pagetitle">
   <meta property="og:description" content="$!content.metadescription">
+  <meta name="twitter:title" content="$!content.pagetitle">
+  <meta name="twitter:description" content="$!content.metadescription">
   #if($content.ogimage)
   <meta property="og:image" content="$content.ogimage">
+  <meta name="twitter:image" content="$content.ogimage">
   <meta name="twitter:card" content="summary_large_image">
+  #else
+  <meta name="twitter:card" content="summary">
   #end
+  <meta name="theme-color" content="#0a1a33">
+  <link rel="icon" href="./theme/images/favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
