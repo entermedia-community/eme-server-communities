@@ -9,16 +9,11 @@ import org.entermediadb.email.TemplateWebEmail
 
 
 public void init() {
-
-	
 	
 	//Notify to Email:
 	
 	  //get it from catalog settings?
 	
-	
-	
-
 	//prevent re-submition
 	 String clientform = context.getSessionValue("clientform");
 	 if (clientform != null) {
@@ -33,6 +28,10 @@ public void init() {
 	MediaArchive archive = context.getPageValue("mediaarchive");
 	
 	String notifyemail = archive.getCatalogSettingValue("notificationmeeting");
+	if (notifyemail == null || notifyemail.isEmpty()) {
+		log.info("No notification email set in catalog settings");
+		return;
+	}
 	
 	Boolean valid = true;
 	String field1 = context.getRequestParameter("username"); //Fake fields for spamm control
