@@ -1,0 +1,39 @@
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "EME Architecture: the parent server and its EME Servers",
+    "description": "EME World is the parent server. It holds People and Teams. Each connected EME Server has its own Server Chat Welcome, Collections, Tutorials and Data Tools.",
+    "inLanguage": "en",
+    "about": ["EME World", "EME Server", "People", "Teams", "Collections", "Tutorials", "Data Tools", "Java", "Linux", "Docker", "ElasticSearch", "Model Context Protocol", "Websockets", "Flutter", "Public key cryptography"],
+    "publisher": { "@type": "Organization", "name": "EME World", "url": "https://eme.world" }
+  }
+  </script>
+
+<main>
+    <section class="dev-hero">
+      <div class="wrap">
+        <span class="eyebrow">Architecture</span>
+        <h1 class="nowrap">Object Orientated Knowledge Management</h1>
+      </div>
+    </section>
+
+    <div class="band" style="padding-top:56px;">
+      <div class="wrap arch">
+
+        <figure class="architecture" id="inside">
+          <header class="arch-head">
+            <h2>Built with Java</h2>
+            <p>Every EME Server is completely self contained. The only harness built this way.</p>
+          </header>
+          <a href="./overview/eme-object-architecture.svg" aria-label="Open the full size diagram"><img src="./overview/eme-object-architecture.svg" width="1200" height="1966" loading="lazy" alt="Object oriented architecture. The EME Server is object oriented. Below it is a tree from the back end to the front end: Linux and Docker, an embedded ElasticSearch index with vector search, pages and data as files, Model Connectors, Skills and Agent Jobs with a Job Manager, an MCP server and client, public and private keys, Websockets, and Flutter front ends such as EME.world and Data Tools."></a>
+        </figure>
+
+        <figure class="architecture" id="diagram">
+          <figcaption><strong>EME World is the parent server.</strong> It holds the People and the Teams. Every EME Server connects to it and keeps its own Collections, Tutorials and Data Tools. A thick green border marks an EME Server.</figcaption>
+          <a href="./overview/eme-world-parent-server.svg" aria-label="Open the full size diagram"><img src="./overview/eme-world-parent-server.svg" width="1200" height="1092" alt="Network diagram. EME World, the parent server, holds People and Teams. Each connected EME Server, such as UN News, Cumbre de Cocreación or your own, connects through a Server Chat Welcome node and has Collections, Tutorials and Data Tools. Cumbre de Cocreación also has a Topics node, and its Tutorials connect to its Collections."></a>
+        </figure>
+
+      </div>
+    </div>
+  </main>

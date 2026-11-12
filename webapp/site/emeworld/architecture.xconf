@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<page>
+  <layout>/${applicationid}/theme/layouts/sitepage.html</layout>
+  <inner-layout />
+  <property name="pagetitle">Architecture | EME World</property>
+  <property name="metadescription">EME World is the parent server with People and Teams. Each EME Server is object oriented, built with Java and self contained, on Linux and Docker, with embedded ElasticSearch, Model Connectors, MCP, Websockets, key signature authentication and Flutter front ends.</property>
+  <property name="keywords">EME architecture, parent server, EME World, EME Server, People, Teams, Collections, Tutorials, Data Tools, Server Chat Welcome, network diagram</property>
+  <property name="canonical">https://eme.world/architecture.html</property>
+  <property name="navkey">arch</property>
+  <property name="extracss">developers.css</property>
+  <property name="ogimage">/overview/eme-world-parent-server.png</property>
+</page>

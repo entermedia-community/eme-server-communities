@@ -1,4 +1,4 @@
-<img src="../images/logo_light.svg" alt="EME World" width="200" align="right"> <img src="cumbre-de-cocreacion-logo.svg" alt="Cumbre de Cocreación" width="56" align="right">
+<img src="../overview/logo_light.svg" alt="EME World" width="200" align="right"> <img src="cumbre-de-cocreacion-logo.svg" alt="Cumbre de Cocreación" width="56" align="right">
 
 **Christopher Burkey** · Tel: +502 4611 8131 · [eme.world](https://eme.world)
 
@@ -16,6 +16,12 @@
 | **Público Objetivo** | Toda persona que tenga un negocio en el Lago de Atitlán, local o extranjera. |
 | **Objetivo** | Que cada emprendedor use su teléfono para trabajar, vender y crecer durante todo el año. |
 | **Entidades Aliadas** | **LevelUp Guatemala** (donó el programa completo de cursos); **EME World Inc.** (presenta la propuesta); **UN Open Source Week** de la ONU (colaboración estratégica, ver sección 6) |
+
+# **Tu coach de negocios personal, con IA**
+
+**La Cumbre de Cocreación es un coach personal con inteligencia artificial, en tu teléfono.** Te acompaña paso a paso a **empezar** tu negocio, **registrarlo** y **conectarte** con otros líderes de negocios del Lago de Atitlán. Gratis, y a tu ritmo.
+
+![Tu coach personal de negocios con IA: empezar, registrar y conectar con otros negocios del Lago de Atitlán](cumbre-de-cocreacion-coach.svg)
 
 > **EME World** es una **Plataforma de Inteligencia Colectiva**: **IA personalizable para todos**. Una plataforma abierta, para cada necesidad de IA, con las personas siempre al mando.
 

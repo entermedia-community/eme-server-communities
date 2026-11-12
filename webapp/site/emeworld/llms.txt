@@ -11,6 +11,7 @@ Key facts:
 
 - [Home](https://eme.world/): What EME is, the AI harness, EME Profiles, servers and values.
 - [Budget](https://eme.world/costs.html): My EME is free. Basic hosting is $150 per month, provided by EnterMediaLibrary.com. Monthly support plans are agreed in a one on one proposal. Explains dedicated hardware instead of per token billing.
+- [Architecture](https://eme.world/architecture.html): EME World is the parent server with People and Teams. Each connected EME Server has its own Server Chat Welcome, Collections, Tutorials and Data Tools.
 - [Developers](https://eme.world/developers.html): Tutorial for setting up an EME Server and customizing it with OpenCode and AI coding agents.
 
 ## Optional
