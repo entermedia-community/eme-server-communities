@@ -83,7 +83,7 @@ sudo docker run -t -d \
 	-e CLIENT_NAME=$SERVERNAME \
 	-e INSTANCE_PORT=$NODENUMBER \
 	-v ${SERVERHOME}/:/home/entermedia/eme-server \
-	-v ${SERVERHOME}/webapp/WEB-INF/data/workspaces:/home/entermedia/workspaces \
+	-v ${SERVERHOME}/workspaces:/home/entermedia/workspaces \
 	$DOCKERPROJECT/$DOCKERIMAGE:$BRANCH \
 	/usr/bin/eme dockerstart /home/entermedia/eme-server
 
