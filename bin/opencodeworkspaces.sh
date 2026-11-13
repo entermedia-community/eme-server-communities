@@ -90,8 +90,8 @@ elif [[ -x "$HOME/.opencode/bin/opencode" ]]; then
   OPENCODE="$HOME/.opencode/bin/opencode"
 else
   echo "error: opencode not found in PATH or ~/.opencode/bin" >&2
-  echo "  curl -fsSL https://opencode.ai/v2/install | bash"
-  exit 1
+  echo "Run:  curl -fsSL https://opencode.ai/v2/install | bash"
+  exit 0 ##Kep going
 fi
 
 # exits 0 when the port answers any HTTP response
