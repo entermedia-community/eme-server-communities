@@ -63,6 +63,8 @@ nav.main .btn { padding: 12px 24px; }
 .dark .btn { background: #fff; color: var(--ink) !important; border-color: #fff; }
 .dark .btn.ghost { background: transparent; color: #fff !important; border-color: rgba(255,255,255,.6); }
 .actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 2.4rem; }
+.center .actions { justify-content: center; }
+.center .sub { max-width: none; }
 
 /* hero: paper with a drift of ink */
 .hero { position: relative; min-height: min(100vh, 860px); display: flex; align-items: center; overflow: hidden; background: var(--paper); color: var(--body); }
