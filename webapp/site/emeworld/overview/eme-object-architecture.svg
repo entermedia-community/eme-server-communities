@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 986 1615" width="100%" role="img" aria-labelledby="t d" font-family="Arial, Helvetica, sans-serif">
-<title id="t">EME Server object oriented architecture</title>
-<desc id="d">The EME Server is object oriented. Below it is a tree of its parts, from the back end to the front end: Linux and Docker, an embedded ElasticSearch index with vector search, pages and data as files, Model Connectors, Skills and Agent Jobs with a Job Manager, an MCP server and client, public and private key signatures, Websockets, and Flutter front ends such as EME.world and Data Tools.</desc>
+<title id="t">EME Server Layered Architecture</title>
+<desc id="d">The EME Server Layered Architecture. Below it is a tree of its parts, from the back end to the front end: Linux and Docker, an embedded ElasticSearch index with vector search, pages and data as files, Model Connectors, Skills and Agent Jobs with a Job Manager, an MCP server and client, public and private key signatures, Websockets, and Flutter front ends such as EME.world and Data Tools.</desc>
 <style>
   .h { font-weight: 700; }
   .m { font-weight: 400; }
@@ -35,7 +35,7 @@
 <line x1="522" y1="1546" x2="698" y2="1546" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="2 7" stroke-linecap="round"/>
 <rect x="8" y="8" width="220" height="220" rx="24" fill="#0f172a" stroke="#22c55e" stroke-width="12"/>
 <text x="118.0" y="120.0" text-anchor="middle" class="h" fill="#E8C547" font-size="25" letter-spacing="0.5">EME SERVER</text>
-<text x="118.0" y="146.0" text-anchor="middle" class="m" fill="#e2e8f0" font-size="14" >Object oriented</text>
+<text x="118.0" y="146.0" text-anchor="middle" class="m" fill="#e2e8f0" font-size="14" >Layered Architecture</text>
 <circle cx="290" cy="346" r="64" fill="#1e293b" stroke="#2EC4B6" stroke-width="5"/><g transform="translate(290 322)"><rect x="-15" y="-6" width="9" height="8" rx="1.5" fill="#2EC4B6" stroke="none"/><rect x="-5" y="-6" width="9" height="8" rx="1.5" fill="#2EC4B6" stroke="none"/><rect x="5" y="-6" width="9" height="8" rx="1.5" fill="#2EC4B6" stroke="none"/><rect x="-5" y="-16" width="9" height="8" rx="1.5" fill="#2EC4B6" stroke="none"/><rect x="5" y="-16" width="9" height="8" rx="1.5" fill="#2EC4B6" stroke="none"/><rect x="-15" y="4" width="9" height="8" rx="1.5" fill="#2EC4B6" stroke="none"/><path d="M-18 8H16c-2 7 -9 10 -17 10c-8 0 -14 -4 -17 -10z" fill="#2EC4B6" stroke="none"/></g><text x="290.0" y="355.0" text-anchor="middle" class="h" fill="#f8fafc" font-size="12.5" >LINUX &amp;</text><text x="290.0" y="372.0" text-anchor="middle" class="h" fill="#f8fafc" font-size="12" >DOCKER</text>
 <circle cx="406" cy="346" r="36" fill="#1e293b" stroke="#2EC4B6" stroke-width="4"/><text x="406.0" y="350.0" text-anchor="middle" class="h" fill="#f8fafc" font-size="10.5" >FFMPEG</text>
 <circle cx="290" cy="496" r="64" fill="#1e293b" stroke="#f59e0b" stroke-width="5"/><g transform="translate(290 468)" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="-3" cy="-3" r="9"/><path d="M4 4l10 10"/></g><text x="290.0" y="505.0" text-anchor="middle" class="h" fill="#f8fafc" font-size="12.5" >EMBEDDED</text><text x="290.0" y="522.0" text-anchor="middle" class="h" fill="#f8fafc" font-size="12" >ELASTICSEARCH</text>

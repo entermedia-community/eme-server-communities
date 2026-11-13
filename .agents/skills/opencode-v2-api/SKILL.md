@@ -1,6 +1,6 @@
 ---
 name: opencode-v2-api
-description: Use when working with OpenCodeClient.java or any code that talks to a paired OpenCode v2 HTTP server (the "opencode pair" web interface), or when starting/opening the OpenCode web UI locally. Covers the full verified /api/* endpoint surface, Basic auth, request/response envelopes, the SSE event stream wire format and event-type catalog, the v1→v2 migration mapping for OpenCodeClient.java, the browser-pairing startup script bin/opencoded.sh (host/port from opencode.json, sign-in via one-time `opencode pair` links), and the live-probe recipe for re-verifying the API against a running server.
+description: Use when working with OpenCodeClient.java or any code that talks to a paired OpenCode v2 HTTP server (the "opencode pair" web interface), or when starting/opening the OpenCode web UI locally. Covers the full verified /api/* endpoint surface, Basic auth, request/response envelopes, the SSE event stream wire format and event-type catalog, the v1→v2 migration mapping for OpenCodeClient.java, the browser-pairing startup script bin/opencoded.sh (host/port from opencodeshared.json, sign-in via one-time `opencode pair` links), and the live-probe recipe for re-verifying the API against a running server.
 ---
 
 # Skill: opencode-v2-api
@@ -22,7 +22,7 @@ The repo ships `bin/opencoded.sh` for bringing up this server locally:
 
 - Starts the OpenCode **background service** (`opencode service set/start`, not standalone
   `opencode serve`). Hostname and port come from the `"server"` block in the repo-root
-  `opencode.json` — the script reads them (jq, python3 fallback) and applies them with
+  `opencodeshared.json` — the script reads them (jq, python3 fallback) and applies them with
   `opencode service set`. The v2 binary itself ignores that deprecated key; the service only
   ever reads `~/.config/opencode/service.json`.
 - **No fixed password**: the script never touches the service password. Sign-in happens in the
