@@ -113,7 +113,7 @@ curl -H "&#36;AUTH" http://localhost:8080/site/mediadb/ai/mcp/</code></pre>
 
           <section id="opencode">
             <h2>4. Connect OpenCode</h2>
-            <p>The project root contains an <code>opencodeshared.json</code>. It defines the model provider and the server's MCP endpoint. A minimal version looks like this:</p>
+            <p>The project root contains an <code>opencodeglobal.json</code>. It defines the model provider and the server's MCP endpoint. A minimal version looks like this:</p>
 <pre><code>{
   "&#36;schema": "https://opencode.ai/config.json",
   "providers": {
@@ -144,7 +144,7 @@ curl -H "&#36;AUTH" http://localhost:8080/site/mediadb/ai/mcp/</code></pre>
             <h3>Prefer a browser?</h3>
             <p>Run the OpenCode web interface as a background service:</p>
 <pre><code>bin/opencoded.sh start     # also: restart, stop, status</code></pre>
-            <p>The host and port come from the <code>server</code> block of <code>opencodeshared.json</code>. Sign in with the one time pairing link the script prints. A link works once and expires in 5 minutes, so run the script again for a new one. Behind a proxy, set <code>OPENCODE_PAIR_URL</code> to the public address.</p>
+            <p>The host and port come from the <code>server</code> block of <code>opencodeglobal.json</code>. Sign in with the one time pairing link the script prints. A link works once and expires in 5 minutes, so run the script again for a new one. Behind a proxy, set <code>OPENCODE_PAIR_URL</code> to the public address.</p>
           </section>
 
           <section id="rules">
