@@ -1,0 +1,37 @@
+@import url("./costs.css");
+
+.it-hero { padding: clamp(72px, 9vw, 120px) 0 24px; }
+.it-hero h1 { font-size: clamp(2rem, 4.2vw, 3.4rem); max-width: 24ch; margin: 0 0 .4em; }
+
+.pains { margin: 1.5rem 0 0; padding-left: 1.1em; color: var(--body); max-width: 70ch; }
+.pains li { margin-bottom: .6em; }
+
+.levers { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 2rem; }
+.lever ul { margin: .8rem 0 0; padding-left: 1.1em; color: var(--body); }
+.lever li { margin-bottom: .5em; }
+
+.steps { counter-reset: step; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin: 2rem 0 0; padding: 0; list-style: none; }
+.steps li { counter-increment: step; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 22px; color: var(--body); }
+.steps li::before { content: counter(step); display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: var(--ink); color: #fff; font-weight: 500; margin-bottom: .8rem; }
+.steps strong { display: block; color: var(--text); font-weight: 500; font-size: 1.1rem; margin-bottom: .3em; }
+
+.roi { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 30px; margin-top: 1.5rem; }
+.roi-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
+.roi h3 { margin: 0 0 1rem; font-size: 1.1rem; font-weight: 500; color: var(--text); }
+.roi .field { display: block; margin-bottom: 1rem; }
+.roi .field span { display: block; color: var(--text); margin-bottom: .3rem; }
+.roi .field small { display: block; color: var(--muted); margin-top: .25rem; }
+.roi input[type=number] { width: 100%; max-width: 240px; box-sizing: border-box; padding: 10px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--text); font: inherit; }
+.roi input[type=number]:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+.roi-out { margin-top: 1.6rem; display: none; }
+.roi-out.on { display: block; }
+.roi-out table { width: 100%; border-collapse: collapse; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.roi-out th, .roi-out td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+.roi-out td.num, .roi-out th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.roi-out tr.total th, .roi-out tr.total td { font-weight: 500; color: var(--text); background: var(--tint); border-bottom: 0; }
+.roi-verdict { margin-top: 1rem; padding: 18px 22px; border-left: 4px solid var(--ink); background: var(--tint); color: var(--text); }
+.roi-hint { margin-top: 1.2rem; color: var(--muted); }
+.roi-note { margin-top: 1rem; color: var(--muted); font-size: .9rem; }
+
+.cta { text-align: left; }
+@media (max-width: 640px) { .roi { padding: 20px; } }

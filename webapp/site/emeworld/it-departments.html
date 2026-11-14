@@ -1,0 +1,271 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Self Hosted EME for IT Departments",
+  "url": "https://eme.world/it-departments.html",
+  "description": "The ROI case for self hosting EME, an open source Java server that runs in Docker on Linux, to roll out AI apps and servers across the enterprise on your own hardware with unlimited tokens, full data privacy and no vendor lock in.",
+  "inLanguage": "en",
+  "audience": { "@type": "Audience", "audienceType": "IT departments" },
+  "publisher": { "@type": "Organization", "name": "EME World", "url": "https://eme.world" }
+}
+</script>
+
+<main>
+    <section class="it-hero">
+      <div class="wrap">
+        <span class="eyebrow">IT Departments &middot; Self hosted</span>
+        <h1>Run EME on the Docker and Java stack your team already knows.</h1>
+        <p class="lead">EME is an open source Java server that runs in Docker on Linux. Self host it on your own hardware, keep your data inside, and roll out AI apps and servers across the enterprise without a new vendor for each one.</p>
+        <p style="margin-top:1.4rem;"><a class="btn" href="#calculator">Estimate your ROI</a> <a class="btn ghost" href="#stack" style="margin-left:10px;">See what you run</a></p>
+      </div>
+    </section>
+
+    <div class="band" id="problem">
+      <div class="wrap">
+        <span class="eyebrow">The problem</span>
+        <h2>Every AI app becomes a new project</h2>
+        <p class="lead narrow">Each department finds its own AI tool. IT inherits the work of making them safe, connected and affordable.</p>
+        <ul class="pains">
+          <li><strong>One vendor per app.</strong> Every app brings its own contract, its own security review and its own login.</li>
+          <li><strong>Usage meters that never stop.</strong> Most AI is billed by the token, so more adoption means a bigger bill that is hard to forecast.</li>
+          <li><strong>Data sent out.</strong> Company documents end up in many shared services you do not control.</li>
+          <li><strong>Tied to one model.</strong> Models change quickly. An app built around one vendor cannot follow.</li>
+          <li><strong>Shadow AI.</strong> When the official route is slow, teams go around IT and buy their own.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="band tint" id="case">
+      <div class="wrap">
+        <span class="eyebrow">Why self host</span>
+        <h2>Four reasons it fits IT</h2>
+        <p class="lead narrow">You run EME once, on infrastructure you already manage. Each new app is added to it instead of being bought, reviewed and wired in again.</p>
+        <div class="levers">
+          <article class="card lever">
+            <h3>It fits your stack</h3>
+            <ul>
+              <li>Java server in a Docker container on Linux.</li>
+              <li>Search is embedded, so there is no extra cluster to run.</li>
+              <li>Pages and data are files, kept in Git.</li>
+              <li>Code comes from GitHub and updates from Git.</li>
+              <li>SSO with Microsoft, Google or OAuth 2.</li>
+            </ul>
+          </article>
+          <article class="card lever">
+            <h3>Your data stays inside</h3>
+            <ul>
+              <li>Full data privacy on hosts you choose.</li>
+              <li>Your data is never mined or sold.</li>
+              <li>Export it, or move it to another EME Server.</li>
+              <li>Logins are signed with a private key.</li>
+            </ul>
+          </article>
+          <article class="card lever">
+            <h3>A cost you can plan</h3>
+            <ul>
+              <li>100% open source software.</li>
+              <li>No per token fees from EME, and unlimited tokens on your own hardware.</li>
+              <li>Add apps to the servers you already run.</li>
+            </ul>
+          </article>
+          <article class="card lever">
+            <h3>Extend it in Java</h3>
+            <ul>
+              <li>Skills are Java classes that run as agent jobs.</li>
+              <li>Plugins are Java and HTML.</li>
+              <li>Open API, MCP and Websockets connect your other systems.</li>
+              <li>A person approves the key actions. Humans stay in control.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="band" id="stack">
+      <div class="wrap">
+        <span class="eyebrow">What you run</span>
+        <h2>The stack, in plain terms</h2>
+        <table class="cmp">
+          <thead><tr><th>Layer</th><th>What it is</th></tr></thead>
+          <tbody>
+            <tr><th>Host</th><td>Linux, with Docker. Each EME Server is self contained.</td></tr>
+            <tr><th>Server</th><td>Java, running in a Docker container. 100% open source.</td></tr>
+            <tr><th>Search</th><td>Embedded ElasticSearch with vector search.</td></tr>
+            <tr><th>Storage</th><td>Pages and data as files, versioned in Git. Easy to back up, diff and move.</td></tr>
+            <tr><th>Models</th><td>Model Connectors for hosted, local or your own models, including any model that speaks the OpenAI compatible API.</td></tr>
+            <tr><th>Integration</th><td>Open API (REST, OpenAI syntax compatible), an MCP server and client, and Websockets.</td></tr>
+            <tr><th>Sign in</th><td><strong>SSO with Microsoft, Google or any OAuth 2 provider.</strong> Also public and private key signatures, with login by emailed code, a registered key or an application password.</td></tr>
+            <tr><th>Front ends</th><td>Flutter apps for iOS, Android and web.</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:1.5rem;">The <a href="./architecture.html">architecture page</a> shows how the layers fit together. The <a href="./developers.html">developer tutorial</a> takes you from a fresh machine to a running server.</p>
+      </div>
+    </div>
+
+    <div class="band tint" id="compare">
+      <div class="wrap">
+        <span class="eyebrow">Side by side</span>
+        <h2>Separate AI apps or one self hosted EME</h2>
+        <table class="cmp">
+          <thead><tr><th></th><th>A separate vendor for each app</th><th>One self hosted EME</th></tr></thead>
+          <tbody>
+            <tr><th>Contracts</th><td>One per app</td><td>One open source platform</td></tr>
+            <tr><th>Billing</th><td>Per seat or per token, varies by app</td><td>No per token fees</td></tr>
+            <tr><th>Your data</th><td>Spread across shared services</td><td>On your own hosts</td></tr>
+            <tr><th>Models</th><td>Whatever each vendor offers</td><td>Hosted, local or your own, through Model Connectors</td></tr>
+            <tr><th>Adding the next app</th><td>A new vendor project</td><td>A new skill or Collection on a server you run</td></tr>
+            <tr><th>Who runs it</th><td>The vendor</td><td>Your IT team, with support if you want it</td></tr>
+            <tr><th>Lock in</th><td>Tied to each vendor</td><td>Open source and open models</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="band" id="rollout">
+      <div class="wrap">
+        <span class="eyebrow">Test small, bet big</span>
+        <h2>How IT rolls it out</h2>
+        <p class="lead narrow">Start with one team and measure. Expand when the numbers are yours.</p>
+        <ol class="steps">
+          <li><strong>Try My EME</strong>Free. See chat, the EME Profile and the AI harness.</li>
+          <li><strong>Self host one server</strong>For one team and one real task. Clone from GitHub and run it in Docker on a Linux host.</li>
+          <li><strong>Connect one system</strong>A CMS, email or your own model. Track the hours and costs, then use the calculator below.</li>
+          <li><strong>Review governance</strong>Approvals and access, with your security team.</li>
+          <li><strong>Scale</strong>More teams and servers, or take it fully in house.</li>
+        </ol>
+        <p style="margin-top:1.5rem;color:var(--muted);">Prefer that we run it for you? Basic hosting is $150 per month. See the <a href="./costs.html">budget</a>.</p>
+      </div>
+    </div>
+
+    <div class="band tint" id="calculator">
+      <div class="wrap">
+        <span class="eyebrow">Your numbers</span>
+        <h2>Estimate your first year</h2>
+        <p class="lead narrow">Enter what you spend today and what you expect to spend running EME yourself. The result uses only the numbers you type in. Nothing is assumed for you.</p>
+
+        <form class="roi" id="roiform" onsubmit="return false;">
+          <div class="roi-cols">
+            <fieldset style="border:0;padding:0;margin:0;">
+              <h3>Today, with separate AI vendors</h3>
+              <label class="field"><span>AI apps you plan to run across the enterprise</span><input type="number" id="r-apps" min="0" step="1" inputmode="numeric"></label>
+              <label class="field"><span>Average monthly licence or subscription per app ($)</span><input type="number" id="r-appcost" min="0" step="any" inputmode="decimal"></label>
+              <label class="field"><span>Monthly token and usage charges across all apps ($)</span><input type="number" id="r-usage" min="0" step="any" inputmode="decimal"></label>
+              <label class="field"><span>IT hours to roll out one app</span><input type="number" id="r-hrs" min="0" step="any" inputmode="decimal"><small>Security review, integration, access, testing.</small></label>
+              <label class="field"><span>Loaded hourly cost of IT staff ($)</span><input type="number" id="r-rate" min="0" step="any" inputmode="decimal"></label>
+            </fieldset>
+            <fieldset style="border:0;padding:0;margin:0;">
+              <h3>With self hosted EME</h3>
+              <label class="field"><span>EME Servers you would run</span><input type="number" id="r-servers" min="0" step="1" inputmode="numeric"></label>
+              <label class="field"><span>Monthly cost to run each server ($)</span><input type="number" id="r-hosting" min="0" step="any" inputmode="decimal"><small>Your own hardware or cloud host. Include GPUs if you run models yourself.</small></label>
+              <label class="field"><span>IT hours per month to operate and update EME</span><input type="number" id="r-ops" min="0" step="any" inputmode="decimal"><small>Backups, updates, monitoring. Self hosting is your team's time too.</small></label>
+              <label class="field"><span>Monthly support plan ($)</span><input type="number" id="r-support" min="0" step="any" inputmode="decimal"><small>Use the amount in your proposal, or 0 for none.</small></label>
+              <label class="field"><span>One time setup and migration ($)</span><input type="number" id="r-setup" min="0" step="any" inputmode="decimal"></label>
+              <label class="field"><span>IT hours to add one app on EME</span><input type="number" id="r-hrseme" min="0" step="any" inputmode="decimal"><small>A pilot will show you this number. Use your best estimate until then.</small></label>
+            </fieldset>
+          </div>
+
+          <p class="roi-hint" id="roi-hint">Fill in every field to see the result.</p>
+          <div class="roi-out" id="roi-out" role="status" aria-live="polite">
+            <table>
+              <thead><tr><th>First year</th><th class="num">Separate vendors</th><th class="num">Self hosted EME</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Licences and subscriptions</th><td class="num" id="o-lic-a"></td><td class="num">None</td></tr>
+                <tr><th scope="row">Token and usage charges</th><td class="num" id="o-use-a"></td><td class="num">None</td></tr>
+                <tr><th scope="row">Hosts and support</th><td class="num">None</td><td class="num" id="o-host-b"></td></tr>
+                <tr><th scope="row">Operating and updating</th><td class="num">None</td><td class="num" id="o-ops-b"></td></tr>
+                <tr><th scope="row">Setup and migration</th><td class="num">None</td><td class="num" id="o-setup-b"></td></tr>
+                <tr><th scope="row">IT rollout time</th><td class="num" id="o-it-a"></td><td class="num" id="o-it-b"></td></tr>
+                <tr class="total"><th scope="row">Total first year</th><td class="num" id="o-tot-a"></td><td class="num" id="o-tot-b"></td></tr>
+              </tbody>
+            </table>
+            <div class="roi-verdict" id="o-verdict"></div>
+          </div>
+          <p class="roi-note">This is an estimate built from your own inputs. It leaves out benefits that are hard to price, such as data privacy and freedom from lock in.</p>
+        </form>
+      </div>
+    </div>
+
+    <div class="band">
+      <div class="wrap">
+        <span class="eyebrow">Questions IT asks</span>
+        <h2>Short answers</h2>
+        <dl class="glance">
+          <dt>Where does our data live?</dt><dd>On your EME Server, in files and an embedded index. You choose the host. It is never harvested.</dd>
+          <dt>Can we run it ourselves?</dt><dd>Yes. It is open source Java on Linux and Docker, deployed from Git.</dd>
+          <dt>Do you support SSO?</dt><dd>Yes. Sign in with Microsoft, Google or any OAuth 2 provider.</dd>
+          <dt>Can we use our own models?</dt><dd>Yes, through Model Connectors or MCP.</dd>
+          <dt>What does it cost to grow?</dt><dd>There are no per token fees. You add the hosts you need.</dd>
+          <dt>What if we leave?</dt><dd>Export your data or move it to another EME Server.</dd>
+          <dt>Who approves risky actions?</dt><dd>A person, by design.</dd>
+          <dt>How do we integrate?</dt><dd>Open API, MCP and connectors, such as the Drupal connector used by UN News.</dd>
+        </dl>
+        <p style="margin-top:1.5rem;color:var(--muted);">Trusted by the United Nations, Yale and the Canadian Broadcasting Corporation (CBC).</p>
+      </div>
+    </div>
+
+    <div class="band tint">
+      <div class="wrap cta">
+        <span class="eyebrow">Next step</span>
+        <h2>Take the case to your team</h2>
+        <p class="lead narrow">Tell us about your Docker and Java environment and the AI apps you need to roll out. We will propose a pilot you can measure.</p>
+        <p style="margin-top:1.4rem;">
+          <a class="btn" href="mailto:cburkey@eme.world?subject=Self%20hosted%20EME%20for%20IT">Start a conversation</a>
+          <a class="btn ghost" href="https://github.com/entermedia-community/eme-server" style="margin-left:10px;">View the source</a>
+          <a class="btn ghost" href="./developers.html" style="margin-left:10px;">Developer tutorial</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+<script>
+  (function () {
+    var f = document.getElementById('roiform');
+    if (!f) return;
+    function el(i) { return document.getElementById(i); }
+    function num(i) { var v = el(i).value; return v === '' ? NaN : parseFloat(v); }
+    function usd(n) { return (n < 0 ? '-' : '') + '$' + Math.abs(Math.round(n)).toLocaleString('en-US'); }
+    var ids = ['r-apps', 'r-appcost', 'r-usage', 'r-hrs', 'r-rate', 'r-servers', 'r-hosting', 'r-ops', 'r-support', 'r-setup', 'r-hrseme'];
+
+    function update() {
+      var v = {};
+      var ready = ids.every(function (i) { v[i] = num(i); return !isNaN(v[i]) && v[i] >= 0; });
+      el('roi-out').className = 'roi-out' + (ready ? ' on' : '');
+      el('roi-hint').hidden = ready;
+      if (!ready) return;
+
+      var lic = v['r-apps'] * v['r-appcost'] * 12;
+      var use = v['r-usage'] * 12;
+      var itA = v['r-apps'] * v['r-hrs'] * v['r-rate'];
+      var totA = lic + use + itA;
+
+      var host = (v['r-servers'] * v['r-hosting'] + v['r-support']) * 12;
+      var ops = v['r-ops'] * v['r-rate'] * 12;
+      var itB = v['r-apps'] * v['r-hrseme'] * v['r-rate'];
+      var totB = host + ops + v['r-setup'] + itB;
+
+      el('o-lic-a').textContent = usd(lic);
+      el('o-use-a').textContent = usd(use);
+      el('o-it-a').textContent = usd(itA);
+      el('o-tot-a').textContent = usd(totA);
+      el('o-host-b').textContent = usd(host);
+      el('o-ops-b').textContent = usd(ops);
+      el('o-setup-b').textContent = usd(v['r-setup']);
+      el('o-it-b').textContent = usd(itB);
+      el('o-tot-b').textContent = usd(totB);
+
+      var diff = totA - totB, msg;
+      if (diff > 0) {
+        msg = '<strong>Self hosted EME comes out ' + usd(diff) + ' lower in the first year.</strong>';
+        if (totB > 0) msg += ' That is a return of ' + Math.round(diff / totB * 100) + '% on what you would spend on EME.';
+      } else if (diff < 0) {
+        msg = '<strong>With these numbers, separate vendors are ' + usd(-diff) + ' lower in the first year.</strong> Try a larger number of apps, or run a pilot to measure the real hours.';
+      } else {
+        msg = '<strong>With these numbers the two options cost the same in the first year.</strong>';
+      }
+      el('o-verdict').innerHTML = msg;
+    }
+    f.addEventListener('input', update);
+    update();
+  })();
+  </script>

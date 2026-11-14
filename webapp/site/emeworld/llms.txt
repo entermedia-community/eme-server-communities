@@ -13,6 +13,7 @@ Key facts:
 - [Budget](https://eme.world/costs.html): My EME is free. Basic hosting is $150 per month, provided by EnterMediaLibrary.com. Monthly support plans are agreed in a one on one proposal. Explains dedicated hardware instead of per token billing.
 - [Architecture](https://eme.world/architecture.html): EME World is the parent server with People and Teams. Each connected EME Server has its own Server Chat Welcome, Collections, Tutorials and Data Tools.
 - [Developers](https://eme.world/developers.html): Tutorial for setting up an EME Server and customizing it with OpenCode and AI coding agents.
+- [IT Departments](https://eme.world/it-departments.html): The ROI case for self hosting EME in an IT department. An open source Java server that runs in Docker on Linux, rolls out AI apps and servers across the enterprise on your own hardware, with no per token fees, full data privacy and no vendor lock in. Includes a calculator for your own numbers.
 
 ## Optional
 
