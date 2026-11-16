@@ -128,6 +128,12 @@ svg.tree > rect:first-of-type { fill: none; }
 .features li:has(.fi) p { grid-column: 1 / -1; }
 .features .fi { display: block; width: 30px; height: 30px; color: var(--ink-soft); }
 .features p { margin: 0; font-size: 1rem; color: var(--muted); }
+.trusted { margin: 64px auto 0; max-width: 960px; }
+.trusted-list { list-style: none; padding: 0; margin: 0 0 1.4rem; display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.trusted-list li { padding: 30px 24px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
+.trusted-list strong { font-size: clamp(1.6rem, 2.6vw, 2.2rem); font-weight: 400; color: var(--ink); line-height: 1.1; }
+.trusted-list span { font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.trusted > p { margin: 0; color: var(--muted); }
 
 .contact { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; gap: 12px; font-size: 1.1rem; }
 .contact a { color: #cfdcf5; text-underline-offset: 4px; }
