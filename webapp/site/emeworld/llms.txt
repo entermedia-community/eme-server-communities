@@ -1,6 +1,6 @@
 # EME World
 
-> EME World is a Fundación (501(c)(3) foundation) that provides an open source, human guided AI harness for organizations, governments and communities. Everyone gets a free My EME, a chat platform with their own AI digital twin (an EME Profile). Trusted by the United Nations, Yale and the Canadian Broadcasting Corporation (CBC).
+> EME World is a 501(c)(3) Foundation that provides an open source, human guided AI harness for organizations, governments and communities. Everyone gets a free My EME, a chat platform with their own AI digital twin (an EME Profile). Trusted by the United Nations, Yale and the Canadian Broadcasting Corporation (CBC).
 
 Key facts:
 - 100% open source. Runs on Linux, Docker and Git.

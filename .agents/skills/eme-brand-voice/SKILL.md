@@ -1,6 +1,6 @@
 ---
 name: eme-brand-voice
-description: Use whenever you write or rewrite copy for EME World (web pages, graphics text, proposals, documents, chat blurbs, English or Spanish). Defines the voice, the four values with their exact wording, vocabulary to use and avoid, and the hard punctuation and naming rules the user has set (no em dashes, Fundación not nonprofit, short text, bold key words).
+description: Use whenever you write or rewrite copy for EME World (web pages, graphics text, proposals, documents, chat blurbs, English or Spanish). Defines the voice, the four values with their exact wording, vocabulary to use and avoid, and the hard punctuation and naming rules the user has set (no em dashes, Foundation not nonprofit, short text, no bold inside text).
 ---
 
 # EME brand voice
@@ -13,13 +13,13 @@ description: Use whenever you write or rewrite copy for EME World (web pages, gr
 - Soft, not hype. No exclamation marks, no "revolutionary", no "disrupt".
 - Lead with the most compelling points and use few words. The user's steer on the home page was "most compelling parts only, not too many words": one line per idea, detail goes in cards.
 - Decide the amount of text yourself and keep it short. Chart and card blurbs are about 3 to 5 short lines.
-- Bold only the key words in a short blurb, never whole sentences.
+- **Never bold words inside body text** (paragraphs, card blurbs, lists, graphics text). Use plain text. Headings and labels carry the emphasis.
 
 ## Hard rules from the user
 
 1. **Never use an em dash.** Not in pages, documents, graphics or replies. Use a comma, colon or new sentence.
 2. In chart and graphic text, avoid hyphens. Keep a hyphen only when the user's own wording has one (for example "Open-source tools" in the Light on the Earth blurb).
-3. **Never write "sin fines de lucro" or "nonprofit"** for EME World Inc. Say **Fundación** (a 501(c)(3) foundation).
+3. **Never write "nonprofit" or "sin fines de lucro"** for EME World Inc. Say **Foundation** (a 501(c)(3) Foundation). **Never use "Fundación"**, in English or Spanish copy.
 4. Do not read or show the `description` field as a description; it is search text. Use `longdescription`.
 5. Do not invent customers, numbers or claims. Use the proof points in `eme-brand-story`.
 6. Say **EME Profile**, not "persona", for a person's digital twin entity.
@@ -48,12 +48,12 @@ Respect for Time, Stronger Together, Light on the Earth, Open to Everyone.
 | open source, 100% open source | "free software" (unless quoting) |
 | Collective Intelligence | "AGI", "superintelligence" |
 | humans in control, human guided | "autonomous", "hands off" |
-| Fundación | "nonprofit", "sin fines de lucro" |
+| Foundation (also in Spanish copy) | "Fundación", "nonprofit", "sin fines de lucro" |
 | flat rate, full data privacy | "pay per use", "usage fees" (the Open API has no usage charge) |
 
 ## Spanish
 
-Mirror the English meaning, same warmth. Keep product names (EME, Mi EME, AI Harness) as is. Keep "Fundación". Use the
+Mirror the English meaning, same warmth. Keep product names (EME, Mi EME, AI Harness) as is. Keep "Foundation" as is (never "Fundación"). Use the
 `cumbre-de-cocreacion-*` files as the reference for tone.
 
 ## Quick check before you finish

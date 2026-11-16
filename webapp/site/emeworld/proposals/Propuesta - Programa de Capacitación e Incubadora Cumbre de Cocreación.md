@@ -9,7 +9,7 @@
 | Detalle del Proyecto | Información Institucional |
 | :---- | :---- |
 | **Programa** | Cumbre de Cocreación (capacitación gratuita y autoguiada para emprendedores, en una aplicación móvil) |
-| **Presentado por** | EME World Inc. (Fundación) |
+| **Presentado por** | EME World Inc. (Foundation) |
 | **Ubicación Base** | San Marcos La Laguna, Sololá, Guatemala |
 | **Público Objetivo** | Toda persona que tenga un negocio o una idea concreta de negocio en el Lago de Atitlán, local o extranjera. |
 | **Objetivo** | Que cada emprendedor use su teléfono para trabajar, vender y crecer durante todo el año. |
@@ -170,7 +170,7 @@ El piloto busca demostrar que un modelo autoguiado y de bajo costo, con contenid
 
 # **11. Quiénes estamos detrás**
 
-**EME World Inc.** es una **Fundación** 501(c)(3) dedicada a la mejora comunitaria y al desarrollo de capacidades mediante tecnología abierta, **sin depender de grandes corporaciones**. Cada mes, la Comunidad EME se reúne y envía sus comentarios a nuestra Oficina del Programa de Código Abierto (OSPO).
+**EME World Inc.** es una **Foundation** 501(c)(3) dedicada a la mejora comunitaria y al desarrollo de capacidades mediante tecnología abierta, **sin depender de grandes corporaciones**. Cada mes, la Comunidad EME se reúne y envía sus comentarios a nuestra Oficina del Programa de Código Abierto (OSPO).
 
 EME World participa en el marco de la **UN Open Source Week** y ha trabajado con organizaciones como Yale y la Canadian Broadcasting Corporation (CBC). **Esto no implica que la ONU respalde ni financie este proyecto.** **[Por documentar]** el alcance de cada colaboración antes de citarla ante un financiador.
 

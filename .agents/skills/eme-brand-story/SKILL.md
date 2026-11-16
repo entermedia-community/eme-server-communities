@@ -15,7 +15,7 @@ Source documents: `webapp/site/emeworld/overview/EME Collective Intelligence for
 - **Sub line:** "One open platform. Every AI need. Humans fully in control."
 - **Lead:** "EME is an all inclusive AI package delivered through a single, open platform, fully customizable using AI skills."
 - **Sign off:** "Own your intelligence. Own your content. Own your future."
-- **Organization:** EME World Inc., a Fundación (501(c)(3) foundation). President: Christopher Burkey, cburkey@eme.world,
+- **Organization:** EME World Inc., a Foundation (501(c)(3) foundation). President: Christopher Burkey, cburkey@eme.world,
   +1 513 898-2063. Portal eme.world. Code: github.com/entermedia-community/eme-server. Contact group: the EME World OSPO Team.
 
 ## The one idea
@@ -65,8 +65,8 @@ Developers get the tutorial page (`developers.html`): setup from GitHub, OpenCod
 
 ## Story order (home page as it ended up, reuse for documents)
 
-1. **Hook:** eyebrow "Customizable AI for Everyone", H1 "Collective Intelligence Platform", sub line, one lead line (free chat platform, AI digital twin, a Fundación inspired by UN Open Source Week).
-2. **Our mission, "AI that belongs to everyone":** six short cards. Free chat for all (mobile and web, thousands of users and servers). Unlimited tokens (dedicated hardware, no usage charges). Humans in control. A Fundación (501(c)(3), servers hosted worldwide). Trusted by leaders (United Nations, Yale, CBC). Community driven (monthly EME Community meetings feed the OSPO).
+1. **Hook:** eyebrow "Customizable AI for Everyone", H1 "Collective Intelligence Platform", sub line, one lead line (free chat platform, AI digital twin, a Foundation inspired by UN Open Source Week).
+2. **Our mission, "AI that belongs to everyone":** six short cards. Free chat for all (mobile and web, thousands of users and servers). Unlimited tokens (dedicated hardware, no usage charges). Humans in control. A Foundation (501(c)(3), servers hosted worldwide). Trusted by leaders (United Nations, Yale, CBC). Community driven (monthly EME Community meetings feed the OSPO).
 3. **Your EME:** digital twin, the two modes, email reach.
 4. **Build value that lasts, "Your server is your digital brain":** digital brain (lasting value, competitive edge) and AI economy (agents over chat or MCP).
 5. **Custom EME Servers, "Anyone can build a server":** hundreds of skills, shaped by AI, publish to EME World or join one from the server list (app store), then the real chat apps.
