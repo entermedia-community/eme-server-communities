@@ -63,9 +63,9 @@ if [ ! -f "$SERVERHOME/.env" ]; then
 fi
 
 set -e
-# Per-user My EME workspaces (~/workspaces) must outlive the container. They live under webapp/WEB-INF/data, which is not in git.
+# Per-user My EME workspaces (~/workspaces) must outlive the container. They live in $SERVERHOME/workspaces, which is not in git.
 # Create the folder as the deploying user so it is not root-owned.
-mkdir -p "${SERVERHOME}/webapp/WEB-INF/data/workspaces"
+mkdir -p "${SERVERHOME}/workspaces"
 
 # Run Create Docker Instance, add Mounted HotFolders as needed
 sudo docker run -t -d \
