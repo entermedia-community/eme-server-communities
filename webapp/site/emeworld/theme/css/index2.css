@@ -82,6 +82,8 @@ nav.main .btn { padding: 12px 24px; }
 .stage { background: transparent; padding: clamp(24px, 4vw, 56px) 0; }
 figure { margin: 0; }
 figcaption { font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); text-align: center; margin-top: 1rem; }
+.dark figcaption { color: var(--on-dark-muted); }
+.dark .sub { color: var(--on-dark); }
 
 /* grids and cards */
 .grid { display: grid; gap: 22px; }
