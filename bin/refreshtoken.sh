@@ -67,11 +67,8 @@ set_env() {  # set_env <KEY> <value> — replace the KEY= line in .env, or appen
 
 # sign_login <user> <key_id> <private key> — sets TIMESTAMP (ms), NONCE and SIGNATURE for a key login
 sign_login() {
-  local work secs ns pem
+  local work secs ns
   work="$(mktemp -d)"
-  pem="$(printf '%s' "$3" | b64url_dec | base64 -w64)" \
-    || { rm -rf "$work"; die "EME_PRIVATE_KEY in $ENV_FILE is not valid base64url; run --keygen again after removing it"; }
-  { echo '-----BEGIN PRIVATE KEY-----'; printf '%s\n' "$pem"; echo '-----END PRIVATE KEY-----'; } > "$work/key.pem"
 
   # Millisecond timestamp. Some date implementations (e.g. uutils coreutils) ignore the %3N width and
   # print all 9 nanosecond digits, so take the first 3 of %N ourselves; fall back to whole seconds if %N is missing.
@@ -84,8 +81,45 @@ sign_login() {
   fi
   NONCE="$(openssl rand -hex 16)"
   printf '%s\n%s\n%s\n%s' "$1" "$2" "$TIMESTAMP" "$NONCE" > "$work/message"
-  SIGNATURE="$(openssl pkeyutl -sign -inkey "$work/key.pem" -in "$work/message" | b64url_enc)" \
-    || { rm -rf "$work"; die "could not sign; is EME_PRIVATE_KEY a valid Ed25519 key?"; }
+
+  # Use Python to sign with Ed25519 (OpenSSL 3.0 doesn't support Ed25519 signing via CLI)
+  cat > "$work/sign.py" << 'EOF'
+import sys
+import base64
+from cryptography.hazmat.primitives import serialization
+from cryptography.hazmat.primitives.asymmetric import ed25519
+
+priv_b64url = sys.argv[1]
+msg_path = sys.argv[2]
+
+try:
+    # Decode base64url
+    priv_b64 = priv_b64url.replace('-', '+').replace('_', '/')
+    while len(priv_b64) % 4:
+        priv_b64 += '='
+    priv_der = base64.b64decode(priv_b64)
+    
+    # Load as Ed25519 private key
+    priv_key = serialization.load_der_private_key(priv_der, password=None)
+    
+    # Read and sign the message
+    with open(msg_path, 'rb') as f:
+        message = f.read()
+    
+    signature = priv_key.sign(message)
+    
+    # Output as base64url
+    sig_b64 = base64.b64encode(signature).decode('ascii')
+    sig_b64url = sig_b64.replace('+', '-').replace('/', '_').rstrip('=')
+    print(sig_b64url, end='')
+except Exception as e:
+    print(f'Error: {e}', file=sys.stderr)
+    sys.exit(1)
+EOF
+
+  SIGNATURE="$(python3 "$work/sign.py" "$3" "$work/message")" \
+    || { rm -rf "$work"; die "could not sign; is EME_PRIVATE_KEY a valid Ed25519 key? (requires Python 3 with cryptography package)"; }
+
   rm -rf "$work"
 }
 
