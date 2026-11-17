@@ -83,8 +83,11 @@ sign_login() {
   printf '%s\n%s\n%s\n%s' "$1" "$2" "$TIMESTAMP" "$NONCE" > "$work/message"
 
   # Use Python to sign with Ed25519, since OpenSSL pkeyutl -sign doesn't support Ed25519 on all systems
-  SIGNATURE="$(python3 <<'PYSCRIPT'
-import sys
+  local python_code priv_key_arg msg_path_arg
+  priv_key_arg="$3"
+  msg_path_arg="$work/message"
+  
+  python_code='import sys
 import base64
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric import ed25519
@@ -92,26 +95,27 @@ from cryptography.hazmat.primitives.asymmetric import ed25519
 # Read the private key (base64url encoded PKCS#8)
 priv_b64url = sys.argv[1].strip()
 # Decode base64url: replace - with +, _ with /, and pad
-priv_b64 = priv_b64url.replace('-', '+').replace('_', '/')
+priv_b64 = priv_b64url.replace("-", "+").replace("_", "/")
 while len(priv_b64) % 4:
-    priv_b64 += '='
+    priv_b64 += "="
 priv_der = base64.b64decode(priv_b64)
 
 # Load as Ed25519 private key
 priv_key = serialization.load_der_private_key(priv_der, password=None)
 
 # Read and sign the message
-with open(sys.argv[2], 'rb') as f:
+with open(sys.argv[2], "rb") as f:
     message = f.read()
 
 signature = priv_key.sign(message)
 
 # Output as base64url
-sig_b64 = base64.b64encode(signature).decode('ascii')
-sig_b64url = sig_b64.replace('+', '-').replace('/', '_').rstrip('=')
-print(sig_b64url, end='')
-PYSCRIPT
-" "$3" "$work/message")" || { rm -rf "$work"; die "could not sign; is EME_PRIVATE_KEY a valid Ed25519 key? (requires Python 3 and cryptography package)"; }
+sig_b64 = base64.b64encode(signature).decode("ascii")
+sig_b64url = sig_b64.replace("+", "-").replace("/", "_").rstrip("=")
+print(sig_b64url, end="")'
+
+  SIGNATURE="$(python3 -c "$python_code" "$priv_key_arg" "$msg_path_arg")" \
+    || { rm -rf "$work"; die "could not sign; is EME_PRIVATE_KEY a valid Ed25519 key? (requires Python 3 and cryptography package)"; }
 
   rm -rf "$work"
 }
