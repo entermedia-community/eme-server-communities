@@ -47,12 +47,6 @@
 	"compaction": {
 		"auto": true
 	},
-	"permissions": [
-		{ "action": "*", "resource": "*", "effect": "allow" },
-		{ "action": "edit", "resource": "*.env", "effect": "deny" },
-		{ "action": "edit", "resource": "*.env.*", "effect": "deny" },
-		{ "action": "shell", "resource": "sudo *", "effect": "deny" }
-	],
 	"mcp": {
 		"eme-mediadb": {
 			"type": "remote",
