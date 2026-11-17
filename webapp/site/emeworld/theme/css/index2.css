@@ -71,8 +71,8 @@ nav.main .btn { padding: 12px 24px; }
 .hero::before { content: ""; position: absolute; inset: 0 0 0 46%; background: url("../images/ink-hero.webp") 35% center / cover no-repeat; mix-blend-mode: multiply;
   -webkit-mask-image: linear-gradient(to right, transparent 0, #000 35%); mask-image: linear-gradient(to right, transparent 0, #000 35%); }
 .hero .wrap { position: relative; padding-top: 130px; padding-bottom: 90px; }
-.hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); align-items: center; gap: 40px; }
-.hero-emblem { width: 100%; max-width: 520px; height: auto; justify-self: center; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.05fr); align-items: center; gap: 40px; }
+.hero-emblem { width: 100%; max-width: 680px; height: auto; justify-self: center; }
 .hero h1 { color: var(--ink); max-width: 18ch; font-size: clamp(2.2rem, 4.8vw, 4.2rem); }
 .hero .sub { font-size: clamp(1.2rem, 2.2vw, 1.7rem); font-weight: 300; color: var(--ink); margin-bottom: 1.2rem; max-width: 30ch; }
 .hero p.lead { color: var(--muted); max-width: 46ch; }
@@ -215,3 +215,21 @@ header.top { display: none; }
 .values-three { max-width: 960px; }
 .values-three li { min-height: 0; padding: 32px 28px; }
 @media (min-width: 900px) { .values-three { grid-template-columns: repeat(3, 1fr); } }
+
+/* Meeting Request dialog */
+.meeting-dialog { border: 0; border-radius: 10px; padding: 0; width: min(560px, calc(100vw - 32px)); max-height: calc(100vh - 32px); background: var(--paper); color: var(--ink); box-shadow: 0 30px 80px rgba(10,26,51,.4); }
+.meeting-dialog::backdrop { background: rgba(10,26,51,.6); }
+.meeting-dialog .md-body { padding: 36px 32px 32px; }
+.meeting-dialog h2 { margin: 0 0 6px; font-weight: 300; font-size: 1.8rem; }
+.meeting-dialog .md-sub { margin: 0 0 20px; color: var(--muted); }
+.meeting-dialog .md-close { position: absolute; top: 8px; right: 12px; border: 0; background: none; font-size: 2rem; line-height: 1; color: var(--muted); cursor: pointer; }
+.meeting-dialog .md-form { display: grid; gap: 14px; }
+.meeting-dialog .md-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.meeting-dialog label { display: grid; gap: 6px; font-size: .85rem; color: var(--muted); }
+.meeting-dialog input:not([type=radio]):not([type=hidden]), .meeting-dialog textarea, .meeting-dialog select { font: inherit; font-size: 1rem; color: var(--ink); padding: 11px 12px; border: 1px solid #c9d1df; border-radius: 6px; background: #fff; width: 100%; box-sizing: border-box; }
+.meeting-dialog fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 6px; font-size: .85rem; color: var(--muted); }
+.meeting-dialog .md-radio { display: flex; align-items: center; gap: 8px; font-size: 1rem; color: var(--ink); }
+.meeting-dialog .md-note { margin: 0; font-size: .85rem; color: var(--muted); }
+.meeting-dialog .md-error { margin: 0; color: #b3261e; font-size: .9rem; }
+.meeting-dialog .btn { justify-self: start; cursor: pointer; }
+@media (max-width: 520px) { .meeting-dialog .md-row { grid-template-columns: 1fr; } }
