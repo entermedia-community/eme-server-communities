@@ -84,7 +84,7 @@ sign_login() {
   fi
   NONCE="$(openssl rand -hex 16)"
   printf '%s\n%s\n%s\n%s' "$1" "$2" "$TIMESTAMP" "$NONCE" > "$work/message"
-  SIGNATURE="$(openssl pkeyutl -sign -inkey "$work/key.pem" -rawin -in "$work/message" | b64url_enc)" \
+  SIGNATURE="$(openssl pkeyutl -sign -inkey "$work/key.pem" -in "$work/message" | b64url_enc)" \
     || { rm -rf "$work"; die "could not sign; is EME_PRIVATE_KEY a valid Ed25519 key?"; }
   rm -rf "$work"
 }
