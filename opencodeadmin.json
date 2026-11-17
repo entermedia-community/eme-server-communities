@@ -53,16 +53,6 @@
 	"compaction": {
 		"auto": true
 	},
-	"mcp": {
-		"eme-mediadb": {
-			"type": "remote",
-			"url": "http://localhost:8080/site/mediadb/ai/mcp/",
-			"headers": {
-				"Authorization": "Bearer {env:EME_TOKEN}"
-			},
-			"enabled": true
-		}
-	},
 	"permissions": [
 		{ "action": "*", "resource": "*", "effect": "deny" },
 		{ "action": "read", "resource": "*", "effect": "allow" },
