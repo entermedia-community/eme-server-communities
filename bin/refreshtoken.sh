@@ -35,6 +35,20 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+# read .env file location from parameters
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --env-file)
+      ROOT="$2"
+      shift 2
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
+  
 ENV_FILE="$ROOT/.env"
 CACHE_FILE="$ROOT/.refreshtoken"   # "<epoch seconds> <token>", mode 600, git-ignored
 
