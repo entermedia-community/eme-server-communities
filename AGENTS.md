@@ -36,7 +36,7 @@ Use screenshots as the primary verification surface; the configured model accept
 
 ## Local login credentials (VS Code / local development)
 
-Authenticate HTTP requests (curl, MCP endpoints, JSON APIs) with a Bearer token from `bin/refreshtoken.sh`.
+Authenticate HTTP requests (curl, JSON APIs) with a Bearer token from `bin/refreshtoken.sh`.
 It reads `EME_USER` / `EME_KEY_ID` / `EME_PRIVATE_KEY` (or `EME_APP_PASSWORD`) from the root `.env`, logs in with the
 registered key, caches the 7 day token in `.refreshtoken`, and prints the token as its last line (always use `| tail -n1`). One-time setup:
 `bin/refreshtoken.sh --register` (emails a login code) or `bin/refreshtoken.sh --app-password`.
@@ -60,6 +60,14 @@ curl -H "Authorization: Bearer $(bin/refreshtoken.sh | tail -n1)" \
 1. Run `bin/refreshtoken.sh --force` to log in again. If it says there is no registered key, run `bin/refreshtoken.sh --register` once from a terminal. **Do not ask for new credentials.**
 2. Verify with a guest-forbidden probe: `GET /site/mediadb/services/lists/data/color/52` must return **200** (guest gets 403).
 3. Note: `.mcp.json` and `opencodeglobal.json` are static MCP configs that hold a *literal* token — they cannot recompute. If the token changes, update both with the new output of `bin/refreshtoken.sh`.
+
+Local MCP endoings authenticates with headers "X-Tokentype": "signature" and "X-Token": "{\"username\":\"{env:EME_USER}\",\"key_id\":\"{env:EME_KEY_ID}\",\"timestamp\":\"{env:EME_TIMESTAMP}\",\"nonce\":\"{env:EME_NONCE}\",\"signature\":\"{env:EME_SIGNATURE}\"}"
+
+The way to generate EME_KEY_ID, EME_TIMESTAMP, EME_NONCE, EME_SIGNATURE is with bin/refreshtoken.sh
+
+When working in a user workspace ''workspaces/{username}'' use the .env file located in that path within the refreshtoken.sh
+
+
 
 ## No Groovy
 
