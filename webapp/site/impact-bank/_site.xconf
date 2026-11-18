@@ -59,6 +59,8 @@
 	<script id="liveajax" src="${communityhome}/components/javascript/emedia/liveajax.js" />
 	<script id="utility-plugins" src="${communityhome}/components/javascript/emedia/utility-plugins.js" />
 
+	 <script src="${communityhome}/components/javascript/emedia/ajax/signedheaders.js" id="signedheaders"/>
+
 	<script id="runajax" src="${communityhome}/components/javascript/emedia/ajax/runajax.js" />
 	<script id="emdialog" src="${communityhome}/components/javascript/emedia/ajax/emdialog.js" />
 	<script id="dataentryfields" src="/${applicationid}/components/javascript/emedia/dataentryfields.js" />
@@ -79,6 +81,8 @@
 	<style id="results-css" href="/finder/find/theme/styles/pages/results.css" />
 	<style id="customfindercolors" href="/finder/find/theme/defaulttheme/custom.css"/>
 	<style id="mediaplayer" href="/finder/find/theme/styles/pages/mediaplayer.css"/>
+
+	<style id="app-com-css" href="/${applicationid}/theme/styles/theme-community.css"/>
 
 	<style id="goals-css" href="${communityhome}/theme/css/goals/goals.css" /> 
 	
