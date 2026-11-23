@@ -55,6 +55,7 @@
 		<div id="application" class="eminstitutecollective" 
 			data-home="$home" 
 			data-user="$!user.id" 
+			data-siteroot="$!siteroot"
 			data-apphome="$!{apphome}"
 			data-communityhome="$!{communityhome}"
 			data-applink="$!{applink}" 
@@ -64,7 +65,7 @@
 			data-editmode='$!user.get("oe_edit_mode")'
 			data-mediadbappid="$!mediaarchive.getMediaDbId()" 
 			data-componenthome="$!componenthome"
-			data-findroot="$content.findroot"
+			data-findroot="$!content.findroot"
 			#if( $showupload) data-showuploadid="${showupload.id}" #end
 			>
 
