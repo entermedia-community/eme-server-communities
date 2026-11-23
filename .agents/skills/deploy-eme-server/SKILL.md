@@ -47,7 +47,7 @@ Notes for other machines:
   - `DIR=$DEPLOY_ROOT/eme-server-$CLIENTNAME`
   - `DOMAIN=$CLIENTNAME.$DOMAIN_BASE`
   - container name = `eme-server-$CLIENTNAME$NNN` (basename of DIR + node number)
-- **ADMIN_EMAIL** — optional; the client's admin login email. If given, do step 10 after verification.
+- **ADMIN_EMAIL** — optional; the client's admin login email. If given, do step 4 (after dockerbuild, step 5).
 - **DOMAIN_BASE** — which domain family the instance gets. If not stated by the user, default is the first option. Add new rows here as options appear:
 
   | Base | Cert dir | Notes |
@@ -110,17 +110,21 @@ docker ps -aq --filter "name=eme-server-${CLIENTNAME}${NNN}"
 
 ### 4. Set up the admin account (when ADMIN_EMAIL was given)
 
-A fresh instance ships with a placeholder admin (`id="admin"`, stock email), so re-point it.
+A fresh instance ships with a placeholder admin (`id="admin"`, stock email `tech@entermediadb.org`), so re-point it. **This step runs after dockerbuild (step 5)** — in a fresh clone the plugins are only JSON manifests, so `plugins/system` (and thus `defaultusers.xml`) does not exist until dockerbuild pulls them.
 
-Note: in a fresh clone the plugins are only JSON manifests, so `plugins/system` (and thus `defaultusers.xml`) does not exist until dockerbuild (step 5) pulls them. Do this edit right after step 5 dockerbuild and before the ownership-alignment restart; the first successful boot then seeds ES with the correct admin row, so no wipe/re-seed cycle is needed.
+**Fresh instance (no user data yet)**
 
+1. Run dockerbuild (step 5). The container boots and ES seeds the stock admin row — expected, not an error.
+2. Edit `$DIR/plugins/system/html/data/lists/user/defaultusers.xml`, add a row →
+   `<row id="adminuser" email="$ADMIN_EMAIL" enabled="true" firstName="<First>" screenname="<First>" groups="administrators"><First></row>`
+   (leave the other rows alone). The file is owned by `entermedia`: `sudo chown "$(id -un):$(id -gn)" <file>`, edit, then `sudo chown "$(id -u entermedia):$(id -g entermedia)" <file>`.
+3. Re-seed ES from the corrected file — stop, wipe, start:
 
-**Fresh instance (no user data yet) **
-
-1. Edit `$DIR/plugins/system/html/data/lists/user/defaultusers.xml`, admin row →
-   `<row id="admin" email="$ADMIN_EMAIL" enabled="true" firstName="<First>" screenname="<First>" groups="administrators"><First></row>`
-   (keep `id="admin"`; drop the legacy `password` attribute — it is not a field in `user.xml`; leave the `agent` row alone). The file is owned by `entermedia`: `sudo chown "$(id -un):$(id -gn)" <file>`, edit, then `sudo chown "$(id -u entermedia):$(id -g entermedia)" <file>`.
-
+   ```bash
+   sudo docker stop eme-server-$CLIENTNAME$NNN
+   rm -rf $DIR/webapp/WEB-INF/elastic/singlenode/data
+   sudo docker start eme-server-$CLIENTNAME$NNN
+   ```
 
 ### 5. Dockerbuild
 
