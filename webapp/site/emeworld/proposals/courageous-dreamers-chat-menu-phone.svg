@@ -78,6 +78,16 @@
 <path d="M366 33l9 9-9 9" fill="none" stroke="#5E4A6E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 
+<!-- card 5: Dream Teams -->
+<g transform="translate(20 572)">
+<rect width="400" height="84" rx="16" fill="#FFFFFF" stroke="#E4C6F5" stroke-width="1.5"/>
+<rect x="14" y="18" width="48" height="48" rx="14" fill="#fae7fd"/>
+<g transform="translate(26 30)" fill="none" stroke="#8c12e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5.5" r="3"/><circle cx="5" cy="18" r="3"/><circle cx="19" cy="18" r="3"/><path d="M10.5 8.2L6.4 15.3M13.5 8.2l4.1 7.1M8 18h8"/></g>
+<text x="78" y="39" font-size="16" font-weight="700" fill="#2B1240">Dream Teams</text>
+<text x="78" y="59" font-size="13.5" fill="#5E4A6E">Create and view your teams and projects</text>
+<path d="M366 33l9 9-9 9" fill="none" stroke="#5E4A6E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+
 </g>
 <g transform="translate(0 120)">
 <!-- input bar -->

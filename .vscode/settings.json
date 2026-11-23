@@ -16,5 +16,6 @@
 	"java.autobuild.enabled": true,
 	"java.debug.settings.hotCodeReplace": "auto",
 	"java.format.settings.url": "formatter.xml",
-	"postman.settings.dotenv-detection-notification-visibility": false
+	"postman.settings.dotenv-detection-notification-visibility": false,
+	"python.terminal.useEnvFile": true
 }

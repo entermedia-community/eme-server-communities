@@ -28,6 +28,9 @@
 #   bin/refreshtoken.sh --app-password  same emailed-code check, but registers an application password
 #                                   for tools that cannot sign (curl in other apps, CI). It is shown once and
 #                                   saved as EME_APP_PASSWORD; the script then prints it as the Bearer value.
+#   bin/refreshtoken.sh --signature print the signed login JSON as one line, for tools that sign in themselves:
+#                                   {"username":..,"key_id":..,"timestamp":..,"nonce":..,"signature":..}
+#                                   The stored timestamp/nonce/signature are re-signed first if they are 24h old or more.
 #   bin/refreshtoken.sh --keygen    only create the key pair and print the public key
 #
 # Prints only the token on stdout. Errors go to stderr, exit code 1.
@@ -238,6 +241,17 @@ fi
 # Create/refresh the stored timestamp/nonce/signature when missing or 24 hours old or more (needs EME_USER,
 # EME_KEY_ID and EME_PRIVATE_KEY); done before the app-password exit so it runs in every mode
 refresh_stored_signature
+
+# --signature: print the stored login signature as JSON (already refreshed above if it was 24h old)
+if [ "${1:-}" = "--signature" ]; then
+  USER_ID="$(envval EME_USER)"; KEY_ID="$(envval EME_KEY_ID)"
+  [ -n "$USER_ID" ] && [ -n "$KEY_ID" ] && [ -n "$(envval EME_SIGNATURE)" ] \
+    || die "no registered key in $ENV_FILE; run 'bin/refreshtoken.sh --register' once from a terminal"
+  jq -cn --arg username "$USER_ID" --arg key_id "$KEY_ID" --arg timestamp "$(envval EME_TIMESTAMP)" \
+    --arg nonce "$(envval EME_NONCE)" --arg signature "$(envval EME_SIGNATURE)" \
+    '{username:$username,key_id:$key_id,timestamp:$timestamp,nonce:$nonce,signature:$signature}'
+  exit 0
+fi
 
 # An application password needs no login or cache
 APP_PASSWORD="$(envval EME_APP_PASSWORD)"
