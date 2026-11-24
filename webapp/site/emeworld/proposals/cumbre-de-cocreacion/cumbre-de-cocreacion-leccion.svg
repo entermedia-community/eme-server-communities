@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 402 740" width="402" height="740" role="img" aria-labelledby="s8-t s8-d">
+  <title id="s8-t">Cumbre de Cocreación: lección activa de Comunicación Digital</title>
+  <desc id="s8-d">Pantalla móvil con una lección activa del módulo Comunicación Digital: un video sobre WhatsApp Business, un texto breve, una pregunta de opción múltiple con botones de selección, un botón Enviar respuesta y, debajo, un campo de texto para escribir.</desc>
+  <defs>
+    <linearGradient id="s8-me" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
+    <linearGradient id="s8-heart" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient>
+    <linearGradient id="s8-vid" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14532d"/><stop offset="1" stop-color="#0f172a"/></linearGradient>
+    <clipPath id="s8-screen"><rect x="16" y="16" width="372" height="710" rx="36"/></clipPath>
+    <clipPath id="s8-video"><rect x="28" y="126" width="348" height="140" rx="14"/></clipPath>
+  </defs>
+
+  <!-- phone -->
+  <rect x="2" y="2" width="400" height="738" rx="48" fill="#0f172a"/>
+  <rect x="16" y="16" width="372" height="710" rx="36" fill="#f1f5f9"/>
+  <g clip-path="url(#s8-screen)">
+    <rect x="157" y="24" width="90" height="22" rx="11" fill="#0f172a"/>
+    <text x="44" y="38" font-size="13" font-weight="700" fill="#0f172a">9:41</text>
+    <g fill="#0f172a"><rect x="324" y="30" width="3" height="6" rx="1"/><rect x="329" y="27" width="3" height="9" rx="1"/><rect x="334" y="24" width="3" height="12" rx="1"/><rect x="343" y="26" width="20" height="10" rx="3" fill="none" stroke="#0f172a" stroke-width="1.5"/><rect x="345" y="28" width="13" height="6" rx="1.5"/></g>
+
+    <!-- header -->
+    <path d="M16 52h372v66H16z" fill="#fff"/>
+    <line x1="16" y1="118" x2="388" y2="118" stroke="#e2e8f0"/>
+    <path d="M44 74l-8 11 8 11" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="84" cy="85" r="21" fill="#f8fafc" stroke="#e2e8f0"/>
+    <g fill="none" stroke-width="2.4" stroke-linecap="round">
+      <path d="M67 82A17 17 0 0 1 101 82" stroke="#ef4444"/>
+      <path d="M70 82A14 14 0 0 1 98 82" stroke="#f59e0b"/>
+      <path d="M73 82A11 11 0 0 1 95 82" stroke="#22c55e"/>
+    </g>
+    <path d="M84 100C71 91 69 82 75 79C79 77.500 82.500 79 84 82C85.500 79 89 77.500 93 79C99 82 97 91 84 100Z" fill="url(#s8-heart)"/>
+    <text x="116" y="82" font-size="15" font-weight="700" fill="#0f172a">Comunicación Digital</text>
+    <text x="116" y="100" font-size="12" fill="#64748b">Módulo 3 · Lección 2 de 4</text>
+    <rect x="316" y="76" width="56" height="18" rx="9" fill="#dbeafe"/>
+    <text x="344" y="89" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1d4ed8">En curso</text>
+
+    <!-- video -->
+    <g clip-path="url(#s8-video)">
+      <rect x="28" y="126" width="348" height="140" fill="url(#s8-vid)"/>
+      <circle cx="330" cy="156" r="70" fill="#22c55e" opacity=".18"/>
+      <circle cx="70" cy="254" r="56" fill="#22c55e" opacity=".12"/>
+      <rect x="44" y="140" width="116" height="20" rx="10" fill="#000" opacity=".35"/>
+      <circle cx="56" cy="150" r="5" fill="#22c55e"/>
+      <text x="67" y="154" font-size="10.5" font-weight="700" fill="#fff">WhatsApp Business</text>
+      <circle cx="202" cy="196" r="27" fill="#fff" opacity=".95"/>
+      <path d="M195 182l22 14-22 14z" fill="#0f172a"/>
+      <rect x="28" y="234" width="348" height="32" fill="#000" opacity=".4"/>
+      <path d="M42 245l9 5-9 5z" fill="#fff"/>
+      <rect x="62" y="249" width="216" height="4" rx="2" fill="#fff" opacity=".35"/>
+      <rect x="62" y="249" width="82" height="4" rx="2" fill="#22c55e"/>
+      <circle cx="144" cy="251" r="5.500" fill="#fff"/>
+      <text x="288" y="254" font-size="10.5" font-weight="700" fill="#fff">1:24 / 3:40</text>
+    </g>
+
+    <!-- lesson text -->
+    <text x="32" y="294" font-size="14" font-weight="700" fill="#0f172a">Tu negocio en WhatsApp Business</text>
+    <text x="32" y="314" font-size="11.5" fill="#475569">Con WhatsApp Business puedes crear un catálogo de</text>
+    <text x="32" y="331" font-size="11.5" fill="#475569">productos, configurar un mensaje de bienvenida y usar</text>
+    <text x="32" y="348" font-size="11.5" fill="#475569">respuestas rápidas para atender a tus clientes más rápido.</text>
+
+    <!-- question -->
+    <rect x="28" y="368" width="348" height="204" rx="16" fill="#fff" stroke="#e2e8f0"/>
+    <text x="44" y="392" font-size="10.5" font-weight="700" fill="#2563eb">PREGUNTA 1 DE 3</text>
+    <text x="44" y="412" font-size="12.5" font-weight="700" fill="#0f172a">¿Para qué sirve el catálogo de</text>
+    <text x="44" y="429" font-size="12.5" font-weight="700" fill="#0f172a">WhatsApp Business?</text>
+    <rect x="40" y="442" width="324" height="34" rx="11" fill="#fff" stroke="#e2e8f0"/>
+    <circle cx="60" cy="459" r="8.500" fill="#fff" stroke="#94a3b8" stroke-width="1.8"/>
+    <text x="80" y="463" font-size="12.5" fill="#0f172a">Hacer videollamadas</text>
+    <rect x="40" y="484" width="324" height="34" rx="11" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+    <circle cx="60" cy="501" r="8.500" fill="#fff" stroke="#2563eb" stroke-width="1.8"/>
+    <circle cx="60" cy="501" r="4.200" fill="#2563eb"/>
+    <text x="80" y="505" font-size="12.5" font-weight="700" fill="#1d4ed8">Mostrar tus productos a los clientes</text>
+    <rect x="40" y="526" width="324" height="34" rx="11" fill="#fff" stroke="#e2e8f0"/>
+    <circle cx="60" cy="543" r="8.500" fill="#fff" stroke="#94a3b8" stroke-width="1.8"/>
+    <text x="80" y="547" font-size="12.5" fill="#0f172a">Cambiar el nombre del teléfono</text>
+
+    <!-- submit -->
+    <rect x="28" y="590" width="348" height="48" rx="24" fill="url(#s8-me)"/>
+    <text x="202" y="620" text-anchor="middle" font-size="14.5" font-weight="700" fill="#fff">Enviar respuesta</text>
+
+    <!-- text input -->
+    <rect x="28" y="652" width="348" height="50" rx="25" fill="#fff" stroke="#cbd5e1"/>
+    <text x="46" y="682" font-size="12" fill="#94a3b8">Escribe una duda sobre la lección…</text>
+    <circle cx="350" cy="677" r="16" fill="#2563eb"/>
+    <path d="M343 677h14M352 671l6 6-6 6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(-1 0)"/>
+    <rect x="152" y="714" width="100" height="4" rx="2" fill="#0f172a" opacity=".25"/>
+  </g>
+</svg>

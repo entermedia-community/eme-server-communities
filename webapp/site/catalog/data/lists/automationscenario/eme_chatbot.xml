@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- EME Chatbot: visitor-facing chatbot. Same skills as My EME (Welcome Menu and chat), under its own label (shown as "EME Chatbot Visitor"). Help Desk, Lead, Task and Finance scenarios are placeholders, not implemented yet -->
+<records>
+  <data id="eme_chatbot_welcome_menu" ordering="5" scenarioicon="list" enabled="true" isvisible="true" connectedtop="eme_chatbot" chatenabled="true">
+    <name>
+      <language id="en"><![CDATA[Welcome Menu]]></language>
+    </name>
+    <longcaption><![CDATA[Good for starting a conversation and seeing which EME Chatbot tools are available.]]></longcaption>
+    <markdowncontent><![CDATA[Greets the user and shows a menu of the EME Chatbot scenarios to choose from.]]></markdowncontent>
+  </data>
+
+  <data id="eme_chatbot_visitor_chat" ordering="10" scenarioicon="chat" enabled="true" isvisible="true" connectedtop="eme_chatbot" chatenabled="true">
+    <name>
+      <language id="en"><![CDATA[Visitor Chat]]></language>
+    </name>
+    <longcaption><![CDATA[Good for chatting with an assistant as a visitor.]]></longcaption>
+    <markdowncontent><![CDATA[Opens a visitor chat with the EME Chatbot.]]></markdowncontent>
+  </data>
+
+  <data id="eme_chatbot_help_desk" ordering="20" scenarioicon="headset" enabled="true" isvisible="true" connectedtop="eme_chatbot" chatenabled="true">
+    <name>
+      <language id="en"><![CDATA[Help Desk and Self Service]]></language>
+    </name>
+    <longcaption><![CDATA[Good for answering visitor questions, qualifying leads and suggesting ticket replies.]]></longcaption>
+    <markdowncontent><![CDATA[A chat that answers questions, qualifies visitors and captures leads around the clock. Tickets get answered fast with suggested replies. Not implemented yet.]]></markdowncontent>
+  </data>
+
+  <data id="eme_chatbot_customer_onboarding" ordering="30" scenarioicon="funnel" enabled="true" isvisible="true" connectedtop="eme_chatbot" chatenabled="true">
+    <name>
+      <language id="en"><![CDATA[Customer Onboarding]]></language>
+    </name>
+    <longcaption><![CDATA[Good for getting new customers started.]]></longcaption>
+    <markdowncontent><![CDATA[Helps onboard new customers. Not implemented yet.]]></markdowncontent>
+  </data>
+
+  <data id="eme_chatbot_request_meeting" ordering="40" scenarioicon="calendar-event" enabled="true" isvisible="true" connectedtop="eme_chatbot" chatenabled="true">
+    <name>
+      <language id="en"><![CDATA[Request a Meeting]]></language>
+    </name>
+    <longcaption><![CDATA[Good for asking to book a meeting with the team.]]></longcaption>
+    <markdowncontent><![CDATA[Lets a visitor request a meeting. Not implemented yet.]]></markdowncontent>
+  </data>
+
+  <data id="eme_chatbot_place_order" ordering="50" scenarioicon="cart" enabled="true" isvisible="true" connectedtop="eme_chatbot" chatenabled="true">
+    <name>
+      <language id="en"><![CDATA[Place an Order]]></language>
+    </name>
+    <longcaption><![CDATA[Good for placing an order without leaving the chat.]]></longcaption>
+    <markdowncontent><![CDATA[Lets a visitor place an order. Not implemented yet.]]></markdowncontent>
+  </data>
+</records>

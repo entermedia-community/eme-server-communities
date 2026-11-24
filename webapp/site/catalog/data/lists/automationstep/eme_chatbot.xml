@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Menu items run <scenario>_confirm first, so each skill is the confirm step. Same Java skills as My EME -->
+<records>
+  <data id="eme_chatbot_welcome_menu_welcome" aiskill="welcomeMenuSkill" automationscenario="eme_chatbot_welcome_menu" enabled="true" agenttype="eventagent" processingmessage="Welcome">
+    <name>
+      <![CDATA[Welcome Menu]]>
+    </name>
+  </data>
+  <data id="eme_chatbot_visitor_chat_confirm" aiskill="employeeChatSkill" automationscenario="eme_chatbot_visitor_chat" enabled="true" agenttype="remoteagent" processingmessage="Working...">
+    <name>
+      <language id="en"><![CDATA[Visitor Chat]]></language>
+    </name>
+  </data>
+  <data id="eme_chatbot_help_desk_confirm" aiskill="emeChatbotHelpDeskSkill" automationscenario="eme_chatbot_help_desk" enabled="true" agenttype="remoteagent" processingmessage="Working...">
+    <name>
+      <language id="en"><![CDATA[Help Desk and Self Service]]></language>
+    </name>
+  </data>
+  <data id="eme_chatbot_customer_onboarding_confirm" aiskill="emeChatbotCustomerOnboardingSkill" automationscenario="eme_chatbot_customer_onboarding" enabled="true" agenttype="remoteagent" processingmessage="Working...">
+    <name>
+      <language id="en"><![CDATA[Customer Onboarding]]></language>
+    </name>
+  </data>
+  <data id="eme_chatbot_task_tracker_confirm" aiskill="emeChatbotTaskTrackerSkill" automationscenario="eme_chatbot_task_tracker" enabled="true" agenttype="remoteagent" processingmessage="Working...">
+    <name>
+      <language id="en"><![CDATA[Team Todo and Task Tracker]]></language>
+    </name>
+  </data>
+  <data id="eme_chatbot_finance_tracker_confirm" aiskill="emeChatbotFinanceTrackerSkill" automationscenario="eme_chatbot_finance_tracker" enabled="true" agenttype="remoteagent" processingmessage="Working...">
+    <name>
+      <language id="en"><![CDATA[Finance Tracker and Invoicing]]></language>
+    </name>
+  </data>
+  <data id="eme_chatbot_request_meeting_confirm" aiskill="emeChatbotRequestMeetingSkill" automationscenario="eme_chatbot_request_meeting" enabled="true" agenttype="remoteagent" processingmessage="Working...">
+    <name>
+      <language id="en"><![CDATA[Request a Meeting]]></language>
+    </name>
+  </data>
+  <data id="eme_chatbot_place_order_confirm" aiskill="emeChatbotPlaceOrderSkill" automationscenario="eme_chatbot_place_order" enabled="true" agenttype="remoteagent" processingmessage="Working...">
+    <name>
+      <language id="en"><![CDATA[Place an Order]]></language>
+    </name>
+  </data>
+</records>

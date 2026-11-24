@@ -5,7 +5,7 @@ description: Use when planning or writing sales and marketing for EME (intros, o
 
 # EME sales and marketing playbook
 
-Source: transcript of `webapp/site/emeworld/proposals/browser_recording_20261111_110943-transcript.txt` (clips with timestamps below). The lessons are from the clips. The "For EME" lines are suggestions, not facts from the recording. Follow `eme-brand-voice` for all wording (no em dashes, short, bold key words, EME Profile not persona).
+Source: transcript of `webapp/site/emeworld/proposals/recordings/browser_recording_20261111_110943-transcript.txt` (clips with timestamps below). The lessons are from the clips. The "For EME" lines are suggestions, not facts from the recording. Follow `eme-brand-voice` for all wording (no em dashes, short, bold key words, EME Profile not persona).
 
 ## 1. Introduce with value, not a title (0:00)
 - Step 1, start with value: a promise, not a job title. "I help teams hit impossible deadlines without burning out" beats "senior project manager".

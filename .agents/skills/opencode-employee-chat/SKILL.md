@@ -1,11 +1,11 @@
 ---
-name: opencode-my-eme-chat
-description: Use when changing or debugging My EME chat (the app's chat with yourself, scenario my_eme_chat), where MyEmeChatSkill forwards every message to a per-chat OpenCode session in the user's workspace folder and streams OpenCode's events back as ONE chat message built up by messageappend / messagereplace patches. Covers the channel's opencodesessionid, the workspace folder and permission rules (MyEmeWorkspace), the per-session event queue in OpenCodeClient, MyEmeTurnMessage (events to ops and patches), MarkdownToQuill, AgentJobManager.broadcastMessagePatch, the patch wire format the Flutter app merges, routing of typed text, what is deliberately deferred, and how to test it.
+name: opencode-employee-chat
+description: Use when changing or debugging Employee Chat (the app's chat with yourself, scenario eme_chatbot_employees_employee_chat), where EmployeeChatSkill forwards every message to a per-chat OpenCode session in the user's workspace folder and streams OpenCode's events back as ONE chat message built up by messageappend / messagereplace patches. Covers the channel's opencodesessionid, the workspace folder and permission rules (EmployeeWorkspace), the per-session event queue in OpenCodeClient, EmployeeTurnMessage (events to ops and patches), MarkdownToQuill, AgentJobManager.broadcastMessagePatch, the patch wire format the Flutter app merges, routing of typed text, what is deliberately deferred, and how to test it.
 ---
 
-# Skill: opencode-my-eme-chat
+# Skill: opencode-employee-chat
 
-My EME chat sends each chat message to OpenCode and shows OpenCode's work as a single chat message
+Employee Chat sends each chat message to OpenCode and shows OpenCode's work as a single chat message
 that grows while it happens. This is **not** the agent-job runner/status-card path; for that see
 `opencode-running`. For the OpenCode HTTP API and event stream see `opencode-v2-api`. For the Flutter
 side (merging patches, status widgets) see the app's `eme-app-chat-ui` and `eme-sdk-chat-messages`.
@@ -14,27 +14,27 @@ side (merging patches, status widgets) see the app's `eme-app-chat-ui` and `eme-
 
 | Piece | File (`plugins/finder/code/org/entermediadb/...`) | Job |
 |---|---|---|
-| Skill | `ai/skills/MyEmeChatSkill.java` | Step `my_eme_chat_confirm` of scenario `my_eme_chat`. Finds or creates the session, sends the prompt, runs the event loop, sends patches, saves and completes |
-| Workspace | `ai/skills/MyEmeWorkspace.java` | The user's folder and the session permission rules |
-| Message builder | `ai/skills/MyEmeTurnMessage.java` | Collects events into one message; decides each patch |
+| Skill | `ai/skills/EmployeeChatSkill.java` | Step `eme_chatbot_employees_employee_chat_confirm` of scenarios `eme_chatbot_employees_employee_chat` and `eme_chatbot_visitor_chat`. Finds or creates the session, sends the prompt, runs the event loop, sends patches, saves and completes |
+| Workspace | `ai/skills/EmployeeWorkspace.java` | The user's folder and the session permission rules |
+| Message builder | `ai/skills/EmployeeTurnMessage.java` | Collects events into one message; decides each patch |
 | Markdown | `markdown/MarkdownToQuill.java` | Reply markdown to Quill ops (vendored CommonMark) |
 | Client | `mcp/client/OpenCodeClient.java` | `createSession(title, folder, permissions)`, `sessionExists`, `sendPrompt`, per-session event queue |
 | Broadcast | `ai/agentjobs/AgentJobManager.broadcastMessagePatch` | Sends a patch; saves nothing |
 | Push skip | `websocket/chat/ChatServer.java` | No push notification for `messageappend` / `messagereplace` |
 
 Data: `channel.opencodesessionid` (`plugins/catalog/html/data/fields/channel.xml`). Skill and step docs:
-`aiskill/my_eme.xml`, `automationstep/my_eme.xml`. Bean: `myEmeChatSkill` in `plugins/finder/html/src/plugin.xml`.
+`aiskill/eme_chatbot.xml`, `automationstep/eme_chatbot_employees.xml`. Bean: `employeeChatSkill` in `plugins/finder/html/src/plugin.xml`.
 
 ## One session per chat channel
 
-- A My EME channel is `searchtype=emeprofile`, `user=<login>`. Its OpenCode session id is saved on the
+- An Employee Chat channel is `searchtype=emeprofile`, `user=<login>`. Its OpenCode session id is saved on the
   channel row in `opencodesessionid`.
 - First message (or the id is blank, or `sessionExists` finds OpenCode lost it): create a session in the
   workspace with the permission rules, save the id on the channel.
 - "New session" in the app already makes a new channel (`connectMyEmeChat(createNew: true)`), so it gets a
   new OpenCode session with no extra work.
 
-## Workspace and permissions (`MyEmeWorkspace`)
+## Workspace and permissions (`EmployeeWorkspace`)
 
 Each user has a folder in the **home of the user the server runs as** (in Docker `/home/entermedia/workspaces/<userid>`;
 `EME_WORKSPACES_ROOT` moves it):
@@ -48,7 +48,7 @@ Each user has a folder in the **home of the user the server runs as** (in Docker
 - The session folder is the user's folder itself, so OpenCode loads its `opencode.json`, `.agents/skills` and `AGENTS.md` and the model
   can see them. The model must not change them (it could add an MCP server or instructions that every later session loads), so
   `permissions()` denies `edit` (which covers write too) on `opencode.json`, `opencode.jsonc`, `AGENTS.md`, `CLAUDE.md`, `.agents/**`,
-  `.claude/**`, `.opencode/**` (`MyEmeWorkspace.PROTECTED`). Verified on a scratch OpenCode: edit and write fail with "Permission denied:
+  `.claude/**`, `.opencode/**` (`EmployeeWorkspace.PROTECTED`). Verified on a scratch OpenCode: edit and write fail with "Permission denied:
   edit" for relative and absolute paths, other files are writable, and the `code` tool has no file access. The model can still **read** its
   config, so keep secrets out of it (use `{env:...}`). Edits to a user's `opencode.json` apply to the next new session without a restart.
 - **The folder must not be inside a git repo or another project.** The old location (`webapp/WEB-INF/data/<catalog>/workspaces/<user>`
@@ -76,7 +76,7 @@ not also loaded as a project config inside the repo). The launcher sets hostname
 base64 of `opencode:<password>` must match; a fixed password survives container rebuilds). One OpenCode service per OS user: running
 either script replaces the other's config link.
 
-**`webapp/system/workspaces/opencodeuser.json` is the template for each user's own `opencode.json`** (`MyEmeWorkspace.folderFor`
+**`webapp/system/workspaces/opencodeuser.json` is the template for each user's own `opencode.json`** (`EmployeeWorkspace.folderFor`
 copies it when a user's folder is first created, replacing every `{userid}` with the user's id, and never overwrites; a changed template
 reaches new users only; per-user MCP connections go here). It holds only the user-level settings (the shared skills path, `{env:EME_WORKSPACE_SKILLS}`); everything else comes from the global config. A user without
 that file gets no shared skills. Do not put the template's settings in the global config: the dev service has no `EME_WORKSPACE_SKILLS`.
@@ -86,7 +86,7 @@ pages such as the `.json` files to administrators (anonymous gets a login redire
 
 `eme-docker-init.sh` mounts `webapp/WEB-INF/data/workspaces` at `/home/entermedia/workspaces` so user files survive a rebuilt container
 (existing containers need `dockerbuild` again). OpenCode's own data (`~/.local/share/opencode`, its sessions) is not mounted: after a
-rebuild the saved session ids are gone, and `MyEmeChatSkill` starts a new session for the channel (the user's files are kept).
+rebuild the saved session ids are gone, and `EmployeeChatSkill` starts a new session for the channel (the user's files are kept).
 
 ## The turn
 
@@ -107,7 +107,7 @@ Steering: a second message while a turn runs opens the queue again; the older qu
 reply." Known limit: the two replies share one cached `ChatMessageContext`, so the older one's final save can
 land on the newer row.
 
-## Events to one message (`MyEmeTurnMessage`)
+## Events to one message (`EmployeeTurnMessage`)
 
 Segments in order: reply text (markdown -> ops), tool lines (`read notes.txt…`, file names only, never server
 paths), notes, errors. Muted lines are italic `#777777`; errors bold `#c62828`.
@@ -151,21 +151,21 @@ to `findNextFunctionName(channel)` (newest of the last 10 agent rows with a `nex
 ## Deferred
 
 MCP (per-call user key), OS sandbox, `asset` messages, user attachments, OpenCode questions as forms
-(`MyEmeFormAnswerSkill`, step 5), reconnect reconciliation after an SSE drop (`GET /api/session/{id}/message`).
+(`EmployeeFormAnswerSkill`, step 5), reconnect reconciliation after an SSE drop (`GET /api/session/{id}/message`).
 
 ## After changing things
 
 - Java: the EME server runs from the VS Code debugger; `bin/restart.sh` needs the Remote Control extension.
   `bin/compile.sh` accepts `BUILD_DIR` for a scratch compile. OpenCode itself: `bin/opencodeadmin.sh status`
   (plain `start` also opens a browser pairing link).
-- `channel.xml` or `aiskill/my_eme.xml`: reload the field/list data, see `field-definitions-maintenance` and
+- `channel.xml` or `aiskill/eme_chatbot.xml`: reload the field/list data, see `field-definitions-maintenance` and
   `reload-list-data`.
 - Quick checks without the server: compile the plugin Java into a scratch dir and replay captured OpenCode
-  events through `MyEmeTurnMessage` and markdown samples through `MarkdownToQuill`.
+  events through `EmployeeTurnMessage` and markdown samples through `MarkdownToQuill`.
 
 ## Testing live
 
-Restart the server, open My EME chat in the app, switch to "My EME Chat", send "Create an html file called
+Restart the server, open Employee Chat in the app, switch to "Employee Chat", send "Create an html file called
 helloworld.html". Expect one agent bubble that shows a spinner, then tool lines and text, then settles; the file
 must exist in `~/workspaces/<user>/`. Try asking it to edit `opencode.json` (denied). Try a prompt that reads `../x` or `/etc/hostname`
 (should fail: `external_directory` denied) and one that asks for a shell command (denied).

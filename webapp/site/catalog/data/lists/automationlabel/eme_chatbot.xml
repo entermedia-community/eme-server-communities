@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- EME Chatbot Visitor and EME Chatbot Employees labels -->
+<root>
+  <data id="eme_chatbot" strokecolor="rgba(13,110,140,1)" bgcolor="rgba(14,134,170,1)" text="EME Chatbot Visitor">
+    <name/>
+  </data>
+
+  <data id="eme_chatbot_employees" strokecolor="rgba(110,50,140,1)" bgcolor="rgba(139,69,173,1)" text="EME Chatbot Employees">
+    <name/>
+  </data>
+</root>

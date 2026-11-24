@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" width="512" height="512" role="img" aria-labelledby="t d">
+  <title id="t">Atitlán Exchange — El pueblo en acción</title>
+  <desc id="d">Circular emblem with a weathered steel ring bolted at the sides. The ring reads "ATITLÁN EXCHANGE" across the top and "EL PUEBLO EN ACCIÓN" across the bottom. Inside, on parchment, an open hand with a red heart on the palm offers a glowing lightbulb, in front of a dark mechanical gear.</desc>
+  <defs>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9aa4ad"/><stop offset=".35" stop-color="#59626b"/><stop offset=".6" stop-color="#8a949d"/><stop offset="1" stop-color="#3f464e"/>
+    </linearGradient>
+    <linearGradient id="steelBolt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c3cbd2"/><stop offset="1" stop-color="#5d666f"/></linearGradient>
+    <radialGradient id="parchment" cx=".5" cy=".42" r=".65">
+      <stop offset="0" stop-color="#fbf0d3"/><stop offset=".7" stop-color="#f0dcae"/><stop offset="1" stop-color="#d9bd84"/>
+    </radialGradient>
+    <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#fff6a8" stop-opacity=".95"/><stop offset=".55" stop-color="#ffd84a" stop-opacity=".45"/><stop offset="1" stop-color="#ffd84a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bulbGlass" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#fffef0"/><stop offset=".6" stop-color="#ffe680"/><stop offset="1" stop-color="#f6b823"/></radialGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0bf88"/><stop offset="1" stop-color="#d9965a"/></linearGradient>
+    <clipPath id="innerClip"><circle cx="256" cy="256" r="174"/></clipPath>
+    <path id="topArc" d="M56 256A200 200 0 0 1 456 256"/>
+    <path id="botArc" d="M30 256A226 226 0 0 0 482 256"/>
+    <g id="hand">
+      <path d="M214 292C208 318 214 344 230 366C236 376 238 384 238 396L236 470L282 470L280 396C280 384 282 376 288 366C302 344 308 318 304 292Z"/>
+      <path d="M217.6 295.3L210.1 213.6A8.0 8.0 0 0 1 225.9 211.6L238.4 292.7Z"/>
+      <path d="M240.0 290.2L241.1 196.2A8.25 8.25 0 0 1 257.6 195.9L262.0 289.8Z"/>
+      <path d="M262.5 291.1L272.4 206.6A8.0 8.0 0 0 1 288.4 208.0L283.5 292.9Z"/>
+      <path d="M284.2 298.3L299.0 233.9A6.75 6.75 0 0 1 312.2 236.5L301.8 301.7Z"/>
+      <path d="M212.9 353.7L180.7 300.7A9.5 9.5 0 0 1 196.2 289.8L235.1 338.3Z"/>
+    </g>
+  </defs>
+
+  <!-- steel ring -->
+  <circle cx="256" cy="256" r="213" fill="none" stroke="url(#steel)" stroke-width="70"/>
+  <circle cx="256" cy="256" r="247" fill="none" stroke="#1b1f24" stroke-width="3"/>
+  <circle cx="256" cy="256" r="243" fill="none" stroke="#d3dae0" stroke-opacity=".45" stroke-width="2"/>
+  <circle cx="256" cy="256" r="180" fill="none" stroke="#1b1f24" stroke-width="3"/>
+  <circle cx="256" cy="256" r="183.500" fill="none" stroke="#d3dae0" stroke-opacity=".3" stroke-width="2"/>
+  <polygon points="467.2,195.2 458.6,200.2 449.9,195.2 449.9,185.2 458.6,180.2 467.2,185.2" fill="url(#steelBolt)" stroke="#1b1f24" stroke-width="2" stroke-linejoin="round"/><circle cx="458.6" cy="188.7" r="3.2" fill="#e6ebef" opacity=".55"/><polygon points="477.7,261.0 469.0,266.0 460.3,261.0 460.3,251.0 469.0,246.0 477.7,251.0" fill="url(#steelBolt)" stroke="#1b1f24" stroke-width="2" stroke-linejoin="round"/><circle cx="469.0" cy="254.5" r="3.2" fill="#e6ebef" opacity=".55"/><polygon points="467.2,326.8 458.6,331.8 449.9,326.8 449.9,316.8 458.6,311.8 467.2,316.8" fill="url(#steelBolt)" stroke="#1b1f24" stroke-width="2" stroke-linejoin="round"/><circle cx="458.6" cy="320.3" r="3.2" fill="#e6ebef" opacity=".55"/><polygon points="62.1,326.8 53.4,331.8 44.8,326.8 44.8,316.8 53.4,311.8 62.1,316.8" fill="url(#steelBolt)" stroke="#1b1f24" stroke-width="2" stroke-linejoin="round"/><circle cx="53.4" cy="320.3" r="3.2" fill="#e6ebef" opacity=".55"/><polygon points="51.7,261.0 43.0,266.0 34.3,261.0 34.3,251.0 43.0,246.0 51.7,251.0" fill="url(#steelBolt)" stroke="#1b1f24" stroke-width="2" stroke-linejoin="round"/><circle cx="43.0" cy="254.5" r="3.2" fill="#e6ebef" opacity=".55"/><polygon points="62.1,195.2 53.4,200.2 44.8,195.2 44.8,185.2 53.4,180.2 62.1,185.2" fill="url(#steelBolt)" stroke="#1b1f24" stroke-width="2" stroke-linejoin="round"/><circle cx="53.4" cy="188.7" r="3.2" fill="#e6ebef" opacity=".55"/>
+
+  <!-- lettering -->
+  <g font-family="'Archivo Black','Arial Black',Impact,sans-serif" font-size="29.700" letter-spacing="2.750" text-anchor="middle">
+    <g fill="#1b1f24" transform="translate(1.500 2)"><text><textPath xlink:href="#topArc" startOffset="50%">ATITLÁN EXCHANGE</textPath></text>
+    <text><textPath xlink:href="#botArc" startOffset="50%">EL PUEBLO EN ACCIÓN</textPath></text></g>
+    <g fill="#f3ead2"><text><textPath xlink:href="#topArc" startOffset="50%">ATITLÁN EXCHANGE</textPath></text>
+    <text><textPath xlink:href="#botArc" startOffset="50%">EL PUEBLO EN ACCIÓN</textPath></text></g>
+  </g>
+
+  <!-- parchment -->
+  <circle cx="256" cy="256" r="178" fill="url(#parchment)"/>
+  <g clip-path="url(#innerClip)">
+    <!-- gear -->
+    <path d="M361.7 241.3 L385.4 245.5 L385.4 270.5 L361.7 274.7 L355.9 296.3 L374.3 311.9 L361.8 333.5 L339.2 325.3 L323.3 341.2 L331.5 363.8 L309.9 376.3 L294.3 357.9 L272.7 363.7 L268.5 387.4 L243.5 387.4 L239.3 363.7 L217.7 357.9 L202.1 376.3 L180.5 363.8 L188.7 341.2 L172.8 325.3 L150.2 333.5 L137.7 311.9 L156.1 296.3 L150.3 274.7 L126.6 270.5 L126.6 245.5 L150.3 241.3 L156.1 219.7 L137.7 204.1 L150.2 182.5 L172.8 190.7 L188.7 174.8 L180.5 152.2 L202.1 139.7 L217.7 158.1 L239.3 152.3 L243.5 128.6 L268.5 128.6 L272.7 152.3 L294.3 158.1 L309.9 139.7 L331.5 152.2 L323.3 174.8 L339.2 190.7 L361.8 182.5 L374.3 204.1 L355.9 219.7Z M324 258 A68 68 0 1 0 188 258 A68 68 0 1 0 324 258Z" fill="#2a2e34" fill-rule="evenodd"/>
+    <circle cx="256" cy="258" r="86" fill="none" stroke="#454b53" stroke-width="3"/>
+
+    <!-- bulb -->
+    <circle cx="240" cy="162" r="66" fill="url(#glow)"/>
+    <g stroke="#f3b412" stroke-width="4" stroke-linecap="round"><line x1="210.6" y1="143.0" x2="200.2" y2="137.0"/><line x1="223.0" y1="130.6" x2="217.0" y2="120.2"/><line x1="240.0" y1="126.0" x2="240.0" y2="114.0"/><line x1="257.0" y1="130.6" x2="263.0" y2="120.2"/><line x1="269.4" y1="143.0" x2="279.8" y2="137.0"/></g>
+    <path d="M228 184C228 176 216 172 216 160A24 24 0 1 1 264 160C264 172 252 176 252 184Z" fill="url(#bulbGlass)" stroke="#2a2118" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M233 184V168Q240 156 247 168V184" fill="none" stroke="#c2410c" stroke-width="2.500" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M226 150A16 16 0 0 1 238 138" fill="none" stroke="#fff" stroke-opacity=".8" stroke-width="3" stroke-linecap="round"/>
+    <rect x="228" y="184" width="24" height="8" rx="2" fill="#8c949c" stroke="#2a2118" stroke-width="2.500"/>
+    <rect x="229" y="192" width="22" height="7" rx="2" fill="#6b737b" stroke="#2a2118" stroke-width="2.500"/>
+    <rect x="233" y="199" width="14" height="6" rx="3" fill="#3a3f45" stroke="#2a2118" stroke-width="2"/>
+
+    <!-- hand -->
+    <g transform="translate(0 22) rotate(-10 256 340)">
+      <use xlink:href="#hand" fill="#2a2118" stroke="#2a2118" stroke-width="8" stroke-linejoin="round"/>
+      <use xlink:href="#hand" fill="#e8b27c"/>
+      <ellipse cx="219.5" cy="224.5" rx="4.5" ry="6.8" transform="rotate(-7 219.5 224.5)" fill="#f9d3cb" stroke="#c28a52" stroke-width="1.2"/><ellipse cx="249.6" cy="208.3" rx="4.6" ry="6.9" transform="rotate(-1 249.6 208.3)" fill="#f9d3cb" stroke="#c28a52" stroke-width="1.2"/><ellipse cx="279.4" cy="219.3" rx="4.5" ry="6.8" transform="rotate(5 279.4 219.3)" fill="#f9d3cb" stroke="#c28a52" stroke-width="1.2"/><ellipse cx="303.5" cy="245.8" rx="3.8" ry="5.9" transform="rotate(11 303.5 245.8)" fill="#f9d3cb" stroke="#c28a52" stroke-width="1.2"/><ellipse cx="196.2" cy="306.3" rx="5.3" ry="7.8" transform="rotate(-35 196.2 306.3)" fill="#f9d3cb" stroke="#c28a52" stroke-width="1.2"/>
+      <path d="M237 300C240 316 238 330 232 346" fill="none" stroke="#c28a52" stroke-width="1.600" stroke-linecap="round" opacity=".55"/>
+      <rect x="233" y="390" width="52" height="10" rx="5" fill="#e9b949" stroke="#2a2118" stroke-width="2.500"/>
+      <path d="M240 394H262" stroke="#fff" stroke-opacity=".7" stroke-width="2" stroke-linecap="round"/>
+      <path transform="translate(260 326) scale(1.250)" d="M0 14C-24 -2 -20 -22 -7 -22C-3 -22 0 -19 0 -15C0 -19 3 -22 7 -22C20 -22 24 -2 0 14Z" fill="#d6212a" stroke="#7f1018" stroke-width="2" stroke-linejoin="round"/>
+      <path transform="translate(260 326) scale(1.250)" d="M-12 -14C-10 -17 -8 -17 -6 -16" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="2.500" stroke-linecap="round"/>
+    </g>
+  </g>
+  <circle cx="256" cy="256" r="176" fill="none" stroke="#3a2f25" stroke-opacity=".6" stroke-width="3"/>
+</svg>

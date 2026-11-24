@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Diagram positions for the EME Chatbot Visitor and Employees labels and scenarios -->
+<root>
+  <data id="eme_chatbot" posx="2777.0" posy="1264.0">
+    <name/>
+  </data>
+  <data id="eme_chatbot_welcome_menu" posx="2333.6" posy="1482.8">
+    <name/>
+  </data>
+  <data id="eme_chatbot_visitor_chat" posx="2452.4" posy="1688.6">
+    <name/>
+  </data>
+  <data id="eme_chatbot_help_desk" posx="2658.2" posy="1807.4">
+    <name/>
+  </data>
+  <data id="eme_chatbot_customer_onboarding" posx="2895.8" posy="1807.4">
+    <name/>
+  </data>
+  <data id="eme_chatbot_request_meeting" posx="3101.6" posy="1688.6">
+    <name/>
+  </data>
+  <data id="eme_chatbot_place_order" posx="3220.4" posy="1482.8">
+    <name/>
+  </data>
+  <data id="eme_chatbot_employees" posx="1224.0" posy="2219.0">
+    <name/>
+  </data>
+  <data id="eme_chatbot_employees_welcome_menu" posx="780.6" posy="2437.8">
+    <name/>
+  </data>
+  <data id="eme_chatbot_employees_employee_chat" posx="899.4" posy="2643.6">
+    <name/>
+  </data>
+  <data id="eme_chatbot_task_tracker" posx="1105.2" posy="2762.4">
+    <name/>
+  </data>
+  <data id="eme_chatbot_finance_tracker" posx="1342.8" posy="2762.4">
+    <name/>
+  </data>
+  <data id="eme_chatbot_employees_lead_tracker" posx="1548.6" posy="2643.6">
+    <name/>
+  </data>
+  <data id="eme_chatbot_employees_order_tracker" posx="1667.4" posy="2437.8">
+    <name/>
+  </data>
+</root>

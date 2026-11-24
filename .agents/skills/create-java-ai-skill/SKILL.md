@@ -113,11 +113,11 @@ message.
 ### Streaming one growing message
 
 `processUpdate` re-saves and re-sends the whole last response. A skill that builds a long reply from many
-events (My EME chat, `MyEmeChatSkill`) instead sleeps on an event queue, keeps the full message itself and
+events (Employee Chat, `EmployeeChatSkill`) instead sleeps on an event queue, keeps the full message itself and
 sends small patches with `AgentJobManager.broadcastMessagePatch(agentMessage, command, ops, seq, status)`
 (`messageappend` / `messagereplace`, same `messageid`, nothing saved). It then calls `processCompleted` once
 with the finished message so the row is saved and the whole message is sent. Patches are not push-notified.
-See `opencode-my-eme-chat`.
+See `opencode-employee-chat`.
 
 Debounce a chat message (see `LibraryCollectionChatMonitorSkill`):
 

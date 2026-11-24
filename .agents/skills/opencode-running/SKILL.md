@@ -9,8 +9,8 @@ How a chat request becomes an OpenCode session, how its progress is shown, and h
 answer gets back to OpenCode. For the OpenCode HTTP API and event stream itself, see
 `opencode-v2-api`.
 
-This is the **agent-job** path (status card, polling every 2 s). My EME chat uses a different, event-driven
-path that streams one growing chat message; see `opencode-my-eme-chat`.
+This is the **agent-job** path (status card, polling every 2 s). Employee Chat uses a different, event-driven
+path that streams one growing chat message; see `opencode-employee-chat`.
 
 ## The chain
 

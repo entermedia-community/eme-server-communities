@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500" role="img" aria-labelledby="t d">
+  <title id="t">Wall of Shame</title>
+  <desc id="d">Round badge with a red ring and a thumbs-down hand, above the words Wall of Shame.</desc>
+  <circle cx="250" cy="250" r="244" fill="#b3261e"/>
+  <circle cx="250" cy="250" r="214" fill="#fff"/>
+  <circle cx="250" cy="250" r="203" fill="none" stroke="#b3261e" stroke-width="3"/>
+  <g transform="translate(250 190) rotate(180) scale(1.350)">
+    <rect x="-52" y="-6" width="20" height="54" rx="4" fill="#1c4f63"/>
+    <path d="M-26 -4L-4 -48C-1 -56 14 -54 13 -42L9 -12H38C48 -12 54 -4 52 6L44 40C42 47 36 50 30 50H-26Z" fill="#b3261e"/>
+    <path d="M14 4H46M12 20H44M10 35H40" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g font-family="Arial,'Liberation Sans',Helvetica,sans-serif" font-weight="700" fill="#1c4f63" text-anchor="middle">
+    <text x="250" y="338" font-size="36" letter-spacing="3">WALL OF</text>
+    <text x="250" y="388" font-size="46">SHAME</text>
+  </g>
+</svg>

@@ -11,12 +11,12 @@ page documents v1 only. This skill records the v2 surface reverse-engineered fro
 bundles and confirmed by live probing (server 2.0.14, verified 2026-09-23).
 
 For how chat agent job steps run OpenCode (runner, status card, answers, approvals), see
-`opencode-running`. For My EME chat (one session per chat, events streamed into one message), see
-`opencode-my-eme-chat`.
+`opencode-running`. For Employee Chat (one session per chat, events streamed into one message), see
+`opencode-employee-chat`.
 
 Primary consumer: `plugins/finder/code/org/entermediadb/mcp/client/OpenCodeClient.java`
 (about 1150 lines; the agent-job path is still written against the v1 surface, see the migration mapping
-below). The v2 methods used by My EME chat are `createSession(title, folder, permissions)`, `sessionExists`,
+below). The v2 methods used by Employee Chat are `createSession(title, folder, permissions)`, `sessionExists`,
 `sendPrompt` (returns null or the rejection reason), `openEventQueue` / `closeEventQueue` (a per-session
 `BlockingQueue` fed from the SSE thread, filtered by `data.sessionID`, or `data.form.sessionID` for
 `form.created`) and `replyToPermission`.
@@ -372,7 +372,7 @@ The shell action is `shell`, not `bash` (`bash` is silently ignored). A denied a
   `location[directory]`; the first call after a restart can come back empty while it scans, ask again). OpenCode loads `.agents`,
   `.claude`, `.opencode`, `opencode.json` from **every ancestor** of the folder and `AGENTS.md` up to the home folder, and a git
   repository around the folder becomes the project, so `external_directory` is then judged against the repo. Keep session folders
-  outside any repo/project (see `opencode-my-eme-chat`).
+  outside any repo/project (see `opencode-employee-chat`).
 - A user config at an ancestor (`<user>/opencode.json`, `<user>/.agents/skills`) applies to new sessions without a restart.
 - `skills.paths` entries: absolute, `~/...` and `{env:NAME}` work; a relative `./x` does not resolve against the config file.
 - `opencode service set env NAME VALUE` (read with `service get env NAME`) gives the background service an environment variable;

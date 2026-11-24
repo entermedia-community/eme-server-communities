@@ -1,4 +1,4 @@
-<img src="../overview/logo_light.svg" alt="EME World" width="200" align="right"> <img src="cumbre-de-cocreacion-logo.svg" alt="Cumbre de Cocreación" width="56" align="right">
+<img src="../../overview/logo_light.svg" alt="EME World" width="200" align="right"> <img src="cumbre-de-cocreacion-logo.svg" alt="Cumbre de Cocreación" width="56" align="right">
 
 **Christopher Burkey** · Tel: +502 4611 8131 · [eme.world](https://eme.world)
 
@@ -9,7 +9,7 @@
 | Detalle del Proyecto | Información Institucional |
 | :---- | :---- |
 | **Programa** | Cumbre de Cocreación (capacitación gratuita y autoguiada para emprendedores, en una aplicación móvil) |
-| **Presentado por** | EME World Inc. (Foundation) |
+| **Presentado por** | EME World Inc. |
 | **Ubicación Base** | San Marcos La Laguna, Sololá, Guatemala |
 | **Público Objetivo** | Toda persona que tenga un negocio o una idea concreta de negocio en el Lago de Atitlán, local o extranjera. |
 | **Objetivo** | Que cada emprendedor use su teléfono para trabajar, vender y crecer durante todo el año. |
@@ -17,13 +17,13 @@
 | **Escala del piloto** | Inscripción abierta. Meta de planificación: unas 60 personas inscritas |
 | **Estado del documento** | Borrador para validación comunitaria. Presupuesto y calendario son **provisionales**. Lo marcado **[Por confirmar]** aún debe validarse |
 
-# **Tu coach de negocios personal, con IA**
+# **Tres pasos para hacer visible tu negocio**
 
-**La Cumbre de Cocreación es un coach personal con inteligencia artificial, en tu teléfono.** Te acompaña paso a paso a **empezar** tu negocio, **registrarlo** y **conectarte** con otros líderes de negocios del Lago de Atitlán. Gratis, y a tu ritmo.
+**La Cumbre de Cocreación es una aplicación gratuita en tu teléfono.** En tres pasos: **completa la capacitación**, **describe tu negocio y confirma tus datos** y **obtén tu certificación**. Después, publicaremos tu negocio en línea, en grupos de WhatsApp y en el directorio de negocios de Lake Atitlan.Life. Gratis, y a tu ritmo.
 
-![Tu coach personal de negocios con IA: empezar, registrar y conectar con otros negocios del Lago de Atitlán](cumbre-de-cocreacion-coach.svg)
+![Tres pasos: completa la capacitación, describe tu negocio y confirma tus datos, y obtén tu certificación. Publicamos tu negocio en línea, en grupos de WhatsApp y en el directorio Lake Atitlan.Life](cumbre-de-cocreacion-pasos.svg)
 
-> **Qué financia esta propuesta.** El piloto lanza el **curso donado por LevelUp** dentro de la aplicación, con soporte técnico para los teléfonos de los participantes durante 6 meses. El coach con IA es la **visión** y una posible segunda fase: **no está financiado ni operativo hoy** y no es un entregable de este piloto.
+> **Qué financia esta propuesta.** El piloto lanza el **curso donado por LevelUp** dentro de la aplicación, con soporte técnico para los teléfonos de los participantes durante 6 meses.
 
 > **EME World** es una **Plataforma de Inteligencia Colectiva**: **IA personalizable para todos**. Una plataforma abierta, para cada necesidad de IA, con las personas siempre al mando.
 
@@ -35,11 +35,13 @@ Creemos que la IA debe pertenecer a todos, no a unas pocas corporaciones. Por es
 
 Y creemos que el cambio empieza escuchando: **escuchar** a las personas, **notar** lo que está emergiendo y **cocrear** juntos el siguiente paso, siempre con las **personas al mando** de la tecnología.
 
+Por eso la capacitación no es fija: la **ajustaremos según los comentarios de las personas participantes y de la comunidad**. A esto lo llamamos **aprendizaje adaptativo**.
+
 Nuestros valores: **Respeto por el tiempo**, **Más fuertes juntos**, **Ligeros con la Tierra** y **Abierto para todos**.
 
-| Pantalla de inicio (ejemplo) | Módulos de capacitación (ejemplo) |
+| Módulos de capacitación (ejemplo) | Lección activa (ejemplo) |
 | :---: | :---: |
-| <img src="cumbre-de-cocreacion-chat.png" alt="Chat de Cumbre de Cocreación con el menú principal" width="320" height="505"> | <img src="cumbre-de-cocreacion-cursos.png" alt="Lista de cursos de Capacitación y Certificación con indicador de progreso" width="320" height="505"> |
+| <img src="cumbre-de-cocreacion-chat-card.svg" alt="Lista de seis cursos de Capacitación y Certificación con indicador de progreso" width="320"> | <img src="cumbre-de-cocreacion-leccion.svg" alt="Lección activa de Comunicación Digital con video sobre WhatsApp Business, texto, pregunta de opción múltiple, botón Enviar respuesta y campo de texto" width="320"> |
 
 ---
 
@@ -69,24 +71,7 @@ Para cambiar esta realidad no basta con esperar a que vuelva la temporada alta. 
 
 A largo plazo, la Cumbre de Cocreación aspira a que **empresas más grandes patrocinen programas de empleo, capacitaciones y eventos** en la región, creando un puente estable entre el talento local y las oportunidades de trabajo y de negocio.
 
-# **3. Lo que aprenden los participantes**
-
-El programa combina habilidades clásicas de negocio con herramientas digitales, adaptadas a la realidad de la región:
-
-* **Cursos de digitalización (LevelUp):** cinco módulos prácticos, que son la base del piloto.
-* **Contenido y Publicidad:** un espacio para crear carteles, afiches y material comercial propio, sin depender de terceros ni pagar por publicidad.
-* **Directorio de Negocios del Lago:** un directorio donde cada persona registra su negocio y encuentra a otros emprendedores con quienes aliarse. **[Por confirmar]** que esté operativo al lanzamiento.
-* **Coach de Negocio con IA (visión, fase 2):** acompañamiento personalizado para que cada emprendedor descubra qué valores guían su negocio. No forma parte del piloto financiado.
-
-# **4. El curso ya existe: LevelUp Guatemala lo donó**
-
-No partimos de cero. La empresa guatemalteca **LevelUp** ha donado su programa completo de digitalización para emprendedores: cinco módulos que llevan a cada participante paso a paso, del uso básico del teléfono a la operación digital de su negocio. **[Por confirmar]** con LevelUp la licencia de uso, el formato y la duración real de cada módulo.
-
-![Ruta de capacitación: cinco módulos formativos de LevelUp Guatemala. Las semanas son indicativas](cumbre-de-cocreacion-gantt.png)
-
-**Metodología: aprender aplicando.** Los participantes no estudian teoría: aplican cada lección directamente a su propio negocio. Evalúan cómo operan hoy, identifican qué les falta, eligen las herramientas adecuadas y definen sus próximos pasos concretos. Al finalizar, cada emprendedor sabe qué puede hacer la tecnología por su negocio, por dónde empezar y cuál es su siguiente paso. Antes de actuar, cada persona aprende a **escuchar** con atención a su comunidad y a sus clientes, a notar lo que está emergiendo y a **cocrear** el siguiente paso junto a otros.
-
-# **5. ¿Quién puede participar?**
+# **3. ¿Quién puede participar?**
 
 Pueden participar dueños de micro y pequeños negocios, formales e informales, trabajadores independientes y personas que están desarrollando una idea de negocio en la zona del Lago de Atitlán. Turismo, hospedaje, gastronomía, comercio, artesanías y servicios locales pueden ser sectores prioritarios, pero **no son requisito**.
 
@@ -103,7 +88,7 @@ Pueden participar dueños de micro y pequeños negocios, formales e informales, 
 
 **Diagnóstico de entrada.** Al inscribirse, cada persona responde un cuestionario de 15 a 20 minutos (con apoyo por WhatsApp si lo necesita) sobre su negocio, su etapa, su uso actual de WhatsApp, redes, Google Maps y herramientas, cómo registra ventas y cobra, sus principales dificultades y sus necesidades de acceso e idioma. Sirve para sugerir por dónde empezar, orientar el soporte técnico y fijar la **línea base** para medir el progreso.
 
-# **6. Qué logra cada persona al terminar**
+# **4. Qué logra cada persona al terminar**
 
 | Módulo (LevelUp) | Lo que podrá hacer | Entregable |
 | :---- | :---- | :---- |
@@ -115,7 +100,7 @@ Pueden participar dueños de micro y pequeños negocios, formales e informales, 
 
 Distinguimos tres niveles: **completó** (terminó los módulos y entregó los ejercicios), **demostró** una competencia (se revisó con una rúbrica sencilla) y **adoptó** una herramienta (la sigue usando a los 30 y 90 días). **No prometemos aumento de ventas ni rentabilidad.**
 
-# **7. Cómo funciona**
+# **5. Cómo funciona**
 
 **Autoguiado, en el teléfono, sin sesiones en vivo.** Cada persona avanza a su ritmo por la aplicación. Una ruta sugerida de unas 8 semanas, con un reto semanal publicado en un grupo de WhatsApp de la comunidad, ayuda a mantener el avance. Un equipo de soporte técnico ayuda con el teléfono a quien se atasca, por WhatsApp o llamada. Unas **32 horas** en total (unas 20 de lecciones y unas 12 de práctica en el propio negocio), **[por confirmar con LevelUp]**.
 
@@ -125,7 +110,7 @@ Distinguimos tres niveles: **completó** (terminó los módulos y entregó los e
 
 **Lanzamiento y promoción.** Mensajes en los grupos de WhatsApp del pueblo, publicaciones en Facebook y carteles con código QR, compartidos por EME World, la comunidad y los propios negocios. No presupuestamos publicidad pagada.
 
-# **8. Lo que pedimos: \$1,000 USD**
+# **6. Lo que pedimos: \$1,000 USD**
 
 Para lanzar la aplicación y ofrecer la capacitación **gratuita** a los habitantes de San Marcos La Laguna y comunidades aledañas, solicitamos un fondo de arranque de \$1,000 USD. **Es un escenario inicial, no un presupuesto confirmado.**
 
@@ -137,7 +122,7 @@ Para lanzar la aplicación y ofrecer la capacitación **gratuita** a los habitan
 
 **Precio regular y descuento.** La configuración de la aplicación cuesta \$1,500. EME World, que presenta esta propuesta y también presta el servicio, ofrece a este proyecto **50% de descuento**: se cobran \$750 y no se cobran otros \$750. Lo indicamos para que el financiador vea el precio real y el aporte.
 
-**Lo que no cubre este presupuesto:** alojamiento, mantenimiento y licencias de la aplicación después de la configuración, desarrollo de funciones nuevas (como el coach con IA), ni transporte. Sin facilitador ni sesiones en vivo, la aplicación es el programa, por eso **[por confirmar]** por escrito qué incluye la configuración y quién sostiene el alojamiento y el mantenimiento. No contamos como confirmado ningún voluntariado o servicio donado, salvo el contenido de LevelUp y el descuento de EME World. Tampoco incluye coordinadores locales, publicidad pagada, acompañamiento individual extenso ni sesiones en vivo; eso requeriría recursos adicionales.
+**Lo que no cubre este presupuesto:** alojamiento, mantenimiento y licencias de la aplicación después de la configuración, desarrollo de funciones nuevas, ni transporte. Sin facilitador ni sesiones en vivo, la aplicación es el programa, por eso **[por confirmar]** por escrito qué incluye la configuración y quién sostiene el alojamiento y el mantenimiento. No contamos como confirmado ningún voluntariado o servicio donado, salvo el contenido de LevelUp y el descuento de EME World. Tampoco incluye coordinadores locales, publicidad pagada, acompañamiento individual extenso ni sesiones en vivo; eso requeriría recursos adicionales.
 
 ## **¿Por qué financiar este programa?**
 
@@ -149,15 +134,15 @@ Dar acceso a la tecnología no basta; lo que hace falta es enseñar a usarla de 
 
 Estos primeros pasos son la base de empresas más sólidas, más productividad y acceso a nuevos mercados, y preparan a los participantes para dar los siguientes: automatización e Inteligencia Artificial.
 
-# **9. Sostenibilidad y próximos pasos**
+# **7. Sostenibilidad y próximos pasos**
 
 El piloto busca demostrar que un modelo autoguiado y de bajo costo, con contenido donado, promoción comunitaria y apoyo por WhatsApp, produce competencias digitales verificables y herramientas en uso. Sus datos (inscripción, avance, finalización, costo por graduado) serían la base para pedir más financiamiento con evidencia.
 
 **Posibles fuentes para una siguiente etapa** (por explorar, **ninguna está comprometida**): patrocinio de negocios locales y de empresas del sector turístico, responsabilidad social empresarial, subvenciones, alianzas con la municipalidad y con asociaciones de turismo y comercio.
 
-**Fase 2 posible (futura, sin financiamiento ni operación hoy):** coach de negocios con IA, guía de aprendizaje automatizada y herramientas digitales de relevancia local, con las personas siempre al mando. Se evaluaría solo después de validar el piloto.
+**Fase 2 posible (futura, sin financiamiento ni operación hoy):** guía de aprendizaje automatizada y herramientas digitales de relevancia local, con las personas siempre al mando. Se evaluaría solo después de validar el piloto.
 
-# **10. Riesgos principales**
+# **8. Riesgos principales**
 
 | Riesgo | Cómo lo manejamos |
 | :---- | :---- |
@@ -168,15 +153,15 @@ El piloto busca demostrar que un modelo autoguiado y de bajo costo, con contenid
 | **Costos de la app después de la configuración** | Confirmar por escrito qué incluye la configuración y quién cubre hosting y mantenimiento después |
 | **Barreras de idioma y cultura** | Lenguaje sencillo, ejemplos visuales, apoyo en idiomas locales según los inscritos |
 
-# **11. Quiénes estamos detrás**
+# **9. Quiénes estamos detrás**
 
-**EME World Inc.** es una **Foundation** 501(c)(3) dedicada a la mejora comunitaria y al desarrollo de capacidades mediante tecnología abierta, **sin depender de grandes corporaciones**. Cada mes, la Comunidad EME se reúne y envía sus comentarios a nuestra Oficina del Programa de Código Abierto (OSPO).
+**EME World Inc.** es una organización sin fines de lucro 501(c)(3) dedicada a la mejora comunitaria y al desarrollo de capacidades mediante tecnología abierta, **sin depender de grandes corporaciones**. Cada mes, la Comunidad EME se reúne y envía sus comentarios a nuestra Oficina del Programa de Código Abierto (OSPO).
 
 EME World participa en el marco de la **UN Open Source Week** y ha trabajado con organizaciones como Yale y la Canadian Broadcasting Corporation (CBC). **Esto no implica que la ONU respalde ni financie este proyecto.** **[Por documentar]** el alcance de cada colaboración antes de citarla ante un financiador.
 
 La aplicación de la Cumbre de Cocreación funciona sobre esta plataforma, como uno de los servidores EME de la comunidad.
 
-# **12. Cronograma y próximos pasos (provisional)**
+# **10. Cronograma y próximos pasos (provisional)**
 
 La **fecha de publicación para consenso es el 1 de enero de 2027**. No es la fecha de inicio. Las semanas son relativas al lanzamiento de la ruta (semana 1).
 

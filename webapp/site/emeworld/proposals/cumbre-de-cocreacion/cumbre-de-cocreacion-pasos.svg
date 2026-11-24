@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="100%" role="img" aria-labelledby="t d" font-family="'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif">
-<title id="t">Tu coach personal de negocios con IA</title>
-<desc id="d">Un teléfono con un coach de inteligencia artificial que ayuda a una persona a empezar su negocio, registrarlo y conectarse con otros líderes de negocios del Lago de Atitlán, con los volcanes y el lago de fondo.</desc>
+<title id="t">Tres pasos: capacitación, descripción del negocio y certificación</title>
+<desc id="d">Un teléfono con la lista de cursos de capacitación y tres pasos: completar la capacitación, describir tu negocio y confirmar tus datos y obtener la certificación. Después se publica el negocio en línea, en grupos de WhatsApp y en el directorio de negocios Lake Atitlan.Life, con los volcanes y el lago de fondo.</desc>
 <defs>
   <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0f2fe"/><stop offset="1" stop-color="#ffffff"/></linearGradient>
   <linearGradient id="heart" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient>
@@ -32,7 +32,7 @@
 <rect x="60" y="28" width="172" height="316" rx="28" fill="#0f172a"/>
 <rect x="68" y="40" width="156" height="292" rx="20" fill="#ffffff"/>
 <rect x="124" y="46" width="44" height="6" rx="3" fill="#0f172a" opacity=".85"/>
-<!-- coach header -->
+<!-- training header -->
 <rect x="68" y="60" width="156" height="42" fill="#f1f5f9"/>
 <svg x="76" y="62" width="40" height="38" viewBox="62 62 44 42">
   <g fill="none" stroke-width="2.400" stroke-linecap="round">
@@ -42,53 +42,59 @@
   </g>
   <path d="M84 100C71 91 69 82 75 79C79 77.500 82.500 79 84 82C85.500 79 89 77.500 93 79C99 82 97 91 84 100Z" fill="url(#heart)"/>
 </svg>
-<text x="124" y="78" font-size="12" font-weight="700" fill="#0f172a">Tu coach</text>
-<text x="124" y="93" font-size="10.500" fill="#475569">con IA a tu lado</text>
+<text x="124" y="78" font-size="12" font-weight="700" fill="#0f172a">Capacitación</text>
+<text x="124" y="93" font-size="10.500" fill="#475569">6 módulos</text>
 
-<!-- chat bubbles -->
-<rect x="78" y="114" width="132" height="42" rx="12" fill="#e0f2fe"/>
-<text x="88" y="132" font-size="11.500" fill="#0f172a">Hola, soy tu coach.</text>
-<text x="88" y="148" font-size="11.500" fill="#0f172a">¿Qué negocio sueñas?</text>
-
-<rect x="94" y="168" width="120" height="42" rx="12" fill="#dcfce7"/>
-<text x="104" y="186" font-size="11.500" fill="#0f172a">Quiero vender mis</text>
-<text x="104" y="202" font-size="11.500" fill="#0f172a">tejidos todo el año</text>
-
-<rect x="78" y="222" width="132" height="42" rx="12" fill="#e0f2fe"/>
-<text x="88" y="240" font-size="11.500" fill="#0f172a">Te guío paso a paso,</text>
-<text x="88" y="256" font-size="11.500" fill="#0f172a">desde tu celular.</text>
-
-<!-- typing dots -->
-<rect x="94" y="276" width="52" height="28" rx="12" fill="#f1f5f9"/>
-<circle cx="108" cy="290" r="3.500" fill="#94a3b8"/><circle cx="120" cy="290" r="3.500" fill="#94a3b8"/><circle cx="132" cy="290" r="3.500" fill="#94a3b8"/>
-<rect x="78" y="312" width="132" height="12" rx="6" fill="#f1f5f9"/>
+<!-- course rows -->
+<rect x="78" y="112" width="136" height="38" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+<circle cx="94" cy="131" r="8" fill="#22c55e"/><path d="M90 131l3 3 6-6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="108" y="127" width="94" height="5" rx="2.500" fill="#e2e8f0"/><rect x="108" y="127" width="94" height="5" rx="2.500" fill="#22c55e"/>
+<rect x="108" y="137" width="60" height="4" rx="2" fill="#cbd5e1"/>
+<rect x="78" y="156" width="136" height="38" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+<circle cx="94" cy="175" r="8" fill="#2563eb"/><text x="94" y="179" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">2</text>
+<rect x="108" y="171" width="94" height="5" rx="2.500" fill="#e2e8f0"/><rect x="108" y="171" width="56" height="5" rx="2.500" fill="#2563eb"/>
+<rect x="108" y="181" width="70" height="4" rx="2" fill="#cbd5e1"/>
+<rect x="78" y="200" width="136" height="38" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+<circle cx="94" cy="219" r="8" fill="#2563eb"/><text x="94" y="223" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">3</text>
+<rect x="108" y="215" width="94" height="5" rx="2.500" fill="#e2e8f0"/><rect x="108" y="215" width="24" height="5" rx="2.500" fill="#2563eb"/>
+<rect x="108" y="225" width="66" height="4" rx="2" fill="#cbd5e1"/>
+<rect x="78" y="244" width="136" height="38" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+<circle cx="94" cy="263" r="8" fill="#e2e8f0"/><text x="94" y="267" text-anchor="middle" font-size="10" font-weight="700" fill="#64748b">4</text>
+<rect x="108" y="259" width="94" height="5" rx="2.500" fill="#e2e8f0"/>
+<rect x="108" y="269" width="58" height="4" rx="2" fill="#cbd5e1"/>
+<!-- certification -->
+<rect x="78" y="290" width="136" height="34" rx="10" fill="#ede9fe" stroke="#c4b5fd"/>
+<circle cx="96" cy="307" r="9" fill="#7c3aed"/>
+<path d="M96 301l2 4.200 4.600.5-3.400 3.100 1 4.500-4.200-2.400-4.200 2.400 1-4.500-3.400-3.100 4.600-.5z" fill="#fff"/>
+<text x="112" y="305" font-size="9.500" font-weight="700" fill="#4c1d95">Certificación</text>
+<rect x="112" y="311" width="64" height="4" rx="2" fill="#c4b5fd"/>
 
 <!-- flow arrows -->
 <g fill="none" stroke-width="3.500" stroke-linecap="round" stroke-dasharray="2 9">
   <path d="M236 186C290 186 290 85 334 85" stroke="#ef4444"/>
   <path d="M236 186C290 186 290 186 334 186" stroke="#f59e0b"/>
-  <path d="M236 186C290 186 290 287 334 287" stroke="#22c55e"/>
+  <path d="M236 186C290 186 290 294 334 294" stroke="#22c55e"/>
 </g>
 
 <!-- card 1: start -->
 <rect x="340" y="46" width="620" height="78" rx="16" fill="#ffffff" stroke="#fecaca" stroke-width="2"/>
 <circle cx="386" cy="85" r="22" fill="#ef4444"/>
 <text x="386" y="93" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">1</text>
-<text x="426" y="78" font-size="21" font-weight="700" fill="#0f172a">Empieza tu negocio</text>
-<text x="426" y="102" font-size="14" fill="#475569">Convierte tu idea en un plan con pasos claros y alcanzables.</text>
-<!-- seedling icon -->
-<g transform="translate(900 85)" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M0 22V-2" stroke="#15803d" stroke-width="3"/>
-  <path d="M0 6C-18 6 -22 -8 -22 -16C-8 -16 0 -8 0 6Z" fill="#22c55e" stroke="#15803d" stroke-width="2"/>
-  <path d="M0 -2C14 -2 20 -12 20 -22C8 -22 0 -14 0 -2Z" fill="#86efac" stroke="#15803d" stroke-width="2"/>
+<text x="426" y="78" font-size="21" font-weight="700" fill="#0f172a">Completa la capacitación</text>
+<text x="426" y="102" font-size="14" fill="#475569">Aprende a hacer crecer tu negocio con tu teléfono.</text>
+<!-- book icon -->
+<g transform="translate(900 85)" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M-22 -14C-12 -18 -4 -16 0 -10V18C-4 12 -12 10 -22 14Z" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+  <path d="M22 -14C12 -18 4 -16 0 -10V18C4 12 12 10 22 14Z" fill="#fecaca" stroke="#b91c1c" stroke-width="2"/>
+  <path d="M-15 -4C-10 -6 -6 -5 -4 -2M15 -4C10 -6 6 -5 4 -2" stroke="#b91c1c" stroke-width="2" fill="none"/>
 </g>
 
 <!-- card 2: register -->
 <rect x="340" y="147" width="620" height="78" rx="16" fill="#ffffff" stroke="#fde68a" stroke-width="2"/>
 <circle cx="386" cy="186" r="22" fill="#f59e0b"/>
 <text x="386" y="194" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">2</text>
-<text x="426" y="179" font-size="21" font-weight="700" fill="#0f172a">Regístralo</text>
-<text x="426" y="203" font-size="14" fill="#475569">Te acompaña a formalizarlo y a aparecer en el directorio del lago.</text>
+<text x="426" y="179" font-size="21" font-weight="700" fill="#0f172a">Describe tu negocio y confirma tus datos</text>
+<text x="426" y="203" font-size="14" fill="#475569">Cuéntanos qué haces y cómo contactarte.</text>
 <!-- document check icon -->
 <g transform="translate(900 186)" stroke-linecap="round" stroke-linejoin="round">
   <rect x="-16" y="-24" width="32" height="44" rx="5" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
@@ -97,21 +103,18 @@
   <path d="M3 12L7 16L14 8" stroke="#ffffff" stroke-width="2.500" fill="none"/>
 </g>
 
-<!-- card 3: network -->
-<rect x="340" y="248" width="620" height="78" rx="16" fill="#ffffff" stroke="#bbf7d0" stroke-width="2"/>
-<circle cx="386" cy="287" r="22" fill="#22c55e"/>
-<text x="386" y="295" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">3</text>
-<text x="426" y="280" font-size="21" font-weight="700" fill="#0f172a">Conéctate</text>
-<text x="426" y="304" font-size="14" fill="#475569">Conoce a otros líderes de negocios del lago y crezcan juntos.</text>
-<!-- network icon -->
-<g transform="translate(900 287)">
-  <g stroke="#1d4ed8" stroke-width="2.500" stroke-linecap="round">
-    <path d="M0 -4L-20 -18M0 -4L20 -18M0 -4L-14 18M0 -4L16 18M-20 -18L20 -18" fill="none"/>
-  </g>
-  <circle cx="0" cy="-4" r="9" fill="url(#heart)"/>
-  <circle cx="-20" cy="-18" r="6" fill="#ef4444"/>
-  <circle cx="20" cy="-18" r="6" fill="#f59e0b"/>
-  <circle cx="-14" cy="18" r="6" fill="#22c55e"/>
-  <circle cx="16" cy="18" r="6" fill="#38bdf8"/>
+<!-- card 3: certification -->
+<rect x="340" y="248" width="620" height="92" rx="16" fill="#ffffff" stroke="#bbf7d0" stroke-width="2"/>
+<circle cx="386" cy="294" r="22" fill="#22c55e"/>
+<text x="386" y="302" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">3</text>
+<text x="426" y="278" font-size="21" font-weight="700" fill="#0f172a">Obtén tu certificación</text>
+<text x="426" y="302" font-size="14" fill="#475569">Publicaremos tu negocio en línea, en grupos de WhatsApp</text>
+<text x="426" y="321" font-size="14" fill="#475569">y en el directorio de negocios de Lake Atitlan.Life.</text>
+<!-- certificate icon -->
+<g transform="translate(900 294)" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M-10 12L-16 28L-6 23L0 30L2 14Z" fill="#c4b5fd" stroke="#6d28d9" stroke-width="2"/>
+  <path d="M10 12L16 28L6 23L0 30L-2 14Z" fill="#ddd6fe" stroke="#6d28d9" stroke-width="2"/>
+  <circle cx="0" cy="-4" r="20" fill="#7c3aed" stroke="#ffffff" stroke-width="3"/>
+  <path d="M0 -15l4 8.500 9.500 1-7 6.400 2 9.300-8.500-4.800-8.500 4.800 2-9.300-7-6.400 9.500-1z" fill="#ffffff"/>
 </g>
 </svg>

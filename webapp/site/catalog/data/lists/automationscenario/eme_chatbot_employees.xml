@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- EME Chatbot Employees: chatbot for staff. Welcome Menu and Employee Chat use the same Java skills as My EME; the trackers are placeholders, not implemented yet -->
+<records>
+  <data id="eme_chatbot_employees_welcome_menu" ordering="5" scenarioicon="list" enabled="true" isvisible="true" connectedtop="eme_chatbot_employees" chatenabled="true">
+    <name>
+      <language id="en"><![CDATA[Welcome Menu]]></language>
+    </name>
+    <longcaption><![CDATA[Good for starting a conversation and seeing which EME Chatbot Employees tools are available.]]></longcaption>
+    <markdowncontent><![CDATA[Greets the employee and shows a menu of the EME Chatbot Employees scenarios to choose from.]]></markdowncontent>
+  </data>
+
+  <data id="eme_chatbot_employees_employee_chat" ordering="10" scenarioicon="chat" enabled="true" isvisible="true" connectedtop="eme_chatbot_employees" chatenabled="true">
+    <name>
+      <language id="en"><![CDATA[Employee Chat]]></language>
+    </name>
+    <longcaption><![CDATA[Good for chatting with an assistant as an employee.]]></longcaption>
+    <markdowncontent><![CDATA[Opens an employee chat with the EME Chatbot.]]></markdowncontent>
+  </data>
+
+  <data id="eme_chatbot_task_tracker" ordering="20" scenarioicon="check2-square" enabled="true" isvisible="true" connectedtop="eme_chatbot_employees" chatenabled="true">
+    <name>
+      <language id="en"><![CDATA[Team Todo and Task Tracker]]></language>
+    </name>
+    <longcaption><![CDATA[Good for assigning tasks and seeing what is done, due soon or overdue.]]></longcaption>
+    <markdowncontent><![CDATA[Assign tasks, set due dates, check items off and see what is done, due soon or overdue. Not implemented yet.]]></markdowncontent>
+  </data>
+
+  <data id="eme_chatbot_finance_tracker" ordering="30" scenarioicon="cash-coin" enabled="true" isvisible="true" connectedtop="eme_chatbot_employees" chatenabled="true">
+    <name>
+      <language id="en"><![CDATA[Finance Tracker and Invoicing]]></language>
+    </name>
+    <longcaption><![CDATA[Good for sending invoices and seeing profit, cash flow and what is unpaid.]]></longcaption>
+    <markdowncontent><![CDATA[Send invoices, record income and expenses, and see profit, cash flow and what is still unpaid. Not implemented yet.]]></markdowncontent>
+  </data>
+
+  <data id="eme_chatbot_employees_lead_tracker" ordering="40" scenarioicon="people" enabled="true" isvisible="true" connectedtop="eme_chatbot_employees" chatenabled="true">
+    <name>
+      <language id="en"><![CDATA[Lead Tracker]]></language>
+    </name>
+    <longcaption><![CDATA[Good for seeing the leads the chatbot captures and following up on them.]]></longcaption>
+    <markdowncontent><![CDATA[Lets an employee see and follow up on leads captured by the chatbot. Not implemented yet.]]></markdowncontent>
+  </data>
+
+  <data id="eme_chatbot_employees_order_tracker" ordering="50" scenarioicon="box-seam" enabled="true" isvisible="true" connectedtop="eme_chatbot_employees" chatenabled="true">
+    <name>
+      <language id="en"><![CDATA[Order Tracker]]></language>
+    </name>
+    <longcaption><![CDATA[Good for seeing orders placed through the chatbot and where each one stands.]]></longcaption>
+    <markdowncontent><![CDATA[Lets an employee see and follow up on orders placed through the chatbot. Not implemented yet.]]></markdowncontent>
+  </data>
+</records>

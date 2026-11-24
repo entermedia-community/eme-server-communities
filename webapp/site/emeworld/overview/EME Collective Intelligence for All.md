@@ -55,8 +55,8 @@ Here are some chat apps being created by EME users:
   <tr>
     <td align="center" width="25%"><img src="eme-chat-dialog.png" alt="Peer-to-peer chat with the EME assistant" width="100%"><br><sub>Peer to Peer</sub></td>
     <td align="center" width="25%"><img src="eme-server-chat.png" alt="UN News EME chat with My EME assistant" width="100%"><br><sub>UN News</sub></td>
-    <td align="center" width="25%"><img src="../proposals/cacao-source-chat.png" alt="Cacao Source team chat with the EME assistant" width="100%"><br><sub>Cacao Source</sub></td>
-    <td align="center" width="25%"><img src="../proposals/cumbre-de-cocreacion-cursos.png" alt="Cursos de Cumbre de Cocreación" width="100%"><br><sub>Cumbre de Cocreación</sub></td>
+    <td align="center" width="25%"><img src="../proposals/cacao-source/cacao-source-chat.png" alt="Cacao Source team chat with the EME assistant" width="100%"><br><sub>Cacao Source</sub></td>
+    <td align="center" width="25%"><img src="../proposals/cumbre-de-cocreacion/cumbre-de-cocreacion-cursos.png" alt="Cursos de Cumbre de Cocreación" width="100%"><br><sub>Cumbre de Cocreación</sub></td>
   </tr>
 </table>
 

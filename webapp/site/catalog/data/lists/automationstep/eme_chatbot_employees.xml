@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Menu items run <scenario>_confirm first, so each skill is the confirm step. Same Java skills as My EME -->
+<records>
+  <data id="eme_chatbot_employees_welcome_menu_welcome" aiskill="welcomeMenuSkill" automationscenario="eme_chatbot_employees_welcome_menu" enabled="true" agenttype="eventagent" processingmessage="Welcome">
+    <name>
+      <![CDATA[Welcome Menu]]>
+    </name>
+  </data>
+  <data id="eme_chatbot_employees_employee_chat_confirm" aiskill="employeeChatSkill" automationscenario="eme_chatbot_employees_employee_chat" enabled="true" agenttype="remoteagent" processingmessage="Working...">
+    <name>
+      <language id="en"><![CDATA[Employee Chat]]></language>
+    </name>
+  </data>
+  <data id="eme_chatbot_employees_lead_tracker_confirm" aiskill="emeChatbotLeadTrackerSkill" automationscenario="eme_chatbot_employees_lead_tracker" enabled="true" agenttype="remoteagent" processingmessage="Working...">
+    <name>
+      <language id="en"><![CDATA[Lead Tracker]]></language>
+    </name>
+  </data>
+  <data id="eme_chatbot_employees_order_tracker_confirm" aiskill="emeChatbotOrderTrackerSkill" automationscenario="eme_chatbot_employees_order_tracker" enabled="true" agenttype="remoteagent" processingmessage="Working...">
+    <name>
+      <language id="en"><![CDATA[Order Tracker]]></language>
+    </name>
+  </data>
+</records>

@@ -1,4 +1,4 @@
-<img src="../images/logo_light.svg" alt="EME World" width="200" align="right">
+<img src="../../overview/logo_light.svg" alt="EME World" width="200" align="right">
 
 **Christopher Burkey** · Tel: +502 4611 8131 · [eme.world](https://eme.world)
 
@@ -9,7 +9,7 @@
 | Project Details | Information |
 | :---- | :---- |
 | **Prepared for** | Cacao Source, a Guatemalan social enterprise (San Marcos la Laguna, Sololá, Guatemala) |
-| **Prepared by** | EME World Inc. (Foundation) |
+| **Prepared by** | EME World Inc. |
 | **Contact** | Christopher Burkey, +502 4611 8131 |
 | **Product** | Branded mobile app built on the EME World Collective Intelligence platform |
 | **Menu** | Employee Training · Company Dashboard · Goal Tracking |
