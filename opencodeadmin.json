@@ -28,11 +28,28 @@
 					}
 				}
 			}
+		},
+		"qwen-cloud": {
+			"package": "aisdk:@ai-sdk/openai-compatible",
+			"settings": {
+				"baseURL": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1",
+				"apiKey": "{env:QWEN_API_KEY}"
+			},
+			"models": {
+				"qwen4-max": {
+					"name": "qwen4-max",
+					"capabilities": {
+						"tools": true,
+						"input": ["text", "image"],
+						"output": ["text"]
+					},
+					"limit": {
+						"context": 32000,
+						"output": 8192
+					}
+				}
+			}
 		}
-	},
-	"model": {
-		"providerID": "local-llama",
-		"model": "Qwen3.8-27B-GGUF"
 	},
 	"skills": [
 		 "/media/emsites/opencode/skills",  
