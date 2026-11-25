@@ -248,13 +248,22 @@ sleep 10
 After the final stage reached, summarize the findings of all stages and let the user
 decide any further fix.
 
-## 6. Email the summary
+## 6. Email the summary — down situations only
 
-At the end of every run (recovered or still down), email the summary to
-**cristobal@emedialibrary.com**. The summary must include: monitor name/URL and
-server tag, down-since timestamp, actions taken (nginx test/reload result), each
-stage's result (probe status + headers, container name/status, log findings, disk
-free %), whether stage 6 ran, and the final verdict/root cause.
+**Never email when all monitors are up.** Email only for down incidents:
+
+- **Down confirmed** (stage 1 still shows down on a fresh beat) → send the summary
+  email **once** for that incident.
+- **Recovery** of a monitor whose down was previously reported → a short recovery
+  email closing the incident.
+- Same monitor still down on later runs → do **NOT** re-email every run; one email
+  per incident. Report updates in the chat instead. Re-email only if the situation
+  materially changes (new root cause, or a different monitor goes down).
+
+Recipient: **cristobal@emedialibrary.com**. The summary must include: monitor
+name/URL and server tag, down-since timestamp, actions taken (nginx test/reload
+result), each stage's result (probe status + headers, container name/status, log
+findings, disk free %), whether stage 6 ran, and the final verdict/root cause.
 
 **Sending route (verified working 2026-11-25):**
 
