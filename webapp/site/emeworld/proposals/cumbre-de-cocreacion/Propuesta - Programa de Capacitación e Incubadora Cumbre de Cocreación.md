@@ -155,7 +155,7 @@ El piloto busca demostrar que un modelo autoguiado y de bajo costo, con contenid
 
 # **9. Quiénes estamos detrás**
 
-**EME World Inc.** es una organización sin fines de lucro 501(c)(3) dedicada a la mejora comunitaria y al desarrollo de capacidades mediante tecnología abierta, **sin depender de grandes corporaciones**. Cada mes, la Comunidad EME se reúne y envía sus comentarios a nuestra Oficina del Programa de Código Abierto (OSPO).
+**EME World Inc.** es una organización dedicada a la mejora comunitaria y al desarrollo de capacidades mediante tecnología abierta, **sin depender de grandes corporaciones**. Cada mes, la Comunidad EME se reúne y envía sus comentarios a nuestra Oficina del Programa de Código Abierto (OSPO).
 
 EME World participa en el marco de la **UN Open Source Week** y ha trabajado con organizaciones como Yale y la Canadian Broadcasting Corporation (CBC). **Esto no implica que la ONU respalde ni financie este proyecto.** **[Por documentar]** el alcance de cada colaboración antes de citarla ante un financiador.
 
