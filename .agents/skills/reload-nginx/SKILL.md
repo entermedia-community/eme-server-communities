@@ -1,11 +1,12 @@
 ---
 name: reload-nginx
-description: Use when the user asks to restart, reload, or apply nginx configuration on this server — "restart nginx", "reload nginx", "apply the nginx site change". Always test the config first with `sudo nginx -t`; only if the test passes, reload with `sudo nginx -s reload`. Never reload with a failing config, and never use `systemctl restart nginx` (a reload keeps existing connections alive).
+description: Use when the user asks to restart, reload, or apply nginx configuration on this server or a remote mNN server — "restart nginx", "reload nginx", "apply the nginx site change", "reload nginx on m49 as eadmin". Always test the config first with `sudo nginx -t`; only if the test passes, reload with `sudo nginx -s reload`. Never reload with a failing config, and never use `systemctl restart nginx` (a reload keeps existing connections alive). For remote servers, SSH as the requested provisioned user with their explicit key.
 ---
 
 # Skill: reload-nginx
 
-Safely apply nginx configuration changes on this machine. Two steps, in order, no shortcuts:
+Safely apply nginx configuration changes on this machine or a remote EME server.
+Two steps, in order, no shortcuts:
 
 ## 1. Test the configuration
 
@@ -61,6 +62,36 @@ the `deploy-eme-server` skill), also probe it:
 ```bash
 curl -sI https://<domain>/ | head -3   # expect an HTTP response, not a connection error
 ```
+
+## Remote servers (mNN)
+
+The same test-gated flow applies on a remote EME server: run every step over SSH as the
+requested user, in the same order. If the user names a specific account (e.g. `eadmin`),
+use only that account. If anything fails, report the failure to the user before trying
+alternatives — do not silently fall back to another user.
+
+**Key gotcha:** the `mNN` host aliases in `~/.ssh/keys/entermedia.conf` pin
+`User entermedia` and `IdentityFile ~/.ssh/keys/mNN`. Overriding the user on the command
+line (`ssh eadmin@m49`) does **not** override the identity file, so SSH offers
+entermedia's key and fails with `Permission denied (publickey,password)`.
+
+For any non-default user, always pass that user's provisioned key explicitly. Keys are
+created by the `remote-user-provisioning` skill as `~/.ssh/keys/<user>_<host>.pk`:
+
+```bash
+SSH="ssh -o BatchMode=yes -o ConnectTimeout=10 -o IdentitiesOnly=yes -i ~/.ssh/keys/eadmin_m49.pk eadmin@m49"
+
+$SSH 'whoami && sudo -n nginx -t'     # 1. test
+$SSH 'sudo -n nginx -s reload'        # 2. reload, only if the test passed
+$SSH 'pgrep -a nginx | head -5'       # 3. verify
+```
+
+- `IdentitiesOnly=yes` ensures only the named key is offered, not the alias's key.
+- `BatchMode=yes` and `sudo -n` make SSH/sudo password prompts fail fast instead of
+  hanging the session. Report such failures to the user rather than working around them.
+- If `~/.ssh/keys/<user>_<host>.pk` does not exist, the user is not provisioned on that
+  server yet — stop and report (see the `remote-user-provisioning` skill).
+- Probe a site through the remote host if needed: `$SSH 'curl -sI http://localhost/ | head -3'`.
 
 ## Notes
 
