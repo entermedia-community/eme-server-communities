@@ -44,8 +44,8 @@
 						"output": ["text"]
 					},
 					"limit": {
-						"context": 32000,
-						"output": 8192
+						"context": 131072,
+						"output": 16384
 					}
 				}
 			}
