@@ -39,7 +39,7 @@
       <language id="en"><![CDATA[Request a Meeting]]></language>
     </name>
     <longcaption><![CDATA[Good for asking to book a meeting with the team.]]></longcaption>
-    <markdowncontent><![CDATA[Lets a visitor request a meeting. Not implemented yet.]]></markdowncontent>
+    <markdowncontent><![CDATA[Lets a visitor request a meeting: they pick a date and time and add an optional message, and the vendor's owner gets an email.]]></markdowncontent>
   </data>
 
   <data id="eme_chatbot_place_order" ordering="50" scenarioicon="cart" enabled="true" isvisible="true" connectedtop="eme_chatbot" chatenabled="true">

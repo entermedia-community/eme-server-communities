@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- EME Chatbot skills: Employee Chat is the real skill; the others are placeholders, not implemented yet -->
+<!-- EME Chatbot skills: Employee Chat and Request a Meeting are real; the others are placeholders, not implemented yet -->
 <records>
   <data id="employeeChatSkill" bean="employeeChatSkill" agenttype="remoteagent" ordering="10" contextbean="chatMessageContext">
     <name>
@@ -36,7 +36,13 @@
     <name>
       <language id="en"><![CDATA[Request a Meeting]]></language>
     </name>
-    <markdowncontent><![CDATA[Lets a visitor request a meeting. Not implemented yet.]]></markdowncontent>
+    <markdowncontent><![CDATA[Lets a visitor request a meeting: sends them a form to pick a date and time and add an optional short message.]]></markdowncontent>
+  </data>
+  <data id="emeChatbotSendMeetingRequestSkill" bean="emeChatbotSendMeetingRequestSkill" agenttype="remoteagent" ordering="10" contextbean="chatMessageContext">
+    <name>
+      <language id="en"><![CDATA[Send Meeting Request]]></language>
+    </name>
+    <markdowncontent><![CDATA[Emails the vendor's owner a visitor's meeting request (their name, email, the date and time they picked and their message), then confirms to the visitor.]]></markdowncontent>
   </data>
   <data id="emeChatbotPlaceOrderSkill" bean="emeChatbotPlaceOrderSkill" agenttype="remoteagent" ordering="10" contextbean="chatMessageContext">
     <name>

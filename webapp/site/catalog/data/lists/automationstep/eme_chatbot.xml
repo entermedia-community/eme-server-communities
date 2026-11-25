@@ -37,6 +37,11 @@
       <language id="en"><![CDATA[Request a Meeting]]></language>
     </name>
   </data>
+  <data id="eme_chatbot_request_meeting_submit" aiskill="emeChatbotSendMeetingRequestSkill" automationscenario="eme_chatbot_request_meeting" runafter="eme_chatbot_request_meeting_confirm" enabled="true" agenttype="remoteagent" processingmessage="Sending your request">
+    <name>
+      <language id="en"><![CDATA[Send Meeting Request]]></language>
+    </name>
+  </data>
   <data id="eme_chatbot_place_order_confirm" aiskill="emeChatbotPlaceOrderSkill" automationscenario="eme_chatbot_place_order" enabled="true" agenttype="remoteagent" processingmessage="Working...">
     <name>
       <language id="en"><![CDATA[Place an Order]]></language>
