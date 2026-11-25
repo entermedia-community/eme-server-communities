@@ -16,9 +16,11 @@ ts() { date -u '+%Y-%m-%d %H:%M:%S UTC'; }
 log() { echo "[$(ts)] $*"; }
 
 # --- config ------------------------------------------------------------------
-if [ ! -f "$DIR/opencode.env" ]; then log "FATAL: missing $DIR/opencode.env"; exit 1; fi
-# shellcheck disable=SC1091
-source "$DIR/opencode.env"
+# OpenCode API port + password come from the project .env (OPENCODE_PORT,
+# OPENCODE_PASSWORD). eadmin reads the repo .env directly (it is other-readable).
+ENVFILE="$REPO/.env"
+if [ ! -r "$ENVFILE" ]; then log "FATAL: cannot read $ENVFILE"; exit 1; fi
+eval "$(grep -E '^OPENCODE_(PORT|PASSWORD)=' "$ENVFILE")"
 : "${OPENCODE_PORT:?}" "${OPENCODE_PASSWORD:?}"
 AUTH=$(printf 'opencode:%s' "$OPENCODE_PASSWORD" | base64 -w0)
 API="http://127.0.0.1:$OPENCODE_PORT"

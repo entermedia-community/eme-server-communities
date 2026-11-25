@@ -6,10 +6,11 @@ session that executes this skill (`SKILL.md`). Steady state (all up, or the same
 monitors still down) is silent: no agent, no email.
 
 ## Layout
-- **Code (this folder, in git):** `monitor.sh`, the two `*.env.example` templates,
+- **Code (this folder, in git):** `monitor.sh`, the `mail.env.example` template,
   this runbook, and `SKILL.md`.
+- **OpenCode API creds:** read from the project `.env` (`OPENCODE_PORT`,
+  `OPENCODE_PASSWORD`) — no separate file. eadmin reads the repo `.env` directly.
 - **Runtime + secrets (NOT in git):** `/home/eadmin/monitor-un/`
-  - `opencode.env` (600) — OpenCode API port + password
   - `mail.env` (600) — `monitor_email_*` SMTP relay values
   - `state.json` — last-handled down set (transition dedupe)
   - `lock`, `monitor_un.log`
@@ -21,9 +22,12 @@ Paths are m49-specific (`/media/emsites/opencode`, `/home/eadmin/...`).
 1. eadmin keys to the UN servers in `/home/eadmin/.ssh/keys/` (dir 700, files 600).
 2. eadmin sudoers: nginx + docker + journal/snap/apt cleanup rules (see the
    `remote-user-provisioning` skill).
-3. `mkdir -p /home/eadmin/monitor-un` (700, eadmin). Install `opencode.env` and
-   `mail.env` from the templates (600, eadmin). Never commit real secrets.
-4. **Model context:** `qwen4-max` needs a large `limit.context` (e.g. 131072) in
+3. `mkdir -p /home/eadmin/monitor-un` (700, eadmin). Install `mail.env` from the
+   template (600, eadmin). Never commit real secrets.
+4. Project `.env` must define `OPENCODE_PORT` and `OPENCODE_PASSWORD` (the live
+   service pairing password). eadmin reads the repo `.env` directly — keep it
+   readable by eadmin (default `664`). No separate `opencode.env` file is used.
+5. **Model context:** `qwen4-max` needs a large `limit.context` (e.g. 131072) in
    `opencodeadmin.json`, otherwise the agent compaction-loops at the email step.
    Apply without a restart via `POST /api/location/reload`.
 
@@ -32,6 +36,10 @@ The repo path is already traversable/readable by eadmin (dirs are `775`).
 `monitor.sh` is committed executable (`755`), so eadmin can run it straight from the
 repo — no extra ACL needed. If a checkout ever drops the exec bit:
 `chmod 755 .agents/skills/monitor-un/monitor.sh`.
+
+The repo `.env` must also be readable by eadmin (default `664`); `monitor.sh` reads
+`OPENCODE_PORT` / `OPENCODE_PASSWORD` from it. If it is locked down to `600`, grant
+eadmin read (e.g. `chmod 664 .env` or an ACL) or the trigger cannot authenticate.
 
 ## Crontab (eadmin)
 ```
