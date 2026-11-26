@@ -32,6 +32,8 @@ fi
 
 if [ "$CMD" = "restartopencode" ]; then
     if [[ "$OPENCODE_ENABLED" = "true" ]]; then
+        #if opencode is installed, restart it
+
         echo "*** Restarting OPENCODE"
         cd "$SERVERHOME" && bin/opencodeworkspaces.sh start
     else
@@ -320,13 +322,6 @@ case "$CMD" in
     
     $SERVERHOME/bin/resources/docker/scripts/eme-docker-init.sh "$SERVERHOME" "$NODENUMBER" "$USERID" "$GROUPID"
 
-    #if OPEN_CODE_ENABLED install OpenCode client
-    if [ "$OPEN_CODE_ENABLED" = "true" ]; then
-        #install opencode inside the Docker container with entermedia user
-        docker exec -it "$INSTANCE" bash -c "sudo -u entermedia curl -fsSL https://opencode.ai/v2/install | bash"
-    fi
-
-
   ;;
 
   dockerstart)
@@ -365,6 +360,12 @@ case "$CMD" in
     }
 
     trap term_handler TERM INT
+
+    #if OPEN_CODE_ENABLED install OpenCode client
+    if [ "$OPEN_CODE_ENABLED" = "true" ]; then
+        #install opencode inside the Docker container with entermedia user
+        sudo -u entermedia curl -fsSL https://opencode.ai/v2/install | bash
+    fi
 
     wait "$launcherpid"
     echo "Launcher process $launcherpid exited"
