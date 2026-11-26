@@ -32,9 +32,12 @@ fi
 
 if [ "$CMD" = "restartopencode" ]; then
     if [[ "$OPENCODE_ENABLED" = "true" ]]; then
-        #if opencode is installed, restart it
-
-        echo "*** Restarting OPENCODE"
+        if ! command -v opencode >/dev/null 2>&1; then
+            echo "opencode not found. Installing..."
+            curl -fsSL https://opencode.ai/v2/install | bash
+        fi
+        
+        echo "*** Starting OPENCODE"
         cd "$SERVERHOME" && bin/opencodeworkspaces.sh start
     else
         echo "*** OPENCODE is not enabled"
@@ -343,6 +346,8 @@ case "$CMD" in
         echo "entermedia ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/entermedia
         chmod 0440 /etc/sudoers.d/"entermedia"
     fi
+
+    chown -R entermedia:entermedia /home/entermedia/ 
 
     echo "Starting Tomcat in foreground (PID: $$)"
 
