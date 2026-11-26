@@ -75,6 +75,7 @@ sudo docker run -t -d \
 	--ip $IP_ADDR \
 	--name $INSTANCE \
 	--dns 1.1.1.1 --dns 8.8.8.8 \
+	--add-host=host.docker.internal:host-gateway \
 	--log-opt max-size=10m --log-opt max-file=10 \
 	--cap-add=SYS_PTRACE \
 	-e TZ="America/New_York" \
