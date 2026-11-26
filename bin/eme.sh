@@ -320,6 +320,12 @@ case "$CMD" in
     
     $SERVERHOME/bin/resources/docker/scripts/eme-docker-init.sh "$SERVERHOME" "$NODENUMBER" "$USERID" "$GROUPID"
 
+    #if OPEN_CODE_ENABLED install OpenCode client
+    if [ "$OPEN_CODE_ENABLED" = "true" ]; then
+        #install opencode inside the Docker container with entermedia user
+        docker exec -it "$INSTANCE" bash -c "sudo -u entermedia curl -fsSL https://opencode.ai/v2/install | bash"
+    fi
+
 
   ;;
 
