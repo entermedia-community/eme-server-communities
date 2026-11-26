@@ -31,6 +31,15 @@ Code: `plugins/finder/code/org/entermediadb/ai/skills/OpenCode*Skill.java`. Sess
 `org.entermediadb.mcp.client.SessionStatus`, held by `OpenCodeClient` keyed by the **runner step's
 id** (`client.loadStatus(stepid)`).
 
+## Scheduled OpenCode jobs
+
+Jobs using `openCodeOrchestrator` wait for the OpenCode execution event before completing the
+job. Questions and permissions keep the job running until answered; execution failures set it to
+error. The repeat scheduler skips running, queued, and other non-terminal jobs.
+
+Session tracking is in memory. After an EME server restart, a job left running is not automatically
+repeated or reattached. Check the OpenCode session before manually stopping or rerunning the job.
+
 ## OpenCodeStatusSkill loop
 
 1. `findSessionStatus()` looks for `sessionstatus` in this context and its parents. Child contexts

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<records>
+  <data id="monitorunagentstep" name="Run monitor-un skill" agentjob="monitorunagent">
+    <userrequest><![CDATA[Run the monitor-un skill from .agents/skills/monitor-un/SKILL.md. Follow its instructions and hard safety rules exactly. This is an unattended scheduled run: do not ask questions; report blockers explicitly. Persist incident reporting state locally across runs so down alerts are sent once per confirmed incident and recovery alerts only for incidents previously reported. Never treat missing, pending, or maintenance heartbeats as recovery. Use the local machine configuration and credentials specified by the skill; do not use monitor.sh or cron.]]></userrequest>
+  </data>
+</records>
