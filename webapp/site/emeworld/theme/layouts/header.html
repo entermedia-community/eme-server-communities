@@ -32,7 +32,7 @@
 			#end
 			
 			#ifnull($user)
-				<a class="personal-brand text-decoration-none d-flex align-items-center" href="$homeurl" title="EME" style="height: var(--themed-logo-height);">
+				<a class="personal-brand text-decoration-none d-flex align-items-center" href="$homeurl" title="eME" style="height: var(--themed-logo-height);">
 					#ifnotnull($category)
 						#set( $assetid = $category.findValue("headercategoryimage") )
 						#ifnotnull($assetid)
@@ -50,7 +50,7 @@
 						#set($logoheight = $theme.logoheight)
 					#end
 					#ifnotnull($logourl)
-						<img src="$logourl" alt="[[EME]]" style="height: 52px; width: auto;object-fit:contain;" class="me-2">
+						<img src="$logourl" alt="[[eME]]" style="height: 52px; width: auto;object-fit:contain;" class="me-2">
 					#end
 					##set($sitetitle = $mediaarchive.getCatalogSettingValue("sitetitle"))
 					##$sitetitle

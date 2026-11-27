@@ -1,6 +1,6 @@
 # EME World
 
-> EME World is a 501(c)(3) Foundation that provides an open source, human guided AI harness for organizations, governments and communities. Everyone gets a free My EME, a chat platform with their own AI digital twin (an EME Profile). Trusted by the United Nations, Yale and the Canadian Broadcasting Corporation (CBC).
+> EME World is a 501(c)(3) Foundation that provides an open source, human guided AI harness for organizations, governments and communities. Everyone gets a free My eME, a chat platform with their own AI digital twin (an eME Profile). Trusted by the United Nations, Yale and the Canadian Broadcasting Corporation (CBC).
 
 Key facts:
 - 100% open source. Runs on Linux, Docker and Git.
@@ -9,13 +9,14 @@ Key facts:
 
 ## Pages
 
-- [Home](https://eme.world/): What EME is, the AI harness, EME Profiles, servers and values.
-- [Budget](https://eme.world/costs.html): My EME is free. Basic hosting is $150 per month, provided by EnterMediaLibrary.com. Monthly support plans are agreed in a one on one proposal. Explains dedicated hardware instead of per token billing.
-- [EME Pro](https://eme.world/architecture.html): EME World is the parent server with People and Teams. Each connected EME Server has its own Server Chat Welcome, Collections, Tutorials and Data Tools.
-- [Developers](https://eme.world/developers.html): Tutorial for setting up an EME Server and customizing it with OpenCode and AI coding agents.
-- [IT Departments](https://eme.world/it-departments.html): The ROI case for self hosting EME in an IT department. An open source Java server that runs in Docker on Linux, rolls out AI apps and servers across the enterprise on your own hardware, with no per token fees, full data privacy and no vendor lock in. Includes a calculator for your own numbers.
+- [Home](https://eme.world/): eME Salesbot. AI chat for a business website, $20 per month for each website. Customers ask sales and support questions, schedule meetings and order from a product menu. Includes eME Small Business, the app employees use for tickets, goals, bookkeeping, basic CRM and support documents.
+- [Budget](https://eme.world/costs.html): My eME is free. Basic hosting is $150 per month, provided by EnterMediaLibrary.com. Monthly support plans are agreed in a one on one proposal. Explains dedicated hardware instead of per token billing.
+- [eME Pro](https://eme.world/pro.html): A custom AI server and employee app, built by AI around one business and hosted by EME World. $1500 to install, then $150 per month hosting.
+- [eME Pro architecture](https://eme.world/architecture.html): EME World is the parent server with People and Teams. Each connected eME Server has its own Server Chat Welcome, Collections, Tutorials and Data Tools.
+- [Developers](https://eme.world/developers.html): Tutorial for setting up an eME Server and customizing it with OpenCode and AI coding agents.
+- [IT Departments](https://eme.world/it-departments.html): The ROI case for self hosting eME in an IT department. An open source Java server that runs in Docker on Linux, rolls out AI apps and servers across the enterprise on your own hardware, with no per token fees, full data privacy and no vendor lock in. Includes a calculator for your own numbers.
 
 ## Optional
 
-- [Source code](https://github.com/entermedia-community/eme-server): The open source EME Server.
+- [Source code](https://github.com/entermedia-community/eme-server): The open source eME Server.
 - Contact: cburkey@eme.world

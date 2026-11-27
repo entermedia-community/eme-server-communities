@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-147.1 -63.0 1294.3 1110.6" width="100%" role="img" aria-labelledby="en-t en-d">
-<title id="en-t">EME entities</title>
-<desc id="en-d">The EME logo sits in the middle. Around it, linked in a ring, are the standard entities: Person, EME Profile, Agent, Skill, Server, Project, Team, Channel, Document, File, Asset, Category and Collection.</desc>
+<title id="en-t">eME entities</title>
+<desc id="en-d">The eME logo sits in the middle. Around it, linked in a ring, are the standard entities: Person, eME Profile, Agent, Skill, Server, Project, Team, Channel, Document, File, Asset, Category and Collection.</desc>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=JetBrains+Mono:wght@500;700&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap');
   .h { font-family: 'Archivo Black', 'Arial Black', sans-serif; font-weight: 400; }
@@ -57,7 +57,7 @@
 <text x="428.0" y="-22.1" class="h" font-size="22.5" fill="#f8fafc">Person</text>
 <rect x="628.3" y="0.7" width="236" height="60" rx="14" fill="#1e293b" stroke="#0ea5e9" stroke-width="4"/>
 <circle cx="654.3" cy="30.7" r="8" fill="#0ea5e9"/>
-<text x="674.3" y="38.6" class="h" font-size="22.5" fill="#f8fafc">EME Profile</text>
+<text x="674.3" y="38.6" class="h" font-size="22.5" fill="#f8fafc">eME Profile</text>
 <rect x="818.2" y="168.9" width="236" height="60" rx="14" fill="#1e293b" stroke="#0ea5e9" stroke-width="4"/>
 <circle cx="844.2" cy="198.9" r="8" fill="#0ea5e9"/>
 <text x="864.2" y="206.8" class="h" font-size="22.5" fill="#f8fafc">Agent</text>

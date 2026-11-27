@@ -2,15 +2,15 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "EME Budget",
+  "name": "eME Budget",
   "url": "https://eme.world/costs.html",
   "inLanguage": "en",
   "publisher": { "@type": "Organization", "name": "EME World", "url": "https://eme.world" },
   "mainEntity": {
     "@type": "ItemList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "item": { "@type": "Offer", "name": "My EME", "price": "0", "priceCurrency": "USD", "description": "Free My EME, sponsored by the EME Foundation." } },
-      { "@type": "ListItem", "position": 2, "item": { "@type": "Offer", "name": "Basic hosting", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "150", "priceCurrency": "USD", "unitText": "MONTH" }, "description": "Hosted EME Server provided by EnterMediaLibrary.com. Flat rate for all AI services." } },
+      { "@type": "ListItem", "position": 1, "item": { "@type": "Offer", "name": "My eME", "price": "0", "priceCurrency": "USD", "description": "Free My eME, sponsored by the EME Foundation." } },
+      { "@type": "ListItem", "position": 2, "item": { "@type": "Offer", "name": "Basic hosting", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "150", "priceCurrency": "USD", "unitText": "MONTH" }, "description": "Hosted eME Server provided by EnterMediaLibrary.com. Flat rate for all AI services." } },
       { "@type": "ListItem", "position": 3, "item": { "@type": "Offer", "name": "Monthly support plans", "description": "One on one proposal with a monthly support plan." } }
     ]
   }
@@ -30,15 +30,15 @@
       <div class="wrap">
         <div class="tiers" style="grid-template-columns:minmax(260px,420px);">
           <article class="card tier" id="t-free">
-            <h3>My EME</h3>
+            <h3>My eME</h3>
             <p class="amt">Free</p>
             <p class="by">Sponsored by the EME Foundation</p>
             <ul>
-              <li>Your EME Profile and AI assistant</li>
+              <li>Your eME Profile and AI assistant</li>
               <li>Chat on mobile and web</li>
               <li>Open source, no lock in</li>
             </ul>
-            <a class="btn" href="/site/app">Get My EME</a>
+            <a class="btn" href="/site/app">Get My eME</a>
           </article>
         </div>
       </div>
@@ -51,7 +51,7 @@
         <p class="lead narrow">Are you building your own, or do you need help? We will show what fits.</p>
         <form class="survey" id="needs" onsubmit="return false;">
           <fieldset>
-            <legend>Are you a developer creating your own EME?</legend>
+            <legend>Are you a developer creating your own eME?</legend>
             <div class="opts">
               <label><input type="radio" name="dev" value="yes"> Yes, I am building my own</label>
               <label><input type="radio" name="dev" value="no"> No, tell us more</label>
@@ -109,7 +109,7 @@
             <p class="amt">$150 <small>per month</small></p>
             <p class="by">Provided by EnterMediaLibrary.com</p>
             <ul>
-              <li>Your own EME Server, hosted for you</li>
+              <li>Your own eME Server, hosted for you</li>
               <li>Open AI models on dedicated hardware</li>
               <li>Flat rate for all AI services</li>
             </ul>
@@ -126,7 +126,7 @@
               <li>Custom skills, workflows and data</li>
               <li>Your plan and cost agreed in a proposal</li>
             </ul>
-            <a class="btn ghost" id="one-link" href="mailto:cburkey@eme.world?subject=EME%20one%20on%20one">Start a conversation</a>
+            <a class="btn ghost" id="one-link" href="mailto:cburkey@eme.world?subject=eME%20one%20on%20one">Start a conversation</a>
           </article>
         </div>
       </div>
@@ -137,9 +137,9 @@
       <div class="wrap">
         <span class="eyebrow">Dedicated hardware</span>
         <h2>Hardware, not tokens</h2>
-        <p class="lead">Most AI is billed by the token, so the more your team uses it, the more it costs. EME runs your AI on <strong>dedicated hardware</strong> instead.</p>
+        <p class="lead">Most AI is billed by the token, so the more your team uses it, the more it costs. eME runs your AI on <strong>dedicated hardware</strong> instead.</p>
         <table class="cmp">
-          <thead><tr><th></th><th>Token billing</th><th>EME dedicated hardware</th></tr></thead>
+          <thead><tr><th></th><th>Token billing</th><th>eME dedicated hardware</th></tr></thead>
           <tbody>
             <tr><th>How you are charged</th><td>By every word in and out</td><td>One flat rate for all AI services</td></tr>
             <tr><th>Heavy use</th><td>The bill grows</td><td>Unlimited tokens, same cost</td></tr>
@@ -157,7 +157,7 @@
         <span class="eyebrow">At a glance</span>
         <h2>Budget summary</h2>
         <dl class="glance">
-          <dt>My EME</dt><dd>Free, sponsored by the EME Foundation.</dd>
+          <dt>My eME</dt><dd>Free, sponsored by the EME Foundation.</dd>
           <dt>Basic hosting</dt><dd>$150 per month, provided by EnterMediaLibrary.com. Flat rate for all AI services.</dd>
           <dt>Monthly support plans</dt><dd>One on one. Your plan and cost are agreed in a proposal.</dd>
           <dt>AI usage</dt><dd>Dedicated hardware, unlimited tokens, no usage charges.</dd>
@@ -169,7 +169,7 @@
       <div class="wrap">
         <span class="eyebrow">Our exchange</span>
         <h2>How it fits together</h2>
-        <p class="lead narrow">The <strong>free</strong> My EME is the front door, paid for by the Foundation. Hosting pays for the servers and the people who run them. One on one work pays for the time we spend learning your needs.</p>
+        <p class="lead narrow">The <strong>free</strong> My eME is the front door, paid for by the Foundation. Hosting pays for the servers and the people who run them. One on one work pays for the time we spend learning your needs.</p>
       </div>
     </div>
   </main>
@@ -183,7 +183,7 @@
     function vals(n) { return [].map.call(f.querySelectorAll('input[name=' + n + ']:checked'), function (e) { return e.value; }); }
     var sizes = { 1: 'just me', 2: '2 to 10 people', 3: '11 to 100 people', 4: 'more than 100 people' };
     var privs = { 1: 'nothing special', 2: 'some documents', 3: 'everything stays with us' };
-    var names = { 't-host': 'Test small: Basic hosting', 't-one': 'Bet big: One on one', 't-free': 'Give first: My EME (free)' };
+    var names = { 't-host': 'Test small: Basic hosting', 't-one': 'Bet big: One on one', 't-free': 'Give first: My eME (free)' };
 
     function update() {
       var dev = val('dev'), who = val('who'), pains = vals('pain'), size = +val('size') || 0, priv = +val('privacy') || 0;
@@ -198,7 +198,7 @@
       if (isDev) {
         any = true; pick = 't-host';
         why = 'As a developer building your own, basic hosting at $150 per month is all you need.';
-        parts.push('I am a developer creating my own EME.');
+        parts.push('I am a developer creating my own eME.');
       } else if (dev === 'no') {
         if (who) parts.push('I am ' + who + '.');
         if (size) parts.push('Users: ' + sizes[size] + '.');
@@ -206,8 +206,8 @@
         if (pains.length) parts.push('Most time goes to: ' + pains.join(', ') + '.');
         any = !!(who || size || priv || pains.length);
         if (who && size && priv) {
-          pick = 't-free'; why = 'A free My EME is a good place to start.';
-          if (size >= 2 || priv >= 2 || pains.length >= 3) { pick = 't-host'; why = 'Your own hosted EME Server keeps your data and your team together.'; }
+          pick = 't-free'; why = 'A free My eME is a good place to start.';
+          if (size >= 2 || priv >= 2 || pains.length >= 3) { pick = 't-host'; why = 'Your own hosted eME Server keeps your data and your team together.'; }
           if (size >= 4 || (priv >= 3 && size >= 3) || who === 'an agency or government') { pick = 't-one'; why = 'Your needs are specific. A one on one proposal fits them best.'; }
         }
       }
@@ -223,7 +223,7 @@
       $id('host-link').href = url + '#entermedialibraryhosting';
       $id('host-wrap').hidden = !any;
       $id('host-hint').hidden = !!dev;
-      $id('one-link').href = 'mailto:cburkey@eme.world?subject=' + encodeURIComponent('EME one on one') + '&body=' + encodeURIComponent(parts.join(' '));
+      $id('one-link').href = 'mailto:cburkey@eme.world?subject=' + encodeURIComponent('eME one on one') + '&body=' + encodeURIComponent(parts.join(' '));
     }
     f.addEventListener('change', update);
   })();

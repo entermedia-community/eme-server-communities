@@ -1,6 +1,6 @@
 ---
 name: eme-content-guide
-description: Start here to create new EME World content such as white papers, web sites, landing pages, one pagers, decks, proposals and press text. Holds the master fact sheet (who EME is, the six core messages, the Foundation, EME World, EME Servers, digital brain, agent economy), the full eme.world section inventory, logo and design summary, and white paper and web site templates. Points to eme-brand-voice, eme-brand-story, eme-brand-site and eme-graphics for the detailed rules.
+description: Start here to create new EME World content such as white papers, web sites, landing pages, one pagers, decks, proposals and press text. Holds the master fact sheet (who EME is, the six core messages, EME World, EME Servers, digital brain, agent economy), the full eme.world section inventory, logo and design summary, and white paper and web site templates. Points to eme-brand-voice, eme-brand-story, eme-brand-site and eme-graphics for the detailed rules.
 ---
 
 # EME content guide
@@ -19,7 +19,7 @@ If facts here disagree with the newest edit by the user, the user wins. Update t
 ## Hard rules (always)
 
 1. **No em dashes, ever.** Use a comma, colon or new sentence.
-2. **Say Foundation**, never "nonprofit" or "sin fines de lucro". Write "a 501(c)(3) Foundation". Never write "Fundación", even in Spanish. The user's source notes say "non profit 501c foundation"; translate that to this wording.
+2. **EME World Inc. is a company, not a Foundation** (changed 2026-11-25). Never write Foundation, Fundación, nonprofit or 501(c)(3). It sells eME Salesbot, eME Pro, consulting and hosting directly. EnterMediaLibrary is no longer part of the offer.
 3. Keep text short. Never bold words inside body text. Decide the length yourself.
 4. Humans stay in control. EME assists, it does not act alone on key actions.
 5. Do not invent customers, numbers, prices or integrations. Use only the facts below and the proof points in `eme-brand-story`.
@@ -30,7 +30,7 @@ If facts here disagree with the newest edit by the user, the user wins. Update t
 ## Master fact sheet
 
 ### Who we are
-- **EME World Inc.**, a **Foundation** (501(c)(3) foundation). The product family is **EME Collective Intelligence** (the EME Collective Intelligence Assistant).
+- **EME World Inc.**, a company. Products and prices are in `eme-website-goals`. The product family is **EME Collective Intelligence** (the EME Collective Intelligence Assistant).
 - **Reach and trust:** servers hosted worldwide. Works with the United Nations. Clients include **Yale** and the **Canadian Broadcasting Corporation (CBC)**. Monthly **EME Community** meetings give feedback to the Open Source Program Office (OSPO).
 - **Mission:** inspired to support the principles of **United Nations Open Source Week**: build a **free, reusable, open platform** that empowers autonomous AI **without dependency on large corporations**.
 - **Positioning:** Collective Intelligence Platform. Tagline: "Empowering Collective Intelligence". Vision line: "Customizable AI for Everyone". Use "infrastructure" only as a supporting word for government and enterprise copy. Sub line: "One open platform. Every AI need. Humans fully in control."
@@ -38,7 +38,7 @@ If facts here disagree with the newest edit by the user, the user wins. Update t
 - **Contact:** EME World OSPO Team. President Christopher Burkey, cburkey@eme.world, +1 513 898-2063. Portal https://eme.world. Code https://github.com/entermedia-community/eme-server. Login `/site/app/`.
 
 ### The six core messages (the spine of every piece)
-1. **Foundation and mission.** EME is a Foundation inspired by UN Open Source Week. It builds a free reusable platform for autonomous AI with no dependency on big corporations.
+1. **Mission.** eME is inspired by UN Open Source Week. It builds a free reusable platform for autonomous AI with no dependency on big tech providers.
 2. **EME.world is a free chat platform for everyone.** Mobile and web. Built to support **thousands of users and servers** working together. People join team chats or talk peer to peer, and their **EME digital twin** joins the conversation to augment it when needed.
 3. **Built from hundreds of skills, customized by AI.** The EME platform is made of hundreds of AI skills. AI can build a **custom EME Server** around each client's needs. Every organization can run its own server as part of the **EME World economy**. For mid size organizations this means **accelerating AI native operations**: domain expertise, knowledge engineering, AI agents and **human in the loop (HITL) governance**, to deliver measurable operational gains, fast.
 4. **Anyone can create an EME Server.** A directory lists available servers. Users are assigned to a server or choose to join one. Think of it like an **app store** of community servers.
@@ -74,7 +74,7 @@ Nav: Home, Your EME, Servers, AI Harness, Values, Developers, Login. Footer: "EM
 | # | Section (anchor) | Heading | Key content | Band |
 |---|---|---|---|---|
 | 1 | Hero (#top) | Customizable AI for Everyone / Collective Intelligence Platform | one lead line; buttons Login, Explore the AI Harness | paper |
-| 2 | Our mission (#mission) | AI that belongs to everyone | 6 cards: Free chat for all, Unlimited tokens, Humans in control, A Foundation, Trusted by leaders, Community driven | tint |
+| 2 | Our mission (#mission) | AI that belongs to everyone | 6 cards: Free chat for all, Unlimited tokens, Humans in control, A Foundation (remove, no longer true), Trusted by leaders, Community driven | tint |
 | 3 | Your EME (#persona) | Your EME is a personal digital twin | two modes, email reach, phone mockup | dark |
 | 4 | Digital brain (#brain) | Your server is your digital brain | 2 cards: Digital brain, AI economy | tint |
 | 5 | Servers (#servers) | Anyone can build a server | hundreds of skills, app store style server list, four chat apps (Peer to Peer, UN News, Cacao Source, Cumbre de Cocreación) | paper |
@@ -89,7 +89,7 @@ Never place two bands of the same color next to each other (alternate paper, tin
 
 Length: 4 to 8 pages. Short paragraphs, one idea each.
 
-1. **Title block:** logo, title, one line subtitle, date, "EME World Inc., a Foundation".
+1. **Title block:** logo, title, one line subtitle, date, "EME World Inc.".
 2. **Summary (half page):** the problem (AI is concentrated in a few corporations), the answer (open, sovereign, human guided), the offer.
 3. **Why now:** UN Open Source Week principles, dependency risk, cost unpredictability.
 4. **What EME is:** messages 2 and 3, with the entity terminology.
@@ -106,12 +106,12 @@ Length: 4 to 8 pages. Short paragraphs, one idea each.
 2. Build with the conventions in `eme-brand-site` (standalone `.xconf` with `<inner-layout />`, semantic HTML, JSON-LD, alt text, no content only in images).
 3. One H1. Hero uses the vision line and sub line.
 4. Each section: eyebrow, H2, one short paragraph, optional card grid or graphic.
-5. Spanish version mirrors the English meaning, keeps "Foundation" (never "Fundación") and product names.
+5. Spanish version mirrors the English meaning, keeps product names.
 
 ## Checklist before delivering
 
 - Search for the em dash character and remove it.
-- Search for "nonprofit" and "sin fines de lucro".
+- Search for "Foundation", "nonprofit" and "EnterMediaLibrary".
 - Every claim traces to this file or `eme-brand-story`.
 - Humans in control is visible. No usage based pricing, no lock in claims.
 - Logo, palette and fonts match this file.

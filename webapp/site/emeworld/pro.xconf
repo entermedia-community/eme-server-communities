@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<page>
+  <layout>/${applicationid}/theme/layouts/sitepage.html</layout>
+  <inner-layout />
+  <property name="pagetitle">eME Pro | A custom AI server for your business | EME World</property>
+  <property name="metadescription">eME Pro is a custom AI server and employee app, built by AI around how your business works and hosted by EME World. $1500 to install, then $150 per month hosting. Open source, open models, no caps on tokens.</property>
+  <property name="keywords">eME Pro, custom AI server, AI for business, employee app, self hosted AI, open source AI, open models, flat pricing AI API, eME Server, EME World</property>
+  <property name="canonical">https://eme.world/pro.html</property>
+  <property name="navkey">pro</property>
+  <property name="extracss">products.css</property>
+</page>

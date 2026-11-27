@@ -94,23 +94,23 @@
 <line x1="796.0" y1="648.0" x2="796.0" y2="702.0" stroke="#94a3b8" stroke-width="2.5"/><path d="M789.0 702.0L796.0 712.0L803.0 702.0z" fill="#94a3b8"/>
 <line x1="862.4" y1="786.0" x2="862.4" y2="840.0" stroke="#94a3b8" stroke-width="2.5"/><path d="M855.4 840.0L862.4 850.0L869.4 840.0z" fill="#94a3b8"/>
 <rect x="442.0" y="24.0" width="257.6" height="72" rx="12" fill="#7c3aed"/>
-<text x="458.0" y="55.0" class="b" font-size="15" font-weight="700" fill="#ffffff">UN News EME Memory Storage</text>
+<text x="458.0" y="55.0" class="b" font-size="15" font-weight="700" fill="#ffffff">UN News eME Memory Storage</text>
 <text x="458.0" y="78.0" class="m" font-size="12.5" fill="#ffffff" fill-opacity=".85">Journalist / Assistant</text>
 <rect x="508.4" y="162.0" width="257.6" height="72" rx="12" fill="#0284c7"/>
-<text x="524.4" y="193.0" class="b" font-size="15" font-weight="700" fill="#ffffff">EME Ingestion Engine</text>
+<text x="524.4" y="193.0" class="b" font-size="15" font-weight="700" fill="#ffffff">eME Ingestion Engine</text>
 <text x="524.4" y="216.0" class="m" font-size="12.5" fill="#ffffff" fill-opacity=".85">UN News System</text>
 <rect x="574.8" y="300.0" width="257.6" height="72" rx="12" fill="#b45309"/>
 <text x="590.8" y="331.0" class="b" font-size="15" font-weight="700" fill="#ffffff">UN News Chat Interface</text>
 <text x="590.8" y="354.0" class="m" font-size="12.5" fill="#ffffff" fill-opacity=".85">Editor &amp; AI Co-Pilot</text>
 <rect x="641.2" y="438.0" width="257.6" height="72" rx="12" fill="#059669"/>
-<text x="657.2" y="469.0" class="b" font-size="15" font-weight="700" fill="#ffffff">EME Multi-Model Suite</text>
-<text x="657.2" y="492.0" class="m" font-size="12.5" fill="#ffffff" fill-opacity=".85">EME Editorial Assistant</text>
+<text x="657.2" y="469.0" class="b" font-size="15" font-weight="700" fill="#ffffff">eME Multi-Model Suite</text>
+<text x="657.2" y="492.0" class="m" font-size="12.5" fill="#ffffff" fill-opacity=".85">eME Editorial Assistant</text>
 <rect x="707.6" y="576.0" width="257.6" height="72" rx="12" fill="#0B6B63"/>
 <text x="723.6" y="607.0" class="b" font-size="15" font-weight="700" fill="#ffffff">UN News Chat Interface</text>
 <text x="723.6" y="630.0" class="m" font-size="12.5" fill="#ffffff" fill-opacity=".85">Senior Editor</text>
 <rect x="774.0" y="714.0" width="257.6" height="72" rx="12" fill="#2F6B14"/>
-<text x="790.0" y="745.0" class="b" font-size="15" font-weight="700" fill="#ffffff">EME Drupal Agent</text>
-<text x="790.0" y="768.0" class="m" font-size="12.5" fill="#ffffff" fill-opacity=".85">EME Automation</text>
+<text x="790.0" y="745.0" class="b" font-size="15" font-weight="700" fill="#ffffff">eME Drupal Agent</text>
+<text x="790.0" y="768.0" class="m" font-size="12.5" fill="#ffffff" fill-opacity=".85">eME Automation</text>
 <rect x="840.4" y="852.0" width="257.6" height="72" rx="12" fill="#7c3aed"/>
 <text x="856.4" y="883.0" class="b" font-size="15" font-weight="700" fill="#ffffff">Drupal CMS</text>
 <text x="856.4" y="906.0" class="m" font-size="12.5" fill="#ffffff" fill-opacity=".85">UN Publishing Team</text>

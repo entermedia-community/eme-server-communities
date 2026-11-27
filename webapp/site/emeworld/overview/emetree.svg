@@ -23,14 +23,14 @@
   <g>
     <rect x="2" y="2" width="360" height="62" rx="10" fill="#0f1609" stroke="#E8C547" stroke-width="2.5"/>
     <text x="182" y="31" text-anchor="middle" class="h" fill="#E8C547" font-size="22" letter-spacing="1">PEOPLE</text>
-    <text x="182" y="53" text-anchor="middle" class="m" fill="#F4FAE6" font-size="12">Individual Level (My EME)</text>
+    <text x="182" y="53" text-anchor="middle" class="m" fill="#F4FAE6" font-size="12">Individual Level (My eME)</text>
     <rect x="2" y="78" width="360" height="698" rx="12" fill="#0b1007" stroke="#0b1007" stroke-width="2"/>
     <rect x="14" y="94" width="336" height="122" rx="8" fill="#FBF3D0" stroke="#E8C547" stroke-width="1.2"/>
     <text x="32" y="126" class="h" fill="#7A5C00" font-size="17">Free-for-Life Login</text>
     <text x="32" y="154" class="b" fill="#1a2410" font-size="17">Universal digital identity</text>
     <text x="32" y="177" class="b" fill="#1a2410" font-size="17">and cross-platform access</text>
     <rect x="14" y="230" width="336" height="122" rx="8" fill="#FBF3D0" stroke="#E8C547" stroke-width="1.2"/>
-    <text x="32" y="262" class="h" fill="#7A5C00" font-size="17">Electronic Me (EME)</text>
+    <text x="32" y="262" class="h" fill="#7A5C00" font-size="17">Electronic Me (eME)</text>
     <text x="32" y="290" class="b" fill="#1a2410" font-size="17">Personal digital twin that</text>
     <text x="32" y="313" class="b" fill="#1a2410" font-size="17">emulates user online</text>
     <rect x="14" y="366" width="336" height="122" rx="8" fill="#FBF3D0" stroke="#E8C547" stroke-width="1.2"/>
@@ -38,7 +38,7 @@
     <text x="32" y="426" class="b" fill="#1a2410" font-size="17">Custom trained preferences</text>
     <text x="32" y="449" class="b" fill="#1a2410" font-size="17">(e.g., friendly vs. factual)</text>
     <rect x="14" y="502" width="336" height="122" rx="8" fill="#FBF3D0" stroke="#E8C547" stroke-width="1.2"/>
-    <text x="32" y="534" class="h" fill="#7A5C00" font-size="17">My EME Digital Twin Chat</text>
+    <text x="32" y="534" class="h" fill="#7A5C00" font-size="17">My eME Digital Twin Chat</text>
     <text x="32" y="562" class="b" fill="#1a2410" font-size="17">Daily digest of pending</text>
     <text x="32" y="585" class="b" fill="#1a2410" font-size="17">tasks &amp; communications</text>
     <rect x="14" y="638" width="336" height="122" rx="8" fill="#FBF3D0" stroke="#E8C547" stroke-width="1.2"/>
@@ -56,10 +56,10 @@
     <rect x="392" y="78" width="360" height="698" rx="12" fill="#0b1007" stroke="#0b1007" stroke-width="2"/>
     <rect x="404" y="94" width="336" height="122" rx="8" fill="#E4F4D6" stroke="#6CC24A" stroke-width="1.2"/>
     <text x="422" y="126" class="h" fill="#2F6B14" font-size="17">Collaborative Group Chat</text>
-    <text x="422" y="154" class="b" fill="#1a2410" font-size="17">Humans and personal EMEs</text>
+    <text x="422" y="154" class="b" fill="#1a2410" font-size="17">Humans and personal eMEs</text>
     <text x="422" y="177" class="b" fill="#1a2410" font-size="17">interact in unified threads</text>
     <rect x="404" y="230" width="336" height="122" rx="8" fill="#E4F4D6" stroke="#6CC24A" stroke-width="1.2"/>
-    <text x="422" y="262" class="h" fill="#2F6B14" font-size="17">Automated EME Interjection</text>
+    <text x="422" y="262" class="h" fill="#2F6B14" font-size="17">Automated eME Interjection</text>
     <text x="422" y="290" class="b" fill="#1a2410" font-size="17">Helper agents cross-check</text>
     <text x="422" y="313" class="b" fill="#1a2410" font-size="17">schedules &amp; book logistics</text>
     <rect x="404" y="366" width="336" height="122" rx="8" fill="#E4F4D6" stroke="#6CC24A" stroke-width="1.2"/>
@@ -72,7 +72,7 @@
     <text x="422" y="585" class="b" fill="#1a2410" font-size="17">and revenue division</text>
     <rect x="404" y="638" width="336" height="122" rx="8" fill="#E4F4D6" stroke="#6CC24A" stroke-width="1.2"/>
     <text x="422" y="670" class="h" fill="#2F6B14" font-size="17">After-Hours Continuity</text>
-    <text x="422" y="698" class="b" fill="#1a2410" font-size="17">EME assistants maintain team</text>
+    <text x="422" y="698" class="b" fill="#1a2410" font-size="17">eME assistants maintain team</text>
     <text x="422" y="721" class="b" fill="#1a2410" font-size="17">collaboration &amp; queries</text>
     <text x="422" y="744" class="b" fill="#1a2410" font-size="17">outside business hours</text>
   </g>

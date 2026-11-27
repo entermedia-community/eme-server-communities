@@ -1,212 +1,260 @@
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "name": "EME World",
-        "url": "https://eme.world",
-        "email": "cburkey@eme.world",
-        "telephone": "+1 513 898-2063",
-        "sameAs": ["https://github.com/entermedia-community/eme-server"],
-        "description": "EME World provides an open source, human guided AI harness for organizations, governments and communities."
-      },
-      {
-        "@type": "WebPage",
-        "name": "Empowering Collective Intelligence",
-        "description": "EME is an all inclusive AI package delivered through a single, open platform, empowering organizations to harness powerful digital capabilities while keeping humans fully in control.",
-        "inLanguage": "en"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "EME Server",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Linux, Docker",
-        "isAccessibleForFree": true,
-        "license": "https://github.com/entermedia-community/eme-server",
-        "featureList": [
-          "Memory", "Agents", "Chat", "Automation", "Informatics", "Database",
-          "Media Management", "Storage", "Server Sync", "Desktop File Manager", "Smart Organizer", "Workflow Editor", "Smart Creator", "Docker, Git and Linux friendly, deploy direct to servers from Git", "Java Based", "Translation", "Transcribing and Voice to Text",
-          "Video Editing", "Semantic Vector Search", "Embeddings", "Named Entity Recognition", "Markdown Creation", "Automated Tagging", "Facial Recognition", "Scheduler", "Job Manager", "Image Creation", "Orchestration", "MCP Server and Client", "Open API compatible with OpenAI syntax"
-        ]
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "EME World",
+      "url": "https://eme.world",
+      "email": "cburkey@eme.world",
+      "telephone": "+1 513 898-2063",
+      "sameAs": ["https://github.com/entermedia-community/eme-server"],
+      "description": "EME World provides an open source, human guided AI harness for organizations, governments and communities."
+    },
+    {
+      "@type": "Product",
+      "name": "eME Salesbot",
+      "url": "https://eme.world/",
+      "category": "AI chat for business websites",
+      "description": "AI chat for your website. Customers ask sales and support questions, schedule meetings and order from your product menu. Includes eME Small Business, the app for your employees.",
+      "brand": { "@type": "Organization", "name": "EME World", "url": "https://eme.world" },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "20",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": "20", "priceCurrency": "USD", "unitText": "MONTH", "referenceQuantity": { "@type": "QuantitativeValue", "value": 1, "unitText": "website" } },
+        "seller": { "@type": "Organization", "name": "EME World Inc." }
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What does eME Salesbot cost?", "acceptedAnswer": { "@type": "Answer", "text": "$20 per month for each website. eME Small Business, the app your employees use for follow up, is included." } },
+        { "@type": "Question", "name": "Does eME Salesbot replace my staff?", "acceptedAnswer": { "@type": "Answer", "text": "No. eME Salesbot handles first contact and passes real work to your people in eME Small Business. The bot answers and collects, your people decide." } },
+        { "@type": "Question", "name": "Are there limits on AI usage?", "acceptedAnswer": { "@type": "Answer", "text": "No. eME runs on open models with flat pricing and no caps on tokens." } },
+        { "@type": "Question", "name": "What if my business needs something custom?", "acceptedAnswer": { "@type": "Answer", "text": "eME Pro and Consulting builds a custom AI server and employee app for your business, with one on one help, for $1500 per month." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="./theme/css/products.css?v=6">
 
 <main>
 
-    <section class="hero" id="top">
-      <div class="wrap hero-grid">  
-        <div class="hero-text">
-          <h1>AI that makes business flow effortlessly.</h1>
-          <!-- Easy to understand by end users - for teams / departments and approved by technical people at company level -->
-          <p class="lead">Create your own AI-powered, chat-based app for employees and customers to use.
-             </p>
-          <p class="lead">
-             Automate daily operations, save your team time and raise the value of your company.</p>
-          <div class="actions">
-            <a class="btn ghost" href="./architecture.html#benefits">See the benefits</a>
-            <a class="btn" href="/site/app/">Create </a>
-          </div>
-        </div>
-        <img class="hero-emblem" src="./overview/eme-logo-circle-collective.svg" width="800" height="800" alt="EME screens rotating through Chat Assistants, Self Service Menu, Employee Training, Business Dashboards, Knowledge Search, Workflows, Support Assistance, Job Manager, Media Library and Project Hub">
-      </div>
-    </section>
-
-   
-
-    <section class="band dark" id="servers" aria-labelledby="servers-h">
-      <div class="wrap">
-        <h3 class="center" style="margin:2.5rem 0 1.5rem;">Tools that help you earn and keep customers</h3>
-        <div class="grid g4">
-          <div class="card">
-            <svg viewBox="0 0 240 120" width="100%" height="auto" role="img" aria-label="Chat with a question and an answer" style="display:block;width:100%;height:auto;margin-bottom:1.2rem;border-radius:14px;background:rgba(255,255,255,.05);"><rect x="20" y="16" width="120" height="26" rx="13" fill="rgba(255,255,255,.14)"/><rect x="34" y="26" width="72" height="6" rx="3" fill="#b4bfd3"/><rect x="100" y="52" width="120" height="26" rx="13" fill="#8fb8ff"/><rect x="114" y="62" width="82" height="6" rx="3" fill="#0a1a33"/><rect x="20" y="88" width="76" height="18" rx="9" fill="rgba(255,255,255,.14)"/><circle cx="40" cy="97" r="2.5" fill="#b4bfd3"/><circle cx="52" cy="97" r="2.5" fill="#b4bfd3"/><circle cx="64" cy="97" r="2.5" fill="#b4bfd3"/></svg>
-            <h3>Help Desk and Self Service</h3>
-            <p>A chat that answers questions, qualifies visitors and captures leads around the clock. Tickets get answered fast with suggested replies.</p>
-          </div>
-          <div class="card">
-            <svg viewBox="0 0 240 120" width="100%" height="auto" role="img" aria-label="Lead pipeline with three stages" style="display:block;width:100%;height:auto;margin-bottom:1.2rem;border-radius:14px;background:rgba(255,255,255,.05);"><g fill="rgba(255,255,255,.1)"><rect x="14" y="14" width="66" height="92" rx="8"/><rect x="87" y="14" width="66" height="92" rx="8"/><rect x="160" y="14" width="66" height="92" rx="8"/></g><g fill="#b4bfd3"><rect x="22" y="24" width="30" height="5" rx="2.5"/><rect x="95" y="24" width="30" height="5" rx="2.5"/><rect x="168" y="24" width="30" height="5" rx="2.5"/></g><g fill="rgba(255,255,255,.2)"><rect x="22" y="38" width="50" height="16" rx="5"/><rect x="22" y="60" width="50" height="16" rx="5"/><rect x="95" y="38" width="50" height="16" rx="5"/></g><rect x="168" y="38" width="50" height="16" rx="5" fill="#8fb8ff"/><path d="M186 46l4 4 8-8" stroke="#0a1a33" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <h3>Lead Tracker</h3>
-            <p>See every lead, who owns it and what stage it is in. Follow up reminders and meeting booking keep leads moving.</p>
-          </div>
-          <div class="card">
-            <svg viewBox="0 0 240 120" width="100%" height="auto" role="img" aria-label="Checklist with completed and open tasks" style="display:block;width:100%;height:auto;margin-bottom:1.2rem;border-radius:14px;background:rgba(255,255,255,.05);"><rect x="24" y="18" width="16" height="16" rx="4" fill="#8fb8ff"/><path d="M28 26l3 3 5-6" stroke="#0a1a33" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="50" y="23" width="110" height="6" rx="3" fill="#b4bfd3" opacity=".6"/><rect x="24" y="52" width="16" height="16" rx="4" fill="#8fb8ff"/><path d="M28 60l3 3 5-6" stroke="#0a1a33" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="50" y="57" width="86" height="6" rx="3" fill="#b4bfd3" opacity=".6"/><rect x="24" y="86" width="16" height="16" rx="4" fill="none" stroke="#b4bfd3" stroke-width="2"/><rect x="50" y="91" width="96" height="6" rx="3" fill="#b4bfd3"/><rect x="176" y="86" width="44" height="16" rx="8" fill="rgba(255,255,255,.14)"/><rect x="186" y="92" width="24" height="4" rx="2" fill="#b4bfd3"/></svg>
-            <h3>Team Todo and Task Tracker</h3>
-            <p>Assign tasks, set due dates, check items off and see what is done, due soon or overdue.</p>
-          </div>
-          <div class="card">
-            <svg viewBox="0 0 240 120" width="100%" height="auto" role="img" aria-label="Invoice and income chart" style="display:block;width:100%;height:auto;margin-bottom:1.2rem;border-radius:14px;background:rgba(255,255,255,.05);"><rect x="16" y="14" width="88" height="92" rx="8" fill="rgba(255,255,255,.1)"/><rect x="26" y="24" width="40" height="6" rx="3" fill="#b4bfd3"/><rect x="26" y="40" width="68" height="4" rx="2" fill="#b4bfd3" opacity=".5"/><rect x="26" y="50" width="56" height="4" rx="2" fill="#b4bfd3" opacity=".5"/><rect x="26" y="60" width="62" height="4" rx="2" fill="#b4bfd3" opacity=".5"/><rect x="26" y="80" width="44" height="14" rx="7" fill="#8fb8ff"/><rect x="34" y="85" width="28" height="4" rx="2" fill="#0a1a33"/><g fill="#8fb8ff"><rect x="124" y="64" width="16" height="42" rx="3" opacity=".5"/><rect x="148" y="48" width="16" height="58" rx="3" opacity=".7"/><rect x="172" y="30" width="16" height="76" rx="3"/><rect x="196" y="18" width="16" height="88" rx="3"/></g></svg>
-            <h3>Finance Tracker and Invoicing</h3>
-            <p>Send invoices, record income and expenses, and see profit, cash flow and what is still unpaid.</p>
-          </div>
-        </div>
-      </div>
-      <div class="wrap center">
-        <h3 style="margin:4rem 0 1rem;">Predictable budgeting and complete sovereignty</h3>
-        <p class="lead narrow">One flat rate. Full data privacy, no data harvesting, no vendor lock in. Hosting, open AI models, GPU and storage included.</p>
-      </div>
-    </section>
-
-    <section class="band tint" id="portfolio" aria-labelledby="portfolio-h">
-      <div class="wrap center">
-        <h2 id="portfolio-h">Chat apps being created by EME users</h2>
-        <p class="sub">Real apps, built by real teams</p>
-        <div class="chats" style="margin-top:2rem;">
-          <figure>
-            <img class="art b" src="/proposals/courageous-dreamers/courageous-dreamers-chat-card.svg" width="402" height="635" alt="Business Coaching chat menu on a mobile phone" style="width:100%;height:auto;">
-            <figcaption>Courageous Dreamers</figcaption>
-          </figure>
-          <figure>
-            <img class="art b" src="/proposals/un-news/un-news-chat-card.svg" width="402" height="635" alt="News Room chat on a mobile phone" style="width:100%;height:auto;">
-            <figcaption>UN News</figcaption>
-          </figure>
-          <figure>
-            <img class="art b" src="/proposals/cacao-source/cacao-source-chat-card.svg" width="402" height="635" alt="Small Business team chat on a mobile phone" style="width:100%;height:auto;">
-            <figcaption>Cacao Source</figcaption>
-          </figure>
-          <figure>
-            <img class="art b" src="/proposals/cumbre-de-cocreacion/cumbre-de-cocreacion-chat-card.svg" width="402" height="635" alt="Vocational School chat on a mobile phone" style="width:100%;height:auto;">
-            <figcaption>Cumbre de Cocreación</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="band tint" id="values" aria-labelledby="mission-h">
-      <div class="wrap center">
-        <p class="sub" id="mission-h">We are a Foundation of builders who believe knowledge belongs to the people who create it.</p>
-        <p class="lead">EME World Inc. is a Foundation helping humanity, not large corporations, keep its own intelligence. Our free, open source platform lets people and communities keep that knowledge, share it and build on it. Inspired by the principles of UN Open Source Week.</p>
-        <h2 id="values-h" style="margin-top:72px;">Build value that lasts</h2>
-        <p class="lead narrow">What you create stays yours and grows over time, guided by three values.</p>
-        <ul class="features values-cards values-three" style="margin-top:36px;">
-          <li><h3>Respect for Time</h3><p>High-performance, smart technology handles logistics so people focus on setting their direction.</p></li>
-          <li><h3>Stronger Together</h3><p>Communities solve problems best when people and AI work side by side.</p></li>
-          <li><h3>Light on the Earth</h3><p>We honor nature. Open-source tools on idle hardware and solar nodes keep technology sustainable.</p></li>
+  <section class="sb-hero" aria-labelledby="sb-title">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">eME Salesbot</span>
+        <h1 id="sb-title">AI that makes business flow effortlessly.</h1>
+        <p class="lead">Give your small business an edge and make more sales.</p>
+        <p class="sb-price"><span>$20</span>per month gets you all three</p>
+        <ul class="sb-benefits" aria-label="Included for $20 per month">
+          <li><svg width="24" height="24" class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><div><strong><a href="#eme">Your own eME</a></strong><span>A digital assistant that thinks and acts like you. One for each person on your team.</span></div></li>
+          <li><svg width="24" height="24" class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg><div><strong>A sales bot for your website</strong><span>eME Salesbot gives your customers one chat where they can ask, book and order at any hour.</span></div></li>
+          <li><svg width="24" height="24" class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><div><strong><a href="#team">A back office assistant</a></strong><span>Keeps tickets, goals, bookkeeping and customers running smoothly for the whole team.</span></div></li>
         </ul>
-        <div class="trusted">
-          <span class="eyebrow">Trusted by</span>
-          <ul class="trusted-list">
-            <li><strong>United Nations</strong><span>UN News</span></li>
-            <li><strong>Yale</strong><span>Yale University</span></li>
-            <li><strong>CBC</strong><span>Canadian Broadcasting Corporation</span></li>
+        <div class="sb-actions">
+          <a class="btn" href="/site/app/?message=I%20want%20eME%20Salesbot%20for%20my%20website">Get eME Salesbot</a>
+          <a class="btn ghost meeting-link" href="#open-schedule-meeting" data-url="./meetingschedule/meeting-form.html" data-updateurl="true" rel="nofollow">Request a meeting</a>
+        </div>
+        <ul class="sb-chips" aria-label="Included">
+          <li>eME Small Business included</li>
+          <li>Open source</li>
+          <li>No caps on tokens</li>
+        </ul>
+      </div>
+
+      <figure class="sb-chat" aria-label="Example eME Salesbot chat">
+        <div class="sb-chat-head">
+          <svg width="24" height="24" class="sb-back" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="sb-dot" aria-hidden="true">eME</span>
+          <div class="sb-who"><strong>Ask us anything</strong><small>online</small></div>
+          <svg width="56" height="22" class="sb-hicons" viewBox="0 0 56 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="13" height="12" rx="2"/><path d="M14 10l5-3v10l-5-3"/><circle cx="50" cy="5" r="1.2" fill="currentColor"/><circle cx="50" cy="12" r="1.2" fill="currentColor"/><circle cx="50" cy="19" r="1.2" fill="currentColor"/></g></svg>
+        </div>
+        <ul class="sb-msgs">
+          <li class="sb-day">Today</li>
+          <li class="me">Do you deliver on Saturdays?<span class="sb-meta">9:41 <svg width="16" height="11" class="sb-tick" viewBox="0 0 16 11" aria-hidden="true"><path d="M1 6l3 3 6-7M6 9l1 1 6-8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></li>
+          <li class="bot">Yes, from 9 to 1. Here is our menu.
+            <div class="sb-menu"><span>House blend $14</span><span>Gift box $32</span><span>Monthly bag $25</span></div>
+            <span class="sb-meta">9:41</span>
+          </li>
+          <li class="me">Two gift boxes, please. Can I talk to someone about a large order too?<span class="sb-meta">9:42 <svg width="16" height="11" class="sb-tick" viewBox="0 0 16 11" aria-hidden="true"><path d="M1 6l3 3 6-7M6 9l1 1 6-8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></li>
+          <li class="bot">Done, your order is placed. Mike is free Tuesday at 10. Shall I send him a meeting request?<span class="sb-meta">9:42</span></li>
+          <li class="team">Order and meeting request sent to Mike in eME Small Business</li>
+        </ul>
+        <div class="sb-input" aria-hidden="true">
+          <div class="sb-field">
+            <svg width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0"/><circle cx="9" cy="10" r=".6" fill="currentColor"/><circle cx="15" cy="10" r=".6" fill="currentColor"/></g></svg>
+            <span>Message</span>
+            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M16.5 6.5l-7.8 7.8a2 2 0 0 0 2.8 2.8l8-8a3.8 3.8 0 0 0-5.4-5.4l-8 8a5.6 5.6 0 0 0 7.9 7.9l6.5-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <span class="sb-mic"><svg width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></g></svg></span>
+        </div>
+        <figcaption class="visually-hidden">An example chat. A customer asks about delivery, orders from the product menu, and asks for a meeting, which goes to an employee in eME Small Business.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="trust" aria-label="Who we work with">
+    <div class="wrap">
+      <p>From the team that builds eME Servers for</p>
+      <ul>
+        <li>United Nations</li>
+        <li>Yale</li>
+        <li>CBC</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band tint" id="eme" aria-labelledby="sb-eme">
+    <div class="wrap">
+      <span class="eyebrow">Your own eME</span>
+      <h2 id="sb-eme">Your digital assistant and digital twin</h2>
+      <p class="lead narrow">eME is short for electronic me. Like email, but for you. It is a digital assistant that thinks and acts like you.</p>
+      <figure class="sb-connect">
+        <img src="./overview/eme-salesbot-connect.svg" width="1340" height="620" alt="Customers on WhatsApp or a website chat pop up connect to EME.World, which connects to the eME Small Business app on a tablet, where eMike and other employee assistants are listening.">
+      </figure>
+      <p class="sb-principle">Your staff, with less on their minds. Not replaced.</p>
+    </div>
+  </section>
+
+  <section class="band dark" id="team" aria-labelledby="sb-team">
+    <div class="wrap">
+      <span class="eyebrow">Your back office assistant</span>
+      <h2 id="sb-team">eME Small Business makes it easy to answer your customers</h2>
+      <p class="lead narrow">It comes with your Salesbot. Questions, orders and meeting requests land in one app, where your employees can reply right away.</p>
+
+      <div class="team-hub">
+        <ul class="features hub-left">
+          <li class="has-art"><svg width="100" height="50" viewBox="0 0 240 120" role="img" aria-label="Business dashboard with figures and charts" class="sb-art"><g fill="rgba(255,255,255,.12)"><rect x="16" y="14" width="66" height="28" rx="6"/><rect x="87" y="14" width="66" height="28" rx="6"/><rect x="158" y="14" width="66" height="28" rx="6"/><rect x="16" y="50" width="137" height="56" rx="6"/><rect x="158" y="50" width="66" height="56" rx="6"/></g><g fill="#b4bfd3"><rect x="26" y="25" width="34" height="6" rx="3"/><rect x="97" y="25" width="44" height="6" rx="3"/><rect x="168" y="25" width="28" height="6" rx="3"/></g><path d="M28 94l26-14 24 6 28-22 34-6" fill="none" stroke="#8fb8ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="191" cy="78" r="18" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="9"/><path d="M191 60a18 18 0 1 1-17 24" fill="none" stroke="#8fb8ff" stroke-width="9"/></svg><div><h3>Business Dashboard</h3><small class="hub-by">Used by Sara L.</small><p>Open items, goals and profit and loss at a glance.</p></div></li>
+          <li class="has-art"><svg width="100" height="50" viewBox="0 0 240 120" role="img" aria-label="Chat with a question and an answer" class="sb-art"><rect x="20" y="16" width="120" height="26" rx="13" fill="rgba(255,255,255,.14)"/><rect x="34" y="26" width="72" height="6" rx="3" fill="#b4bfd3"/><rect x="100" y="52" width="120" height="26" rx="13" fill="#8fb8ff"/><rect x="114" y="62" width="82" height="6" rx="3" fill="#0a1a33"/><rect x="20" y="88" width="76" height="18" rx="9" fill="rgba(255,255,255,.14)"/><circle cx="40" cy="97" r="2.5" fill="#b4bfd3"/><circle cx="52" cy="97" r="2.5" fill="#b4bfd3"/><circle cx="64" cy="97" r="2.5" fill="#b4bfd3"/></svg><div><h3>Help desk and self service</h3><small class="hub-by">Used by Mike R.</small><p>The chat answers questions, qualifies visitors and captures leads around the clock. Harder questions become tickets, answered fast with suggested replies.</p></div></li>
+          <li class="has-art"><svg width="100" height="50" viewBox="0 0 240 120" role="img" aria-label="Lead pipeline with three stages" class="sb-art"><g fill="rgba(255,255,255,.1)"><rect x="14" y="14" width="66" height="92" rx="8"/><rect x="87" y="14" width="66" height="92" rx="8"/><rect x="160" y="14" width="66" height="92" rx="8"/></g><g fill="#b4bfd3"><rect x="22" y="24" width="30" height="5" rx="2.5"/><rect x="95" y="24" width="30" height="5" rx="2.5"/><rect x="168" y="24" width="30" height="5" rx="2.5"/></g><g fill="rgba(255,255,255,.2)"><rect x="22" y="38" width="50" height="16" rx="5"/><rect x="22" y="60" width="50" height="16" rx="5"/><rect x="95" y="38" width="50" height="16" rx="5"/></g><rect x="168" y="38" width="50" height="16" rx="5" fill="#8fb8ff"/><path d="M186 46l4 4 8-8" stroke="#0a1a33" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><h3>Lead tracker and CRM</h3><small class="hub-by">Used by Christopher B.</small><p>Every lead and customer, who owns it, what stage it is in and their orders. Follow up reminders and meeting booking keep leads moving.</p></div></li>
+        </ul>
+        <div class="hub-center">
+          <p class="hub-title">eME Small Business</p>
+          <ul class="hub-users">
+            <li><span class="hub-user"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><strong>Sara L.</strong><small>eSara L.</small></span><span class="visually-hidden">Sara L. uses Business Dashboard and Tasks and goals.</span></li>
+            <li><span class="hub-user"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><strong>Mike R.</strong><small>eMike R.</small></span><span class="visually-hidden">Mike R. uses Help desk and self service and Finance and invoicing.</span></li>
+            <li><span class="hub-user"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><strong>Christopher B.</strong><small>eChristopher B.</small></span><span class="visually-hidden">Christopher B. uses Lead tracker and CRM and Support documents.</span></li>
           </ul>
-          <p>EME World Inc. is a 501(c)(3) Foundation with servers hosted worldwide.</p>
+        </div>
+        <ul class="features hub-right">
+          <li class="has-art"><svg width="100" height="50" viewBox="0 0 240 120" role="img" aria-label="Checklist with completed and open tasks" class="sb-art"><rect x="24" y="18" width="16" height="16" rx="4" fill="#8fb8ff"/><path d="M28 26l3 3 5-6" stroke="#0a1a33" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="50" y="23" width="110" height="6" rx="3" fill="#b4bfd3" opacity=".6"/><rect x="24" y="52" width="16" height="16" rx="4" fill="#8fb8ff"/><path d="M28 60l3 3 5-6" stroke="#0a1a33" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="50" y="57" width="86" height="6" rx="3" fill="#b4bfd3" opacity=".6"/><rect x="24" y="86" width="16" height="16" rx="4" fill="none" stroke="#b4bfd3" stroke-width="2"/><rect x="50" y="91" width="96" height="6" rx="3" fill="#b4bfd3"/><rect x="176" y="86" width="44" height="16" rx="8" fill="rgba(255,255,255,.14)"/><rect x="186" y="92" width="24" height="4" rx="2" fill="#b4bfd3"/></svg><div><h3>Tasks and goals</h3><small class="hub-by">Used by Sara L.</small><p>Assign tasks, set due dates and team goals, and see what is done, due soon or overdue.</p></div></li>
+          <li class="has-art"><svg width="100" height="50" viewBox="0 0 240 120" role="img" aria-label="Invoice and income chart" class="sb-art"><rect x="16" y="14" width="88" height="92" rx="8" fill="rgba(255,255,255,.1)"/><rect x="26" y="24" width="40" height="6" rx="3" fill="#b4bfd3"/><rect x="26" y="40" width="68" height="4" rx="2" fill="#b4bfd3" opacity=".5"/><rect x="26" y="50" width="56" height="4" rx="2" fill="#b4bfd3" opacity=".5"/><rect x="26" y="60" width="62" height="4" rx="2" fill="#b4bfd3" opacity=".5"/><rect x="26" y="80" width="44" height="14" rx="7" fill="#8fb8ff"/><rect x="34" y="85" width="28" height="4" rx="2" fill="#0a1a33"/><g fill="#8fb8ff"><rect x="124" y="64" width="16" height="42" rx="3" opacity=".5"/><rect x="148" y="48" width="16" height="58" rx="3" opacity=".7"/><rect x="172" y="30" width="16" height="76" rx="3"/><rect x="196" y="18" width="16" height="88" rx="3"/></g></svg><div><h3>Finance and invoicing</h3><small class="hub-by">Used by Mike R.</small><p>Send invoices, record income and expenses, and see profit, cash flow and what is still unpaid.</p></div></li>
+          <li class="has-art"><svg width="100" height="50" viewBox="0 0 240 120" role="img" aria-label="Support documents" class="sb-art"><rect x="62" y="22" width="72" height="88" rx="8" fill="rgba(255,255,255,.1)"/><rect x="96" y="10" width="80" height="96" rx="8" fill="rgba(255,255,255,.2)"/><g fill="#b4bfd3"><rect x="108" y="26" width="40" height="6" rx="3"/><rect x="108" y="44" width="56" height="4" rx="2"/><rect x="108" y="56" width="48" height="4" rx="2"/><rect x="108" y="68" width="54" height="4" rx="2"/></g><rect x="108" y="82" width="36" height="12" rx="6" fill="#8fb8ff"/></svg><div><h3>Support documents</h3><small class="hub-by">Used by Christopher B.</small><p>Technical answers your team and your Salesbot both use.</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tint" id="different" aria-labelledby="values-h">
+    <div class="wrap center">
+      <span class="eyebrow">Collective intelligence technologies</span>
+      <div class="center sb-values-top">
+      <h2 id="values-h">Build value that lasts</h2>
+      <p class="lead narrow center-block">Automate daily operations, save your team time and raise the value of your company.</p>
+      <ul class="features values-cards values-three" style="margin-top:28px;">
+        <li><h3>Respect for Time</h3><p>High-performance, smart technology handles logistics so people focus on setting their direction.</p></li>
+        <li><h3>Stronger Together</h3><p>Communities solve problems best when people and AI work side by side.</p></li>
+        <li><h3>Light on the Earth</h3><p>We honor nature. Open-source tools on idle hardware and solar nodes keep technology sustainable.</p></li>
+      </ul>
+      </div>
+      <h3 id="sb-open" class="sb-values-h">Own your intelligence</h3>
+      <p class="lead narrow center-block">eME is the open source, open model, self hosted AI platform that does not depend on big tech providers. What your business builds stays yours.</p>
+      <ul class="features values-cards sb-open-cards">
+        <li><h3>Open source</h3><p>A 100% open source stack. No vendor lock in.</p></li>
+        <li><h3>Open models</h3><p>Open AI models on dedicated hardware.</p></li>
+        <li><h3>Self hosted</h3><p>Your knowledge stays on an eME Server, not in a big tech store.</p></li>
+        <li><h3>Private</h3><p>No data harvesting and no corporate connections.</p></li>
+      </ul>
+      <p class="api-line"><strong>A full AI API. Flat pricing. No caps on tokens.</strong><span>OpenAI syntax compatible, with no usage charges.</span></p>
+    </div>
+  </section>
+
+  <section class="band" id="pricing" aria-labelledby="sb-price">
+    <div class="wrap">
+      <span class="eyebrow">Pricing</span>
+      <h2 id="sb-price">What eME Salesbot does for you</h2>
+      <article class="card tier pick sb-plan">
+        <div>
+          <h3>eME Salesbot</h3>
+          <p class="amt">$20 <small>per month</small></p>
+          <p class="by">For each website</p>
+          <a class="btn" href="/site/app/?message=I%20want%20eME%20Salesbot%20for%20my%20website">Get eME Salesbot</a>
+        </div>
+        <ul>
+          <li>Make more sales: customers can ask, book and order at any hour</li>
+          <li>Quick answers about prices, products and availability, from your own information</li>
+          <li>Meeting requests go to the right person to confirm</li>
+          <li>Harder questions become tickets, so your team can follow up</li>
+          <li>eME Small Business is included for your employees</li>
+          <li>Flat price with no caps on tokens</li>
+        </ul>
+      </article>
+      <div class="sb-custom">
+        <p><strong>Want it fully customized?</strong> Hire the eME Pro team to shape your Salesbot around the way your business works.</p>
+        <div class="sb-actions">
+          <a class="btn ghost meeting-link" href="#open-schedule-meeting" data-url="./meetingschedule/meeting-form.html" data-updateurl="true" rel="nofollow">Request a meeting</a>
+          <a class="btn ghost" href="./pro.html">See eME Pro</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="band dark" id="contact" aria-labelledby="next-h">
-      <div class="wrap center">
-        <span class="eyebrow">Contact</span>
-        <h2 id="next-h">What is keeping you from automating your business?</h2>
-        <p class="lead">Tell us what is in the way and we will help you build the app that fixes it.</p>
-        <div class="grid g3" style="margin:2rem 0;text-align:left;">
-          <div class="card">
-            <h3>United States</h3>
-            <p>EME World Inc.<br>123 Main Street, Suite 400<br>Cincinnati, OH 45202<br>+1 513 898-2063</p>
-          </div>
-          <div class="card">
-            <h3>Guatemala</h3>
-            <p>EME World Guatemala<br>5a Avenida 12-34, Zona 10<br>Ciudad de Guatemala 01010</p>
-          </div>
-          <div class="card">
-            <h3>Chile</h3>
-            <p>EME World Chile<br>Av. Providencia 1234, Oficina 56<br>Santiago 7500000</p>
-          </div>
+  <section class="band soft" id="faq" aria-labelledby="sb-faq">
+    <div class="wrap">
+      <span class="eyebrow">Questions</span>
+      <h2 id="sb-faq">Common questions</h2>
+      <div class="faq">
+        <details><summary>What does eME Salesbot cost?</summary><p>$20 per month for each website. eME Small Business, the app your employees use for follow up, is included.</p></details>
+        <details><summary>What can my customers do in the chat?</summary><p>Ask sales questions, get support, schedule a meeting and place orders from your product menu.</p></details>
+        <details><summary>Does eME Salesbot replace my staff?</summary><p>No. It handles first contact and passes real work to your people in eME Small Business. The bot answers and collects, your people decide.</p></details>
+        <details><summary>What is an eME?</summary><p>eME is short for electronic me. Like email, but for you. Each employee trains their own eME, like eMike for Mike, to carry routine work with them in control.</p></details>
+        <details><summary>Are there limits on AI usage?</summary><p>No. eME runs on open models with flat pricing and no caps on tokens.</p></details>
+        <details><summary>What happens to my business information?</summary><p>It stays yours. eME is open source and self hosted, with no data harvesting and no vendor lock in.</p></details>
+        <details><summary>What if I need something custom?</summary><p>eME Pro and Consulting builds a custom AI server and employee app around your business, with one on one help, for $1500 per month. <a href="./pro.html">See eME Pro</a>.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band dark sb-cta" aria-labelledby="sb-go">
+    <div class="wrap">
+      <h2 id="sb-go">Put eME Salesbot on your website</h2>
+      <p class="lead">$20 per month. Your team stays in charge.</p>
+      <div class="sb-actions">
+        <a class="btn" href="/site/app/?message=I%20want%20eME%20Salesbot%20for%20my%20website">Get eME Salesbot</a>
+        <a class="btn ghost meeting-link" href="#open-schedule-meeting" data-url="./meetingschedule/meeting-form.html" data-updateurl="true" rel="nofollow">Request a meeting</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band dark" id="contact" aria-labelledby="next-h">
+    <div class="wrap center">
+      <span class="eyebrow">Contact</span>
+      <h2 id="next-h">What is keeping you from automating your business?</h2>
+      <p class="lead">Tell us what is in the way and we will help you build the app that fixes it.</p>
+      <div class="grid g3" style="margin:2rem 0;text-align:left;">
+        <div class="card">
+          <h3>United States</h3>
+          <p>EME World Inc.<br>123 Main Street, Suite 400<br>Cincinnati, OH 45202<br>+1 513 898-2063</p>
         </div>
-        <p class="lead">Email <a href="mailto:cburkey@eme.world">cburkey@eme.world</a> or call <a href="tel:+15138982063">+1 513 898-2063</a>. Open source code: <a href="https://github.com/entermedia-community/eme-server">github.com/entermedia-community/eme-server</a></p>
-        <div class="actions" style="justify-content:center;">
-          <a class="btn" href="/site/app">Chat with EME</a>
-          <a class="btn ghost meeting-link" href="#open-schedule-meeting" data-url="./meetingschedule/meeting-form.html" data-updateurl="true" rel="nofollow">Meeting Request</a>
+        <div class="card">
+          <h3>Guatemala</h3>
+          <p>EME World Guatemala<br>5a Avenida 12-34, Zona 10<br>Ciudad de Guatemala 01010</p>
+        </div>
+        <div class="card">
+          <h3>Chile</h3>
+          <p>EME World Chile<br>Av. Providencia 1234, Oficina 56<br>Santiago 7500000</p>
         </div>
       </div>
-    </section>
+      <p class="lead">Email <a href="mailto:cburkey@eme.world">cburkey@eme.world</a> or call <a href="tel:+15138982063">+1 513 898-2063</a>. Open source code: <a href="https://github.com/entermedia-community/eme-server">github.com/entermedia-community/eme-server</a></p>
+      <div class="actions" style="justify-content:center;">
+        <a class="btn" href="/site/app">Chat with eME</a>
+        <a class="btn ghost meeting-link" href="#open-schedule-meeting" data-url="./meetingschedule/meeting-form.html" data-updateurl="true" rel="nofollow">Meeting Request</a>
+      </div>
+    </div>
+  </section>
 
-  </main>
-
-  <script>
-    (function () {
-      var img = document.querySelector('img.hero-emblem');
-      if (!img || !window.fetch) return;
-      fetch(img.getAttribute('src')).then(function (r) { return r.text(); }).then(function (txt) {
-        var box = document.createElement('div');
-        box.className = 'hero-emblem';
-        box.innerHTML = txt;
-        var svg = box.querySelector('svg');
-        if (!svg) return;
-        svg.removeAttribute('width');
-        svg.setAttribute('aria-label', img.getAttribute('alt'));
-        svg.removeAttribute('aria-labelledby');
-        img.parentNode.replaceChild(box, img);
-        var timer;
-        function resume() { svg.classList.remove('manual'); svg.removeAttribute('data-show'); }
-        function pick(i) {
-          clearTimeout(timer);
-          if (svg.classList.contains('manual') && svg.getAttribute('data-show') === String(i)) { resume(); return; }
-          svg.setAttribute('data-show', i);
-          svg.classList.add('manual');
-          timer = setTimeout(resume, 15000);
-        }
-        svg.querySelectorAll('.bd').forEach(function (b) {
-          b.addEventListener('click', function () { pick(b.getAttribute('data-i')); });
-          b.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(b.getAttribute('data-i')); } });
-        });
-      }).catch(function () {});
-    })();
-    (function () {
-      var links = document.querySelectorAll('.side-nav a[data-spy]');
-      var map = {};
-      links.forEach(function (a) { var h = a.getAttribute('href'); var i = h.indexOf('#'); if (i > -1) map[h.slice(i + 1)] = a; });
-      if (!('IntersectionObserver' in window)) return;
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (!e.isIntersecting || !map[e.target.id]) return;
-          links.forEach(function (a) { a.classList.remove('on'); a.removeAttribute('aria-current'); });
-          map[e.target.id].classList.add('on'); map[e.target.id].setAttribute('aria-current', 'location');
-        });
-      }, { rootMargin: '-40% 0px -55% 0px' });
-      Object.keys(map).forEach(function (id) { var el = document.getElementById(id); if (el) io.observe(el); });
-    })();
-  </script>
-
+</main>

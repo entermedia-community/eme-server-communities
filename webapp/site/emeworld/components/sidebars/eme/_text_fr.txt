@@ -1,7 +1,7 @@
 #
 #Thu Sep 24 15:14:16 CST 2026
 Collapse\ sidebar=Barre lat\u00E9rale de l'effondrement
-EME=\u00C9ME
+eME=eME
 Messages\ on=Messages sur
 No\ team\ chat\ found\!=Aucun chat d'\u00E9quipe trouv\u00E9 \!
 Profile=Le profil

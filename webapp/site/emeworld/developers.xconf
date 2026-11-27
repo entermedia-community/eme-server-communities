@@ -3,9 +3,9 @@
 <page>
   <layout>/${applicationid}/theme/layouts/sitepage.html</layout>
   <inner-layout />
-  <property name="pagetitle">Customize EME Server with OpenCode | EME Developers</property>
-  <property name="metadescription">Set up an eme-server developer environment, connect OpenCode, and let AI coding agents add skills, pages and data to your own EME server.</property>
-  <property name="keywords">EME Server, OpenCode, AI coding agents, Model Context Protocol, MCP, open source, developers, Java skills, MediaDB API</property>
+  <property name="pagetitle">Customize eME Server with OpenCode | eME Developers</property>
+  <property name="metadescription">Set up an eme-server developer environment, connect OpenCode, and let AI coding agents add skills, pages and data to your own eME server.</property>
+  <property name="keywords">eME Server, OpenCode, AI coding agents, Model Context Protocol, MCP, open source, developers, Java skills, MediaDB API</property>
   <property name="canonical">https://eme.world/developers.html</property>
   <property name="navkey">dev</property>
   <property name="extracss">developers.css</property>

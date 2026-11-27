@@ -5,7 +5,7 @@ description: Use when writing or speaking to IT departments, CIOs, infrastructur
 
 # Talking to IT departments about EME
 
-Wording, punctuation and vocabulary follow `eme-brand-voice` (no em dashes, Foundation, EME Profile, short text, no bold inside text). Names, positioning and proof points follow `eme-brand-story`. This skill only adds what is specific to IT: their needs, our framing and the technical facts. Do not repeat the home page pitch, the 30 capability cards or the harness diagram here. Point to them.
+Wording, punctuation and vocabulary follow `eme-brand-voice` (no em dashes, company not Foundation, eME Profile, short text, no bold inside text). Names, positioning and proof points follow `eme-brand-story`. This skill only adds what is specific to IT: their needs, our framing and the technical facts. Do not repeat the home page pitch, the 30 capability cards or the harness diagram here. Point to them.
 
 ## What IT leaders need
 
@@ -52,14 +52,14 @@ Source: `webapp/site/emeworld/architecture.html`, `overview/eme-object-architect
 - **Human in the loop (HITL):** high risk actions such as database changes, payments or publishing wait for a person to approve.
 - **Sandboxing and scope:** generated scripts run isolated, file access is limited to a scope, and destructive commands are blocked. Describe these as design goals unless the user confirms the exact controls for a given audience.
 - **Ownership and portability:** the customer owns all data. It is never mined or sold, and can be exported or moved to another EME Server.
-- **Governance:** EME World Inc. is a Foundation (501(c)(3) foundation) run through an Open Source Program Office with monthly community meetings.
+- **Governance:** EME World Inc. runs an Open Source Program Office with monthly community meetings.
 
 ## Deployment options
 
 | Option | Good for | Notes |
 |---|---|---|
-| **My EME** | A person or small team trying it | Free, sponsored by the EME Foundation |
-| **Hosted EME Server** | Teams who want it running without ops work | Basic hosting is on `costs.html` (currently $150 per month, provided by EnterMediaLibrary). Managed plans are quoted one on one |
+| **My EME** | A person or small team trying it | Free (ask the user whether My eME stays free) |
+| **Hosted EME Server** | Teams who want it running without ops work | Hosting is sold by EME World Inc. ($150 per month with eME Pro). Consulting is quoted one on one |
 | **Co-located dedicated hardware** | Teams who want their own hardware, run by EME | Dedicated GPUs and RAID storage, in professional data centers |
 | **Self hosted** | IT departments who want full control | Your Linux or Docker host, code from GitHub, deployed from Git |
 

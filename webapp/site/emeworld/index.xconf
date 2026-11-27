@@ -3,9 +3,9 @@
 <page>
   <layout>/${applicationid}/theme/layouts/sitepage.html</layout>
   <inner-layout />
-  <property name="pagetitle">EME World | Collective Intelligence Platform</property>
-  <property name="metadescription">A free, open source chat platform with your own AI digital twin. EME World, a Foundation, gives everyone one AI harness with humans in control.</property>
-  <property name="keywords">EME, EME World, collective intelligence, open source AI, AI harness, digital twin, EME Profile, My EME, Foundation</property>
+  <property name="pagetitle">eME Salesbot | AI chat for your website | EME World</property>
+  <property name="metadescription">eME Salesbot is an AI chat for your website for $20 per month. Customers ask sales and support questions, schedule meetings and order from your menu. eME Small Business, the app for your employees, is included.</property>
+  <property name="keywords">eME Salesbot, AI chatbot for websites, AI sales chat, customer support chat, online ordering chat, schedule meetings, eME Small Business, small business CRM, bookkeeping</property>
   <property name="canonical">https://eme.world/</property>
   <property name="navkey">home</property>
   <property name="ogimage">/overview/eme-pie.png</property>

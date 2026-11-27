@@ -3,9 +3,9 @@
 <page>
   <layout>/${applicationid}/theme/layouts/sitepage.html</layout>
   <inner-layout />
-  <property name="pagetitle">Self Hosted EME for IT Departments | Docker and Java | EME World</property>
-  <property name="metadescription">Make the ROI case for self hosting EME. An open source Java server that runs in Docker on Linux, so IT can roll out AI apps and servers across the enterprise on its own hardware, with full data privacy and no vendor lock in.</property>
-  <property name="keywords">EME self hosted, self hosted AI, Docker, Java, Linux, Git, enterprise AI rollout, AI ROI, IT department, open source AI, data privacy, no vendor lock in, Model Context Protocol</property>
+  <property name="pagetitle">Self Hosted eME for IT Departments | Docker and Java | EME World</property>
+  <property name="metadescription">Make the ROI case for self hosting eME. An open source Java server that runs in Docker on Linux, so IT can roll out AI apps and servers across the enterprise on its own hardware, with full data privacy and no vendor lock in.</property>
+  <property name="keywords">eME self hosted, self hosted AI, Docker, Java, Linux, Git, enterprise AI rollout, AI ROI, IT department, open source AI, data privacy, no vendor lock in, Model Context Protocol</property>
   <property name="canonical">https://eme.world/it-departments.html</property>
   <property name="navkey">it</property>
   <property name="extracss">it.css</property>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 402 635" width="402" height="635" role="img" aria-labelledby="s5-t s5-d">
-  <title id="s5-t">UN News EME chat with My EME assistant</title>
-  <desc id="s5-d">A mobile chat in the UN News EME channel where the My EME AI bot welcomes the user and lists what it can help with: answer questions, tutor chat, search for media and run custom skills.</desc>
+  <title id="s5-t">UN News eME chat with My eME assistant</title>
+  <desc id="s5-d">A mobile chat in the UN News eME channel where the My eME AI bot welcomes the user and lists what it can help with: answer questions, tutor chat, search for media and run custom skills.</desc>
   <defs>
     <linearGradient id="s5-me" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
     <linearGradient id="s5-ai" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#6d28d9"/></linearGradient>
@@ -23,7 +23,7 @@
     <circle cx="84" cy="85" r="21" fill="url(#s5-me)"/>
     <text x="84" y="91" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">UN</text>
     <circle cx="100" cy="101" r="5.5" fill="#22c55e" stroke="#fff" stroke-width="2"/>
-    <text x="116" y="82" font-size="16" font-weight="700" fill="#0f172a">UN News EME</text>
+    <text x="116" y="82" font-size="16" font-weight="700" fill="#0f172a">UN News eME</text>
     <text x="116" y="100" font-size="12" fill="#64748b">1 members · General</text>
     <g fill="#2563eb"><circle cx="366" cy="76" r="2.2"/><circle cx="366" cy="85" r="2.2"/><circle cx="366" cy="94" r="2.2"/></g>
 
@@ -31,17 +31,17 @@
     <rect x="156" y="130" width="92" height="20" rx="10" fill="#e2e8f0"/>
     <text x="202" y="144" text-anchor="middle" font-size="11" fill="#64748b">Today 9:41 AM</text>
 
-    <!-- My EME (AI bot) -->
+    <!-- My eME (AI bot) -->
     <circle cx="36" cy="212" r="14" fill="url(#s5-ai)"/>
     <path d="M36 203l2.2 6.3 6.3 2.2-6.3 2.2L36 220l-2.2-6.3-6.3-2.2 6.3-2.2z" fill="#fff"/>
-    <text x="58" y="178" font-size="11" font-weight="700" fill="#7c3aed">My EME</text>
+    <text x="58" y="178" font-size="11" font-weight="700" fill="#7c3aed">My eME</text>
     <rect x="104" y="167" width="44" height="14" rx="7" fill="#ede9fe" stroke="#c4b5fd"/>
     <text x="126" y="177" text-anchor="middle" font-size="8.5" font-weight="700" fill="#7c3aed" letter-spacing=".6">AI BOT</text>
     <text x="380" y="178" text-anchor="end" font-size="10" fill="#94a3b8">Just now</text>
     <rect x="58" y="188" width="322" height="365" rx="20" fill="#ede9fe" stroke="#c4b5fd"/>
     <text x="74" y="222" class="h" font-size="20" fill="#1e1b4b">Welcome!</text>
     <text x="74" y="248" class="b" font-size="15" fill="#1e1b4b">Here are some things I can help you</text>
-    <text x="74" y="269" class="b" font-size="15" fill="#1e1b4b">with in <tspan font-weight="700">EME Server</tspan>:</text>
+    <text x="74" y="269" class="b" font-size="15" fill="#1e1b4b">with in <tspan font-weight="700">eME Server</tspan>:</text>
     <circle cx="82" cy="292" r="2.4" fill="#7c3aed"/>
     <text x="96" y="296" class="b" font-size="15" fill="#1e1b4b"><tspan font-weight="700" fill="#059669">Answer Questions:</tspan> Gives AI answers</text>
     <text x="96" y="317" class="b" font-size="15" fill="#1e1b4b">about your catalog using</text>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="100%" role="img" aria-labelledby="hz-t hz-d">
-<title id="hz-t">The EME AI Harness</title>
-<desc id="hz-d">People stay in control. The AI Harness joins four standard layers: Interact, Reason, Context and Connect, with governance and security across all of them. It runs on your own EME Server with dedicated hardware.</desc>
+<title id="hz-t">The eME AI Harness</title>
+<desc id="hz-d">People stay in control. The AI Harness joins four standard layers: Interact, Reason, Context and Connect, with governance and security across all of them. It runs on your own eME Server with dedicated hardware.</desc>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=JetBrains+Mono:wght@500;700&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap');
   .h { font-family: 'Archivo Black', 'Arial Black', sans-serif; font-weight: 400; }
@@ -74,6 +74,6 @@
 <rect x="2" y="458" width="996" height="60" rx="14" fill="#1e293b"/>
 <rect x="2" y="458" width="8" height="60" rx="4" fill="#2EC4B6"/>
 <circle cx="46" cy="488.0" r="14" fill="#2EC4B6"/>
-<text x="76" y="494.0" class="h" font-size="20" fill="#f8fafc">Your EME Server</text>
+<text x="76" y="494.0" class="h" font-size="20" fill="#f8fafc">Your eME Server</text>
 <text x="990" y="494.0" text-anchor="end" class="b" font-size="17" fill="#e2e8f0">Dedicated hardware. Flat rate. Full data privacy.</text>
 </svg>

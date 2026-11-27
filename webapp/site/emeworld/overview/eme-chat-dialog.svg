@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 690" width="100%" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
-  <title id="t">Peer-to-peer chat with EME assistant</title>
-  <desc id="d">A mobile chat between Christopher and Tammy planning a conference trip, where the EME assistant offers to reserve tickets and schedule a carpool.</desc>
+  <title id="t">Peer-to-peer chat with eME assistant</title>
+  <desc id="d">A mobile chat between Christopher and Tammy planning a conference trip, where the eME assistant offers to reserve tickets and schedule a carpool.</desc>
   <defs>
     <linearGradient id="me" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
     <linearGradient id="ai" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#6d28d9"/></linearGradient>
@@ -52,13 +52,13 @@
 
   <!-- assistant divider -->
   <line x1="40" y1="386" x2="118" y2="386" stroke="#c4b5fd"/>
-  <text x="210" y="390" text-anchor="middle" font-size="11" font-weight="700" fill="#7c3aed" letter-spacing="1">✦ EME ASSISTANT</text>
+  <text x="210" y="390" text-anchor="middle" font-size="11" font-weight="700" fill="#7c3aed" letter-spacing="1">✦ eME ASSISTANT</text>
   <line x1="302" y1="386" x2="380" y2="386" stroke="#c4b5fd"/>
 
-  <!-- EME Christopher -->
+  <!-- eChristopher -->
   <circle cx="44" cy="484" r="14" fill="url(#ai)"/>
   <path d="M44 475l2.2 6.3 6.3 2.2-6.3 2.2L44 492l-2.2-6.3-6.3-2.2 6.3-2.2z" fill="#fff"/>
-  <text x="66" y="416" font-size="11" font-weight="700" fill="#7c3aed">EME Christopher</text>
+  <text x="66" y="416" font-size="11" font-weight="700" fill="#7c3aed">eChristopher</text>
   <rect x="66" y="424" width="314" height="102" rx="20" fill="#ede9fe" stroke="#c4b5fd"/>
   <g font-size="15" fill="#1e1b4b">
     <text x="82" y="450">I've checked both your schedules.</text>

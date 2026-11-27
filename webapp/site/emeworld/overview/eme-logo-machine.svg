@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 680" width="100%" role="img" aria-labelledby="t">
-<title id="t">EME: Create Your Own AI</title>
+<title id="t">eME: Create Your Own AI</title>
 <defs>
   <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
     <feGaussianBlur in="SourceAlpha" stdDeviation="10"/><feOffset dy="12" result="b"/>
