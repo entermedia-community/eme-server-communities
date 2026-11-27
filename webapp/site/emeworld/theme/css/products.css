@@ -241,3 +241,8 @@ svg.prod .bar-bg { fill: var(--tint); }
 .pro-hero .wrap { grid-template-columns: minmax(0, .8fr) minmax(300px, 1.2fr); gap: clamp(24px, 3vw, 48px); }
 .pro-hero .pro-art { max-width: 720px; margin: 0; }
 @media (max-width: 900px) { .pro-hero .wrap { grid-template-columns: 1fr; } .pro-hero .pro-art { max-width: 560px; } }
+
+/* eME Pro: self customizing network */
+.flow-art { margin: 2.6rem 0 0; }
+/* the network's text gets too small on narrower screens, so show the list sooner */
+@media (max-width: 1099px) { .flow-art { display: none; } .flow-art + .wide-alt { display: grid; } }
