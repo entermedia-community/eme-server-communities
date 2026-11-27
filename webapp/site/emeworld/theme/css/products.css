@@ -236,3 +236,8 @@ svg.prod .bar-bg { fill: var(--tint); }
 .pro-shot { aspect-ratio: 16 / 10; display: grid; place-items: center; border: 1px dashed rgba(255,255,255,.35); border-radius: var(--radius); background: rgba(255,255,255,.05); color: var(--on-dark-muted); }
 .pro-gallery img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: var(--radius); }
 .pro-gallery figcaption { margin-top: 10px; color: var(--on-dark-muted); font-size: .95rem; }
+.pro-art img, .pro-art svg { display: block; width: 100%; height: auto; }
+/* Pro hero: give the emblem more room */
+.pro-hero .wrap { grid-template-columns: minmax(0, .8fr) minmax(300px, 1.2fr); gap: clamp(24px, 3vw, 48px); }
+.pro-hero .pro-art { max-width: 720px; margin: 0; }
+@media (max-width: 900px) { .pro-hero .wrap { grid-template-columns: 1fr; } .pro-hero .pro-art { max-width: 560px; } }
